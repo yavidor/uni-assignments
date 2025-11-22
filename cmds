@@ -1,0 +1,9 @@
+:%s/#\+\s\+\(.\+\)/\\section{\1}/
+
+:%s/^\$\$\n\\begin{gather}/\\begin{gather*}
+
+:%s/^\\end{gather}\n\$\$/\\end{gather*}
+
+:%s/^\$\$\n\\begin{cases}/\\begin{equation*}\r\\begin{cases}
+
+%s/\\end{cases}\n\$\$/\\end{cases}\r\\end{equation*}
