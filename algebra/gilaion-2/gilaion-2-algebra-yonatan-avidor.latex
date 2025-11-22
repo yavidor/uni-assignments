@@ -1,0 +1,264 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה א' 01040066 \\ גליון 2}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\section*{שאלה 1}
+יהא $\mathbb{F}$ שדה. עבור $a,b \in \mathbb{F}$ נסמן $\frac{a}{b}=a\cdot b^{-1}$ (בהנחה כי $b$ הפיך). הוכיחו את הזהויות הבאות באמצעות אקסיומות השדה (יש לנמק היטב).\\
+א.
+$$
+\left( \frac{a}{b} \right) ^{-1}= \frac{b}{a}
+$$
+ב.
+$$
+\frac{a}{b}\cdot \frac{c}{d} = \frac{a\cdot c}{b\cdot d}
+$$
+ג.
+$$
+\frac{a}{b}+\frac{c}{d}= \frac{ad+bc}{bd}
+$$
+\section*{פתרון 1}
+א.\\
+נכתוב מחדש את מה שצריך להוכיח לפי הסימון שנתון לנו
+$$
+(a \cdot b^{-1})^{-1} = b \cdot a^{-1} 
+$$
+ראשית נראה את יחידות האיבר ההופכי, על הגדרת ההופכי, לכל $l \in \mathbb{F}$, קיים נגדי $l^{-1}$. נניח בשלילה שקיימים $m,n \in \mathbb{F}, m\neq n$ כך שגם $m$ וגם $m$ איברים נגדיים של $l$
+$$
+m \underbrace{ = }_{ \left( * \right)  } m \cdot 1 = m \cdot \left( l\cdot n  \right)  \underbrace{ = }_{ \left( ** \right)  } \left( m\cdot l \right)  \cdot n=1\cdot n \implies m =n
+$$
+\begin{gather*}
+\left( * \right) \text{ כל איבר בשדה כפול איבדר היחידה שווה לאיבר} \\
+\left( ** \right)  \text{ אסוציאטיביות על כפל}
+\end{gather*}
+הגענו לסתירה, ולכן לכל איבר קיים הופכי בודד.\\
+עכשיו נרצה להוכיח כי לכל $l,m \in \mathbb{F}$, מתקיים $\left( l\cdot m \right)^{-1}=l^{-1}\cdot m^{-1}$\\
+לפי תכונות ההופכי והאקסיומה ששדה סגור תחת כפל
+$$
+\left( l \cdot m \right)^{-1} \cdot \left( l\cdot m \right)=1
+$$
+על פי יחידות ההופכי שהוכחנו\\
+אם $\left( l^{-1}\cdot m^{-1} \right) \cdot \left(l\cdot m\right)=1$ אזי $\left( l\cdot m \right)^{-1}=\left(l^{-1}\cdot m^{-1} \right)$
+$$
+\left( l^{-1}\cdot m^{-1} \right) \cdot \left( l\cdot m \right)\underbrace{ = }_{ \left( * \right)  } \left(l^{-1}\cdot l\right)\cdot \left( m^{-1}\cdot m \right) =1\cdot 1=1
+$$
+$$
+\left( * \right) \text{ כפל הוא אסוציאטיבי וקומוטטיבי}
+$$
+ולכן $\left( l\cdot m \right)^{-1}=\left( l^{-1}\cdot m^{-1} \right)$\\
+כלומר
+$$
+(a \cdot b^{-1})^{-1} = a^{-1} \cdot \left( b^{-1} \right)^{-1}
+$$
+נרצה להראות ש $\left( b^{-1} \right)^{-1}=b$\\
+על פי הגדרת ההופכי, לכל $l \in \mathbb{F}$, מתקיים $l^{-1} \cdot l=1$. נסתכל על ההופכי של $l^{-1}$
+$$
+l^{-1} \cdot \left( l^{-1} \right) ^{-1}=1
+$$
+לפי יחידות האיבר ההופכי, $l=\left( l^{-1} \right)^{-1}$\\
+כלומר
+$$
+a^{-1}\cdot \left( b^{-1} \right) ^{-1}=a^{-1}\cdot b
+$$
+על פי הסימון (וזה שהכפל קומוטטיבי)
+$$
+a^{-1}\cdot b=\frac{b}{a}
+$$
+$\blacksquare$
+\\
+ב.\\
+נכתוב מחדש את מה שצריך להוכיח על פי הסימון
+$$
+\left( a\cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) = \left( a\cdot c \right) \cdot(b\cdot d)^{-1}
+$$
+מכיוון שכפל הוא קומוטטיבי ואסוציאטיבי ניתן לכתוב ש
+$$
+\left( a\cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)  = \left( a\cdot c \right)\cdot \left( b^{-1}\cdot d^{-1} \right)  
+$$
+בסעיף הקודם הוכחנו כי לכל $l,m \in \mathbb{F}$ מתקיים $\left( l^{-1}\cdot m^{-1} \right)=\left( l\cdot m \right)^{-1}$\\
+ולכן
+$$
+ \left( a\cdot c \right)\cdot \left( b^{-1}\cdot d^{-1} \right)   =\left( a\cdot c \right) \cdot \left( b\cdot d \right) ^{-1}
+$$
+על פי הסימון
+$$
+\left( a\cdot c \right) \cdot \left( b\cdot d \right) ^{-1} = \frac{a\cdot c}{b\cdot d}
+$$
+$\blacksquare$\\
+ג.\\
+נכתוב מחדש את מה שצריך להוכיח על פי הסימון
+$$
+\left( a \cdot b^{-1} \right)  + \left( c \cdot d^{-1} \right)  = \left( (a\cdot d )+( b\cdot c )\right) \cdot \left( b\cdot d \right) ^{-1}
+$$
+על פי אקסיומות השדה, $1$ הוא אדיש כפלית ולכן אפשר להכפיל כל ביטוי ב$1$, בנוסף $d^{-1}\cdot d=1$\\
+כלומר $\left( d\cdot d^{-1} \right)\cdot \left( a\cdot b^{-1} \right)=\left( a\cdot b^{-1} \right)$\\
+נכתוב מחדש את הביטוי
+$$
+\left( d\cdot d^{-1} \right) \cdot(a\cdot b^{-1})+\left(  c\cdot d^{-1} \right)
+$$
+על פי קומוטוטיביות ואסוציאטיביות הכפל, אפשר לכתוב $\left( d\cdot d^{-1} \right)\cdot \left( a\cdot b^{-1} \right)=\left(a\cdot d\right)\cdot \left( b^{-1}\cdot d^{-1} \right)$\\
+בצורה דומה 
+$$
+\left( c\cdot d^{-1} \right)=\left( b\cdot b^{-1} \right)\cdot \left( c \cdot d^{-1} \right)=\left( b\cdot c\right)\cdot \left( b^{-1}\cdot d^{-1} \right) 
+$$
+נכתוב מחדש את הביטוי
+$$
+\left( a\cdot d \right) \cdot \left( b^{-1}\cdot d^{-1} \right) + \left( b \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right) 
+$$
+על פי אקסיומות השדה, הכפל דיסטריביוטיבי על החיבור ולכן
+$$
+\left( a\cdot d \right) \cdot \left( b^{-1}\cdot d^{-1} \right) + \left( b \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right)  = \left( \left( a\cdot d \right) +\left( b\cdot c \right)  \right) \cdot \left( b^{-1}\cdot d^{-1} \right) 
+$$
+$\blacksquare$
+\section*{שאלה 2}
+א.\\
+יהא $d \in \mathbb{Z}$ כלשהו. נתבונן בתת-קבוצה הבאה של $\mathbb{C}$:
+$$
+L=\left\{ a+b\sqrt{d}~|~a,b\in \mathbb{Q} \right\} 
+$$
+הוכיחו כי $L$ תת-שדה של $\mathbb{C}$.\\
+ב.\\
+הוכיחו כי כל תת-שדה של $\mathbb{C}$ בהכרח מכיל את $\mathbb{Q}$.
+\section*{פתרון 2}
+ידוע כי על מנת להוכיח שתת-קבוצה תחת שדה היא תת-שדה צריך להוכיח שלושה דברים: קיום איבר שאינו איבר ה$0$, סגירות לכפל וחיבור, והמצאות האיבר הופכי והאיבר נגדי בתת-קבוצה. לכן אלו הדברים שנרצה להוכיח\\
+על מנת להוכיח שקיים איבר השונה מ$0$, ניתן לראות כי $1+2 \sqrt{d}$  נמצא ב$L$ ואינו איבר ה$0$.\\
+על מנת להראות ש$L$ סגורה לחיבור, נראה שלכל $m,n \in L$, מתקיים $m+n \in L$\\
+נגדיר את $m,n$
+\begin{gather*}
+m:=a+b\sqrt{d}~~~a,b \in \mathbb{Q} \\
+n:= c+e\sqrt{d}~~c,e \in \mathbb{Q}
+\end{gather*}
+נסתכל על החיבור שלהם
+$$
+m+n=a+b\sqrt{d}+c+e\sqrt{d}=\underbrace{ a+c }_{ \in \mathbb{Q} }+\underbrace{ \left( b+e \right) }_{ \in \mathbb{Q} }\sqrt{d}
+$$
+$a+c \in \mathbb{Q}$ כי $\mathbb{Q}$ סגורה לחיבור, אותו דבר לגבי $b+e \in \mathbb{Q}$\\
+$m+n \in L$ ולכן $L$ סגורה לחיבור.\\
+נסתכל עכשיו על $m \cdot n$
+\begin{gather*}
+m \cdot n = \left( a +b \sqrt{d} \right) \cdot \left( c + e\sqrt{d} \right) = \left( a+b\sqrt{d} \right)\cdot c+\left( a+b\sqrt{d} \right) \cdot e\sqrt{d} \\
+=c\cdot a+c\cdot b\sqrt{d}+e\sqrt{d}\cdot a +e\sqrt{d }\cdot b\sqrt{d} \\
+= \underbrace{ c\cdot a }_{ \in \mathbb{Q} }  + \underbrace{ \left( c\cdot b+e\cdot a+e\cdot b \right) }_{ \in \mathbb{Q} }\sqrt{d}
+\end{gather*}
+$c \cdot a \in \mathbb{Q}$ כי $\mathbb{Q}$ סגורה לכפל. $c\cdot b+e\cdot a+e\cdot b\in \mathbb{Q}$ כי $\mathbb{Q}$ סגורה לכפל ולחיבור.\\
+$m \cdot n \in L$ ולכן $L$ סגורה לכפל.\\
+נשאר רק להוכיח את האיבר ההופכי והנגדי\\
+ראשית נוכיח כי $a \in \mathbb{F}\implies-a \in \mathbb{F}$\\
+נסתכל על הנגדי של $m$, ונוכיח שהוא ב $L$
+$$
+-m = \underbrace{ (-a) }_{ \in \mathbb{Q} }+\underbrace{ (-b) }_{ \in \mathbb{Q} }\sqrt{d}
+$$
+$-a \in \mathbb{Q}$ כי $-1 \in \mathbb{Q}$ ו$\mathbb{Q}$ סגורה לכפל. אותו דבר לגבי $-b \in \mathbb{Q}$\\
+נסתכל על ההופכי של $m$ ונוכיח שהוא ב$L$
+\begin{gather*}
+m^{-1} = \frac{1}{a+b\sqrt{d}}=\frac{1}{a+b\sqrt{d}} \cdot \frac{a-b\sqrt{d}}{a-b\sqrt{d}} \\
+= \frac{a-b\sqrt{d}}{\left( a+b\sqrt{d} \right) \left( a-b\sqrt{d} \right) }=\left( a-b\sqrt{d} \right) \cdot \underbrace{ \frac{1}{a^{2}-b^{2}d} }_{ \mathbb{Q} }  \\
+=\underbrace{ \left( \frac{a}{a^{2}-b^{2}d} \right)  }_{ \in \mathbb{Q} } + \underbrace{ \left( -\frac{b}{a-b^{2}d} \right) }_{ \in \mathbb{Q} }\sqrt{d}\in L
+\end{gather*}
+$L$ מקיים את כל התכונות של תת-שדה של $\mathbb{C}$ ולכן תת שדה של $\mathbb{C}$.\\
+$\blacksquare$\\
+ב.\\
+יהי $F \subseteq \mathbb{C}$ להיות תת שדה של $\mathbb{C}$.\\
+על מנת להוכיח ש$\mathbb{Q} \subseteq F$ נרצה להוכיח שלכל $b\neq 0,a,b \in \mathbb{Z}$ מתקיים $a\cdot b^{-1} \in F$\\
+נוכיח קודם ש$\mathbb{Z} \subseteq F$ ותת שדה של $F$.\\
+ידוע ש $\mathbb{Z}$ שדה ולכן צריך רק להוכיח ש$\mathbb{Z} \subseteq F$\\
+על מנת לעשות זאת צריך להראות שכל$a \in \mathbb{Z}$ מקיים $a \in F$\\
+נפרק למקרים.\\
+$a = 0$ נמצא כי $0 \in F$ על פי ההגדרה של $F$ כתת שדה של $\mathbb{C}$.\\
+$a>0$, ניתן לכתוב כ$a=\underbrace{ 1+1+1+\ldots+1 }_{ a\text{ פעמים} }$. נשים לב ש$1 \in F$ על פי ההגדרה של $F$ כתת שדה של $\mathbb{C}$.\\
+$a<0$, ניתן לכתוב כ$a=0+\underbrace{ (-1)+(-1)+(-1)+\ldots+(-1) }_{ a\text{ פעמים} }$. נשים לב ש$-1 \in F$ כי $-1$ הוא הנגדי של $1$.\\
+הוכחנו כי $\mathbb{Z}\subseteq F$, מה שאומר שלכל $a,b \in \mathbb{Z}, b\neq 0$ מתקיים$a \cdot b^{-1} \in F$ כי $F$ סגור להופכיים ולכפל.\\
+על פי ההגדרה של $\mathbb{Q}=\left\{ a\cdot b^{-1}~|~a,b\in \mathbb{Z},b\neq 0 \right\}$\\
+אפשר לראות כי $\mathbb{Q} \subseteq F$.\\
+מכיוון ש$F$ הוגדר לכל תת-שדה של $\mathbb{C}$. כל תת שדה של $\mathbb{C}$ בהכרח מכיל את $\mathbb{Q}$.\\
+$\blacksquare$
+\section*{שאלה 3}
+א.\\
+יהא $\mathbb{F}$ שדה סופי עם מספר זוגי של איברים. הראו כי מתקיים $1+1=0$\\
+ב.\\
+באמצעות סעיף א', הסיקו כי לא קיים שדה עם שישה איברים
+\section*{פתרון 3}
+נניח בשלילה כי לכל איבר $0 \neq a \in \mathbb{F}$ בשדה הסופי$\mathbb{F}$ שבו יש כמות זוגית של איברים מתקיים $a +a\neq 0$  כלומר $a \neq -a$\\
+זה אומר שעל כל איבר קיים גם ההופכי שלו. כלומר כמות האיברים בשדה היא מספר זוגי + 1 (כי ל0 אין הופכי). כלומר כמות האיברים היא אי-זוגית, הגענו לסתירה.\\
+$\blacksquare$\\
+ב.\\
+נניח בשלילה כי קיים שדה $\mathbb{F}$ בעל שישה איברים.\\
+נגדיר את איבריו:\\
+ארבעת האיברים הראשונים זהים לשדה בעל ארבעת האיברים $\left\{ 0,1,a,b \right\}$ כאשר $a\neq b$ נבחר כך ש$a+1 \neq b,b+1\neq a$, בשביל שישה איברים נצטרך להוסיף עוד שניים.\\
+מכיוון ש$\mathbb{F}$ סגור תחת חיבור, גם $a+1$ נמצא ב$\mathbb{F}$, וגם $b+1$.\\
+נתבונן ב$a+b$, מכיוון ש$\mathbb{F}$ סגור תחת חיבור. $a+b$ צריך להיות שווה לאיבר אחר ב$\mathbb{F}$. נבדוק לכל אחד מהאיברים, אם נראה ש$a+b$ לא שווה לאף איבר אחר ב$\mathbb{F}$, נגיע לסתירה 
+\begin{equation*}
+\begin{cases}
+a+b=0 \implies a=-b  \overbrace{ \implies }^{ \left( * \right)  } a=b~\left( ** \right) \\
+a+b=1\implies a+b+b=a+1\implies a=a+1 ~\left( * *  \right)  \\
+a+b=a\implies b=0~ \left(  **  \right)  \\
+a+b=b\implies a=1~\left( ** \right)  \\
+a+b=a+1 \implies b=1~\left( ** \right)  \\
+a+b=b+1\implies a=1~\left( ** \right) 
+\end{cases}
+\end{equation*}
+(*) כפי שהוכחנו בסעיף הקודם, בשדה בעל כמות זוגית של איברים, כל איבר שווה להופכי של עצמו\\
+(**) על פי הגדרת $\mathbb{F}$, $0\neq 1\neq a\neq a+1\neq b\neq b+1$\\
+הגענו לסתירה\\
+$\blacksquare$
+\section*{שאלה 4}
+יהא $\mathbb{F}$ שדה. תהא $f: \mathbb{F}\to \mathbb{F}$ פונקציה המקיימת את התכונות הבאות:
+\begin{gather*}
+f\left( x+y \right) =f\left( x \right) +f\left( y \right) \\
+f\left( x\cdot y \right) =f\left( x \right) \cdot f\left( y \right)
+\end{gather*}
+נסמן
+$$
+Ker\left( f \right) =\left\{ x \in \mathbb{F}:f\left( x\right)=0  \right\} 
+$$
+הוכיחו כי $Ker(f)=\left\{ 0 \right\}$ או $Ker\left( f \right)=\mathbb{F}$
+\section*{פתרון 4}
+צריך להוכיח בעצם שאם ישנו איבר $x \in \mathbb{F}$ אחד שמקיים$f(x)\neq 0$, אזי זה נכון לכל האיברים מלבד $0$ עצמו.\\
+נניח בשלילה שקיים $0\neq x \in \mathbb{F}$ יחיד \\
+נגדיר$a:=f\left( 1 \right)$, $a \in \mathbb{F}$ כי הפלט של$f$ תמיד ב$\mathbb{F}$, בנוסף $a \neq 0$ כי הגדרנו את $x$ בתור האיבר היחיד שעבורו $f$ מוציא $0$\\
+נסתכל על $f(x\cdot x ^{-1})$
+$$
+f\left( x\cdot x ^{-1} \right) =0 \cdot f\left( x ^{-1} \right)  =0
+$$
+אבל אפשר גם לכתוב
+$$
+f\left( x \cdot x ^{-1} \right) =f\left( 1 \right) =a
+$$
+כלומר $a =0$, סתירה.\\
+$\blacksquare$
+\section*{שאלה 5}
+א.\\
+מצאו את שארית החלוקה של$2^{81}$ ב$17$\\
+ב.\\
+הוכיחו $2\cdot 3^{n}+5 \cdot 14^{n}+ 4 \cdot 25^{n}$ מתחלק ב$11$ לכל מספר טבעי וחיובי $n$.\\
+ג.\\
+אולי אחר כך
+\section*{פתרון 5}
+א.\\
+על מנת למצוא את שארית החלוקה של $2^{81}$ ב$17$\\
+צריך למצוא את הערך של $\text{mod}17\left( 2^{81} \right)$.\\
+נשים לב ש$2^{4}=16 \equiv_{17}-1$.
+$$
+2^{81}=2^{\left( 4\cdot 20 \right) +1} \equiv_{17}\left( -1 \right) ^{20}\cdot 2 = 1 \cdot 2 = \boxed{2}
+$$
+ב.\\
+נפעיל$\text{mod }11$  על הביטוי, אם התוצאה היא $0$ אזי הביטוי מתחלק ב11
+$$
+2\cdot 3^{n}+5\cdot 14^{n}+4 \cdot 25^{n}  =
+2\cdot 3^{n}+ 5 \cdot 3^{n}-7 \cdot 3^{n}=\left( 2+5-7 \right) \cdot 3^{n}=0\cdot 3^{n} =0 
+$$
+$\blacksquare$
+\fancyfoot[L]{\text{214269565}}
+\end{document}

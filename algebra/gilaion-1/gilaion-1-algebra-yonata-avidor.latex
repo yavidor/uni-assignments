@@ -1,0 +1,337 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה א' 01040066 \\ גליון 1}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{שאלה 1}
+א. פתרו את המשוואה $z^2 + \left|z^2\right| = 1 + 2i$\\ 
+ב. יהיו $z_1,\dots,z_{10}$ מספרים מרוכבים המקיימים $\left|z_i\right|=3$ לכל $i = 1,\dots,10$. נתון כי $\left| z_1 + \dots + z_{10}\right| =9$. חשבו את ערך הביטוי
+$$
+\left| \frac{1}{z_1} + \ldots + \frac{1}{z_{10}}\right|
+$$
+\section*{פתרון 1}
+א. \\
+נתבונן בצד השמאלי של המשוואה \\
+ראשית, נשים לב ש $\left|z^2\right| = \left|z\right|^2$ \\
+נכתוב מחדש את המשוואה ונפרק לחלק ממשי וחלק מדומה
+\begin{gather*}
+z=a+bi \left( a,b \in \mathbb{R}\right) \implies \\
+z^2+\left|z\right|^2=(a+bi)^2 + \left(\sqrt{a^2 + b^2}\right)^2 \\
+= a^2+2abi-b^2 + a^2 + b^2 = 2a^2 +2abi 
+\end{gather*}
+עכשיו כשיש לנו חלק ממשי ($2a^2$) וחלק מדומה ($2abi$), נשווה ל$1 +2i$
+\begin{equation*}
+\begin{cases}
+    2a^2 = 1 \underset{\div 2}{\implies} a = \frac{1}{2} \underset{\sqrt{}}{\implies} a = \pm\frac{1}{\sqrt{2}} \\
+    2ab = 2 \underset{\div 2}{\implies} ab=1 \underset{a= \pm\frac{1}{\sqrt{2}}}{\implies}  \pm \frac{1}{\sqrt{2}}b = 1 \underset{\div \pm \frac{1}{\sqrt{2}}}{\implies} b = \pm \sqrt{2}
+\end{cases}
+\end{equation*}
+קיבלנו את שני השורשים הריבועיים של $z$
+$$
+    \boxed{z_1 = \frac{1}{\sqrt{2}} +\sqrt{2}i,z_2 = -\frac{1}{\sqrt{2}}-\sqrt{2}i}
+$$
+ב. \\
+ראשית, נרצה להוציא את המספר המרוכב מהמכנה, נעשה זאת באמצעות הכפלה בצמוד.
+$$
+\frac{1}{z_{i}} = \frac{1}{z_{i}} \cdot \frac{\bar{z_{i}}}{\bar{z_{i}}} = \frac{\bar{z_{i}}}{\left| z_{i} \right|^{2}} \underset{(*)}{=} \frac{\bar{z_{i}}}{3^{2}} = \frac{\bar{z_{i}}}{9}
+$$
+(*) נתון לנו ש$\left| z_{i} \right|=3$ \\
+נכתוב מחדש את הביטוי שעלינו לחשב
+\begin{gather*}
+\left| \frac{\bar{z_{1}}}{9} + \ldots + \frac{\bar{z_{10}}}{9}\right|=
+ \left| \frac{1}{9}  \cdot \left(\bar{z_{1}} + \ldots + \bar{z_{10}} \right)\right| \\
+\underset{(*)}{=} \left| \frac{1}{9} \cdot \left( \overline{z_{1}+\ldots+z_{10}} \right)  \right| \\
+ \underset{(**)}{=} \left| \frac{1}{9} \right| \cdot \left| \overline{z_{1}+\ldots+z_{10}} \right|  \\
+\underset{(***)}{=} \frac{1}{9} \cdot \left| z_{1}+\ldots + z_{10} \right| \\
+\underset{(****)}{=} \frac{1}{9} \cdot 9 =\boxed{1} \\\\
+ (*)~\bar{z} +\bar{w}=\overline{z+w} \\
+(**)~\left| x\cdot y \right| =\left| x \right|\cdot \left| y \right|  \\
+(***)~\left| \bar{z} \right| =\left| z \right| \\
+(****)~\text{נתון} \left| z_1 + \dots + z_{10}\right|
+\end{gather*}
+\section*{שאלה 2}
+א. יהיו $w,z$ מספרים מרוכבים שאינם ממשיים, כך שמתקיים $wz \in \mathbb{R}$. הוכיחו כי קיים $\alpha \in \mathbb{R}$ כך שמתקיים $w=\alpha \bar{z}$
+ב. יהא $z \neq 0$. הוכיחו כי:
+$$
+\mathrm{Re}\left( \left( 1+\frac{1}{z} \right) +\left( 1-\frac{1}{z} \right)  \right) <1
+$$
+ג. הוכיחו כי קיימים זוג מספרים שלמים $a,b \in \mathbb{Z}$ כך שמתקיים:
+$$
+\left( 2882^{2}+ 2022^{2}\right) \left( 38 ^{2}+6725^{2}\right) =a^{2}+b^{2}
+$$
+\section*{פתרון 2}
+א. \\
+נכתוב מחדש את $z,w$ ונפרק אותם לחלק ממשי וחלק מדומה, נשים לב שהחלק המדומה שונה מ-$0$
+\begin{gather*}
+z = a+bi\left( a,b \in \mathbb{R}, b\neq 0 \right)  \\
+w = c+di \left( c,d \in \mathbb{R}, d \neq 0 \right) 
+\end{gather*}
+ראשית נרצה לטפל במקרה הקצה שבו אחד המספרים הוא מדומה טהור, נבדוק מה קורה כשהתנאי מתרחש ואחד המספרים הוא מדומה טהור
+\begin{gather*}
+a=0\iff c+di=\alpha\left(-bi\right) \\
+\iff c+di=-\alpha bi  \\
+\iff c=\left( -\alpha b-d \right)i  \iff c+0i=0+\left( -\alpha b-d \right)i
+\end{gather*}
+נשווה ממשי ומדומה בנפרד
+\begin{equation*}
+\begin{cases}
+c=0 \\
+-\alpha b-d=0 \iff -d=\alpha b \iff -\frac{d}{b}=\alpha
+\end{cases}
+\end{equation*}
+מכאן מגיעות שתי מסקנות. הראשונה היא ש$z$ מדומה טהור אם ורק אם $w$ מדומה טהור, השנייה היא שבמצב הזה $\alpha=-\frac{d}{b}$\\
+הגענו לפתרון כש$z$ ו$w$ מדומים טהורים, עכשיו נפתור לשאר המקרים ונדע ש$a \neq 0, c \neq 0$ \\
+נתבונן במכפלת $z$ ו$w$
+$$
+zw=\left( a+bi \right) \left( c+di \right) = ac+\left( ad \right) i+\left( bc \right)i-bd=\left( ac-bd \right)+(ad+bc)i
+$$
+ידוע לנו ש$zw \in \mathbb{R}$, כלומר החלק המדומה שווה ל$0$
+\begin{gather*}
+ad+bc=0 \iff\\
+ad=-bc \iff \\
+-\frac{ad}{c}=b
+\end{gather*}
+נציב את $b$ בנוסחה $w = \alpha \bar{z}$
+$$
+c+di=\alpha \left( a+\frac{ad}{c}i \right)\iff c+di=\alpha a+ \frac{\alpha ad}{c}i
+$$
+נשווה שוב בנפרד את החלק הממשי והחלק המדומה, המטרה שלנו היא להראות שיש ערך זהה ל$\alpha$ שיהיה מתאים גם לחלק הממשי וגם לחלק המדומה כדי שנוכל להשתמש בו
+\begin{equation*}
+\begin{cases}
+c=\alpha a \iff\alpha=\frac{a}{c} \\
+d=\frac{\alpha ad}{c}\iff dc=\alpha ad\iff c=\alpha a\iff\alpha=\frac{a}{c}
+\end{cases}
+\end{equation*}
+$\blacksquare$\\
+ב. ראשית, נרצה להוציא את המספר המרוכב מהמכנים, נעשה זאת באמצעות הכפלה בצמוד.
+\begin{gather*}
+\frac{1}{z} = \frac{1}{z} \cdot \frac{\bar{z}}{\bar{z}} = \frac{\bar{z}}{\left| z \right|^{2}} \\
+\frac{1}{\bar{z}} = \frac{1}{\bar{z}} \cdot \frac{z}{z} = \frac{z}{\left| \bar{z} \right|^{2}} = \frac{z}{\left| z \right|^{2} }
+\end{gather*}
+ונכתוב מחדש את הביטוי
+$$
+\mathrm{Re}\left( \left( 1+ \frac{z}{\left| z \right| ^{2}} \right) \left(  1- \frac{\bar{z}}{\left| z \right| ^{2}} \right)  \right) 
+$$
+נפתח סוגריים
+\begin{gather*}
+\left( 1+ \frac{z}{\left| z \right| ^{2}} \right) \left(  1- \frac{\bar{z}}{\left| z \right| ^{2}} \right)  \\
+=1-\frac{\bar{z}}{\left| z \right| ^{2}}+ \frac{z}{\left| z \right| ^{2}}- \frac{z\cdot \bar{z}}{\left| z \right| ^{2} \cdot  \left| z \right|^{2} }  \\
+= 1+\frac{z-\bar{z}}{\left| z \right| ^{2}}- \frac{\left| z \right|^{2}} {\left| z \right| ^{2} \cdot \left| z^{2} \right| } \\
+=1+ \frac{z-\bar{z}-1}{\left| z \right| ^{2}}
+\end{gather*}
+נכתוב מחדש את $z$ על מנת להפריד בין החלק הממשי לחלק המדומה, ונכתוב כך מחדש את המשוואה
+\begin{gather*}
+z=a+bi \left( a,b \in \mathbb{R}\right) \implies \\
+1+\frac{z-\bar{z}-1}{\left| z \right| ^{2}}=1+\frac{\left( a+bi \right) -\left(a-bi  \right) -1}{\sqrt{ a^{2}+b^{2} }^{2}}=1+ \frac{2bi-1}{a^{2}+b^{2}} \\
+=\underbrace{1- \frac{1}{a^{2}+b^{2}}}_{\mathrm{Re}}+\underbrace{\frac{2b}{a^{2}+b^{2}}i}_{\mathrm{Im}}
+\end{gather*}
+כעת כל מה שצריך להוכיח זה ש$1- \frac{1}{a^{2}+b^{2}}<1$
+$$
+1-\frac{1}{a^{2}+b^{2}}<1 \underset{-1}{\iff} \frac{1}{a^{2}+b^{2}}<0 \underset{\times -1}{\iff} \frac{1}{a^{2}+b^{2}}>0
+$$
+יצא לנו פסוק אמת מכיוון שגם המונה וגם המכנה חיוביים (המונה הוא $1$ והמכנה הוא סכום של שני מספר בריבוע ושונה מ$0$ ולכן חיובי) כך שהביטוי מצד שמאל של המשוואה חיובי ובכך גדול מ$0$\\
+$\blacksquare$\\\\
+ג.\\
+למען הנוחות ניתן שמות למספרים בנוסחה: $c=2882, d=2002, e=38, f=6725$
+נכתוב מחדש את הנוסחא
+$$
+\left( c^{2}+d^{2} \right) \left( e^{2}+f^{2} \right) =\left(a^{2}+b^{2}\right)
+$$
+ניתן להסתכל על כל ביטוי שבתוך סוגריים בתור מודול של מספר מרוכב בריבוע, נתייחס כך לצד השמאלי של המשוואה ונפתח סוגריים
+\begin{gather*}
+\left( c^{2}+d^{2} \right) \left( e^{2}+f^{2} \right)   \\
+=\left( c+di \right)(c-di)(e-fi)(e+fi) \\
+=\left( \left( c+di \right) \left( e+fi \right)  \right) \left( \left( c-di \right) \left( e-fi \right)  \right)  \\
+= \underbrace{ \left( \left( ce-df \right)+i\left( cf+de \right)   \right) }_{ z } ~~\underbrace{ \left( \left( ce-df \right) -i \left(cf+de  \right) \right) }_{ \bar{z} } \\
+\underset{ z\bar{z}=\left| z \right|^{2} }{ = }\sqrt{\left( cd-df \right)^{2}+\left( cf+de \right)^{2}}^{2} \\
+=\left( cd-df \right)^{2}+\left( cf+de \right)^{2}
+\end{gather*}
+נשים את מה שיצא לנו במשוואה המקורית
+
+$$
+\left( cd-df \right)^{2}+\left( cf+de \right)^{2}=a^{2}+b^{2}
+$$
+מכאן אפשר לומר ש
+\begin{gather*}
+a=cd-df \\
+b=cf+de
+\end{gather*}
+מכיוון ש$\mathbb{Z}$ סגורה לחיבור, חיסור וכפל ו$c,d,f,e \in \mathbb{Z}$. $a,b \in \mathbb{Z}$ \\
+$\blacksquare$
+\section*{שאלה 3}
+מספר מרוכב $z \in \mathbb{C}$ ייקרא שורש יחידה מסדר $n$ ($0 < n \in \mathbb{N}$ כלשהו) אם $z$ הוא פתרון $z^{n}=1$.\\
+א. מצאו את שורשי היחידה מסדר $n$ בהצגה פולרית.\\
+ב. יהא $n > 1$. מהו סכום שורשי היחידה מסדר $n$?\\
+ג. מהי מכפלת שורשי היחידה מסדר $n$?
+\section*{פתרון 3}
+א. $z^{n}=1+0i$, נמצא את הארגומנט והמודול של$z^{n}$
+\begin{gather*}
+r = \sqrt{1^{2}+0^{2}} =1\\
+\theta = \arctan \left( \frac{0}{1} \right) =0 \\
+\end{gather*}
+על פי משפט דה-מואבר ניתן לכתוב את $n$ השורשים של מספר מרוכב $w^{n}$ כ$w_{k}=r^{\frac{1}{n}}e^{i \frac{\theta+2\pi k}{n} }$ כש$0 \leq k \leq n -1$
+נציב ב$z$ שלנו.
+$$
+z_{k}=1^{\frac{1}{n}}e^{i \frac{0+2\pi k}{n} }=\boxed{1e^{ i \frac{2\pi k}{n} }}
+$$
+ב.\\
+נתבונן ב$z$
+$$
+e^{ i\frac{2\pi k}{n} }
+$$
+נקרא ל$\alpha=e^{ i\frac{2\pi}{n} }$, כלומר  $z_{k}=\alpha^{k}$. עכשיו נכתוב את הסכום
+$$
+\sum_{k=0}^{n-1} \alpha^{k}
+$$
+יצא לנו סכום של סדרה הנדסית כש$q=a$ ו$a_{1}=1$
+$$
+S_{n}=\frac{\alpha^n-1}{\alpha-1}\underset{ \alpha^{n}=1 }{ = } \frac{1-1}{\alpha-1}=\boxed{0}
+$$
+ג. נשאר עם ההגדרה ל$\alpha$ מהסעיף הקודם ונתבונן במכפלה
+$$
+\alpha^{0}\cdot \alpha^{1}\cdot\alpha^{2}\cdot\ldots\cdot \alpha^{n-1}
+$$
+על פי חוקי חזקות ניתן גם לכתוב
+$$
+\alpha^{0+1+2+\ldots+n-1}
+$$
+נראה שבחזקה יש סדרה חשבונית שבה $a_{1}=0$ ו$d=1$
+$$
+a^{\sum_{k=0}^{n-1} k}
+$$
+נחשב את סכום $n$ האיברים הראשונים
+$$
+S_{n} =  \frac{n\left( 0+n-1 \right) }{2}=\frac{n(n-1)}{2}
+$$
+נציב בחזרה ב$\alpha$, ונפתח את $\alpha$ בחזרה לערך המקורי
+$$
+\alpha^{\frac{n(n-1)}{2}}\underset{ \alpha=e^{ i\frac{2\pi}{n}} }{ = }e^{ i\frac{2\pi}{n}\frac{n(n-1)}{2} }=e^{ i\frac{2\pi n(n-1)}{2n} }=e^{ i\pi (n-1) }
+$$
+$e^{ i\pi }$ הוא מספר מרוכב בעל מודול $1$ וזוויות של $180^\circ$ כלומר הוא נמצא על הציר הממשי בנקודה $-1$
+מה שאומר ש
+$$
+\text{סכום שורשי היחידה} = e^{ i\pi \left( n-1 \right) }=\boxed{\left( -1 \right)^{n-1}}
+$$
+\section*{שאלה 4}
+א. הוכיחו את מבחן השורש הרציונלי - יהא $f = a_{n}x^{n}+\ldots+a_{0}$ פולינום עם מקדמים שלמים. \\
+אם ל-$f$ יש שורש רציונלי $\frac{p}{q}$ אזי $p|a_{0}$ ו-$q|a_{n}$ \\
+ב. הוכיחו את נוסחת וייטה - יהא $f(x) = \sum_{k=0}^{n} a_{k}x^k$ פולינום ממשי/מרוכב. נסמן את שורשיו (כולל ריבוי) בתור $\alpha_{1},..,\alpha_{n}$. אזי: \\
+1. $\alpha_{1} \cdot \ldots \cdot a_{n}=\left( -1 \right)^n \frac{a_{0}}{a _{n}}$ \\
+2. $\alpha_{1} + \ldots + \alpha_{n}= -\frac{a_{n-1}}{a_{n}}$ \\
+\section*{פתרון}
+א. 
+\begin{gather*}
+f\left( \frac{p}{q} \right)=\sum_{i=0}^{n} a_{i}\cdot \left( \frac{p}{q} \right)^{i}=0 \\
+a_{n}\cdot \left( \frac{p}{q} \right)^n+a_{n-1}\cdot \left( \frac{p}{q} \right)^{n-1}+\ldots+a_{0} =0
+\end{gather*}
+נכפיל$q^n$ שכמובן שונה מ$0$
+\begin{gather*}
+a_{n}\cdot p^{n}+a_{n-1}\cdot p^{n-1}q+a_{n-2}\cdot p^{n-2}\cdot q^{2}+\ldots+a_{0}\cdot q_{n}=0 \\
+a_{n}\cdot p^{n}+a_{n-1}\cdot p^{n-1}q+a_{n-2}\cdot p^{n-2}\cdot q^{2}+\ldots+a_{1}\cdot p \cdot q^{n-1}=-a_{0} \cdot q^n \\
+p \cdot\left( a_{n}\cdot p^{n-1}+a_{n-1}\cdot p^{n-2}q+\ldots+a_{1}\cdot q^{n-1} \right)=-a_{0} \cdot q ^n
+\end{gather*}
+הביטוי בתוך הסוגריים שלם (סגירות השלמים לכפל וחיבור), נקרא לו $\alpha$. יוצא ש $\alpha \cdot p = -a_{0} \cdot q^n$ כלומר $p|-a_{0} \cdot q^n$, מכיוון ש$p, q$ זרים, מתקיים $p \nmid q$  ולכן $p | -a_{0} \iff p|a_{0}$\\
+עכשיו נוכיח את $q|a_{n}$\\
+כמו בחצי הראשון, נכפיל ב$q^n$
+\begin{gather*}
+a_{n}\cdot p^{n}+a_{n-1}\cdot p^{n-1}q+a_{n-2}\cdot p^{n-2}\cdot q^{2}+\ldots+a_{0}\cdot q_{n}=0 \\
+a_{n-1}\cdot p^{n-1}q+a_{n-2}\cdot p^{n-2}q^{2}+\ldots+a_{0}\cdot q_{n}=-a_{n}\cdot p^n \\
+q \cdot(a_{n-1}\cdot p^{n-1}+a_{n-2}\cdot p^{n-2}q+\ldots+a_{0}q^{n-1})=-a_{n} \cdot p^n
+\end{gather*}
+הביטוי בתוך הסוגריים שלם (סגירות השלמים לכפל וחיבור), נקרא לו $\alpha$. יוצא ש $\alpha \cdot q = -a_{n} \cdot p^n$ כלומר $q|-a_{n} \cdot p^n$, מכיוון ש$p, q$ זרים, מתקיים $p \nmid q$  ולכן $q | -a_{n} \iff q|a_{n}$\\
+$\blacksquare$\\ \\
+ב.
+נציג את $f(x)$ כמכפלת גורמים לינארים
+$$
+f(x)_{n}=a_{n}\left(  x-\alpha_{1}\right) \cdot \ldots  \cdot \left( x-\alpha_{n} \right) = \underbrace{ a_{n}x^n+a_{n-1}x^{n-1}+\ldots+a_{0}}_{\sum_{k=0}^{n}a_{k}x^k }
+$$
+נפתור את המשוואות באמצעות השוואת מקדמים\\
+המקדם של $x^n$ בצד הימני הוא $a_{n}$, ובצד השמאלי על מנת לקבל $x^n$ יש לבחור בכל מכפלה את ה$x$ ולא את ה $\alpha_{i}$ (לכל $\alpha_{i}$ בין $\alpha_{1}$ ל$\alpha_{n}$). יש רק אפשרות אחת בשביל זה ולכן המקדם הוא $a_{n} \cdot 1 = a_{n}$ \\
+בצורה דומה המקדם של $x^{n-1}$ בצד הימני הוא $a_{n-1}$. בצד השמאלי צריך לבחור בכל מכפלה את ה$x$ מלבד פעם אחת, יש לזה אפשרות אחת לכל $\alpha_{i}$ ולכן $a_{n} \cdot \left( -\alpha_{1}-\alpha_{2}\ldots -\alpha_{n} \right)$, כלומר\\
+$$
+a_{n-1}=a_{n} \cdot \left( -\alpha_{1}-\alpha_{2}\ldots -\alpha_{n} \right)
+$$
+באותה דרך אפשר להמשיך עד $x^0$, כלומר המקדם החופשי. בצד הימני זה $a_{0}$, בצד הימני יש לבחור בכל מכפלה את $\alpha_{i}$ (על מנת לא לקבל אף $x$)\\
+$$
+a_{0}=a_{n}\cdot(-\alpha_{1} \cdot -\alpha_{2} \cdot \ldots \cdot -\alpha_{n})= a_{n} \cdot \left( -1 \right)^n\left( \alpha_{1} \cdot \alpha_{2} \cdot \ldots  \cdot \alpha_{n} \right) 
+$$
+עכשיו כשיש לנו ייצוג לכל האלמנטים בנוסחה, נסדר אותם\\
+נזכור ש$a_{n} \neq 0$ כי אז מדובר בעצם במפולינום ממעלה $n-1$
+\begin{gather*}
+a_{0}=a_{n} \cdot \left( -1 \right)^n\left( \alpha_{1} \cdot \alpha_{2} \cdot \ldots  \cdot \alpha_{n} \right)  \\
+\underset{\div a_{n}}{\iff} \frac{a_{0}}{a_{n}}= \left( -1 \right)^n\left( \alpha_{1} \cdot \alpha_{2} \cdot \ldots  \cdot \alpha_{n} \right) \\
+\underset{\div \left( -1 \right) ^n}{\iff}\frac{a_{0}}{a_{n}} \frac{1}{\left( -1 \right)^n}= \alpha_{1} \cdot \alpha_{2} \cdot \ldots  \cdot \alpha_{n} \\
+\iff\frac{a_{0}}{a_{n}} \left( -1 \right)^n= \alpha_{1} \cdot \alpha_{2} \cdot \ldots  \cdot \alpha_{n}
+\end{gather*}
+הוכחנו את הנוסחה הראשונה, נוכיח את השנייה
+\begin{gather*}
+a_{n-1}=a_{n} \cdot \left( -\alpha_{1}-\alpha_{2}\ldots -\alpha_{n} \right) \\
+ \underset{\div a_{n}}{\iff} \frac{a_{n-1}}{a_{n}}=-\alpha_{1}-\alpha_{2}-\ldots-\alpha_{n} \\
+\underset{\times -1}{\iff} -\frac{a_{n-1}}{a_{n}} = \alpha_{1}+\alpha_{2} +\ldots + \alpha_{n}
+\end{gather*}
+$\blacksquare$
+\section*{שאלה 5}
+נתון הפולינום
+$$
+p\left( x \right) =3x^{6}-9x^{5}-3x^{4}+33x^{3}-36x^{2}+12x
+$$
+רשמו את $p\left( x \right)$ כמכפלת גורמים לינארים מעל $\mathbb{C}$.
+\section*{פתרון}
+ניתן לראות שכל המקדמים מתחלקים ב$3$ ושאין מקדם חופשי מה שאומר שאפשר לחלק ב$3x$
+$$
+f\left( x \right)=\frac{p\left( x \right)}{3x}=x^{5}-3x^{4}-x^{3}+11x^{2}-12x+4
+$$
+מעתה נעבוד עם $f(x)$ בשביל הנוחות ונזכור להכפיל בסוף ב$3x$ (וש-$0$) שורש
+
+ידוע לנו שאם סכום המקדמים שווים ל$0$ אז $1$ שורש, נבדוק
+$$
+1-3-1+11-12+4=0
+$$
+נגזור לבדוק ריבוי
+\begin{gather*}
+f'(x)=5x^{4}-12x^{3}-3x^{2}+22x-12 \\
+f'(1)=5-12-3+22-12=0 \\
+f''(x)=20x^{3}-36x^{2}-6x+22 \\
+f''(1)=20-36-6+22=0 \\
+f'''(x)=60x^{2}-72x-6 \\
+f'''(1)=60-72-6=-18
+\end{gather*}
+$1$ שורש מריבוי $3$
+נבדוק את מבחן השורש הרציונלי
+$$
+\frac{p}{q} = f(x) \implies p|4,~q|1\implies \frac{p}{q} \in \left\{ \pm 1, \pm 2, \pm 4 \right\}  \\
+$$
+בדקנו את $1$, נבדוק את $-1$
+$$
+f(-1)=-1-3+1+11+12+4=24
+$$
+$-1$ לא שורש
+נבדוק את 2
+\begin{gather*}
+f(2)=32-48-8+44-24+4=0 \\
+f'(2)= 80-96-12+44-12=4
+\end{gather*}
+$2$ שורש מריבוי $1$
+נבדוק את $-2$
+\begin{gather*}
+f(-2)=-32-48+8+44+24+4=0 \\
+\end{gather*}
+אין צורך לגזור כי לפי המשפט היסודי של האלגברה יש $6$ שורשים וכבר מצאנו מספיק, כך ש $-2$ שורש מריבוי $1$. \\
+יצא שיש ל$f(x)$ את השורשים $1$ מריבוי $3$, $2$ מריבוי $1$, $-2$ מריבוי $1$. נכפיל את $f(x)$ ב$3x$ כפי שציינו קודם על מנת לקבל את $p(x)$
+$$
+\boxed{p(x)=3x(x-1)^{3}(x-2)(x+2)}
+$$
+\end{document}

@@ -1,0 +1,207 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 1}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{שאלה 1}
+נגדיר את הקשר NAND על ידי:
+$$
+P \odot Q= \neg \left( P \land Q \right) 
+$$
+א. כתבו את טבלת האמת של הקשר $\odot$.\\
+ב. הראו: $\left( P \odot P \right)\equiv \neg P$\\
+ג. הראו: הקשר $\odot$ בפני עצמו מהווה מערכת קשרים שלמה.
+\section*{פתרון}
+א.
+$$
+\begin{array}{|c|c|c|}
+\hline
+P & Q &P \odot Q\\
+\hline
+T & T & F \\
+\hline
+T & F & T\\
+\hline
+F & T & T\\
+\hline
+F & F & T \\
+\hline
+\end{array}
+$$
+ב.
+נוכיח באמצעות טבלת אמת
+$$
+\begin{array}{|c|c|c|}
+\hline
+P & P \odot P & \neg P \\
+\hline
+T & F & F \\
+\hline
+F & T & T\\
+\hline
+\end{array}
+$$
+ג.\\
+ידוע לנו כי $\neg, \land, \lor$ מייצרים מערכת קשרים שלמה, כלומר אם נצליח באמצעות $\odot$ לייצר את הקשרים הללו, נוכל לייצר מערכת קשרים שלמה אך ורק באמצעות $\odot$\\
+את $\neg$ כבר יצרנו בסעיף הקודם, $P \odot P$\\
+מכיוון ש$P \odot Q \equiv \neg \left( P \land Q \right)$ ניתן לומר כי $P \land Q \equiv \neg \left( P \odot Q \right)$, נוכיח באמצעות טבלת אמת
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+P & Q &  \overset{x}{P \odot Q} & \neg x  &  P \land Q \\
+\hline
+T & T & F & T & T\\
+\hline
+T & F & T & F & F\\
+\hline
+F & T & T & F & F\\
+\hline
+F & F & T & F & F\\
+\hline
+\end{array}
+$$
+נשאר רק $\lor$, נסתכל על טבלת האמת של $P \lor Q$
+$$
+\begin{array}{|c|c|c|}
+\hline
+P & Q &P \lor Q\\
+\hline
+T  & T & T\\
+\hline
+T  & F & T\\
+\hline
+F  & T & T\\
+\hline
+F & F & F\\
+\hline
+\end{array}
+$$
+ניתן לראות שהטבלה דומה מאוד לטבלה של $P \odot Q$ רק ש$T\lor T=T$ ו$F \lor F=F$, לכן כל מה שצריך זה לעשות היפוך על $P$ ו$Q$, כלומר $P \lor Q \equiv \neg P \odot \neg Q$ נוכיח באמצעות טבלת אמת
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+P & Q &P \lor Q & \neg P \odot \neg Q \\
+\hline
+T  & T & T & T\\
+\hline
+T  & F & T & T\\
+\hline
+F  & T & T & T\\
+\hline
+F & F & F & F\\
+\hline
+\end{array}
+$$
+קיבלנו שהביטויים שקולים. \\
+הוכחנו שבאמצעות $\odot$ בלבד ניתן לייצר את הקשרים $\neg, \land, \lor$, וידוע לנו שהם מהווים מערכת קשרים שלמה, אזי $\odot$ לבדו מהווה מערכת קשרים שלמה.
+
+\section*{שאלה 2}
+הוכיחו את הזהויות הבאות:\\
+א.
+$$
+\neg \left( P \land Q \right)  \equiv \neg P \lor \neg Q
+$$
+ב.
+$$
+\neg \left( P \lor Q \right)  \equiv \neg P \land \neg Q
+$$
+\section*{פתרון 2}
+א.\\
+נוכיח באמצעות טבלת אמת
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+P & Q &\overset{ x }{ P \land Q } & \neg x & \neg P \lor \neg Q  \\
+\hline
+T  & T & T & F & F\\
+\hline
+T  & F & F & T & T\\
+\hline
+F  & T & F & T & T\\
+\hline
+F & F & F & T & T\\
+\hline
+\end{array}
+$$
+ב.
+נוכיח באמצעות טבלת אמת
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+P & Q &\overset{ x }{ P \lor Q } & \neg x & \neg P \land \neg Q  \\
+\hline
+T  & T & T & F & F\\
+\hline
+T  & F & T & F & F\\
+\hline
+F  & T & T & F & F\\
+\hline
+F & F & F & T & T\\
+\hline
+\end{array}
+$$
+\section*{תרגיל 3}
+\textbf{הקדמה}\\
+נאמר, שפסוק הוא בצורת CNF אם הוא מהצורה $C_{1} \land \ldots \land C_{k}$ כאשר כל $C_{i}$ הוא מהצורה $A_{1} \lor \ldots \lor A_{n}$ ו-$A_{i}$ הוא המשתנה $x_{i}$ או שלילתו $\neg x_{i}$.\\
+נאמר, שפסוק הוא בצורת DNF אם הוא מהצורה $D_{1} \lor \ldots \lor D_{k}$ כאשר כל $D_{i}$ הוא מהצורה של $A_{1} \land \ldots \land A_{n}$ ו-$A_{i}$ הוא המשתנה $x_{i}$ או שלילתו $\neg x_{i}$.\\
+לדוגמה: הפסוק
+$$
+\left( x_{1} \land x_{2} \right) \lor \left( x_{1} \land \neg x_{2} \right) 
+$$
+הוא פסוק בצורת DNF, והפסוק
+$$
+\left( x_{1} \lor x_{2} \right) \land \left( \neg x_{1}\lor \neg x_{2} \right) 
+$$
+הוא בצורת CNF.\\
+בתרגול ראינו (בניסוח אחר) את הרעיון מאחורי ההוכחה לעבודה הבאה:\\
+\textbf{עובדה}:\\
+לכל טבלת אמת על המשתנים $x_{1},\ldots,x_{n}$ קיים פסוק בצורת DNF שמייצג אותה.\\
+\\
+\textbf{התרגיל}:\\
+הראו: לכל טבלת אמת על המשתנים $x_{1},\ldots,x_{n}$ קיים פסוק בצורת CNF שמייצג אותה.\\
+\section*{פתרון 3}
+נרצה להוכיח שלכל טבלת אמת של (נקרא לה $P$) $CNF\left( P \right)\equiv P$\\
+נסתכל על הביטוי $DNF\left( P \right)\equiv P$ לטבלת האמת ההופכית ל $\neg P$, נמצא את הקשר בין $DNF\left( \neg P \right)$ ל$P$
+$$
+DNF\left( \neg P \right) \equiv \neg P \iff \neg DNF\left( \neg P \right) \equiv\neg  \left( \neg P \right)  \equiv P
+$$
+או בקצרה
+$$
+P\equiv \neg DNF\left( \neg P \right) 
+$$
+$$
+\neg DNF\left( \neg P \right) \equiv \neg \left( D(\neg P)_{1} \lor \ldots \lor D(\neg P)_{n} \right) 
+$$
+על פי מה שהוכחנו בשאלה 2
+$$
+\neg DNF\left( \neg P \right) \equiv \left( \neg D(\neg P)_{1} \land \ldots \land \neg D( \neg P)_{n}\right) 
+$$
+עכשיו נסתכל בתוך $D\left( P \right)_{i}$ 
+$$
+D\left( P \right) _{i} \equiv \left(  A_{1} \land \ldots \land A_{n} \right) 
+$$
+על פי מה שהוכחנו בשאלה 2
+$$
+\neg D\left( \neg P \right) _{i} \equiv \neg \left( \neg A_{1} \land \ldots \land \neg A_{n}  \right) \equiv \left(  A_{1} \lor \ldots \lor  A_{n} \right) 
+$$
+מכיוון שאנחנו רוצים להסתכל על $P$ \\
+ניתן לראות שהצורה של הביטוי הפכה לביטוי מסוג CNF\\
+רצף ביטויים ($A_{i}$) שמחוברים תחת קשר $\lor$, שמייצרים רצף ביטויים $C_{i}$ שמחוברים תחת קשר $\land$\\
+הביטוי כולו כזכור שקול ל$P$ ולכן מצאנו את 
+$$
+\boxed{CNF\left( P \right) \equiv P}
+$$
+\end{document}

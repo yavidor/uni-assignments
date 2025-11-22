@@ -1,0 +1,560 @@
+
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפיטסימלי 1 - 01040195\\ גליון 1}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\section*{שאלה 1}
+1. פתרו את אי השיוויון הבא:
+$$
+3 + \left| x-9 \right|< \frac{2\left| x-1 \right| }{x}
+$$
+2. הוכיחו כי אם $\left| x - 7 \right|< \frac{1}{2}$ אז
+$$
+\left| \frac{x^{2}-4x-21}{x-6} \right| < \frac{21}{2}
+$$
+\section*{פתרון 1}
+1. נשים לב לכך שהצד השמאלי של אי השיוויון חיובי תמיד שכן הוא חיבור בין ביטוי חיובי וביטוי אי שלילי, לכן הצד הימני חייב להיות חיובי.\\
+המונה תמיד יהיה אי שלילי כי הוא מורכב ממכפלה של סקלאר עם ביטוי אי שלילי, על מנת שהמונה יהיה חיובי תמיד נשים לב ש $x \neq 2$ שמאפס את המונה. בהתחשב בזה שהמונה תמיד חיובי גם המכנה צריך תמיד להיות חיובי (ושונה מ0) ולכן $x \neq 1 > 0$\\
+נפרק למקרים לפי הערכים שמחליפים את הסימון של הביטויים שנמצאים בתוך ערך מוחלט\\
+\begin{gather*}
+0<x<1: 3-x+9 < \frac{2\left( -x+1 \right)}{x}  \\
+\iff 0 < x+ \frac{-2x+2}{x}-12  \\
+\iff  0 <x^{2}-14x+2 
+\end{gather*}
+נמצא את השורשים
+\begin{gather*}
+x_{1,2}=\frac{14\pm \sqrt{ 196 -8}}{2}=\frac{14\pm \sqrt{ 4 \cdot 47 }}{2} \\
+=\frac{14\pm 2\sqrt{ 47 }}{2}= 7\pm \sqrt{ 47 } 
+\end{gather*}
+מכאן אנחנו רואים שמה שמאפס את $x$ זה $7 \pm \sqrt{ 47 }$\\
+הפלוס נפסל כי 7 ועוד מספר אי שלילי בהכרח גדול מ1 ולכן לא בטווח\\
+המינוס עובר כי $\sqrt{ 47 }$ נמצא בין 6 ל7 (כי $\sqrt{ 36 }<\sqrt{ 47 }<\sqrt{ 49 }$) כלומר בין $7-7=0$ ו$7-6=1$ שאלה הגבולות שלנו\\
+עכשיו כשאנחנו יודעים ש$7-\sqrt{ 47 }$ שורש של הפולינום ומקיים את התנאים של $x$, נבדוק אם $0<x<7-\sqrt{ 47 }$ או $7-\sqrt{ 47 }<x<1$, על מנת לעשות את זה, נבדוק אם הפולינום חיובי לפני או אחרי הנקודה\\
+נציב את $x$ בגבולות ונבדוק את הסימון\\
+$\left( 7-7 \right)^2-14 \cdot \left( 7-7 \right)+2=0-0+2$\\
+כלומר כש$0<x<7-\sqrt{ 47 }$ הפלינום חיובי\\
+$\left( 7-6 \right)^{2}-14\cdot \left( 7-6 \right)+2=1-14+2=-11$\\
+כלומר כש $1>x>7-\sqrt{ 47 }$  הפולינום שלילי (לא מקיים את התנאי)\\
+ולכן נמצא טווח אפשרי\\
+$0<x<7-\sqrt{ 47 }$\\
+נבדוק $1 < x < 9$\\
+\begin{gather*}
+3-x+9 < \frac{2(x-1)}{x} \\
+\iff-x+12 < \frac{2(x-1)}{x} \\
+\iff 0<x+\frac{2(x-1)}{x} -12  \\
+=x^{2}+2x-2-12x=x^{2}-10x-2
+\end{gather*}
+נמצא את השורשים
+\begin{gather*}
+x_{1,2}=\frac{10\pm \sqrt{ 100+8 }}{2} \\
+=\frac{10\pm \sqrt{ 108 }}{2}=\frac{10\pm \sqrt{ 4 \cdot 9 \cdot 3 }}{2} \\
+= \frac{10 \pm 6\sqrt{ 3 }}{2} = 5 \pm 3\sqrt{ 3 } \\
+\end{gather*}
+נבדוק אם $1<5\pm 3\sqrt{ 3 }<9$\\
+נתחיל מהאגף השמאלי, ונתעלם מ$5 + 3 \sqrt{  3 }$ כי 5 + מספר אי שלילי בהכרח גדול מ1\\
+$$
+1<5-3\sqrt{ 3 } \iff -4 < -3\sqrt{ 3 } \underset{\times-1\text{ and }\left(  \right)^2}{\iff} 16>27
+$$
+קיבלנו סתירה\\
+נעבור לאגף הימני\\
+$5 + 3\sqrt{ 3 } < 9 \iff 3\sqrt{ 3 } <4 \iff 27 <16$\\
+קיבלנו סתירה\\
+לכן אין פתרונות בטווח $1<x<9$\\
+נבדוק את האחרון, $x>9$
+\begin{gather*}
+3+x-9 < \frac{2(x-1)}{x}\\
+\iff x-6 < \frac{2\left( x-1 \right) }{x} \\
+\iff 0>x-6- \frac{2\left( x-1 \right) }{x} \\
+= x^{2}-6x-2x+2=x^{2}-8x+2
+\end{gather*}
+נמצא את השורשים
+\begin{gather*}
+x_{1,2}=\frac{8\pm \sqrt{ 64 -8 }}{2}=\frac{8 \pm \sqrt{ 4 \cdot 14 }}{2} = 4\pm \sqrt{ 14 }
+\end{gather*}
+נתעלם מ $4-\sqrt{ 14 }$ כי 4 פחות מספר אי שלילי בהכרח קטן מ9\\
+אפשר לראות ש $\sqrt{ 14 }<\sqrt{ 16 }=4$ כך ש $4+\sqrt{ 14 }<8$ וזה סותר את זה ש$x>9$ ולכן גם בטווח הזה אין פתרונות\\
+הפתרון היחיד ל$3 + \left| x-9 \right|< \frac{2\left| x-1 \right| }{x}$ הוא $0<x<7-\sqrt{ 47 }$\\
+2. נתון לנו $\left| x-7 \right|< \frac{1}{2}$ ולכן $-\frac{1}{2} < x-7 < \frac{1}{2}$
+$$
+\left| \frac{x^{2}-4x-21}{x-6}  \right|= \frac{\left| x-7 \right| \left| x+3 \right| }{\left| x-6 \right| } 
+$$
+נציב בנתון
+\begin{gather*}
++0  -\frac{1}{2} < x-7 < \frac{1}{2} \implies \boxed{\left| x+7 \right| <\frac{1}{2}}\\
++10  9.5 < x+3 < 10.5 \implies 6.5 < \boxed{\left| x+3 \right| < 10.5}\\
+-2   -2.5 < x-6 < -1.5 \implies \boxed{1.5 <\left| x-6 \right|} <2.5
+\end{gather*}
+\begin{equation*}
+\frac{\left| x-7 \right| \left| x+3 \right| }{\left| x-6 \right| }  < \frac{\frac{1}{2} \cdot \frac{21}{2}}{\frac{3}{2}}=\frac{21}{3} < \frac{21}{2}
+\end{equation*}
+\\
+$\blacksquare$
+\section*{שאלה 2}
+1. יהיו $a_{1},\dots,a_{n}$ מספרים חיוביים קטנים מ$1$. הוכיחו באינדוקציה כי מכפלתם $a_{1} \cdot a_{2} \ldots \cdot a_{n}$  קטנה מ-1.\\
+2. הוכיחו כי לכל $0 \leq k \leq n$ מתקיים\\
+$$
+\binom{n}{k} \cdot \frac{1}{n^k} \leq \frac{1}{k!} \leq \frac{1}{2^{k-1}}
+$$
+\section*{פתרון 2}
+1. נוכיח באינדוקציה\\
+צעד האינדוקציה:\\
+כש $n=1$ אז $a_{1}<1$ לפי הנתון\\
+הנחת האינדוקציה\\
+התנאי מתקיים ל$n-1$\\
+$$
+a_{1} \cdot a_{2} \cdot \ldots \cdot a_{n-1} < 1
+$$
+צעד האינדוקציה $n$\\
+צריך להוכיח ש
+$$
+a_{1} \cdot a_{2} \cdot \ldots \cdot a_{n} \cdot a_{n}< 1
+$$
+נקרא לביטוי $a_{1} \cdot a_{2} \cdot \ldots \cdot a_{n-1}$ בשם $x$ ונציין כי $x <1$ לפי הנחת האינדוקציה\\
+בנוסף, מכיוון שכל המספרים $a_{1},a_{2},\dots, a_{n-1}$ חיוביים גם $x$ חיובי כלומר \\
+$0 <x <1$\\
+נכתוב מחדש את הביטוי כולו
+$x \cdot a_{n}$\\
+ידוע כי $0 < a_{n} <1$ לפי הנתון וכי $0 < x <1$כפי שאמרנו\\
+מכיוון שכפולת שני מספרים חיוביים הקטנים מאחד, קטנה מאחד
+$$
+\underbrace{x}_{a_{1} \cdot a_{2} \cdot \ldots \cdot a_{n-1}} \cdot a_{n}< 1
+$$
+\\
+$\blacksquare$\\
+2. ראשית, נפתור את הצד השמאלי של המשוואה\\
+נפתח את הבינום
+\begin{gather*}
+\binom{n}{k} \cdot \frac{1}{n^k} \leq \frac{1}{k!} \iff \frac{n!}{k!(n-k)!}  \cdot \frac{1}{n^k}  \leq \frac{1}{k!}
+\end{gather*}
+נשים לב ש $k!> 0$ ונכפיל ב$k!$
+$$
+\iff \frac{n!}{\left( n-k \right) !}\cdot \frac{1}{n^k} \leq 1 \underset{\text{factorial}}{\iff} \frac{1 \cdot 2 \cdot \ldots \cdot n}{1 \cdot 2 \cdot \ldots \cdot \left( n-k \right)  } \cdot \frac{1}{n^k} \leq 1
+$$
+נוציא מכנים משותפים מהשבר השמאלי, $1,2,\dots,\left( n-k \right)$ שכמובן כולם חיוביים
+$$
+\iff \frac{\left( n-k+1 \right) \cdot\ldots \cdot n }{1} \cdot \frac{1}{n^k} \leq 1 \underset{\times n^k>0}{\iff} \left( n-k+1 \right) \cdot \ldots \cdot n \leq n^k
+$$
+נשים לב שבצד השמאלי של אי השוויון יש כפל של $k$ ביטויים שכולם (פרט לאחד מהם) קטנים מ$n$\\
+בעוד שהצד הימני של אי השוויון ניתן גם לכתוב ככפל של $k$ ביטוי שכולם הם $n$\\
+לכן, מכיוון ששני האגפים הם כפולה של אותה כמות איברים, וכל איבר בצד השמאלי קטן או שווה לכל איבר בצד הימני\\
+האגף הימני אכן גדול מהאגף השמאלי\\
+ולכן
+$$
+\binom{n}{k} \cdot \frac{1}{n^k} \leq \frac{1}{k!}
+$$
+נעבור לצד הימני של המשוואה
+$$
+\frac{1}{k!} \leq \frac{1}{2^{k-1}} \underset{\times \left( k! \cdot 2^{k-1}\right)}{\iff} 2^{k-1} \leq k! \iff \underbrace{2 \cdot 2 \cdot \ldots \cdot 2}_{k-1 \text{ members}} \leq \underbrace{1  \cdot 2 \cdot \ldots \cdot k}_{k \text{ members}}
+$$
+בצד שמאל של אי השוויון יש $k-1$ כפולות של $2$, בצד ימין של אי השווין יש (אחרי שמתעלמים מ$1$ שהוא אדיש כפלית) $k-1$ כפולות של מספרים הגדולים או שווים ל$2$ ולכן צד ימין גדול מצד שמאל.\\
+ולכן מכיוון שהמעבר בין כל צעד שעשינו הוא מעבר דו צדדי ($\iff$)
+$$
+\frac{1}{k!} \leq \frac{1}{2^{k-1}}
+$$
+הוכחנו את צד ימין של המשוואה המקורית, ואם מחברים את שתי ההוכחות שלנו מקבלים ש
+$$
+\binom{n}{k} \cdot \frac{1}{n^k} \leq \frac{1}{k!} \leq \frac{1}{2^{k-1}}
+$$
+\\
+$\blacksquare$
+\section*{שאלה 3}
+יהיו $a_{1},\dots,a_{n}$ מספרים חיוביים המקיימים $a_{1} \cdot a_{2} \cdot \ldots \cdot a_{n} = 1$. הוכיחו כי
+$$
+\left( 1+a_{1} \right) \cdot \left(1+a_{2}  \right)  \cdot \ldots \cdot \left( 1+a_{n} \right) \geq 2^n
+$$
+\section*{פתרון 3}
+\begin{gather*}
+\left( 1+a_{1} \right) \cdot \left( 1+a_{2}  \right)  \cdot \ldots \cdot \left( 1+a_{n} \right) \geq 2^n  \\
+\underset{\div 2^n}{\iff}\frac{\left( 1+a_{1} \right) \cdot \left(1+a_{2}  \right)  \cdot \ldots \cdot \left( 1+a_{n} \right)}{2^n} \geq 1
+\end{gather*}
+נשים לב שבמונה יש $n$ כפולות, והמכנה שקול ל$n$ כפולות של $2$, נכתוב מחדש את הצד השמאלי של אי השוויון
+$$
+\iff \frac{\left( 1+a_{1} \right)}{2} \cdot \frac{\left( 1+a_{2} \right)}{2} \cdot \ldots \cdot \frac{\left( 1+a_{n} \right)}{2} \geq 1
+$$
+בצד השמאלי של המשוואה יש לנו ממוצעים **חשבוניים** של שני איברים $1$ ו$a_{i}$ (כש$1\leq i\leq n$)\\
+נשתמש באי שוויון הממוצעים בין ממוצע חשבוני לממוצע גיאומטרי\\
+לכל אחד מהם אפשר לומר $\frac{\left( 1+a_{i} \right)}{2} \geq \sqrt{ 1\cdot a_{i}}=\sqrt{ a_{i} }$ ולכן
+\begin{gather*}
+\implies\frac{\left( 1+a_{1} \right)}{2} \cdot \frac{\left( 1+a_{2} \right)}{2} \cdot \ldots \cdot \frac{\left( 1+a_{n} \right)}{2} \geq \sqrt{ a_{1} } \cdot \sqrt{ a_{2} } \cdot \ldots \cdot \sqrt{ a_{n} } \\
+\iff \frac{\left( 1+a_{1} \right)}{2} \cdot \frac{\left( 1+a_{2} \right)}{2} \cdot \ldots \cdot \frac{\left( 1+a_{n} \right)}{2} \geq \sqrt{ a_{1} \cdot a_{2} \cdot \ldots \cdot a_{n} }=\sqrt{ 1}=1
+\end{gather*}
+ולכן מכיוון שהמעבר בין כל צעד שעשינו הוא מעבר דו צדדי ($\iff$)\\
+קיבלנו ש
+$$
+\left( 1+a_{1} \right) \cdot \left(1+a_{2}  \right)  \cdot \ldots \cdot \left( 1+a_{n} \right) \geq 2^n 
+$$
+$\blacksquare$
+\section*{שאלה 4}
+יהיו $a,b$ מספרים טבעיים שונים כך ש$\sqrt{ b }$,$\sqrt{ a }$ הם אי רציונליים. הוכיחו כי $\sqrt{ a }+\sqrt{ b }$ הינו אי-רציונלי.
+\section*{פתרון 4}
+נניח בשלילה כי $\sqrt{ a }+\sqrt{ b }\in \mathbb{Q}$\\
+נכפיל בצמוד $\frac{\sqrt{ a }-\sqrt{ b }}{\sqrt{ a }-\sqrt{ b }}=1$ כך שאין השפעה על ערך הביטוי
+$$
+\sqrt{ a }+\sqrt{ b }=\frac{\left( \sqrt{ a }+\sqrt{ b } \right)}{1} \cdot\frac{\left( \sqrt{ a }-\sqrt{ b } \right)}{\left( \sqrt{ a }-\sqrt{ b } \right) } = \frac{a-b}{\sqrt{ a }-\sqrt{ b }}
+$$
+
+\section*{טענת עזר}
+יהיו $0\neq x \in \mathbb{Q},0\neq y \not\in \mathbb{Q}$ אזי $x-y \not\in \mathbb{Q}$ וגם $\frac{x}{y} \not\in \mathbb{Q}$
+\section*{הוכחת טענת העזר}
+ראשית נוכיח לגבי החיסור, נניח בשלילה כי $x - y \in \mathbb{Q}$, כלומר אפשר גם לכתוב:
+$$
+x-y = \frac{p}{q}
+$$
+כש$p,q \in \mathbb{Z}, q \neq 0$
+$$
+x-y = \frac{p}{q} \underset{- x}{\iff}-y=\frac{p}{q}-x
+$$
+
+$x \in \mathbb{Q}$ ולכן ניתן לכתוב גם
+$$
+x = \frac{r}{s}
+$$
+כש$r,s \in \mathbb{Z}, s\neq 0$\\
+לפי ההגדרה חדשה נכתוב את הביטוי שלנו
+$$
+-y=\frac{p}{q}-x \iff-y = \frac{p}{q} -\frac{r}{s} \iff -y = \frac{ps-rq}{qs} \underset{\times -1}{\iff}=y = \frac{rq-ps}{qs}
+$$
+מכיוון ש$\mathbb{Z}$ סגורה תחת כפל, חיבור וחיסור ו$p,q,r,s \in \mathbb{Z}$ אפשר לראות ש$\left( rq-ps \right)\in \mathbb{Z}$ וש$qs \in \mathbb{Z}$, וכמובן $qs \neq 0$ כי גם $q \neq 0$ וגם $s \neq 0$, המסקנות הללו ביחד אומרות ש $\frac{rq-ps}{qs}\in \mathbb{Q}$\\
+כלומר מכיוון ש$y = \frac{rq-ps}{qa}$ , מתקיים $y \in \mathbb{Q}$. סתירה\\
+בצורה דומה נניח בשלילה כי$\frac{x}{y} \in \mathbb{Q}$\\
+כלומר אפשר גם לכתוב
+$$
+\frac{x}{y}=\frac{p}{q}
+$$
+כש$p,q \in \mathbb{Z}, q \neq 0$ (כמובן אין קשר בין $p,q$ לאותן $p,q$ מההוכחה של החיסור שעשינו כרגע)\\
+נשים לב שגם $p\neq 0$ כי $x \neq 0$\\
+נארגן מחדש את המשוואה
+$$
+\frac{x}{y}=\frac{p}{q}\iff y=\frac{xq}{p}
+$$
+$x \in \mathbb{Q}$ ולכן ניתן לכתוב גם
+$$
+x = \frac{r}{s}
+$$
+כש$r,s \in \mathbb{Z}, s\neq 0$\\
+נכתוב מחדש את המשוואה
+$$
+y= \frac{xq}{p} \iff y= \frac{\frac{r}{s}\cdot q}{p}\iff y=\frac{rq}{ps}
+$$
+$\mathbb{Z}$ סגורה לכפל ולכן $rq, ps \in \mathbb{Z}$ וכמובן $ps \neq 0$כי גם $p \neq 0$וגם $s \neq 0$, המסקנות הללו ביחד אומרות ש $\frac{rq}{ps} \in \mathbb{Q}$\\
+ומכיוון ש$y=\frac{rq}{ps}$ מתקיים $y \in \mathbb{Q}$. סתירה
+$\blacksquare$\\
+בחזרה להוכחה\\
+נתבונן במכנה
+$$
+\sqrt{ a }-\sqrt{ b }=\underbrace{\sqrt{ a }+\sqrt{ b }}_{\in \mathbb{Q}}-\underbrace{2\sqrt{ b }}_{\not\in \mathbb{Q}} \underset{(*)}{\not\in}\mathbb{Q}
+$$
+
+(*) לפי טענת העזר, ההפרש בין מספר רציונלי למספר אי רציונלי הוא אי רציונלי\\
+נעבור למונה\\
+נתון לנו ש$a,b \in \mathbb{N}$ ולכן
+$$
+(a-b) \underset{(**)}{\in} \mathbb{Z} \subset \mathbb{Q} \implies \left( a-b \right) \in \mathbb{Q}
+$$
+(**) הטבעיים לא סגורים תחת חיסור, אבל השלמים כן והטבעיים מהווים תת קבוצה של השלמים\\
+נעבור לביטוי כולו
+
+$$
+\frac{\overbrace{a-b}^{\in \mathbb{Q}}}{\underbrace{\sqrt{ a }-\sqrt{ b }}_{\not\in \mathbb{Q}}}
+$$
+על פי טענת העזר, המנה של מספר רציונלי ומספר אי רציונלית היא אי רציונלית כלומר $\frac{a-b}{\sqrt{ a }-\sqrt{ b }}\not\in \mathbb{Q}$ ומכיוון ש$\sqrt{ a }+\sqrt{ b }= \frac{a-b}{\sqrt{ a }-\sqrt{ b }}$ מתקיים $\sqrt{ a }+\sqrt{ b }\not\in \mathbb{Q}$. סתירה\\
+$\blacksquare$
+\section*{שאלה 5}
+הוכיחו את הטענות הבאות\\
+א. לכל $n$ טבעי, אם $\sqrt[3]{n}$ איננו שלם, $\sqrt[3]{n}$ איננו רציונאלי.\\
+ב. לכל $k,n$ טבעיים, אם $\sqrt[k]{n}$ איננו שלם, אז הוא איננו רציונאלי.
+\section*{פתרון 5}
+א.\\
+נניח בשלילה שקיים $n$ שעבורו $\sqrt[3]{n}$ איננו שלם אבל כן רציונאלי.\\
+יהי $q \in \mathbb{N}$המספר השלם הקטן ביותר כך ש$q\left( \sqrt[3]{n} \right)\in \mathbb{N}$.\\
+נגדיר $r := q\left( \left( \sqrt[3]{n} \right)^{2}-\lfloor \left(\sqrt[3]{n}\right)^{2} \rfloor \right)$
+אם $r<q$, $r \in \mathbb{N}$ וגם $r\left( \sqrt[3]{n} \right)\in \mathbb{N}$ נגיעה לסתירה\\
+ראשית נראה ש $r<q$.\\
+$r$ הוא מכפלה של $q$ ב$\left( \sqrt[3]{n} \right)^{2}-\lfloor \sqrt[3]{n} ^{2} \rfloor$ על פי ההגדרה $0\leq x - \lfloor x \rfloor<1$ ולכן $r$ הוא מכפלה של $q$ במספר קטן מ$1$ ולכן קטן $q$.\\
+נראה ש $r \in \mathbb{N}$.
+$$
+r = q\left( \left( \sqrt[3]{n} \right)^{2}-\lfloor \left(\sqrt[3]{n}\right)^{2} \rfloor \right)= \underbrace{ q\left( \sqrt[3]{n} \right) ^{2} }_{ \left( *\right)  }-\underbrace{ q \lfloor \left( \sqrt[3]{n} \right)^{2} \rfloor    }_{ \left( ** \right)  } \underbrace{ \implies }_{  \left( *** \right)  }  r \in \mathbb{N}
+$$
+\begin{gather*}
+\left( * \right)~ q\left( \sqrt[3]{n} \right) ^{2} \in N \text{ מההגדרה של }q \\
+\left(  ** \right) ~q\in N \text{ מההגדרה של } q \land \lfloor \left(\sqrt[3]{n}\right)^{2} \rfloor \in\mathbb{N} \text{ תכונה של }\lfloor  x\rfloor \\
+\left( * * * \right) \left( \lfloor \left( \sqrt[3]{n} \right) ^{2} \rfloor  \right) \in \mathbb{N} \text{ הטבעיים סגורים לכפל}  
+\end{gather*}
+מה שאומר ש$\mathbb{N} \ni r < q$, עכשיו רק נשאר להוכיח כי $r\sqrt[3]{n}  \in \mathbb{Z}$
+\begin{gather*}
+r\sqrt[3]{n}=q\left( \left( \sqrt[3]{n} \right) ^{2}-\lfloor \left( \sqrt[3]{n} \right) ^{2} \rfloor  \right) \left( \sqrt[3]{n} \right)\\
+=\left(q\left( \sqrt[3]{n} \right) ^{2}-q\lfloor \left( \sqrt[3]{n} \right) ^{2} \rfloor\right) \left( \sqrt[3]{n} \right)\\
+=q\left( \sqrt[3]{n} \right) ^{2}\left( \sqrt[3]{n} \right) -q\left( \sqrt[3]{n} \right) \lfloor \left( \sqrt[3]{n} \right) ^{2} \rfloor  \\
+=\underbrace{ qn }_{ \mathbb{N} }- \underbrace{ q\left( \sqrt[3]{n} \right)  }_{ \mathbb{N} } \cdot\underbrace{ \lfloor \left( \sqrt[3]{ n} \right)^{2}  \rfloor }_{ \mathbb{N} }  \in \mathbb{N}
+\end{gather*}
+הגענו לסתירה. שכן $q$ הוגדר כמספר הטבעי הקטן ביותר שמכפלתו עם $\sqrt[3]{n}$ יוצרת מספר טבעי\\
+ב.\\
+נניח בשלילה שקיים $n$ שעבורו $\sqrt[k]{n}$ איננו שלם אבל כן רציונאלי. יהי $q \in \mathbb{N}$ המספר השלם הקטן ביותר כך ש$q\left( \sqrt[k]{n} \right)\in \mathbb{N}$.\\
+נגדיר $r:=q\left( \left( \sqrt[k]{n} \right)^{k-1}-\lfloor \left( \sqrt[k]{n} \right)^{k-1} \rfloor \right)$\\
+אם $r<q$ וגם $r\left( \sqrt[k]{n} \right)\in \mathbb{N}$ נגיע לסתירה.\\
+ראשית נראה ש$r<q$. $r$ הוא מכפלה של $q$ ב$\left( \sqrt[k]{n} \right)^{k-1}-\lfloor \left( \sqrt[k]{n} \right)^{k-1} \rfloor$ על פי ההגדרה $0\leq x-\lfloor x \rfloor<1$ ולכן $r$ הוא מכפלה של $q$ במספר קטן מ$1$ ולכן קטן מ$q$. נראה ש $r \in \mathbb{N}$.
+$$
+r=q\left( \left( \sqrt[k]{n} \right)^{k-1}-\lfloor \left( \sqrt[k]{n} \right)^{k-1} \rfloor \right) =\underbrace{ q\left( \sqrt[k]{n} \right) ^{k-1} }_{ \left( * \right)  } -\underbrace{ q\lfloor \left( \sqrt[k]{n} \right) ^{k-1} \rfloor }_{ \left( ** \right)  } \underbrace{ \implies }_{ \left( * * * \right)  } r \in \mathbb{N}
+$$
+\begin{gather*}
+\left( * \right) q\left( \sqrt[k]{n} \right) ^{k-1} \in \mathbb{N} \text{ מההגדרה של }q \\
+\left( ** \right)  q \in \mathbb{N} \text{ מההגדרה של }q, \lfloor \left( \sqrt[k]{n} \right) ^{k-1} \rfloor  \in \mathbb{N} \text{ תכונה של }\lfloor x \rfloor \\
+\left( * * * \right) q\left( \lfloor  \left( \sqrt[k]{n} \right) ^{k-1}\rfloor  \right) \in \mathbb{N}\text{ הטבעיים סגור לכפל } \\
+\end{gather*}
+מה שאומר ש $\mathbb{N} \ni r<q$, עכשיו רק נשאר להוכיח כי $r \sqrt[k]{n}\in\mathbb{Z}$
+\begin{gather*}
+r \sqrt[k]{n}=q\left( \left( \sqrt[k]{n} \right) ^{k-1}-\lfloor \left( \sqrt[k]{n} \right) ^{k-1} \rfloor  \right) \left( \sqrt[k]{n} \right)  \\
+=qn-q\left( \sqrt[k]{n} \right) \cdot \lfloor \left( \sqrt[k]{n} \right) ^{k-1} \rfloor \in \mathbb{N}
+\end{gather*}
+הגענו לסתירה שכן $q$ הוגדר כמספר הטבעי הקטן ביותר משכפלתו עם $\sqrt[k]{n}$ יוצרת מספר טבעי\\
+$\blacksquare$
+\section*{שאלה 6}
+הוכיחו או הפריכו:\\
+א. אם $\text{sup }A<\text{inf }B$ אז $A \cap B = \emptyset$.\\
+ב. אם $A$ קבוצה אינסופית שאין לה מינימום, אז $A$ לא חסומה מלרע.\\
+ג. אם לכל $a \in A$ קיים $b \in B$ כך ש-$a<b$ אז $\text{sup }A <\text{sup B}$
+\section*{פתרון 6}
+א.\\
+נכון, נוכיח\\
+נניח בשלילה ש$\text{sup}~A<\text{inf }B$ ושהקבוצה $A \cap B \neq \emptyset$\\
+נגדיר $C :=A\cap B=\left\{ c|c \in A \land c \in B \right\}$\\
+מכיוון שכל $c \in C$ נמצא גם $B$ , מתקיים $c \geq\text{inf }B$\\
+מכיוון שכל $c \in  C$ נמצא גם ב$A$, מתקיים $c \leq \text{sup }A$\\
+כלומר $\text{inf }B \leq c\leq\text{sup }A$, סתירה.\\
+ב.\\
+לא נכון!\\
+ניתן דוגמה נגדית\\
+$A= \left\{ x \in \mathbb{R}|x>0 \right\}$ על פי הגדרת הקבוצה, היא חסומה מלמעטה ע"י 0 ואין לה מינימום כי היא מייצגת קטע פתוח\\
+ג.\\
+לא נכון!\\
+נניח שהתנאי מתקיים ונגיע לסתירה\\
+יהי $x$ כך ש
+\begin{gather*} 
+A=(-\infty,x) \\
+B=\left\{x \right\} \\
+\end{gather*}
+לכל $a \in A$ קיים $b=x \in B$ שגדול ממנו\\
+הסופרמום של $B$ הוא $x$ כי הוא חסם עליון $x\geq x$ וגם המקסימום $x \in B$\\
+הסופרמום של $A$ הוא $x$ כי על פי למת האינפימום מתקיים שלכל $\epsilon>0$ קיים $a \in A$ כך ש$x-\epsilon<a$ (על פי היות $A$ קטע פתוח שנגמר ב$x$)\\
+כלומר $\text{sup }A=\text{sup B}$ סתירה\\
+$\blacksquare$
+\section*{שאלה 7}
+תהיינה $A,B \subseteq \mathbb{R}$ לא ריקות חסומות מלעיל. הוכיחו כי $\text{sup}\left( A \cup B \right)=\text{max}\left\{ \text{sup }A,\text{sup }B \right\}$
+\section*{פתרון 7}
+נגדיר $S_{A}=\text{sup }A$, אנחנו יודעים ש$S_{A}$ קיים לפי אקסיומת השלמות כי $A$ קבוצה חסומה מלעיל ואינה ריקה\\
+בצורה דומה נגדיר $S_{B} =\text{sup }B$\\
+נגדיר את קבוצת האיחוד של $A$ ו$B$
+$$
+C=A\cup B=\left\{ c|c \in A \lor c \in B \right\}
+$$
+נרצה להוכיח ש$\text{sup}\left( C \right)=\text{max}\left\{S_{A},S_{B} \right\}$\\
+ראשית נוכיח כי מדובר בחסם עליון\\
+נראה שלכל $c \in C$ מתקיים $c\leq \text{max}\left\{ S_{A},S_{B} \right\}$\\
+כל $c$ נמצא לפחות באחת הקבוצות $A,B$, נחלק למקרים (אין צורך להתייחס למקרה בו הוא נמצא בשתי הקבוצות, המקרה הזה מוכל בתוך שני המקרים האחרים)
+\begin{equation*}
+\begin{cases}
+c \in A,~c\leq S_{A} \leq \text{max}\left\{ S_{A},S_{B} \right\}  \\
+c \in B, c\leq S_{B} \leq \text{max}\left\{ S_{A},S_{B} \right\} 
+\end{cases}
+\end{equation*}
+כלומר מתקיים $c \leq\text{max}\left\{ S_{A},S_{B} \right\}$ ולכן חסם עליון, עכשיו רק צריך להראות שזה גם הסופרמום\\
+יהי $\epsilon>0$, נראה שקיים $c \in C$ כך שמתקיים $\text{max}\left\{ S_{A},S_{B} \right\}-\epsilon<c$\\
+נבחר $c \in B$ ובלי הגבלת כלליות נניח ש$S_{B}>S_{A}$ (במצב ההפוך נבחר $c \in A$)\\
+מכיוון ש$S_{B}>S_{A}$, אפשר לומר ש$\text{max}\left\{ S_{A},S_{B} \right\} =S_{B}$\\
+מכיוון ש$S_{B}$ הסופרמום של $B$, קיים $b \in B$ כך ש$S_{B}-\epsilon<b$\\
+מכיוון שכל איבר ב$B$ מוכל ב$C$, אפשר לבחור את $c$ כך שיהיה $b$, כלומר ישנו $c \in C$ המקיים $S_{B}-\epsilon <c$, אזי $S_{B}=\text{max}\left\{ S_{A},S_{B} \right\}=\text{sup }C$\\
+$\blacksquare$
+\section*{שאלה 8}
+תהיינה $A,B \subseteq \mathbb{R}$ לא ריקות חסומות מלעיל.\\
+א. נניח שקיים $\epsilon>0$ כך שלכל $a \in A$ קיים $b \in B$ כך ש $a+\epsilon<b$. הוכיחו $\text{sup }A<\text{sup }B$\\
+ב. נניח כי לכל $a \in A$ קיימים $\epsilon>0$ ו-$b\in B$ כך ש $a+\epsilon<b$. הוכיחו או הפריכו:  $\text{sup }A<\text{sup }B$
+\section*{פתרון 8}
+א.\\
+נגדיר $S_{A}:=\text{sup }A,S_{B}:=\text{sup }B$.\\
+לפי למת הסופרימום, מתקיים לכל $\epsilon$ (נבחר כמובן את האחד הנתון לנו) קיים $a \in A$ כך ש$S_{A}-\epsilon<a$\\
+לפי הנתון, לאותו $a$ קיים $b \in B$ כך ש$a+\epsilon<b$
+\begin{gather*}
+S_{A}-\epsilon<a \underset{ +\epsilon }{ \iff } S_{A}<a+\epsilon \underset{ \text{נתון} }{ < } b \underset{ (*) }{ \leq }  S_{B} \iff S_{A}<S_{B} \\
+(*) \text{כל איבר בקבוצה קטן מהסופרימום של הקבוצה}
+\end{gather*}
+$\blacksquare$\\
+ב.\\
+לא נכון!\\
+ניקח כדוגמה נגדית קבוצה מונוטונית עולה חסומה גם כ$A$ וגם כ$B$ (נבחר את $A=B=-\frac{1}{n}$ לשם הנוחות). התנאי לא מתקיים מכיוון שהקבוצות זהות ועל כן גם הסופרימום שלהם, כלומר $\text{sup }A=\text{sup }B$\\
+נראה שהקבוצות שבחרנו מתאימות לנתון\\
+מכיוון שהקבוצה עולה, לכל $a_n$ מתקיים $a_{n}<a_{n+1}=b_{n+1}$\\
+נמצא עכשיו $\epsilon >0$ כך ש $\underbrace{a}_{a_n}+\epsilon <\underbrace{b}_{b_{n+1}}$
+$$
+a+\epsilon<b \iff \epsilon<b-a
+$$
+נבחר $\epsilon = \frac{1}{2}\cdot \left| b-a \right|$\\
+מכיוון שקיים אותו $\epsilon$, קיימים $A,B$ כך ש $\text{sup }A = \text{sup }B$
+\section*{שאלה 9}
+יהא $b$ מספר ממשי. נגדיר $A=\left\{ \frac{\lfloor n \cdot b \rfloor}{n}|n \in \mathbb{N} \right\}$. הוכיחו כי $A$ חסומה מלעיל ומצאו את $\text{sup } A$
+\section*{פתרון 9}
+נמצא חסם עליון של $A$
+$$
+a_{n}=\frac{\lfloor n \cdot b \rfloor }{n} \leq \frac{n\cdot b}{n}=b
+$$
+$b$ חסם עליון של $A$ ולכן $A$ חסומה מלעיל
+נגדיר $S :=\text{sup }A$, אנחנו יודעים ש$S$ קיים לפי אקסיומת השלמות וזה ש$A$ חסומה מלעיל ולא ריקה\\
+יהי $\epsilon>0$, קיים $a \in A$ כך ש$a \in(S-\epsilon,S]$ כלומר צריך למצוא $n$ שעבורו $S\geq a_{n}>S - \epsilon$\\
+ננסה להקטין את $a$
+$$
+\frac{\lfloor n\cdot b \rfloor }{n}>\frac{\left( n \cdot b \right) -1}{n} \underset{   x-1 <\lfloor x \rfloor}{ \iff } \lfloor n \cdot b \rfloor > b-\frac{1}{n}
+$$
+זה אומר ש
+$$
+b\geq a_{n} > b- \frac{1}{n}
+$$
+אז אם נגדיר $n=\frac{1}{\epsilon}$ נקבל
+$$
+b \geq a_{n}>b-\frac{1}{\frac{1}{e}} \iff b \geq a_{n} > b-\epsilon
+$$
+מה שאומר ש$\boxed{\text{sup A}=b}$
+
+\section*{שאלה 10}
+הוכיחו לפי הגדרה\\
+א. $\lim_{ n \to \infty } \frac{2n^{2}-7n+8}{n^{2}+3n+9}=2$\\
+ב. $\lim_{ n \to \infty } \frac{\cos n +4}{n^{2/3}}=0$
+\section*{פתרון 10}
+א.\\
+יהי $\epsilon<0$, צריך למצוא $N$ כך ש $n >N$ (כש$n \in \mathbb{N}$) מתקיים
+$$
+\left| \frac{2n^{2}-7n+8}{n^{2}+3n+9}- 2 \right|<\epsilon 
+$$
+נרצה למצוא אפשרות ל$N$, קודם נפשט את המשוואה.\\
+נוציא מכנה משותף
+$$
+\left|\frac{2n^{2}-7n+8-2\left( n^{2}+3n+9 \right) }{n^{2}+3n+9}\right|=\left| \frac{-13n-10}{n^{2}+3n+9} \right| \underset{ \left| -x \right|=x  }{ = } \frac{13n+10}{n^{2}+3n+9}
+$$
+על מנת לקרב את הביטוי כמה שאפשר ל$\epsilon$ נרצה להגדיל את המונה ולהקטין את המכנה
+$$
+\frac{13n+10}{n^{2}+3n+9} < \frac{13n+10n}{n^{2}}< \frac{23}{n} \underset{ n>N }{ < } \frac{23}{N}
+$$
+נרצה שיתקיים $\frac{23}{N}\leq\epsilon$ כלומר $N \geq \frac{23}{\epsilon}$, נבחר $N = \left\lceil  \frac{23}{\epsilon}  \right\rceil+2$\\
+כלומר לכל $\epsilon$, כאשר $N=\left\lceil  \frac{23}{\epsilon}+2  \right\rceil$, לכל $\mathbb{N} \ni n >N$ מתקיים
+$$
+\left| \frac{2n^{2}-7n+8}{n^{2}+3n+9}- 2 \right|< \frac{23}{n}<  \frac{23}{N} <\epsilon 
+$$
+כלומר, הגבול הוא 2.\\
+$\blacksquare$\\
+ב.\\
+יהי $\epsilon>0$, קיים $N \in \mathbb{N}$ כך שלכל $\mathbb{N} \ni n > N$ מתקיים
+$$
+\left|\frac{\cos n+4}{n^{2/3}}\right|<\epsilon
+$$
+נרצה למצוא אפשרות ל$N$.\\
+על מנת לקרב את הביטוי כמה שאפשר ל$\epsilon$ נרצה להגדלי את המונה ולהקטין את המכנה
+$$
+\left| \frac{\cos n+4}{n^{2/3}} \right|  \leq \left|\frac{1+4}{n^{2/3}}\right| < \frac{5}{\sqrt{n}} \underset{ n>N }{ < } \frac{5}{\sqrt{N}}
+$$
+נרצה שיתקיים $\frac{5}{\sqrt{N}}\leq\epsilon$, כלומר $N\geq \frac{25}{\epsilon^{2}}$, נבחר ב$N=\left\lceil  \frac{25}{\epsilon^{2}}  \right\rceil+5$\\
+כלומר לכל $\epsilon$, כאשר $N=\left\lceil  \frac{25}{\epsilon^{2}}  \right\rceil+5$, לכל $\mathbb{N} \ni n>N$ מתקיים
+$$
+\left| \frac{\cos n+4}{n^{2/3}} \right| < \frac{5}{\sqrt{n}} < \frac{5}{\sqrt{N}} < \epsilon
+$$
+$\blacksquare$
+\section*{שאלה 11}
+א. תהא $\left( a_{n} \right)^{\infty}_{n=1}$ סדרה מתכנסת כך שלכל $n$, $a_{n} \neq 0$. הוכיחו כי אם $\lim_{ n \to \infty }a_{n}=L \neq 0$ אז $\lim_{ n \to \infty } \frac{1}{a_{n}}= \frac{1}{L}$.\\
+ב. תהא $\left( a_{n} \right)^{\infty}_{n=1}$ סדרה אי שלילית מתכנסת. הוכיחו כי אם $\lim_{ n \to \infty }a_{n }=L$ אז $\lim_{ n \to \infty }\sqrt{a_{n}}=\sqrt{L}$
+\section*{פתרון 11}
+א.\\
+יהי $\epsilon>0$,  צריך למצוא $N$ כך שלכל $\mathbb{N} \ni n >N$ מתרחש
+$$
+\left| \frac{1}{a_{n}} - \frac{1}{L} \right| < \epsilon
+$$
+נרצה לקרב את הביטוי ל$\epsilon$, על מנת לעשות את זה נגדיל את המונה ונקטין את המכנה. קודם כל נפשט את הביטוי.
+$$
+\left| \frac{1}{a_{n}}- \frac{1}{L} \right| = \frac{\left| L-a_{n} \right| }{|a_{n}\cdot L|}  
+$$
+לא הצלחנו להגיע למצב שבו אין ביטוי התלוי ב$n$ במכנה או במונה. לכן נצטרך למצוא אפשרויות שונות ל$N$ לפי ההגבלות המכנה ולפי המונה.\\
+נתבונן בגבול של $a_{n}$\\
+על פי הגדרת הגבול של $a_{n}$, לכל $\epsilon_{0}>0$ קיים $N_{0}$ כך שלכל $n<N_{0}$, מתקיים
+$$
+\left| a_{n}-L \right| < \epsilon_{0}
+$$
+מכיוון שביטוי זה נכון לכל $\epsilon_{0}$ נבחר $\epsilon_{0}=\frac{\left| L \right|}{2}$, נזכור ש$L\neq 0$ כך שאכן מתקיים $\epsilon_{0}>0$\\
+כלומר
+\begin{gather*}
+\frac{\left| L \right|}{2} > \left| a_{n}-L \right| \underset{\left( * \right) }{\geq} \left|\left| a_{n} \right| -\left| L \right|  \right| \\
+\iff \frac{\left| L \right| }{2}> \left| \left| a_{n} \right| -\left| L \right|  \right|  \\
+\underset{ \left( ** \right)  }{ \iff } -\frac{\left| L \right| }{2}<\left| a_{n} \right| - \left| L \right| < \frac{\left| L \right| }{2} \\
+\iff \left| a_{n} \right| > -\frac{\left| L \right| }{2}+\left| L \right| \\
+\iff \left| a_{n} \right| > \frac{\left| L \right| }{2}
+\end{gather*}
+נקטין את המכנה
+$$
+\frac{\left| L-a_{n} \right| }{|a_{n}\cdot L|}  <\frac{\left| L-a_{n} \right| }{\frac{\left| L \right| }{2}\left| L \right| } = \frac{\left| L-a_{n} \right| }{\frac{\left| L \right|^{2}}{2}} <\epsilon
+$$
+נסדר את הביטוי
+$$
+\frac{\left| L-a_{n} \right| }{\frac{\left| L \right|^{2}}{2}} = \left| L-a_{n} \right| \cdot \frac{2 }{\left| L \right|^{2}} <\epsilon \iff \left| L-a_{n} \right| > \frac{\epsilon \left| L \right| ^{2}}2{}
+$$
+נסתכל על המונה.
+$$
+\left| L-a_{n} \right| =\left| a_{n}-L \right| 
+$$
+על פי הגדרת הגבול של $a_{n}$, לכל $\epsilon_{1}>0$ קיים $N_{1}$ כך שלכל $n<N_{1}$, מתקיים
+$$
+\left| a_{n}-L \right| < \epsilon_{1}
+$$
+מכיוון שביטוי זה נכון לכל $\epsilon_{1}$. נבחר $\epsilon_{1} =\frac{\epsilon \left| L \right|^{2}}{2}$. נזכור ש$L\neq 0$ ולכן $\epsilon_{1}>0$
+נבחר את $N$ אותו אנחנו מחפשים להיות $N =\text{max }\left\{ N_{0},N_{1} \right\}$ 
+ואז אכן  מתקיים
+$$
+\left| \frac{1}{a_{n}}- \frac{1}{L} \right| = \frac{\left| L-a_{n} \right| }{|a_{n}\cdot L|}  <\frac{\left| L-a_{n} \right| }{\frac{\left| L \right|^{2}}{2}} <\epsilon
+$$
+$\blacksquare$\\
+ב.\\
+ראשית על מנת שנוכל להתעסק עם שורש של $L$ נצטרך קודם להראות ש$L$ אי שלילי.\\
+נתון ש$\left\{ a_{n} \right\}$ אי שלילית לכל $n$. מה שאומר שלכל $\epsilon$ כל איברי הסביבה (פרט למספר סופי של איברים) נמצאים בסביבה $\left( L-\epsilon,L+\epsilon \right)$, מכיוון שכל איברי $\left\{ a_{n} \right\}$ אי שליליים ונמצאים בסביבת $L$ גם  $L$ אי שלילי.\\
+הוכחנו ש$L$ אי שלילי ולכן אפשר להתחיל להתעסק עם השורש. כעת צריך להוכיח ש$\sqrt{a_{n}}\xrightarrow{n\to \infty} \sqrt{L}$\\
+יהי $\epsilon>0$ צריך למצוא $N\in \mathbb{N}$ כך שלכל $\mathbb{N} \ni n > N$ מתרחש
+$$
+\left| \sqrt{a_{n}}-\sqrt{L} \right|<\epsilon
+$$
+נפרק את הביטוי למקרים\\
+אם $L=0$
+$$
+\left| \sqrt{a_{n}}-\sqrt{L} \right| =\left| \sqrt{a_{n}}-\sqrt{0} \right| =\left| \sqrt{a_{n}} \right| =\sqrt{a_{n}} < \epsilon \iff a_{n} < \epsilon^{2}
+$$
+מה שאומר שיש $N_{0}$ כך שלכל $\mathbb{N} \ni n > N_{0}$ מתקיים $\left| \sqrt{a_{n}}-\sqrt{L} \right|<\epsilon$ כדרוש\\
+נעבור ל $L > 0$\\
+נתבונן בצד השמאלי של המשוואה
+\begin{gather*}
+\left| \sqrt{a_{n}}-\sqrt{L} \right| =\frac{ \left| \sqrt{a_{n}}-\sqrt{L} \right|}{1} \cdot \frac{\left| \sqrt{a_{n}}+\sqrt{L} \right| }{\left| \sqrt{a_{n}}+\sqrt{L} \right| } \\
+= \frac{\left| \sqrt{a_{n}}-\sqrt{L}  \right|\cdot \left| \sqrt{a_{n}}  +\sqrt{L} \right| }{\left|\sqrt{a_{n}}+\sqrt{L}\right|} \\
+=\frac{\left| \left(\sqrt{a_{n}}-\sqrt{L}\right)\cdot \left( \sqrt{a_{n}}+\sqrt{L} \right)  \right| }{\sqrt{a_{n}}+\sqrt{L}} = \frac{\left| a_{n}-L \right| }{\sqrt{a_{n} }+\sqrt{L}}
+\end{gather*}
+על מנת לקרב את הביטוי ל$\epsilon$ נרצה להקטין את המונה ולהגדיל את המכנה
+$$
+\frac{\left|a_{n}-L\right|}{\sqrt{a_{n}}+\sqrt{L}} \leq \frac{\left| a_{n}-L \right| }{\sqrt{L}}
+$$
+נסתכל על המונה\\
+על פי הגדרת הגבול של $a_n$, לכל $\epsilon_{1}$ קיים $N_{1}$ כך שלכל $\mathbb{N} \ni n>N$ מתרחש 
+$$
+\left| a_{n}-L \right|<\epsilon_{1}
+$$
+מכיוון שביטוי זה נכון לכל $\epsilon_{1}$, נבחר $\epsilon_{1}=\epsilon \sqrt{L}$ נזכור ש $L >0$ כך ש- $\epsilon_{1} >0$\\
+מה שאומר לכל $n>N_{1}$ מתרחש
+$$
+\leq \frac{\left| a_{n}-L \right| }{\sqrt{L}} < \frac{\epsilon \sqrt{L}}{L}=\epsilon
+$$
+$\blacksquare$
+\fancyfoot[L]{\text{214269565}}
+\end{document}
+
