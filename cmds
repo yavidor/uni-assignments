@@ -1,4 +1,4 @@
-:%s/#\+\s\+\(.\+\)/\\section{\1}/
+:%s/#\+\s\+\(.\+\)/\\section*{\1}/
 
 :%s/^\$\$\n\\begin{gather}/\\begin{gather*}
 
