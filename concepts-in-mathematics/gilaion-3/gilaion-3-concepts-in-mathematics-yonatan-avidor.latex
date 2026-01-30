@@ -1,0 +1,113 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 1}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{תרגיל 1}
+הסימונים $F$ ו-$T$ מייצגים "ערך שקר" ו"ערך אמת". \\
+הוכיחו/הפריכו כל אחת מהטענות הבאות. \\
+1. לכל $x \in \left\{ F,T \right\}$ קיים $y \in \left\{ F,T \right\}$ כך ש-$x \lor y$ אמת. \\
+2. קיים $x \in \left\{ F,T \right\}$ כך שלכל $y \in \left\{ F,T \right\}$ מתקיים ש-$x \lor y$ אמת. \\
+3. לכל $x \in \left\{ F,T \right\}$ קיים $y \in \left\{ F,T \right\}$ כך ש-$x\land y$ אמת.
+\section*{פתרון 1}
+1. כן, נסתכל על שתי האפשרויות. אם יוצא $T$ באחת השורות בעמודה הימנית, אזי הטענה נכונה.  \\
+ראשית $x=T$
+$$
+\begin{array}{|c|c|c|}  
+\hline
+x & y  & x\lor y\\  
+\hline
+T & T & T  \\
+\hline
+T & F  & T\\
+\hline
+\end{array}
+$$
+ראינו שיש (אפילו כולם) $y$ שעבורו $x \lor y$ אמת כש$x$ אמת. נבדוק לגבי $x$ שקר.
+$$
+\begin{array}{|c|c|c|}  
+\hline
+x & y  & x\lor y\\  
+\hline
+F & T & T  \\
+\hline
+F & F  & F\\
+\hline
+\end{array}
+$$
+ראינו שיש $y$ שעבורו $x \lor y$ אמת כש$x$ אמת. מכיוון שהראינו שזה אכן מתרחש לכל $x$, הטענה נכונה. \\
+2. כן, $x=T$. נסתכל על טבלת האמת עם כל $y$. אם יוצא $T$ בכל אחת מהשורות בעמודה הימנית. אזי הטענה נכונה
+$$
+\begin{array}{|c|c|c|}  
+\hline
+y & y  & x\lor y\\  
+\hline
+T & T & T  \\
+\hline
+F & T  & T\\
+\hline
+\end{array}
+$$
+ראינו שעבור  כל $y$ מתרחש $x\lor y$ אמת ולכן הטענה נכונה. \\
+3. לא, נביא דוגמה נגדית. \\
+בעבור $x=F$ אין $y$ כך ש $x\land y$ אמת. נוכיח באמצעות טבלת אמת
+$$
+\begin{array}{|c|c|c|}  
+\hline
+x & y  & x\lor y\\  
+\hline
+F & T & F \\
+\hline
+F & F  & F\\
+\hline
+\end{array}
+$$
+אין $y$ שעבורו $x\land y$ אמת ולכן הטענה לא נכונה
+\section*{תרגיל 2}
+1. הראו שלכל $p$ ראשוני ו-$n$ טבעי מתקיים כי $n$ מתחלק ב-$p$ אמ"מ $n^{2}$ מתחלק ב-$p$. \\
+2. הראו שלכל $p$ ראשוני, המספר $\sqrt{p}$ אינו רציונלי.
+\section*{פתרון 2}
+1. ראשית, נוכיח את הכיוון $\impliedby$כלומר אם $p|n$ אזי $p|n^{2}$ \\
+אם $p|n$ זה אומר שקיים $r \in \mathbb{N}$ כך ש$r \cdot p =n$.  מכיוון ש$n^{2}=n\cdot n$ ניתן לומר ש$n^{2}=n\cdot r\cdot p$. מה שאומר ש$p|n^{2}$. \\
+עכשיו נוכיח את $\implies$ כלומר אם $p|n^{2}$ אזי $p|n$  \\
+אם $p|n^{2}$ זה אומר ש$p|n\cdot n$. ידוע כי אם$a|b\cdot c$ אז או ש$a|b$ או  ש$a|c$. או במקרה הזה שתי האפשרויות אומרות ש$p|n$ \\
+$\blacksquare$ \\
+2. נניח בשלילה כי לכל $p$ ראשוני, $\sqrt{p}$ רציונלי \\
+אם $\sqrt{p}$ רציונלי זה אומר שניתן לכתוב את $\sqrt{p}=\frac{a}{b}$ כש$a,b\in \mathbb{Z}$. כלומר \\
+$$
+\sqrt{p}=\frac{a}{b}\implies p=\frac{a^{2}}{b^{2}}\implies pb^{2}=a^{2}
+$$
+כלומר $p|a^{2}$, על פי מה שהוכחנו, זה אומר ש$p|a$. מה שסותר את היות $p$ ראשוני. \\
+$\blacksquare$
+\section*{תרגיל 3}
+לכל אחת מהקבוצות הבאות, כתבו את גודל הקבוצה, מנו את איברי הקבוצה ומנו את כל תתי הקבוצות של הקבוצה. \\
+1. $\emptyset$ \\
+2. $\left\{ \emptyset \right\}$ \\
+3. $\left\{ \left\{ \emptyset \right\} \right\}$ \\
+4. $\left\{ 1 \right\}$ \\
+5. $\left\{ 1,\emptyset \right\}$ \\
+6. $\left\{ 1,\left\{ \emptyset \right\} \right\}$ \\
+7. $\left\{ 1,\left\{ 1 \right\} \right\}$
+\section*{פתרון 3}
+1. גודל הקבוצה $0$. $P\left( \emptyset \right)=\left\{ \emptyset \right\}$ \\
+2. גודל הקבוצה $1$. $P\left( \left\{ \emptyset \right\} \right)=\left\{ \emptyset,\left\{ \emptyset \right\} \right\}$ \\
+3. גודל הקבוצה 1. $P\left( \left\{ \left\{ \emptyset \right\} \right\} \right)=\left\{ \emptyset,\left\{ \emptyset \right\} \right\}$ \\
+4. גודל הקבוצה 1, $P\left( \left\{ 1 \right\} \right)=\left\{ \emptyset,\left\{ 1 \right\} \right\}$ \\
+5. גודל הקבוצה 2. $P\left( \left\{ 1,\emptyset \right\} \right)=\left\{ \emptyset,\left\{ \emptyset \right\}\left\{ 1 \right\},\left\{ \emptyset,1 \right\} \right\}$ \\
+6. גודל הקבוצה 2. $P\left( \left\{ 1,\left\{ \emptyset \right\} \right\} \right)=\left\{ \emptyset,\left\{ 1 \right\},\left\{ \left\{ \emptyset \right\} \right\},\left\{ 1,\left\{ \emptyset \right\} \right\} \right\}$ \\
+7. גודל הקבוצה 2. $P\left( 1,\left\{ 1 \right\} \right)=\left\{ \emptyset,\left\{ 1 \right\},\left\{ \left\{ 1 \right\} \right\},\left\{ 1,\left\{ 1 \right\} \right\} \right\}$
+
+\end{document}

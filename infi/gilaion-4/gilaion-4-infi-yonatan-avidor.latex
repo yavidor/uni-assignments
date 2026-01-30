@@ -1,0 +1,381 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפיטסימלי 1 - 01040195\\ גליון 4}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{שאלה 1}
+יהא $a>1$ ותהא $\left( b_{n} \right)$ סדרה מתכנסת לגבול $b$. הוכיחו כי $\lim_{ n \to \infty }a^{b_{n}}=a^{b}$
+\begin{gather*}
+a^{b_{n}-b}\to 1 \\
+a^{b_{n}}= a^{b_{n}-b} \cdot a^{b} = 1 \cdot a^{b}= a^{b}
+\end{gather*}
+\section*{פתרון 1}
+נרצה להוכיח שלכל $\mathbb{R}\ni a > 1$, ולכל $\left( b_{n} \right)^{\infty}_{n=1}\to b$, מתקיים $\lim_{ n \to \infty }a^{b_{n}}=a^{b}$ \\
+נזכיר כמה חוקים שראינו בכיתה לגבי חזקות ממשיות \\
+יהיו $\mathbb{R}\ni x > 1$ ו$y,z\in \mathbb{R}$
+\begin{enumerate}
+\item $x^{y}\cdot x^{z}= x^{y+z}$
+\item $\frac{x^{y}}{x^{z}}=x^{y-z}$
+\end{enumerate}
+\begin{gather*}
+a^{b_{n}}\underset{ הטריק הידוע }{ = }a^{b_{n}} \cdot \frac{a^{b}}{a^{b}} = \frac{a^{b_{n}}\cdot a^{b}}{a^{b}} = \frac{a^{b_{n}+b}}{a^{b}}=a^{b_{n}+b-b}=a^{b_{n}-b} \cdot a^{b}
+\end{gather*}
+לפי הנתון $b_{n}\to b$ ולכן $b_{n}-b \to 0$
+$$
+\lim_{n \to \infty} a^{b_{n}-b}\cdot a^{b}=a^{0}\cdot a^{b}= 1 \cdot a^{b}=a^{b}
+$$
+$\blacksquare$
+\section*{שאלה 2}
+תהא $A\subseteq \mathbb{R}$ ותהא $f:A\to \mathbb{R}$ פונקציה. $f$ נקראת חסומה מקומית ב-$A$ אם לכל $x_{0}\in A$ קיימת $\delta>0$ כך ש-$f$ חסומה ב$A\cap \left( x_{0}-\delta,x_{0}+\delta \right)$ \\
+\subsection*{סעיף א}
+תהא $f:\left[ 0,1 \right]\to \mathbb{R}$ חסומה מקומית ב-$\left[ 0,1 \right]$, הוכיחו כי $f$ חסומה $\left[ 0,1 \right]$
+\subsection*{סעיף ב}
+תנו דוגמה לפונקציה $f:\left( 0,1 \right)\to \mathbb{R}$ חסומה מקומית ב-$\left( 0,1 \right)$ אבל לא חסומה ב-$\left( 0,1 \right)$
+\section*{פתרון 2}
+\subsection*{סעיף א}
+יהי $x_{0}\in \left[ 0,1 \right]$
+מהנתון, לכל $x_{0}$ קיימת סביבת $\delta$ כך ש$f$ חסומה בתוך אותה סביבה, כלומר לכל $x_{0}$ קיימים $m_{x_{0}},M_{x_{0}}$, כך ש$m_{x_{0}}<f\left( x \right)<M_{x_{0}}$. כל הסביבות האלה של כל הנקודות ב$\left[ 0,1 \right]$ מהוות כיסוי אינסופי, מכיוון ש$\left[ 0,1 \right]$ היא קבוצה קומפקטית, לפי למת היינה-בורל, קיים לכיסוי הנ"ל תת-כיסוי סופי, כלומר קיימים קבוצה סופית של נקודות $x_{0}$ שמכסים את הקטע $\left[ 0,1 \right]$ ובסביבות ה$\delta_{x_{0}}$ שלהם $f$ חסומה. נסמן את גודל הקבוצה הזו $n$ \\
+כלומר קיימים $\left\{ m_{0},\dots,m_{n} \right\}$ חסמים תחתונים $\left\{ M_{0},\dots,M_{n} \right\}$ חסמים עליונים. מכיוון שמדובר בקבוצות סופיות, על פי אקסיומת השלמות ניתן לקחת להן מקסימום ומינימום, נסמן
+\begin{gather*}
+m'= \min\left\{ m_{0},\dots,m_{n} \right\}  \\
+M'=\max \left\{ M_{0},\dots,M_{n} \right\} 
+\end{gather*}
+מכיוון שלכל קטע $I_{j}$ בתת-הכיסוי הזה, $m_{j}<f<M_{j}$ \\
+בכל $\left[ 0,1 \right]$, $m'<f<M'$. כלומר קיימים ל-$f$ חסם עליון ותחתון. ועל כן $f$ חסומה.
+\subsection*{סעיף ב}
+נראה כי הפונקציה
+\begin{gather*}
+f: \left( 0,1 \right) \to \mathbb{R} \\
+f\left( x \right) = \frac{1}{x}
+\end{gather*}
+חסומה מקומית ב-$\left( 0,1 \right)$, אבל לא חסומה ב-$\left( 0,1 \right)$ \\
+חסומה מקומית: \\
+הפונקציה חיובית בכל התחום, לכן $0$ תמיד חסם תחתון וצריך למצוא רק חסם עליון \\
+יהי $x_{0}\in \left( 0,1 \right)$, עבור $\delta= \frac{x_{0}}{2}$, מכיוון ש$x_{0}>0$, $x_{0}> \frac{x_{0}}{2}>0$  \\
+מכיוון ש$f\left( x \right)$ מונוטונית יורדת חזק, מספיק למצוא חסם תחתון לקטע $\left( x_{0}- \frac{x_{0}}{2},x_{0} \right]\subseteq \left( 0,1 \right)$, בנוסף בגלל המונוטוניות תמיד מתקיים ש$f\left( x-\frac{x_{0}}{2} \right)>f\left(  x_{0}\right)$. כלומר לכל $x_{0}$ קיים $\delta=\frac{x_{0}}{2}$ שעבורו $\left( x_{0}-\delta,x_{0}+\delta \right)$ חסום מלמעלה על ידי $f\left( x_{0}-\delta \right)$ ומלמטה על ידי $0$ ולכן $f\left( x \right)$ חסומה מקומית ב-$\left( 0,1 \right)$ \\
+לא חסומה \\
+מכיוון שהחסם העליון שלנו היה תלוי בערך של $x$, ו$f\left( x \right)\xrightarrow{x\to 0}\infty$, לא משנה איזה חסם עליון $M$ ניקח, קיים $x_{0}$ שעבורו $f\left( x_{0} \right)>M$ כלומר ל$f\left( x \right)$ לא קיים חסם עליון אחד שמתאים לכל התחום, ולכן $f\left( x \right)$ אינה חסומה \\
+$\blacksquare$
+\section*{שאלה 3}
+הוכיחו לפי הגדרה
+\subsection*{סעיף א}
+$$
+\lim_{ x \to \frac{1}{9} } \frac{1}{\sqrt{x}}   =3
+$$
+\subsection*{סעיף ב}
+$$
+\lim_{ x \to \infty }  \frac{-9x^{2}+9x}{2x^{2}+8} = -\frac{9}{2}
+$$
+\section*{פתרון 3}
+\subsection*{סעיף א}
+יהי $\epsilon>0$, נחפש $\delta>0$ כך ש
+$$
+0<\left| x-\frac{1}{9} \right|  < \delta \implies \left| \frac{1}{\sqrt{x}}- 3 \right|<\epsilon 
+$$
+נתבונן בצד הימני של הביטוי \\
+נרצה להגדיל את הביטוי
+\begin{gather*}
+\left| \frac{1}{\sqrt{x}}-3 \right| = \left| \frac{1-3\sqrt{x}}{\sqrt{x}} \right|  = \left| \frac{1-3 \sqrt{x}}{\sqrt{x}} \cdot \frac{1+3\sqrt{x}}{1+ 3 \sqrt{x}} \right|
+= \left| \frac{1-9x}{\sqrt{x }+3x} \right|
+\end{gather*} 
+נעבור לצד השמאלי של הביטוי המקורי
+\begin{gather*}
+\left| x-\frac{1}{9} \right| <\delta \implies \left| \frac{9x-1}{9} \right| <\delta \\
+\implies \frac{\left| 9x-1 \right| }{9} < \delta \implies \frac{\left| 1-9x \right| }{9} < \delta \implies \left| 1-9x \right| < 9\delta 
+\end{gather*}
+ולכן
+$$
+ \left| \frac{1-9x}{\sqrt{x }+3x} \right|<\left| \frac{9\delta}{\sqrt{x}+3x} \right| 
+$$
+נשים לב שיש לנו $\sqrt{x}$, זה אומר שתחום ההגדרה של הפונקציה הוא $x>0$, לכן $\sqrt{x}+3x$ חיובי, ואפשר להוריד ממנו את הערך המוחלט, בנוסף אנו מחפשים $\delta>0$ ולכן גם מהמונה אפשר להוריד את הערך המוחלט
+$$
+\left( * \right): \frac{9\delta}{\sqrt{x}+3x} < \frac{9\delta}{3x}  = \frac{3\delta}{x}
+$$
+נניח ש $\delta \leq  \frac{1}{10}$, נרצה לחסום את $x$ (מלמטה)
+$$
+ \left| x- \frac{1}{9}\right|< \frac{1}{10}  \implies \frac{-1}{10} < x -\frac{1}{9} < \frac{1}{10} \implies \frac{-1}{10}+ \frac{1}{9} < x \implies \frac{1}{90} <x
+$$
+ולכן
+$$
+\frac{3\delta}{x} < \frac{3\delta}{\frac{1}{90}} = 270\delta \leq \epsilon\implies \delta \leq \frac{\epsilon}{270}
+$$
+אם כך, נבחר $\delta=\min\left\{ \frac{1}{10}, \frac{\epsilon}{270} \right\}$ \\
+ואכן, לכל $\epsilon>0$, כש$\delta=\min\left\{ \frac{1}{10}, \frac{\epsilon}{270} \right\}$
+\begin{gather*}
+\left| x- \frac{1}{9} \right| \underset{ \delta \leq \frac{1}{10} }{ < }  \frac{1}{10} \implies x < \frac{1}{90} \implies \left| \frac{1}{\sqrt{x}}- 3 \right|\underset{ (*)\ text{ חישוב}  }{ <  }\frac{1}{x} \cdot 3\delta  \\
+< 90 \cdot 3\delta = 270\delta \underset{ \delta \leq \frac{\epsilon}{270} }{ < } \frac{\epsilon}{270}\cdot 270 = \epsilon
+\end{gather*}
+$\blacksquare$
+\subsection*{סעיף ב}
+יהי $\epsilon>0$, נרצה למצוא $M> 0$ כך שלכל $x> M$ מתקיים
+$$
+\left|  \frac{-9x^{2}+9x}{2x^{2}+8} + \frac{9}{2} \right|< \epsilon 
+$$
+נרצה להגדיל את הצד השמאלי של הביטוי
+\begin{gather*}
+\left| \frac{2\left( -9x^{2}+9x \right)+9\left( 2x^{2}+8 \right)  }{4x^{2}+16} \right| =\left| \frac{ -18x^{2}+18x +18x^{2}+72   }{4x^{2}+16} \right|  \\
+= \left| \frac{18x+72}{4x^{2}+16} \right| =\left| \frac{18(x+4)}{4(x^{2}+4)} \right| =\left| \frac{9(x+4)}{2(x^{2}+4)} \right|
+\end{gather*}
+מכיוון ש$x> M>0$, $x$ חיובי, ולכן גם המכנה וגם המונה חיוביים, ואפשר להיפטר מהערך המוחלט. בנוסף, נניח ש$x>4$
+\begin{gather*}
+\frac{9\left( x+4 \right) }{2\left( x^{2}+4 \right) } < \frac{9 \cdot 2x }{2\left( x^{2}+4 \right) } = \frac{9x}{x^{2}+4} < \frac{9x}{x^{2}} = \frac{9}{x} \underset{ x \geq M }{ \leq } \frac{9}{M} \leq \epsilon \implies M \geq \frac{9}{\epsilon}
+\end{gather*}
+לכן נבחר $M=\max\left\{ 4, \frac{9}{\epsilon} \right\}$ \\
+ואכן, לכל $\epsilon>0$, כש$M=\max\left\{ 4, \frac{9}{\epsilon} \right\}$, לכל $x> M$
+$$
+\left|  \frac{-9x^{2}+9x}{2x^{2}+8} + \frac{9}{2} \right|=\frac{9\left( x+4 \right) }{2\left( x^{2}+4 \right) } \underset{ x > 4 }{ < } \frac{9}{x} \underset{ x > \frac{9}{\epsilon} }{ < } \frac{9}{\frac{9}{\epsilon}} = \epsilon
+$$
+$\blacksquare$
+\section*{שאלה 4}
+תהא $f$ פונקציה חיובית המוגדרת בסביבה מנוקבת של $x=0$. נתון ש$\lim_{ x \to 0 }\left( f\left( x \right)+\frac{1}{f\left( x \right)} \right)=2$. הוכיחו כי
+\subsection*{סעיף א}
+קיימת סביבה של $0$ שבה $f\left( x \right)$ חסומה \\
+\subsection*{סעיף ב}
+$$
+\lim_{ x \to 0 }f\left( x \right)=1
+$$
+\section*{פתרון 4}
+\subsection*{סעיף א}
+נתון כי $f$ חיובית, לכן חסומה ממלרע על ידי $0$, נראה כי קיימת סביבה של $0$ שבה ל-$f\left( x \right)$ קיים חסם ממלעיל. \\
+מהנתון, ידוע כי לכל $\epsilon>0$ קיים $\delta_{\epsilon}>0$ כך שלכל $x \in \left( -\delta_{\epsilon},\delta_{\epsilon} \right)\setminus \left\{ 0 \right\}$ מתקיים
+$$
+\left|\left(  f\left( x \right) + \frac{1}{f\left( x \right) } \right)-2 \right| <\epsilon
+$$
+\begin{gather*}
+\left| \left( f\left( x \right) + \frac{1}{f\left( x \right) } \right)-2  \right|<\epsilon \implies -\epsilon < \left( f\left( x \right) + \frac{1}{f\left( x \right) } \right) -2 < \epsilon \\
+\implies   f\left( x \right) + \frac{1}{f\left( x \right) }  < \epsilon+2 \\
+\implies f\left( x \right)  \underset{ f\left( x \right) > 0 }{ < }f\left( x \right) + \frac{1}{f\left( x \right) }  < \epsilon+2 \implies f\left( x \right)  < \epsilon+2
+\end{gather*}
+מכיוון שזה נכון עבור כל $\epsilon$, נבחר $\epsilon=1$ \\
+ואז עבור סביבת $\delta_{1}$ נקובה של $0$ מתקיים
+$$
+0 < f\left( x \right)  < \underset{ 1+2 }{ 3 }
+$$
+\subsection*{סעיף ב}
+יהי $\epsilon'>0$, נחפש $\delta'>0$ כך ש
+$$
+0<\left| x \right| <\delta' \implies \left|  f\left( x \right) -1\right|< \epsilon'
+$$
+מהסעיף הקודם, אנחנו יודעים שלכל $\epsilon$, עבור $\delta_{\epsilon}$, כאשר $0<\left| x \right|<\delta_{\epsilon }$ מתקיים
+$$
+f\left( x \right) + \frac{1}{f\left( x \right) }< \epsilon+2
+$$
+\begin{gather*}
+f\left( x \right) + \frac{1}{f\left( x \right) } -2< \epsilon \implies \left( f\left( x \right) -1 \right) ^{2} < \epsilon \cdot f\left( x \right) 
+\end{gather*}
+נניח ש $\delta'\leq\delta_{\epsilon}$, ואז $3>f\left( x \right)$, ולכן
+$$
+\left( f\left( x \right) -1 \right) ^{2}< \epsilon \cdot 3\underset{ \sqrt{} }{ \implies } \left| f\left( x \right) -1 \right|  < \sqrt{3\epsilon}
+$$
+נרצה ש $\sqrt{3\epsilon}$ יהיה קטן מ$\epsilon'$, ומכיוון שידוע שלנו שאי השוויון הזה מתקיים לכל $\epsilon$, נוכל לבחור אותו להיות מה שנרצה, בפרט $\epsilon=\frac{\epsilon'^{2}}{3}$ \\
+ואז נוכל לבחור את $\delta'=\delta_{\frac{\epsilon'}{3}}$ המתאימה ואכן
+$$
+0<\left| x \right| <\delta' \implies \left| f\left( x \right) -1 \right| < \sqrt{\frac{\epsilon'}{3} \cdot 3}= \epsilon' 
+$$
+$\blacksquare$
+\section*{שאלה 5}
+ראיתם בכיתה את פונקציית דיריכלה $D\left( x \right)$, נגדיר
+\begin{equation*}
+f\left( x \right) = x^{2} \cdot D\left( x \right) = \begin{cases}
+x^{2}, & x \in \mathbb{Q} \\
+0, & x \in \mathbb{R}\setminus \mathbb{Q}
+\end{cases}
+\end{equation*}
+מצאו באילו נקודות $a \in \mathbb{R}$ הגבול $\lim_{ x \to a }f\left( x \right)$ קיים? הוכיחו תשובתכם בעזרת הגדרת הגבול בלבד.
+\section*{פתרון 5}
+נראה כי עבור $a=0$ קיים גבול $L$ וש-$L=0$ \\
+יהי $\epsilon>0$, נחפש $\delta>0$ כך ש
+$$
+0< \left| x  \right| <\delta \implies \left| f\left( x \right) \right| < \epsilon
+$$
+מכיוון שלכל $x$, $f\left( x \right)=x^{2}\cdot x^{2}$ או $0$, $f\left( x \right)\geq 0$ לכל $x$ ולכן אפשר להוריד את הערך המוחלט. \\
+נפרק למקרים \\
+אם $x$ אי רציונלי
+$$
+f\left( x \right) =0<\epsilon
+$$
+ואז $f\left( x \right) <\epsilon$ נכון תמיד \\
+אם $x$ רציונלי
+$$
+f\left( x \right) = x^{2} \cdot x^{2} = x^{4}
+$$
+נניח ש$\delta<1$, בערכים האלה $0<\left| x \right|<\delta<1$ ולכן $\left| x \right|>x^{4}$
+$$
+0 <  x^{4}  <\left| x \right| < \delta  \implies (x^{4} <\delta\implies x^{4} < \epsilon)
+$$
+אם כך, נצטרך ש$\delta\leq\epsilon$, ולכן נבחר $\delta=\min\left\{ 1,\epsilon \right\}$. \\
+ואכן
+\begin{equation*}
+\begin{cases}
+\epsilon < 1 & \left| x \right| < \epsilon< 1 \implies x^{4} <\left| x \right|<\epsilon <1 \implies  x^{4}  < \epsilon \\
+\epsilon \geq 1 & \left| x\right| <1 \implies x^{4} < \epsilon
+\end{cases}
+\end{equation*}
+כעת נראה שאין $a\neq 0$, שעבורו קיים גבול $L$ \\
+יהי $a \neq 0$, נניח בשלילה שקיים $L$ כך שלכל $\epsilon>0$, קיים $\delta>0$ כך ש
+$$
+0<\left| x-a \right| < \delta \implies \left| f\left( x \right) -L \right| < \epsilon
+$$
+נחלק למקרים לפי $x$ \\
+אם $x$ אי רציונלי
+$$
+0<\left| x-a \right| < \delta \implies \left| 0 -L \right| < \epsilon \implies \left| L \right| <\epsilon
+$$
+כלומר לכל $\epsilon>0$, $\left| L \right|<\epsilon$, וזה אפשרי אם ורק אם $L=0$ \\
+לכן מעתה נניח כי $L=0$ \\
+אם $x$ רציונלי
+$$
+0<\left| x-a \right| <\delta \implies \left|  x^{4}-L \right|<\epsilon
+$$
+$$
+\left| x^{4}-L \right| <\epsilon \underset{ L=0,x^{4}>0 }{ \implies } x^{4}<\epsilon
+$$
+מכיוון שאנחנו מניחים שזה נכון לכל $\epsilon$, זה בפרט נכון עבור $\epsilon=\frac{a^{4}}{2}$ \\
+ולכן
+$$
+0<\left| x-a \right| <\delta\implies x^{4}< \frac{a^{4}}{2}
+$$
+נסמן את החישוב הזה $\left( * \right)$ \\
+מכיון ש
+$$
+\lim_{ x \to a } x^{4} = a^{4}
+$$
+מאריתמטיקת גבולות (חזקה) על הגבול $\lim_{ x \to a }x=a$ \\
+לכל $\epsilon>0$, ובפרט ל$\epsilon=\frac{a^{4}}{2}$, קיים $\delta$ כך ש
+\begin{gather*}
+\left| x-a \right| <\delta \implies \left| x^{4}-a^{4} \right| < \frac{a^{4}}{2}\implies  -\frac{a^{4}}{2}< x^{4}-a^{4}< \frac{a^{4}}{2} \\
+ \underset{ +a^{4} }{ \implies } \frac{a^{4}}{2}< x^{4}< \frac{3a^{4}}{2}
+\end{gather*}
+נסמן את החישוב הזה ב$\left( ** \right)$ \\
+הגענו לסתירה, מכיוון שזה אומר ש
+$$
+\frac{a^{4}}{2}\underset{ \left( ** \right)  }{ < }x^{4}\underset{ \left( * \right)  }{ < } \frac{a^{4}}{2}
+$$
+לכן לכל $a \neq 0$, לא קיים אף גבול $L$ \\
+$\blacksquare$
+\section*{שאלה 6}
+\subsection*{סעיף א}
+הוכיחו דרכים כי
+אם $\lim_{ y \to b }f\left( y \right)=c,\lim_{ x \to a }g\left( x \right)=b$, ונתון כי $g\left( x \right)\neq b$ בסביבת $a$, אזי $\lim_{ x \to a }f\left( g\left( x \right) \right)=c$
+\subsubsection*{תת-סעיף 1}
+בעזרת משפט היינה
+\subsubsection*{תת-סעיף 2}
+בעזרת הגדרת הגבול
+\subsection*{סעיף ב}
+הראו כי אם מוותרים על התנאי כי $g\left( x \right)\neq b$, אזי הטענה איננה נכונה.
+\subsection*{סעיף ג}
+נמקו מדוע
+$$
+\lim_{ x \to \left( -\pi \right)  } \frac{\sin \left( x+\pi \right) }{x+\pi}= 1
+$$
+\section*{פתרון 6}
+\subsection*{סעיף א}
+\subsubsection*{תת-סעיף 1}
+על פי קריטריון היינה, מכיוון ש$g\left( x \right)\xrightarrow{x\to a}b$, אזי לכל סדרה $a\neq x_{n}\to a$ מתקיים $g\left( x_{n} \right)\to b$ \\
+מכיוון ש$g\left( x \right)\neq b$, מן הסתם גם $g\left( x_{n} \right)\neq b$ \\
+בנוסף, על פי משפט היינה מתקבל כי $f\left(g\left(  x_{n} \right) \right)\to c$, ומהצד השני של משפט היינה
+$$
+f\left( g\left( x \right)  \right) \xrightarrow{x\to a}c
+$$
+כנדרש
+\subsubsection*{תת-סעיף 1}
+יהי $\epsilon>0$ נחפש $\delta>0$ כך ש
+$$
+0<\left| x-a \right|< \delta \implies \left| f\left( g\left( x \right)  \right)-c  \right|<\epsilon 
+$$
+לפי הנתון על $f$, לכל $\epsilon>0$, קיים $\delta_{f}>0$ כך ש
+$$
+0<\left| y-b \right| <\delta_{f} \implies \left| f\left( y \right) -c \right| <\epsilon
+$$
+לפי הנתון על $g$, לכל $\epsilon>0$ קיים, ובפרט עבור $\epsilon=\delta_{f}$ $\delta_{g}>0$ כך ש
+$$
+0<\left| x-a \right| <\delta_{g} \implies \left| g\left( x \right) -b \right| <\delta_{f}
+$$
+ובפרט אם נניח $\delta\leq\delta_{g}$
+$$
+0<\left| x-a \right| <\delta\implies \left| g\left( x \right) -b \right| < \delta_{f}
+$$
+מכיוון ש$g\left( x \right)\neq b$ אנחנו מקבלים ש $\left| g\left( x \right)-b \right|>0$ תמיד \\
+לכן אם נציב $y=g\left( x \right)$ בנתון על $f$ נקבל
+$$
+0<\left| g\left( x \right) -b \right| <\delta_{f}\implies \left|f\left( g\left( x \right)  \right) -c  \right|<\epsilon 
+$$
+לכן אם נקבע את $\delta=\delta_{g}$נקבל
+$$
+0<\left| x-a \right| <\delta \implies \left| g\left( x \right) -b \right| <\delta_{f}\implies \left| f\left( g\left( x \right)  \right) -c \right| <\epsilon
+$$
+$$
+0<\left| x-a \right| <\delta \implies \left| f\left( g\left( x \right)  \right) -c \right| <\epsilon
+$$
+כדרוש \\
+$\blacksquare$
+
+\subsection*{סעיף ב}
+בלי התנאי $g\left( x \right)\neq b$, אין הבטחה ש$\left| g\left( x \right)-b \right|>0$, ואז הגדרת הגבול לא מתקיימת. המקור של הבעיה הוא ההבדל בין שני התנאים הבאים
+$$
+0<\left| x-x_{0} \right| <\delta
+$$
+מתוך הגדרת הגבול לפונקציה בנקודה
+$$
+\left| x-x_{0} \right| < \delta
+$$
+שזה התנאי שמתקבל אם מורידים את הדרישה $g\left( x \right)\neq b$ \\
+לכן ללא התנאי, לא מתקבלת התאמה להגדרת הגבול \\
+\subsection*{סעיף ג}
+נראה ש
+$$
+\lim_{ x \to -\pi } \frac{\sin \left( x+\pi \right) }{x+\pi}=1
+$$
+הוא מקרה פרטי של המשפט שהוכחנו בסעיף א כאשר
+\begin{gather*}
+g\left( x \right) = x+\pi\\ \\
+f\left( y \right)=\frac{\sin (y)}{y}  \\
+a=-\pi, b=0,c=1 
+\end{gather*}
+נבדוק את כל הדרישות של סעיף א' \\
+\subsubsection*{דרישה ראשונה}
+$$
+\lim_{ x \to a } g\left( x \right) =b
+$$
+נציב ונבדוק
+$$
+\lim_{ x \to -\pi } ~\underset{ \to -\pi }{ x }~+\underset{ \to \pi }{ \pi } = 0 \implies -\pi + \pi =0 \implies 0 =0
+$$
+\subsubsection*{דרישה שנייה}
+$$
+\lim_{ y \to b } f\left( y \right) =c
+$$
+נציב ונבדוק
+$$
+\lim_{ y \to 0 } \frac{\sin \left( y \right) }{y}= 1 
+$$
+אנחנו יודעים שזה נכון לפי זהות שראינו בכיתה
+\subsubsection*{דרישה שלישית}
+$$
+g\left( x \right) \neq b \text{ בסביבת } a
+$$
+$g\left( x \right)$ לא מוגדרת ב$-\pi$, בנקודת אי רציפות מסוג סליקה, ולכן $g\left( x \right)\neq b$
+
+מכיוון שכל הדרישות של סעיף 1 מתקיימות, אכן
+$$
+\lim_{ x \to a } f\left( g\left( x \right)  \right)=c
+$$
+כלומר
+$$
+l\lim_{ x \to -\pi } \frac{\sin \left( x+\pi \right) }{x+\pi}=1
+$$
+$\blacksquare$
+\end{document}

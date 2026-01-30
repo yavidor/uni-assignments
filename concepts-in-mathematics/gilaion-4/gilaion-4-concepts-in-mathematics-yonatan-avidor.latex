@@ -1,0 +1,84 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 4}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{תרגיל 1}
+יהיו $\left\{ X_{i} \right\}_{i\in I},\left\{ Y_{i} \right\}_{i\in I}$ שני אוספי קבוצות.
+א. הראו
+$$
+\left( \bigcup_{i\in I}X_{i} \right) \cup \left( \bigcup_{i\in I}Y_{i} \right) =\bigcup_{i\in I}\left( X_{i}\cup Y_{i} \right) 
+$$
+ב. הראו
+$$
+\left( \bigcup_{i\in I}X_{i} \right) \cap \left( \bigcup_{i\in I}Y_{i} \right) \supseteq\bigcup_{i\in I}\left( X_{i}\cap Y_{i} \right) 
+$$
+ג. תנו דוגמה לאוספים $\left\{ Y_{i} \right\}_{i\in I},\left\{ X_{i} \right\}_{i\in I}$ עבורם מתקיימת הכלה ממש בסעיף הקודם (כלומר, לא מתקיים שוויון).
+\section*{פתרון 1}
+א.
+על מנת להראות שוויון נראה הכלה דו כיוונית.
+ראשית נראה$\bigcup_{i\in I}\left( X_{i}\cup Y_{i} \right)\subseteq\left( \bigcup_{i\in I}X_{i} \right) \cup \left( \bigcup_{i\in I}Y_{i} \right)$
+יהי $a\in\bigcup_{i\in I}\left( X_{i}\cup Y_{i} \right)$ $a$ בהכרח נמצא ב(לפחות) אחד מהאיחודים, כלומר $\exists i\in I.a\in \left( X_{i}\cup Y_{i} \right)$ ניתן לומר שהמצאות $a$ באיחוד נובעת מהיותו ב(לפחות) אחד מ$X_{i},Y_{i}$, כלומר או ש$a\in \bigcup_{i\in I}X_{i}$ או ש$a\in\bigcup_{i\in I}Y_{i}$. כלומר $a\in\left( \bigcup_{i\in I}X_{i} \right) \cup \left( \bigcup_{i\in I}Y_{i} \right)$.
+כעת נראה $\left( \bigcup_{i\in I}X_{i} \right)\cup \left( \bigcup _{i\in I}Y_{i} \right)\subseteq \bigcup_{i\in I}\left( X_{i}\cup Y_{i} \right)$
+יהי $a\in \left( \bigcup_{i\in I}X_{i} \right)\cup \left( \bigcup _{i\in I}Y_{i} \right)$ כלומר או ש$a\in\left( \bigcup_{i\in I}X_{i} \right)$ או ש$a\in\left( \bigcup_{i\in I}Y_{i} \right)$
+נניח בלי הגבלת הכלליות כי $a\in\left( \bigcup_{i\in I}X_{i} \right)$ (ההוכחה זהה לחלוטין אם $a\in \bigcup_{i\in I}Y_{i}$), כלומר $\exists i\in I.a\in X_{i}$ מכאן נובע כי עבור אותו $i$ מתרחש $a\in X_{i}\cup Y_{i}$. ניתן לכתוב את המסקנה הזו כי $a\in \bigcup_{i\in I}\left( X_{i}\cup Y_{i} \right)$
+הראינו הכלה דו כיוונית ולכן מתקיים שוויון
+$\blacksquare$
+ב. יהי $a \in \bigcup_{i\in I}\left( X_{i}\cap Y_{i} \right)$ כלומר $\exists i\in I.a\in \left( X_{i}\cap Y_{i} \right)$, כלומר עבור אותו $i$ מתרחש גם $a\in X_{i}$ וגם $a\in Y_{i}$ ניתן גם לכתוב ש$a\in \bigcup_{i\in I}X_{i}$ ו$a\in \bigcup_{i\in I}Y_{i}$ ובפרט
+$$
+a\in\left( \bigcup_{i\in I}X_{i} \right) \cap \left( \bigcup_{i\in I}Y_{i} \right) 
+$$
+$\blacksquare$
+ג. 
+\begin{gather*}
+X=\left\{ \left\{ 1 \right\},\left\{ 2 \right\},\left\{ 3 \right\} \right\} \\
+Y=\left\{ \left\{ 3 \right\} ,\left\{ 2 \right\} ,\left\{ 1 \right\}  \right\} 
+\end{gather*}
+
+$$
+\underbrace{ \left( \bigcup_{i\in I}X_{i} \right) \cap \left( \bigcup_{i\in I}Y_{i} \right) }_{ \left\{ \left\{ 1 \right\} ,\left\{ 2 \right\} ,\left\{ 3 \right\}  \right\}  } \supset\underbrace{ \bigcup_{i\in I}\left( X_{i}\cap Y_{i} \right)  }_{ \left\{ 2 \right\}  }
+$$
+\section*{שאלה 2}
+הראו: לא קיימות קבוצות $X,Y\subseteq \mathbb{N}$ כך ש
+$$
+X \times Y =\left\{ \left( i,i \right)  | i\in \mathbb{N} \right\} 
+$$
+\section*{פתרון 2}
+נניח בשלילה שקיימות קבוצות $X,Y\subseteq \mathbb{N}$ כך ש
+$$
+X \times Y =\left\{ \left( i,i \right)  | i\in \mathbb{N} \right\} 
+$$
+ונגיע לסתירה.
+בקבוצה $\left\{ \left( i,i \right)  | i\in \mathbb{N} \right\}$ מופיעים כל הזוגות הסדורים של מספר עם עצמו, כלומר
+$$
+\left\{ \left( i,i \right)  | i\in \mathbb{N} \right\} =\left\{ \left( 1,1 \right) ,\left( 2,2 \right),\left( 3,3 \right) ,\left( 4,4 \right) ,\dots  \right\} 
+$$
+בפרט, על פי הארבעה שהראינו, על מנת ש$X\times Y=\left\{ \left( i,i \right)|i\in \mathbb{N} \right\}$, צריך ש
+$$
+\left\{ 1,2,3,4 \right\} \subsetneq X, \left\{ 1,2,3,4 \right\} \subsetneq Y
+$$
+אבל זה אומר שבקבוצה $X\times Y$ יש גם את האיברים
+$$
+\left( 1,2 \right) ,\left( 1,3 \right) ,\left( 1,4 \right),\left( 2,1 \right) ,\dots
+$$
+אבל האיברים הללו לא קיימים ב$\left\{ \left( i,i \right)|i\in \mathbb{N} \right\}$. סתירה
+לכן לא קיימות קבוצות $X,Y\subseteq \mathbb{N}$ כך ש
+$$
+X \times Y =\left\{ \left( i,i \right)  | i\in \mathbb{N} \right\} 
+$$
+$\blacksquare$
+\end{document}
+\blacksquare$

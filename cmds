@@ -6,4 +6,4 @@
 
 :%s/^\$\$\n\\begin{cases}/\\begin{equation*}\r\\begin{cases}
 
-%s/\\end{cases}\n\$\$/\\end{cases}\r\\end{equation*}
+:%s/\\end{cases}\n\$\$/\\end{cases}\r\\end{equation*}

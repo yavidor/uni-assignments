@@ -1,0 +1,376 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפיטסימלי 1 - 01040195\\ גליון 5}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{שאלה 1}
+הראו שהגבול $\lim_{ x \to 0 } \frac{\lfloor x \rfloor\sin x}{x}$ איננו קיים בארבע דרכים: \\
+א. בעזרת הגדרת הגבול. \\
+ב. בעזרת משפט היינה. \\
+ג. בעזרת גבולות חד צדדים. \\
+ד. בעזרת תנאי קושי.
+\section*{פתרון 1}
+נגדיר $f\left( x \right)=\frac{\lfloor x \rfloor\sin x}{x}$ \\
+א. \\
+יהי $L$ נרצה להראות שקיים $\epsilon>0$ כך שלכל $\delta>0$ קיים $x$ כך ש$0<\left| x \right|<\delta$ אבל
+$$
+\left| \frac{\lfloor x \rfloor \sin x}{x}-L \right|\geq \epsilon 
+$$
+נחלק למקרים \\
+אם $L=0$ \\
+נתבונן ב-$\epsilon=\frac{1}{1000}$
+$$
+\left| \frac{\lfloor x \rfloor\sin x }{x} \right|\geq \frac{1}{1000} 
+$$
+נניח כי $0>x\geq\max\left\{ -\frac{1}{10},-\frac{\delta}{10} \right\}$ \\
+ואכן
+$$
+0<\left| x \right| \underset{ x\geq -\frac{\delta}{2} >-\delta }{ < }\delta
+$$
+ מכיוון ש$0>x\geq-\frac{1}{10}$, $\lfloor x \rfloor=-1$
+ $$
+\left| \frac{\lfloor x \rfloor\sin x }{x} \right| = \left| \frac{-1\sin x}{x} \right| \underset{ \left| -1 \right| =\left| 1 \right|  }{ = } \left| \frac{\sin x}{x} \right|
+$$
+על פי זהות שראינו בכיתה, $\lim_{ x \to 0 } \frac{\sin x}{x}=1$ \\
+כלומר עבור $\epsilon_{1}=\frac{1}{3}$ קיים $\delta_{1}>0$ כך ש
+$$
+0<\left| x \right| <\delta_{1}\implies \left| \frac{\sin x}{x}-1 \right| < \frac{1}{3}
+$$
+$$
+\left| \frac{\sin x}{x}-1 \right|< \frac{1}{3}\implies -\frac{1}{3}< \frac{\sin x}{x}-1 < \frac{1}{3}\implies \frac{2}{3} < \frac{\sin x}{x} < \frac{4}{3} 
+$$
+לכן נבחר $x=\max\left\{ \frac{-\delta}{2}, \frac{-\delta_{1}}{2}, -\frac{1}{10} \right\}$ \\
+ואז
+$$
+\left| \frac{\sin x}{x} \right|  > \left| \frac{2}{3} \right| =\frac{2}{3}> \frac{1}{1000}=\epsilon
+$$
+ולכן $L\neq 0$ \\
+עכשיו נוכיח גם עבור $L\neq 0$ \\
+נתבונן ב $\epsilon = \frac{\left| L \right|}{2}$
+$$
+\left| \frac{\lfloor x \rfloor\sin x }{x} -L \right|\geq \frac{\left| L \right| }{2}
+$$
+בדומה לחלק הקודם, נבחר $x=\min\left\{ \frac{\delta}{2}, \frac{1}{10} \right\}$, ואכן
+$$
+0<\left| x \right| \underset{ x\leq \frac{\delta}{2}< \delta }{ < }\delta
+$$
+מכיוון ש$0<x< \frac{1}{10}$, $\lfloor x \rfloor=0$
+$$
+\left| \frac{\lfloor x \rfloor \sin x}{x}-L   \right| = \left| \frac{0\sin x}{x}-L \right|= \left| 0-L \right| =\left| L \right|  > \frac{\left| L \right| }{2}
+$$
+ולכן גם $L\neq 0$ לא אפשרי. \\
+לכן אין גבול \\
+$\blacksquare$ \\
+ב. \\
+נרצה להראות שקיימות שתי קבוצות, $\left( y_{n} \right)^{\infty}_{n=1},\left( x_{n} \right)^{\infty}_{n=1}\to 0$ כך ש
+\begin{gather*}
+f\left( x_{n} \right) \to L_{1} \\
+f\left( y_{n} \right) \to L_{2} \\
+L_{1} \neq L_{2}
+\end{gather*}
+נתבונן בסדרות הבאות אותן אנחנו מכירים מהכיתה
+\begin{gather*}
+x_{n} = \frac{1}{n} \\
+y_{n} = \frac{-1}{n}
+\end{gather*}
+שתיהן שואפות ל-$0$ ולעולם לא שוות ל-$0$, ולכן הן מתאימות בשביל שימוש במשפט היינה. \\
+נבדוק את $f\left( x_{n} \right),f\left( y_{n} \right)$ \\
+עבור כל $n>1$
+\begin{gather*}
+f\left( x_{n} \right) = \frac{\left\lfloor  x_{n}  \right\rfloor \sin x_{n}}{x_{n}}\underset{0 <\frac{1}{n} <1 \implies\left\lfloor  x_{n}  \right\rfloor =0 }{ = } \frac{0\sin x_{n}}{x_{n}}= 0 \\
+f\left( y_{n} \right) = \frac{\lfloor y_{n} \rfloor \sin \left( y_{n} \right) }{y_{n}} =\underset{ 0> -\frac{1}{n}>-1 }{ =  } \frac{-1\sin y_{n}}{y_{n}}
+\end{gather*}
+מכיוון ש$y_{n}\to 0$, ו$\lim_{ x \to 0 } \frac{\sin x}{x}=1$, $\frac{\sin y_{n}}{y_{n}}\to 1$
+$$
+\frac{-1\sin y_{n}}{y_{n}} = -\frac{\sin y_{n}}{y_{n}} \to -1
+$$
+$-1 \neq 0$ ולכן על פי משפט היינה, לפונקציה אין גבול ב$x\to 0$ \\
+$\blacksquare$
+ג. \\
+נחשב את \\
+$$
+\lim_{ x \to 0^{-} } f\left( x \right) , \lim_{ x \to 0^{+} }f\left( x \right)  
+$$
+\begin{gather*}
+\lim_{ x \to 0^{-} } f\left( x \right) = \lim_{ x \to 0^{-} } \frac{\lfloor x \rfloor \sin x}{x}=\lim_{ x \to 0^{-} } \underset{ \xrightarrow{ x\to_{0}^{-} }-1 }{ \lfloor x \rfloor } \cdot\underset{ \xrightarrow{x\to 0^{-}} 1 }{ \frac{\sin x}{x} }=-1 \cdot 1 = -1
+\end{gather*}
+\begin{gather*}
+\lim_{ x \to 0^{+} } f\left( x \right) = \lim_{ x \to 0^{+} } \frac{\lfloor x \rfloor \sin x}{x}= \lim_{ x \to 0^{+} } \underset{ \xrightarrow{ x\to 0^{+} } 0}{ \lfloor x \rfloor } \cdot \underset{ \xrightarrow{ x\to 0^{+}  }1 }{ \frac{\sin x}{x} }= 0 \cdot 1 = 0
+\end{gather*}
+מכיוון ששני הגבולות החד-צדדיים שונים, הגבול הנקודה לא קיים \\
+$\blacksquare$ \\
+ד. \\
+נראה כי קיים $\epsilon>0$ כך שלכל $\delta>0$ קיימים $0<\left| x \right|<\delta,0<\left| y \right|<\delta$ כך ש
+$$
+\left| f\left( x \right) -f\left( y \right)  \right| \geq \epsilon
+$$
+נתבונן ב-$\epsilon= \frac{1}{1000},x \geq\max\left\{ -\frac{\delta}{2}, -\frac{1}{10} \right\},y=\min\left\{ \frac{\delta}{2}, \frac{1}{10} \right\}$ \\
+ואכן
+\begin{gather*}
+0<\left| x \right| \underset{ x\geq -\frac{\delta}{2}>-\delta }{ < } \delta \\
+0<\left| y \right| \underset{ y\leq \frac{\delta}{2}<\delta  }{ < }\delta
+\end{gather*}
+על פי זהות שראינו בכיתה, $\lim_{ x \to 0 } \frac{\sin x}{x}=1$ \\
+כלומר עבור $\epsilon_{1}=\frac{1}{3}$ קיים $\delta_{1}>0$ כך ש
+$$
+0<\left| x \right| <\delta_{1}\implies \left| \frac{\sin x}{x}-1 \right| < \frac{1}{3}
+$$
+$$
+\left| \frac{\sin x}{x}-1 \right|< \frac{1}{3}\implies -\frac{1}{3}< \frac{\sin x}{x}-1 < \frac{1}{3}\implies \frac{2}{3} < \frac{\sin x}{x} < \frac{4}{3} 
+$$
+ולכן נבחר $x=\max\left\{ -\frac{\delta}{2},-\frac{\delta_{1}}{2},-\frac{1}{10} \right\}$ \\
+נבחן את $\lfloor x \rfloor,\lfloor y \rfloor$ \\
+מכיוון ש-$x$ הוא המקסימום של שלושה מספרים שליליים, $x$ שלילי. מכיוון ש-$y$ הוא המקסימום של שני מספרים חיוביים, $y$ חיובי.
+\begin{gather*}
+0>x\geq -\frac{1}{10}\implies \lfloor x \rfloor =-1\\
+0 < y \leq \frac{1}{10} \implies \lfloor y \rfloor  = 0
+\end{gather*}
+\begin{gather*}
+\left| f\left( x \right) -f\left( y \right)  \right| = \left| \frac{\lfloor x \rfloor \sin x}{x}- \frac{\lfloor y \rfloor \sin y}{y} \right| =\left| \frac{-1\sin x}{x} - \frac{0\sin y}{y}\right|   \\
+= \left| -1 \cdot  \frac{\sin x}{x}-0 \right| \underset{ \left| x \right| < \frac{\delta_{1}}{2} < \delta_{1} }{ > } \left| -1 \cdot \frac{2}{3} \right| = \left| \frac{2}{3} \right| =\frac{2}{3}> \frac{1}{1000}=\epsilon
+\end{gather*}
+\\
+$\blacksquare$
+\section*{שאלה 2}
+תהא $f:\left( a,b \right)\to \mathbb{R}$. לכל $U\subset \mathbb{R}$ נגדיר:
+$$
+f^{-1}\left( U \right) =\left\{ x \in \left( a,b \right) :f\left( x \right) \in U \right\} 
+$$
+הוכיחו כי $f$ רציפה ב-$x_{0}$ אמ"מ לכל קבוצה $U\subset \mathbb{R}$, אם $f\left( x_{0} \right)\in\text{int}\left( U \right)$, אזי $x_{0}\in\text{int}\left( f^{-1}\left( U \right) \right)$.
+\section*{פתרון 2}
+ראשית נוכיח $\impliedby$ \\
+נניח כי $f$ רציפה ב-$x_{0}$ ונרצה להוכיח שלכל קבוצה $U\subset \mathbb{R}$ מתקיים
+$$
+f\left( x_{0} \right) \in \text{int}\left( U \right) \implies x_{0}\in\text{int}\left( f^{-1}\left( U \right)  \right) 
+$$
+יהיו $U\subset \mathbb{R}$, \\
+יהי $x_{0} \in \left( a,b \right)$ כך ש-$f\left( x_{0} \right)\in\text{int}\left( U \right)$, מהגדרת $f\left( x_{0} \right)$ כנקודת פנים של $U$, קיים $\epsilon>0$ כך ש
+$$
+\left( f\left( x_{0} \right) -\epsilon,f\left( x_{0} \right) +\epsilon \right) \subseteq U
+$$
+לפי הגדרת הרציפות מתקיים
+$$
+\lim_{ x \to x_{0} } f\left( x_{0} \right) =f\left( x_{0} \right) 
+$$
+לכן, עבור $\epsilon$ קיים $\delta>0$ כך שלכל $x \in \left( x_{0}-\delta,x_{0}+\delta \right)$ (הסביבה לא נקובה, כי $f$ מוגדרת ב$x_{0}$) מתקיים
+$$
+f\left( x \right) \in \left( f\left( x_{0} \right) -\epsilon,f\left( x_{0} \right) +\epsilon \right) 
+$$
+מהגדרת קבוצת המקורות
+\begin{gather*}
+x \in \left( x_{0}-\delta,x_{0}+\delta \right)  \\
+\implies f\left( x \right) \in \left( f\left( x_{0} \right) -\epsilon,f\left( x_{0} \right) +\epsilon \right) \subseteq U \\
+\implies \left( x_{0}-\delta,x_{0}+\delta \right) \subseteq f^{-1}\left( U \right)  \\
+\implies x_{0}\in \text{int}\left( f^{-1}\left( U \right)  \right) 
+\end{gather*}
+כעת נוכיח $\implies$ \\
+ נניח כי לכל קבוצה $U\subset \mathbb{R}$ מתקיים
+$$
+f\left( x_{0} \right) \in \text{int}\left( U \right) \implies x_{0}\in\text{int}\left( f^{-1}\left( U \right)  \right) 
+$$
+נרצה להוכיח כי $f$ רציפה \\
+יהי $\epsilon>0$, תהא $x_{0}\in \left( a,b \right)$, נבחר $U=\left( f(x_{0})-\epsilon,f(x_{0})+\epsilon \right)$ נרצה למצוא $\delta>0$ כך שלכל $x \in \left( a,b \right)$ המקיים $\left| x-x_{0} \right|<\delta$ מתקיים
+$$
+\left| f\left( x \right) -f\left( x_{0} \right)  \right| <\epsilon
+$$
+מכיוון ש$f\left( x_{0} \right)\in\text{int}\left( U \right)$, $x_{0} \in\text{int}\left( f^{-1}\left( U \right) \right)$, כלומר, קיים $\delta'>0$ כך ש
+$$
+\left( x_{0}-\delta',x_{0}+\delta' \right) \subseteq f^{-1}\left( U \right) 
+$$
+כלומר כל נקודת $x \in \left( x_{0}-\delta',x_{0}+\delta' \right)$ היא מקור של $f$ כך שהתמונה שלו היא איבר ב-$U$, ולכן
+$$
+\left| x-x_{0} \right| <\delta' \implies f\left( x \right) \in \left( f\left( x_{0} \right) -\epsilon,f\left( x_{0} \right) +\epsilon \right) 
+$$
+נבחר $\delta=\delta'$ ונקבל
+$$
+\left| x-x_{0} \right| <\delta \implies \left| f\left( x \right) -f\left( x_{0} \right)  \right| <\epsilon
+$$
+כנדרש \\
+$\blacksquare$
+\section*{שאלה 3}
+תהא $f:\left( a,b \right)\to \mathbb{R}$ ותהא $x_{0}\in \left( a,b \right)$. הוכיחו כי התכונות הבאות שקולות: \\
+א. $f$ רציפה ב-$x_{0}$ \\
+ב. קיימת פונקציה $\epsilon:A\to \mathbb{R}$, מוגדרת בסביבה כלשהי של $0$, רציפה ב-$0$, המקיימת $\epsilon \left( 0 \right)=0$, כך ש:
+$$
+f\left( x \right) =f\left( x_{0} \right) +\epsilon \left( x-x_{0} \right) 
+$$
+\section*{פתרון 3}
+ראשית נוכיח א $\impliedby$ ב \\
+נניח כי $f$ רציפה ב-$x_{0}$, נרצה להוכיח כי קיימת פונקציה $\epsilon:A\to \mathbb{R}$, מוגדרת בסביבה כלשהי של $0$, רציפה ב-$0$, המקיימת $\epsilon \left( 0 \right)=0$, כך ש:
+$$
+f\left( x \right) =f\left( x_{0} \right) +\epsilon \left( x-x_{0} \right) 
+$$
+
+$f$ רציפה ב-$x_{0}$ ולכן \\
+יהי $\epsilon_{1}>0$ קיים $\delta_{1}>0$ כך שלכל $x \in \left( x_{0}-\delta_{1},x_{0}+\delta_{1} \right)$ מתקיים
+$$
+\left| f\left( x \right) -f\left( x_{0} \right)  \right| <\epsilon_{1}
+$$
+נגדיר פונקציה $\epsilon \left( x \right)$ בדרך הבאה
+\begin{gather*}
+\epsilon :\left( -\delta_{1},\delta_{1} \right) \to \mathbb{R}\\
+\epsilon \left( h \right) = f\left( h+x_{0} \right) -f\left( x_{0} \right) 
+\end{gather*}
+נראה שאכן כל התנאים מתקיימים, \\
+הפונקציה מוגדרת לסביבת $\delta_{1}$ של $0$, נראה ש $\epsilon \left( 0 \right)=0$
+$$
+\epsilon \left( 0 \right) =f\left( 0+x_{0} \right) -f\left( x_{0} \right) =f\left( x_{0} \right) -f\left( x_{0} \right) =0
+$$
+נראה רציפות ב-$0$
+$$
+\lim_{ h \to 0 } \epsilon \left( h \right) = \lim_{ h \to 0 } f\left( h+x_{0} \right) - f\left( x_{0} \right) 
+$$
+מכיוון ש$f$ רציפה ב$x_{0}$
+$$
+\lim_{ h \to 0 } f\left( h+x_{0} \right)=f\left( x_{0} \right) 
+$$
+ולכן מאריתמטיקת גבולות (חיסור)
+$$
+\lim_{ h \to 0 } f\left( h+x_{0} \right) -f\left( x_{0} \right) =f\left( x_{0} \right) -f\left( x_{0} \right) =0=\epsilon \left( 0 \right) 
+$$
+עכשיו נותר רק להראות ש
+$$
+f\left( x \right) =f\left( x_{0} \right) +\epsilon \left( x-x_{0} \right)
+$$
+נציב $h=x-x_{0}$בפונקציה $\epsilon$ ונקבל
+$$
+f\left( x \right) = f\left( x_{0} \right) +f\left( x-x_{0}+x_{0} \right) -f\left( x_{0} \right) = f\left( x_{0} \right) +f\left( x \right) -f\left( x_{0} \right) =f\left( x \right) 
+$$
+כעת נוכיח ב $\impliedby$ א \\
+נניח כי כי קיימת פונקציה $\epsilon:A\to \mathbb{R}$, מוגדרת בסביבה כלשהי של $0$, רציפה ב-$0$, המקיימת $\epsilon \left( 0 \right)=0$, כך ש:
+$$
+f\left( x \right) =f\left( x_{0} \right) +\epsilon \left( x-x_{0} \right) 
+$$
+ונרצה להוכיח ש-$f$ רציפה ב-$x_{0}$ \\
+נתבונן בגבול
+$$
+\lim_{ x \to x_{0} } f\left( x \right)= 
+$$
+מהנתון $f\left( x \right)=f\left( x_{0} \right)+\epsilon \left( x-x_{0} \right)$, ולכן
+$$
+\lim_{ x \to x_{0}} f\left( x \right)=  \lim_{ x \to x_{0} } f\left( x_{0} \right)  +\epsilon \left( \underset{ \to 0 }{ x-x_{0} } \right) =\lim_{ x \to x_{0} } f\left( x_{0} \right) +\underset{ \to 0 }{ \epsilon \left( 0 \right)  } = f\left( x_{0} \right) 
+$$
+כלומר קיים ל$f$ גבול ב$x_{0}$ והגבול הוא $f\left( x_{0} \right)$, אזי $f$ רציפה ב-$x_{0}$ \\
+$\blacksquare$
+\section*{שאלה 4}
+תהי $f:\left( a,b \right)\to \mathbb{R}$ רציפה המקיימת $\lim_{ x \to a^{+} }f\left( x \right)=\lim_{ x \to b^{-} }=L$. הוכיחו כי $f$ לא חח"ע.
+\section*{פתרון 4}
+נגדיר פונקציה $g$ כ"הרחבה" של $f$
+\begin{gather*}
+g\left( x \right) :\left[ a,b \right] \to \mathbb{R} \\
+g\left( x \right) =\begin{cases}
+f\left( x \right)  & x \in \left(  a,b\right)  \\
+L & x=a\lor x=b
+\end{cases}
+\end{gather*}
+$g$ רציפה כי $f$ בתחום הגדרתה ומהנתון ש$\lim_{ x \to a^{+} }f\left( x \right)=\lim_{ x \to b^{-} }=L$ \\
+ממשפט ויירשטראס, ל$g$ יש נקודת מקסימום שנסמנה $M$, ונקודת מינימום שנסמנה $m$. \\
+נגדיר $x_{M}\in \left[ a,b \right]$ בתור הנקודה הקטנה ביותר המקיימת $g\left( x_{M}\right)=M$ ואת $x_{m}\in \left[ a,b \right]$ בתור הנקודה הקטנה ביותר המקיימת $g\left( x_{m} \right)=m$. \\
+נחלק למקרים לפי הערכים של $m,M$ \\
+אם $m=M=L$ אזי $g$ היא הפונקציה הקבועה $g\left( x \right)=L$ ולכן גם $f$ היא הפונקציה הקבועה $f\left( x \right)=L$, ועל כן לא חח"ע \\
+אם $M\neq m=L$, אזי $x_{m}=a$. נסמן $y:= \frac{M+m}{2}$ את נקודת האמצע בין $m$ ל-$M$. ממשפט ערך הביניים קיים $a<x_{1}<x_{M}$ כך ש$g\left( x_{1} \right)=y$. ממשפט ערך הביניים קיים גם $x_{M}<x_{2}<b$ כך ש$g\left( x_{2} \right)=y$, $x_{1} \neq x_{2}$ כי הם נמצאים בקטעים זרים, $x_{1} \in \left( a,x_{M} \right),x_{2}\in \left( x_{M},b \right)$. \\
+מכיוון ש $x_{1},x_{2} \in \left( a,b \right)$
+$$
+g\left( x_{1} \right) =f\left( x_{1} \right) =g\left( x_{2} \right) =f\left( x_{2} \right) =y
+$$
+ולכן $f$ לא חח"ע \\
+אם $m\neq M=L$ אזי $x_{M}=a$, נסמן $y:= \frac{M+m}{2}$ את נקודת האמצע בין $m$ ל-$M$. ממשפט ערך הביניים קיים $a<x_{1}<x_{m}$ כך ש$g\left( x_{1} \right)=y$. ממשפט ערך הביניים קיים גם $x_{M}<x_{2}<b$ כך ש$g\left( x_{2} \right)=y$, $x_{1} \neq x_{2}$ כי הם נמצאים בקטעים זרים, $x_{1} \in \left( a,x_{m} \right),x_{2}\in \left( x_{m},b \right)$. \\
+מכיוון ש $x_{1},x_{2} \in \left( a,b \right)$
+$$
+g\left( x_{1} \right) =f\left( x_{1} \right) =g\left( x_{2} \right) =f\left( x_{2} \right) =y
+$$
+ולכן $f$ לא חח"ע \\
+אם $m\neq L,M\neq L,m\neq M$, אזי $m,M\in \left( a,b \right)$. נניח בה"כ כי $x_{M}>x_{m}$ (במצב ההפוך, נהפוך את המיקומים שלהם בכל אי-שיוויון בהמשך ההוכחה). \\
+נסמן $y:= \frac{L+m}{2}$ את נקודת האמצע בין $m$ ל-$L$. ממשפט ערך הביניים קיים $a<x_{1}<x_{m}$ כך ש$g\left( x_{1} \right)=y$, ממשפט ערך הביניים קיים $x_{m}< x_{2} <x_{M}$ כך ש$g\left( x_{2} \right)=y$ \\
+ $x_{1} \neq x_{2}$ כי הם נמצאים בקטעים זרים, $x_{1} \in \left( a,x_{m} \right),x_{2}\in \left( x_{m},x_{M} \right)$. \\
+מכיוון ש $x_{1},x_{2} \in \left( a,b \right)$
+$$
+g\left( x_{1} \right) =f\left( x_{1} \right) =g\left( x_{2} \right) =f\left( x_{2} \right) =y
+$$
+לכן $f$ לא חח"ע \\
+הוכחנו לכל אפשרות. \\
+$\blacksquare$
+\section*{שאלה 5}
+תהי $f:(a,\infty)\to \mathbb{R}$ רציפה, כך שהגבולות $\lim_{ x \to a^{+} }f(x)$ ו-$\lim_{ x \to \infty }f\left( x \right)$ קיימים וסופיים. \\
+א. הוכיחו כי $f$ רציפה במ"ש \\
+ב. אם $\lim_{ x \to a^{+} }f(x)=\lim_{ x \to \infty }f(x)$ הוכיחו כי $f$ מקבלת מינימום או מקסימום. \\
+ג. נגדיר את הפונקציה $f:\left( 0,\infty \right)\to \mathbb{R}$ ע"י:
+$$
+f\left( x \right) =\left( 1+x \right)^{\frac{1}{x}}+\left( 1+ \frac{1}{x} \right)^{x}
+$$
+הוכיחו כי $f$ רציפה במ"ש ומקבלת מקסימום גלובלי.
+\section*{פתרון 5}
+נגדיר $L_{1}:= \lim_{ x \to a^{+} }f\left( x \right), L_{2}:=\lim_{ x \to \infty }f\left( x \right)$ \\
+נגדיר פונקציה $g$ כ"הרחבה" של $f$ (בדומה לשאלה 4)
+\begin{gather*}
+g\left( x \right) :\left[ a,\infty \right) \to \mathbb{R} \\
+g\left( x \right) =\begin{cases}
+f\left( x \right)  & x \in \left(  a,\infty\right)  \\
+L_{1} & x=a
+\end{cases}
+\end{gather*}
+יהי $\epsilon>0$, נרצה למצוא $\delta>0$ כך שלכל $x,y\in \left[ a,\infty \right)$ המקיימים $\left| x-y \right|<\delta$ מתקיים
+$$
+\left| f\left( x \right) -f\left( y \right)  \right| <\epsilon
+$$
+מתנאי קושי לגבול באינסוף, עבור $\epsilon$ קיים $N>a$ כך שלכל $x,y>N$ מתקיים
+$$
+\left| f\left( x \right) -f\left( y \right)  \right| <\epsilon
+$$
+נתבונן בקטע $\left[ a,N+1 \right]$, $g$ רציפה בקטע הזה, ולכן לפי משפט קנטור היינה, בגלל שזה קטע סגור, היא גם רציפה במ"ש, לכן עבור $\epsilon$ קיים $\delta_{1}>0$ כך שלכל $x,y\in \left[ a,N+1 \right]$ המקיימים $\left| x-y \right|<\delta_{1}$ מתקיים
+$$
+\left| g\left( x \right) -g\left( y \right)  \right| <\epsilon
+$$
+נחבר את התנאים שלנו ועל כן נבחר $\delta=\min\left\{ 1,\delta_{1} \right\}$ \\
+בגלל ש-$g$ הרחבה של $f$, זה נכון על כל $g$ ועל כן על כל $f$ \\
+ב. \\
+נגדיר $L=L_{1}=L_{2}$ \\
+אם $f\left( x \right)=L$, אז כל נקודה היא גם המינימום וגם המקסימום, כי זו הפונקציה הקבועה. \\
+עכשיו עבור פונקציה לא קבועה \\
+מכיוון שהפונקציה לא קבועה קיים $b\in \left( a,\infty \right)$ כך ש $f\left( b \right)\neq L$ \\
+נסתכל על הקטע הסגור $\left[ a,b \right]$. \\
+על פי משפט ווירשטראס $g\left( x \right)$ מקבלת שם מקסימום ומינימום, ולפחות אחד מהם לא נמצא ב$g\left( a \right)$ כי $f$ לא פונקציה קבועה, ולכן גם $f\left( x \right)$ מקבלת מינימום ומקסימום ב$\left( a,b \right]$ \\
+לכן אם $f\left( b \right)>L$, אחרי $b$, $f\left( x \right)$ צריכה בסופו של דבר לרדת על מנת "להתקרב" ל-$L$, ואז גם אם אין מינימום, עדיין יש מקסימום \\
+אם $f\left( b \right)<L$, אחרי $b$, $f\left( x \right)$ צריכה בסופו של דבר לעלות על מנת "להתקרב" ל-$L$ ואז גם אם אין מקסימום עדיין יש מינימום. \\
+ג. \\
+נתבונן בפונקציה
+$$
+f\left( x \right) =\left( 1+x \right)^{\frac{1}{x}}+\left( 1+ \frac{1}{x} \right)^{x}
+$$
+ניתן לכתוב אותה מחדש בצורה שקולה בדרך הבאה
+$$
+f\left( x \right) = e^{\ln \left( \left( 1+x \right)^{\frac{1}{x}} \right) } + e^{ \ln\left( 1+ \frac{1}{x} \right)  }
+$$
+מכאן, $f$ רציפה כהרכבה וסכום של פונקציות אלמנטריות \\
+נמצא את הגבולות בקצוות של תחום ההגדרה של $f$
+
+$$
+\lim_{ x \to 0^{+} } f\left( x \right) = \lim_{ x \to 0^{+} } \underset{ \to e }{ \left( 1+x \right)^{\frac{1}{x}} } + \underset{ \to 1 }{ \left( 1+ \frac{1}{x} \right)^{x} } = e+1
+$$
+הגבול קיים וסופי
+$$
+\lim_{ x \to \infty } f\left( x \right) = \lim_{ x \to \infty } \underset{ \to 1 }{ \left( 1+x \right)^{\frac{1}{x}} } + \underset{ \to e }{ \left( 1+ \frac{1}{x} \right)^{x} } = e+1
+$$
+הגבול קיים וסופי \\
+מכאן על פי סעיף א', $f$ רציפה במ"ש \\
+מכיוון שהגבולות גם שווים, על פי סעיף ב' קיים מינימום או מקסימום. על מנת לבדוק אם קיים מקסימום, נבדוק אם קיימת נקודה $x_{0}\in \left( 0,\infty \right)$ שעבורה $f\left( x_{0} \right)>e+1$ \\
+נתבונן בנקודה $x=1$
+$$
+f\left( 1 \right) = \left( 1+1 \right)^{1} + \left( 1+1 \right)^{1}=4>e+1
+$$
+ולכן קיימת נקודת מקסימום \\
+$\blacksquare$
+\end{document}

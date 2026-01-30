@@ -1,0 +1,284 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפיטסימלי 1 - 01040195\\ גליון 6}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\section*{שאלה 1}
+עבור אילו ערכי $p$ ו-$q>0$ הפונקציה
+$$
+f\left( x \right) =\begin{cases}
+\left| x \right| ^{p}\cos \left( \frac{\pi}{\left| x \right| ^{q}} \right)  & x\neq 0 \\
+0 & x=0
+\end{cases}
+$$
+רציפה באפס? גזירה באפס? גזירה ברציפות באפס?
+\section*{פתרון 1}
+נבדוק רציפות \\
+נתבונן בגבול של הפונקציה כש-$x$ שואף ל-$0$ \\
+$$
+\lim_{ x \to 0 } \left| x \right| ^{p}\cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) 
+$$
+על מנת שהפונקציה תהיה רציפה ב-$0$ נדרוש כי הגבול יהיה שווה ל-$0$ \\
+נפרק למקרים על פי ערכי $p$ \\
+עבור $p>0$
+$$
+\lim_{ x \to 0 } \left| x \right| ^{p} = 0
+$$
+בנוסף, נטען כי $\lim_{ x \to 0 } \cos \left( \frac{\pi}{\left| x \right|^{q}} \right)$ לא קיים. \\
+בדומה למה שראינו בכיתה עם $\sin \left( \frac{1}{x} \right)$, נשתמש בקריטריון היינה \\
+נגדיר שתי סדרות
+\begin{gather*}
+x_{n} = \sqrt[q]{\frac{1}{2n}}\xrightarrow{ n\to \infty } \sqrt[q]{0}= 0 \\
+y_{n}=\sqrt[q]{\frac{1}{2n+1}} \xrightarrow{n\to \infty  } \sqrt[q]{0} = 0
+\end{gather*}
+נתבונן ב-$\cos\left( \frac{\pi}{\left| x_{n} \right| ^{q}} \right)$ ו-$\cos\left( \frac{\pi}{\left| y_{n} \right| ^{q}} \right)$
+\begin{gather*}
+\lim_{ n \to \infty } \cos \left( \frac{\pi}{\left| x_{n} \right| ^{q}} \right) =\lim_{ n \to \infty } \cos\left( \frac{\pi}{\left| \sqrt[q]{ \frac{1}{2n} } \right| ^{q}} \right) \\ 
+\underset{ \sqrt{x}>0 }{ = }\lim_{ n \to \infty } \cos\left( \frac{\pi}{ \sqrt[q]{ \frac{1}{2n} }  ^{q}} \right)  \\
+\underset{ \sqrt[q]{x}^{q}=x }{ = }\lim_{ n \to \infty } \cos\left( \frac{\pi}{  \frac{1}{2n} } \right) \\
+=\lim_{ n \to \infty } \cos \left( 2n\pi \right)  =1
+\end{gather*}
+ובצורה דומה
+\begin{gather*}
+\lim_{ n \to \infty } \cos \left( \frac{\pi}{\left| y_{n} \right| ^{q}} \right) =\lim_{ n \to \infty } \cos\left( \frac{\pi}{\left| \sqrt[q]{ \frac{1}{2n+1} } \right| ^{q}} \right) \\ 
+=\lim_{ n \to \infty } \cos\left( \frac{\pi}{ \sqrt[q]{ \frac{1}{2n+1} }  ^{q}} \right)  \\
+=\lim_{ n \to \infty } \cos\left( \frac{\pi}{  \frac{1}{2n+1} } \right) \\
+=\lim_{ n \to \infty } \cos \left( (2n+1)\pi \right)  =-1
+\end{gather*}
+$\lim_{ n \to \infty }\cos\left( \frac{\pi}{\left| x_{n} \right| ^{q}} \right)\neq \lim_{ n \to \infty }\cos\left( \frac{\pi}{\left| y_{n} \right| ^{q}} \right)$ אבל $\lim_{ n \to \infty }x_{n}=\lim_{ n \to \infty }y_{n}=0$, על פי היינה זה אומר שלא קיים $\lim_{ x \to 0 }\cos\left( \frac{\pi}{\left| x\right| ^{q}} \right)$ \\
+וידוע כי $\cos$ חסומה בין $1$ ל-$-1$, ולכן "חסומה כפול אפסה"
+$$
+\lim_{ x \to 0 } \underset{ \to 0 }{ \left| x \right| } ^{p}~~\underset{ \text{Bounded} }{ \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) } = 0
+$$
+כלומר עבור $p>0$, לכל $q>0$ $f$ רציפה ב-$0$ \\
+עבור $p<0$ \\
+נשתמש באותן סדרות $x_{n}$, $y_{n}$
+\begin{gather*}
+\lim_{ n \to \infty } f\left( x_{n} \right)  \\
+=\lim_{ n \to \infty } \left| \sqrt[q]{\frac{1}{2n}} \right|^{p}\cdot \cos \left( \frac{\pi}{\left| \sqrt[q]{\frac{1}{2n}} \right| ^{q}} \right)  \\
+= \lim_{ n \to \infty }  \frac{\overbrace{ \cos \left( 2\pi n \right) }^{ \to 1 }}{\underbrace{ \left(\sqrt[q]{\frac{1}{2n}} \right)^{-p} }_{ \to 0 }} \\
+= \infty
+\end{gather*}
+\begin{gather*}
+\lim_{ n \to \infty } f\left( y_{n} \right)  \\
+=\lim_{ n \to \infty } \left| \sqrt[q]{\frac{1}{2n+1}} \right|^{p}\cdot \cos \left( \frac{\pi}{\left| \sqrt[q]{\frac{1}{2n+1}} \right| ^{q}} \right)  \\
+= \lim_{ n \to \infty }  \frac{\overbrace{ \cos \left( \left( 2n+1 \right) \pi \right) }^{ \to -1 }}{\underbrace{ \left(\sqrt[q]{\frac{1}{2n+1}} \right)^{-p} }_{ \to 0 }} \\
+= -\infty
+\end{gather*}
+שני הגבולות שונים ולכן כש$p<0$, לכל $q>0$, $f$ לא רציפה \\
+עבור $p=0$
+$$
+\lim_{ x \to 0 } \left| x \right| ^{0}=\left| x \right| ^{0}=1
+$$
+ולכן
+$$
+\lim_{ x \to 0 } \left| x \right| ^{0} \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) = \lim_{ x \to 0 } \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) =\text{D.N.E}
+$$
+ולכן כאשר $p=0$, לכל $q>0$, $f$ לא רציפה ב-$0$ \\
+לסיכום, קיבלנו שכל $p>0$, לכל $q>0$. $f$ רציפה \\
+ \\
+נעבור לגזירות \\
+נתעניין רק כש$p>0$ כי רק שם הפונקציה רציפה ב-$0$ ופונקציה לא רציפה היא בהכרח לא גזירה. \\
+נבחן את הגבול
+$$
+\lim_{ x \to 0 } \frac{\left| x \right| ^{p}\cdot \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) }{x}=\lim_{ x \to 0 } \left| x \right| ^{p-1}\cdot\cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) 
+$$
+נגדיר $k:=p$ ונראה כי
+$$
+\lim_{ x \to 0 } \left| x \right| ^{k} \cdot \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right)
+$$
+כפי שראינו, הגבול הנ"ל קיים רק כש-$k>0$, ובמצב הזה הוא $0$ כלומר כש$p-1>0$, מכאן שהגבול הנ"ל קיים רק כש$p>1$ \\
+נעבור לגזירות ברציפות \\
+על מנת לבדוק את זה, נמצא את הנגזרת של $f$, נניח $p>1$ כי רק אז הנגזרת קיימת
+\begin{gather*}
+f'\left( x \right) =\left( \left| x \right|^{p} \cdot  \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) \right)' = \left( \left| x \right| ^{p} \right)'\cdot \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) + \left( \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right)  \right)'\cdot \left( \left| x \right| ^{p} \right) 
+\end{gather*}
+נחשב את הנגזרות
+\begin{gather*}
+\left( \left| x \right| ^{p} \right)' =p\left| x \right| ^{p-1} \\
+\left( \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right)  \right)'=-\sin \left( \frac{\pi}{\left| x \right| ^{q}} \right) \cdot \frac{-\pi \cdot q\left| x \right| ^{q-1}}{\left| x \right| ^{2q}}=-\sin \left( \frac{\pi}{\left| x \right| ^{q}} \right) \cdot -\pi \cdot q \left| x \right|^{-q-1}
+\end{gather*}
+לכן
+\begin{gather*}
+f'\left( x \right) 
+=p\left| x \right| ^{p-1}\cdot \cos \left( \frac{\pi}{\left| x \right| ^{q}} \right) -\sin \left( \frac{\pi}{\left| x \right| ^{q}} \right)\cdot -\pi \cdot q\left| x \right|^{-q-1}\cdot \left| x \right|^{p} \\
+\end{gather*}
+נתבונן בגבול
+$$
+\lim_{ x \to 0 } p\left| x \right| ^{p-1}\cdot \cos \left( \frac{\pi}{\left| x \right| ^{p}} \right) -\sin \left( \frac{\pi}{\left| x \right| ^{q}} \right) \cdot-\pi \cdot q\left| x \right| ^{-q-1}\cdot \left| x \right| ^{p}
+$$
+על מנת שהפונקציה תהיה גזירה ברציפות ב-$0$, נדרוש שהגבול הנ"ל יהיה $0$. \\
+בגלל שהביטויים ב$\cos$ וב$\sin$ זהים, ו$\sin$ ו$\cos$ מתאפסים במקומות שונים ($2k\pi$ ל$\sin$ ו$2k\pi+\frac{\pi}{2}$ ל$\cos$), נדרוש שהחלק השנים בכל ביטוי ישאף לאפס, כלומר $p\left| x \right|^{p-1}\xrightarrow{ x \to 0 }0$ ו-$-\pi q\left| x \right|^{p-q-1}\xrightarrow{ x\to 0 } 0$ \\
+על מנת שזה יקרה, נצטרך שהמעריך יהיה חיובי, כלומר מהצד השמאלי של הביטוי צריך ש$p>1$ (וזה כבר המצב), בעוד שמהצד הימני $p-q-1>1$ כלומר $p>q+1$
+לכן, על מנת שהפונקציה תהיה גזירה ברציפות ב-$0$ צריך ש
+$$
+p>q+1
+$$
+\section*{שאלה 2}
+א. יהיו $a\neq 0$ ו$n\in \mathbb{N}$ מספר זוגי. \\
+הוכיחו כי $\left( x+a \right)^{n}=a^{n}+x^{n}$ מתקיים אם ורק אם $x=0$. \\
+ב. יהיו $a\neq 0$ ו$2<n\in \mathbb{N}$ מספר אי-זוגי. \\
+הוכיחו כי $\left( x+a \right)^{n}=x^{n}+a^{n}$ מתקיים אם ורק אם $x=0$ או $x=-a$
+\section*{פתרון 2}
+ראשית נוכיח $\impliedby$ \\
+נניח כי $\left( x+a \right)^{n}=a^{n}+x^{n}$, נרצה להוכיח כי $x=0$ \\
+נגדיר $f\left( x \right)=\left( x+a \right)^{n}-x^{n}-a^{n}$, מספיק להוכיח ש
+$$
+f\left( x \right) =0 \iff x =0
+$$
+נתבונן בנגזרת של $f$
+$$
+f'\left( x \right) =n\left( x+a \right) ^{n-1}-nx^{n-1}
+$$
+נשווה את הנגזרת ל$0$
+$$
+n\left( x+a \right) ^{n-1}-nx^{n-1}\implies n\left( x+a \right) ^{n-1}=nx^{n-1}\implies \left( x+a \right) ^{n-1}=x^{n-1}
+$$
+מכיוון ש$n$ זוגי, $n-1$ אי-זוגי. בחזקות אי-זוגיות $a^{n}=b^{n}\iff a=b$ ולכן
+$$
+x+a=x\implies a=0
+$$
+סתירה לנתון ש$a\neq 0$, לכן הנגזרת של $f$ אף פעם לא שווה ל-$0$, אזי $f$ מונוטונית ממש, פונקציה מונוטונית היא חח"ע, לכן מספיק להוכיח ש$f\left( 0 \right)=0$
+$$
+f\left( 0 \right) =\left( 0+a \right) ^{n}-0^{n}-a^{n}=a^{n}-a^{n}=0
+$$
+כעת נוכיח $\implies$ \\
+נניח כי $x=0$ ונראה ש$\left( x+a \right)^{n}=a^{n}+x^{n}$
+$$
+\left( 0+a \right) ^{n}=a^{n}+0^{n}\implies a^{n}=a^{n}
+$$
+קיבלנו פסוק אמת \\
+ב. \\
+כמו בסעיף נגדיר $f\left( x \right)=\left( x+a \right)^{n}-x^{n}-a^{n}$ ונשווה את הנגזרת ל$0$ 
+$$
+n\left( \left( x+a \right) ^{n-1}-x^{n-1} \right) =0 \implies \left( x+a \right) ^{n-1}-x^{n-1}=0\implies \left( x+a \right) ^{n-1}=x^{n-1}
+$$
+מכיוון ש$n$ אי-זוגי, $n-1$ זוגי. בחזקות זוגיות $a^{n}=b^{n}\iff a=\pm b$ ולכן
+$$
+\left( x+a \right)^{n-1}= x^{n-1}\implies x=-x-a \lor x=x+a
+$$
+מכיוון ש$a\neq 0$, הנגזרת מתאפסת אם ורק אם $x= -\frac{a}{2}$ \\
+כעת נניח בשלילה כי קיים ל-$f$ שורש שאינו $-a$ או $0$, נסמנו ב$x_{0}$ \\
+לפי משפט רול, בין הנקודה $x_{0}$ ל$-a$ קיימת נקודה בה הנגזרת מתאפסת, וכך גם בין הנקודה $x_{0}$ ל$-a$, בסתירה לכך שהראינו שהנגזרת מתאפסת אך ורק בנקודה אחת. \\
+כעת נוכיח $\implies$ \\
+נניח כי $x \in \left\{ 0,-a \right\}$ ונראה ש$\left( a+x \right)^{n}=a^{n}+x^{n}$ \\
+עבור $x=0$
+$$
+\left( a+0 \right) ^{n}=a^{n}+0^{n}
+$$
+עבור $x=-a$
+$$
+\left( a-a \right) ^{n}=a^{n}+\left( -a \right) ^{n}
+$$
+מכיוון שעבור $n$ אי זוגי $a^{n}=\left( -a \right)^{n}$ מתקיים
+$$
+\left( 0 \right) ^{n}=0=a^{n}+\left( -a \right) ^{n}=a^{n}-a^{n}=0
+$$
+$\blacksquare$
+\section*{שאלה 3}
+תהא $f:\mathbb{R}\to \mathbb{R}$ גזירה ברציפות. נניח שמתקיים $\lim_{ n \to \infty } \frac{f\left( n^{2} \right)}{n^{2}}=\infty$.
+הוכיחו שקיימת סדרה $c_{n}\to \infty$ כך ש$f'\left( c_{n} \right)\to \infty$
+\section*{פתרון 3}
+צריך להוכיח שקיימת סדרה $c_{n}\to \infty$ כך ש$f'\left( c_{n} \right)\to \infty$ \\
+נגדיר את הסדרה $c_{n}$ בדרך הבאה \\
+לכל $n$, $c_{n}$ תהיה הנקודה $c$ הנתונה הנתונה ממשפט לגרנז' בקטע $\left[ 0,n^{2} \right]$ כך ש
+$$
+f'\left( c \right) = \frac{f\left( n^{2} \right) -f\left( 0 \right) }{n^{2}-0}= \frac{f\left(  n^{2}\right) }{n^{2}}- \frac{f\left( 0 \right) }{n^{2}}
+$$
+נתון כי $\frac{f\left( n^{2} \right)}{n^{2}}\to \infty$, לכן $\lim_{ n \to \infty }f'\left( c_{n} \right)=\infty$ \\
+כעת צריך רק להוכיח ש$c_{n}\to \infty$. \\
+ראשית נשים לב שהיא לא שואפת ל-$-\infty$. מכיוון שיש לה אינפימום ב$0$ (כל איבר בה נמצא בקטע $\left[ 0,n^{2} \right]$). אזי $c_{n}\to \infty$ או שהיא חסומה. \\
+נניח בשלילה כי היא חסומה. \\
+מכיוון שהסדרה $c_{n}$ חסומה, על פי משפט $BW$, קיימת לה תת-סדרה מתכנסת במובן הצר $\left( c_{n_{k}} \right)^{\infty}_{k=1}$, אזי קיים $L$ כך ש$c_{n_{k}}\to L$. מכאן על פי היינה, $f'\left( c_{n_{k}} \right)\to L$, בסתירה לכך ש$f'\left( c_{n} \right)\to \infty$. \\
+$\blacksquare$
+\section*{שאלה 4}
+תהא $f:\mathbb{R}\to \mathbb{R}$ גזירה בקטע $\left( 0,\infty \right)$. נתון כי $\lim_{ x \to 0^{+} }f'\left( x \right)=\infty$. הוכיחו כי $f$ לא גזירה ב-$0$.
+\section*{פתרון 4}
+נרצה להראות כי לא קיים $f'\left( 0 \right)$, על מנת לעשות כן נראה כי לא קיים $L\in \mathbb{R}$ כך ש
+$$
+\lim_{ x \to 0 } \frac{f\left( x \right) -f\left( 0 \right) }{x-0}=L
+$$
+נתמקד בגבול החד צדדי $x\to 0^{+}$. \\
+אם הפונקציה $f$ לא רציפה ב-$0$, אזי $f$ בהכרח לא גזירה ב-$0$, לכן מעתה נניח כי $f$ רציפה ב-$0$ \\
+לכל $x \in \left( 0,\infty \right)$, $f$ גזירה ב-$\left( 0,x \right)$ ורציפה ב-$\left[ 0,x \right]$ ולכן על פי משפט לגרנז' קיימת נקודה $0<c_{x}<x$ כך ש
+$$
+f'\left( c_{x} \right) =\frac{f\left( x \right) -f\left( 0 \right) }{x}
+$$
+מסנדוויץ', כאשר $x\to 0$ גם $c_{x}\to 0$ \\
+מהנתון
+$$
+\lim_{ x \to 0^{+} } f'\left( x \right) =\infty \implies \lim_{ x \to 0^{+} } f'\left( c_{x} \right) =\infty\implies \lim_{ x \to 0^{+} } \frac{f\left( x \right) -f(0)}{x}=\infty
+$$
+לכן לא קיים $f'\left( 0 \right)$ \\
+$\blacksquare$
+\section*{שאלה 5}
+א. \\
+נגדיר $f:\left( 0,\pi \right)\to \left( -1,1 \right)$ על ידי $f\left( x \right)=\cos \left( x \right)$. השתמשו במשפט הנגזרת של פונקציה הפוכה כדי למצוא נוסחה לנגזרת של $f^{-1}$ \\
+ב. \\
+נגדיר $g:\left( -\pi,0 \right)\to \left( -1,1 \right)$ על ידי $g\left( x \right)=\cos \left( x \right)$. השתמשו במשפט הנגזרת של פונקציה הפוכה כדי למצוא נוסחה לנגזרת של $g^{-1}$. 
+\section*{פתרון 5}
+
+א. \\
+נחפש נוסחה לנגזרת של $f^{-1}$ לפי משפט הנגזרת של פונקציה הפוכה
+$$
+\forall y_{0}\in \mathrm{Im}\left( f \right) :\left( f^{-1} \right)'\left(y_{0}  \right) = \frac{1}{f'\left( f^{-1}(y_{0}) \right) } 
+$$
+$$
+\left( f^{-1} \right)'\left( y_{0} \right) =\frac{1}{-\sin \left( f^{-1}\left( y_{0} \right)  \right) }
+$$
+לפי זהויות טריגונומטריות
+$$
+\cos \left( x \right)^{2} +\sin \left( x \right)^{2} =1\implies \sin\left( x \right)^{2} = 1-\cos\left( x \right)^{2} \implies \sin \left( x \right) =\pm\sqrt{1-\cos \left( x \right)^{2} }
+$$
+$\sin \left( x \right) \iff \sin \left( x \right)>0$, ובתחום $\left( 0,\pi \right)$ $\sin$ תמיד חיובית ולכן
+$$
+-\sin \left( f^{-1}\left( y_{0} \right) \right)=-\sqrt{1-\cos\left( f^{-1}\left( y_{0} \right)  \right) ^{2}}
+$$
+נציב $f^{-1}\left( x \right)=\cos ^{-1} \left( x \right)$
+$$
+-\sin \left( \cos ^{-1}\left( y_{0} \right)  \right) =-\sqrt{1-\cos \left( \cos ^{-1}\left( y_{0} \right)  \right)^{2} }
+$$
+מכיוון ש$f\left( f^{-1} \right)=I$, $\cos \left( \cos ^{-1}\left( y_{0} \right) \right)=y_{0}$ \\
+ולכן
+$$
+\left( f^{-1} \right) '\left( y_{0} \right) = \frac{1}{-\sqrt{1-y_{0}^{2}}}
+$$
+ב. \\
+נחפש נוסחה לנגזרת של $f^{-1}$ לפי משפט הנגזרת של פונקציה הפוכה
+$$
+\forall y_{0}\in \mathrm{Im}\left( f \right) :\left( f^{-1} \right)'\left(y_{0}  \right) = \frac{1}{f'\left( f^{-1}(y_{0}) \right) } 
+$$
+$$
+\left( f^{-1} \right)'\left( y_{0} \right) =\frac{1}{-\sin \left( f^{-1}\left( y_{0} \right)  \right) }
+$$
+לפי זהויות טריגונומטריות
+$$
+\cos \left( x \right)^{2} +\sin \left( x \right)^{2} =1\implies \sin\left( x \right)^{2} = 1-\cos\left( x \right)^{2} \implies \sin \left( x \right) =\pm\sqrt{1-\cos \left( x \right)^{2} }
+$$
+$\sin \left( x \right) \iff \sin \left( x \right)>0$, ובתחום $\left( -\pi,0 \right)$ $\sin$ תמיד שלילית ולכן
+$$
+-\sin \left( f^{-1}\left( y_{0} \right) \right)=\sqrt{1-\cos\left( f^{-1}\left( y_{0} \right)  \right) ^{2}}
+$$
+נציב $f^{-1}\left( x \right)=\cos ^{-1} \left( x \right)$
+$$
+-\sin \left( \cos ^{-1}\left( y_{0} \right)  \right) =\sqrt{1-\cos \left( \cos ^{-1}\left( y_{0} \right)  \right)^{2} }
+$$
+מכיוון ש$f\left( f^{-1} \right)=I$, $\cos \left( \cos ^{-1}\left( y_{0} \right) \right)=y_{0}$ \\
+ולכן
+$$
+\left( f^{-1} \right) '\left( y_{0} \right) = \frac{1}{\sqrt{1-y_{0}^{2}}}
+$$
+\end{document}
