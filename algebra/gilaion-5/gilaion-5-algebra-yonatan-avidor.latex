@@ -129,13 +129,56 @@ $$
 \section*{שאלה 3}
 \subsection*{סעיף א'}
 יהא $V$ מרחב-וקטורי מעל $\mathbb{F}$, $W,U\subset V$ תמ"ו של $V$. נניח כי $U \cup W$ תמ"ו. הוכיחו כי $U \subset W$ או $W \subset U$
+\subsubsection*{סעיף ב'}
+תנו דוגמה למ"ו $V$ מעל שדה $F$, ותמ"ו $U_1,U_2,U_3$, כך שאף תמ"ו לא מוכל באחר, וגם $U_1 \cup U_2 \cup U_3 = V$.
 \subsection*{פתרון 3}
-נניח בשלילה כי $U \not\subset W$ ו$W \not\subset U$
+\subsection*{סעיף א'}
+נניח בשלילה כי $U \not\subset W$ ו$W \not\subset U$ אבל $U \cup W$ תמ"ו
 אזי קיימים
 \begin{gather*}
     w \in W, w \notin U \\
     u \in U, u \notin W
 \end{gather*}
+מכיוון ש$U \cup W$ תמ"ו, יש בו סגירות לחיבור וקטורים, בפרט $u+w \in U \cup W$\\
+נגדיר $z := u + w$\\
+מכיוון ש $U \cup W$ סגור לחיבור, חייב  שלפחות אחד מהתנאים הבאים יתקיימו: \\
+$z \in U$ או $z \in W$
+אם $z \in U$
+\begin{gather*}
+    w+u = z \implies w = z - u
+\end{gather*}
+מכיוון ש-$U$ תמ"ו, הוא סגור לחיבור. כלומר
+$$
+z + \left( -u \right) \in U \implies w \in U
+$$
+אבל הגדרנו ש$w \notin U$, לכן זה לא יכול לקרות. אזי $z \notin U$
+לכן
+$
+w+u = z \implies u = z -w = z + \left( -w \right)
+$
+מכיוון ש-$W$ תמ"ו, הוא סגור לחיבור, אזי
+$$
+z+ \left( -w \right)  \in W \implies u \in W
+$$
+אבל הגדרנו ש  $u \notin W$, לכן גם זה לא יכול לקרות, אזי $z\notin W$
+מכיוון ש$z \notin U$ וגם $z \notin W$, $z \notin U \cup W$
+כלומר קיימים $u,w \in U \cup W$ כך ש$u+w \notin U \cup W$, כלומר $U \cup W$ לא סגור לחיבור, סתירה להיותו מרחב וקטורי
+\subsection*{סעיף ב'}
+נסתכל על $V=\mathbb{Z}_2^2$
+\begin{gather*}
+    U_1 = \text{sp}\{ (1,0)\}  \\
+    U_2 = \text{sp}\{ (0,1)\}  \\
+    U_3 = \text{sp}\{ (1,1)\}  \\
+\end{gather*}
+\section*{שאלה 4}
+הוכיחו/הפריכו
+א. אם $V=sp(S), U=sp(M)$, אזי $V\cap U=sp(S\cap M)$ 
+ב. יהא $V$ מ"ו מעל $\mathbb{F}$ ויהיו $u,v,w \in V$. אם קיימים סקלארים $\alpha,\beta,\gamma$, לא כולם $0$, כך שמתקיים
+\[
+\alpha u + \beta v + \gamma w = 0
+\]
+אזי $sp\{u,v\} = sp\{u,w\}$
+\section*{פתרון 4}
 
 \fancyfoot[L]{\text{214269565}}
 \end{document}

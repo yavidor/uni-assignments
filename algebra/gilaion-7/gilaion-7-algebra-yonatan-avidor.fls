@@ -1,7 +1,7 @@
-PWD /home/yavidor/uni-assignments/algebra/gilaion-5
+PWD /home/yavidor/uni-assignments/algebra/gilaion-7
 INPUT /var/lib/texmf/web2c/luahbtex/lualatex.fmt
-INPUT ./gilaion-5-algebra-yonatan-avidor.latex
-OUTPUT gilaion-5-algebra-yonatan-avidor.log
+INPUT ./gilaion-7-algebra-yonatan-avidor.latex
+OUTPUT gilaion-7-algebra-yonatan-avidor.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/lualatexquotejobname.lua
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ltluatex.lua
 INPUT /usr/share/texlive/texmf-dist/tex/luatex/luaotfload/luaotfload-main.lua
@@ -135,8 +135,8 @@ INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroma
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-INPUT ./gilaion-5-algebra-yonatan-avidor.aux
-INPUT ./gilaion-5-algebra-yonatan-avidor.aux
+INPUT ./gilaion-7-algebra-yonatan-avidor.aux
+INPUT ./gilaion-7-algebra-yonatan-avidor.aux
 INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc
 INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono12-regular.luc
 INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc
@@ -148,7 +148,7 @@ INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/miriam
 INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/miriammonoclm-boldoblique.luc
 INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/miriammonoclm-bold.luc
 INPUT /home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/miriammonoclm-bookoblique.luc
-OUTPUT gilaion-5-algebra-yonatan-avidor.aux
+OUTPUT gilaion-7-algebra-yonatan-avidor.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -173,7 +173,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr7.tfm
-OUTPUT gilaion-5-algebra-yonatan-avidor.pdf
+OUTPUT gilaion-7-algebra-yonatan-avidor.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
@@ -193,11 +193,13 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
-INPUT ./gilaion-5-algebra-yonatan-avidor.aux
+INPUT ./gilaion-7-algebra-yonatan-avidor.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

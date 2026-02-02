@@ -1,0 +1,67 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה א' 01040066 \\ גליון 7}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\section*{שאלה 3}
+תהי $A= \begin{pmatrix}1 & 3 & 2 \\ 2 & 5 & 2 \\3 & 1 & 4\end{pmatrix}$ מעל השדה $\mathbb{Z}_7$. נגדיר:
+$U$ - מרחב הפתרונות של הממ"ל $Ax = 0$.
+$W$ - מרחב העמודות של $A$.
+\begin{enumerate}
+    \item מצאו בסיס )קבוצה פורשת ובת"ל( עבור $U$ ו-$W$.
+    \item הוכיחו כי $U \oplus W = \left( \mathbb{Z}_7 \right)^3$
+    \item מצאו בסיס לחיתוך של מרחב השורות $row(A)$ ומרחב העמודות $col(A)$
+    \item מצאו את כל הוקטורים $b \in \left(\mathbb{Z}_7\right)^3$ עבורם למערכת $Ax=b$ יש פיתרון והוכיחו כי זהו תת-מרחב של $\left(\mathbb{Z}_7\right)^3$
+\end{enumerate}
+\section*{פתרון 3}
+\subsection*{סעיף 1}
+נתחיל בלדרג
+\begin{gather*}
+\begin{pmatrix}1 & 3 & 2 \\ 2 & 5 & 2 \\3 & 1 & 4\end{pmatrix}\\ \\
+\xrightarrow{R_2 \to R_2 - 2R_1, R_3 \to R_3 - 3R_1}
+\begin{pmatrix}1 & 3 & 2 \\
+0 & 6 & 5 \\
+0 & 6 & 5\end{pmatrix}\\ \\
+\xrightarrow{R_3 \to R_3 - R_2}
+\begin{pmatrix}
+    1 & 3 & 2 \\
+    0 & 6 & 5 \\
+    0 & 0 & 0
+\end{pmatrix}\\
+\xrightarrow{R_2 \to 6R_2}
+\begin{pmatrix}
+    1 & 3 & 2 \\
+    0 & 1 & 2 \\
+    0 & 0 & 0
+\end{pmatrix}\\
+\xrightarrow{R_1 \to R_1 - 3R_3}
+\begin{pmatrix}
+    1 & 0 & 3 \\
+    0 & 1 & 2 \\
+    0 & 0 & 0
+\end{pmatrix}
+\end{gather*}
+מכאן ש
+\begin{gather*}
+    x + 3z = 0 \implies x = -3z \implies x = 4z \\
+    y + 2z = 0 \implies y = -2z = y = 5z
+\end{gather*}
+ולכן נוכל לכתוב את $U$ בדרך הבאה:
+\[
+    U = \left\{\begin{pmatrix}4z\\5z\\1\end{pmatrix}\bigg\vert z\in\mathbb{Z}_7\right\} = \text{sp}\left\{ \begin{pmatrix}4\\5\\1\end{pmatrix} \right\}
+\]
+
+\fancyfoot[L]{\text{214269565}}
+\end{document}
