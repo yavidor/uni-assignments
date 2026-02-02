@@ -1,0 +1,141 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה א' 01040066 \\ גליון 5}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\section*{שאלה 1}
+\subsection*{סעיף א'}
+נתבונן $V$ הכוללת את כל הפולינומים הממשיים ממעלה קטנה או שווה $3$, תחת הפעולות הבאות:
+\begin{gather*}
+p\left(x\right) \oplus q\left(x\right) = p\left(x\right) + q(x) + x^2 \\
+\alpha \odot p(x) = \alpha p(x) + (\alpha -1)x^2
+\end{gather*}
+הוכיחו כי $V$ מרחב וקטורי מעל $\mathbb{R}$ 
+\subsection*{סעיף ב'}
+נתבונן בקבוצה $B=\left\{\left(x,y\right):x,y\in \mathbb{Z}_{11}\right\}$ תחת הפעולות:
+\begin{gather*}
+(x,y) + (z,w) = (x+z,y+w) \\
+\alpha(x,y) = (\alpha x,y)
+\end{gather*}
+האם $B$ מרחב וקטורי מעל $\mathbb{Z}_{11}$?
+\section*{פתרון 1}
+\subsection*{סעיף א'}
+נוכיח את כל האקסיומות של מרחב וקטורי \\
+יהיו $p,q,r \in \mathbb{R}_3\left[x\right]$ ו$\alpha, \beta \in \mathbb{R}$
+\begin{gather*}
+    p = a_3\cdot x^3 + a_2 \cdot x^2 + a_1 \cdot x + a_0 \\
+    q = b_3\cdot x^3 + b_2 \cdot x^2 + b_1 \cdot x + b_0 \\
+    r = c_3\cdot x^3 + c_2 \cdot x^2 + c_1 \cdot x + c_0
+\end{gather*}
+\subsubsection*{סגירות לחיבור ($\oplus$)}
+ראינו בכיתה שהדרגה של חיבור פולינומים היא לכל היותר \\
+המקסימום בין שני הפולינומים כלומר:
+\begin{gather*}
+\deg(p(x) + q(x) + x^2) \leq \max\left\{\deg(p(x)),\deg(q(x)),\deg(x^2)\right\}  \\
+= \max\left\{3,3,2 \right\} \leq 3
+\end{gather*}
+\subsubsection*{קומוטטיביות לחיבור ($\oplus$)}
+$$
+q(x) \oplus p(x) = q(x) + p(x) + x^2 \underset{\text{קומוטטיביות של חיבור}}{=} p(x) + q(x) + x^2 = p(x) \oplus q(x)
+$$
+\subsubsection*{אסוציאטיביות לחיבור ($\oplus$)}
+\begin{gather*}
+    p \oplus \left(q \oplus r  \right)= p(x) + \left(q(x) + r(x) + x^2\right) + x^2 \\
+    \underset{\text{אסוציאטיביות וקומוטטיביות בשדה}}{=} p(x)+q(x) + r(x) + 2x^2
+\end{gather*}
+\begin{gather*}
+ \left(   p \oplus q \right)\oplus r  = \left(p(x) + q(x)  + x^2\right) + r(x)+ x^2 \\
+ \underset{\text{אסוציאטיביות וקומוטטיביות בשדה}}{=} p(x)+q(x) + r(x) + 2x^2 \\
+ \implies p \oplus \left( q \oplus r \right) = \left( p \oplus q \right) \oplus r
+\end{gather*}
+\subsubsection*{קיום איבר אדיש חיבורית}
+נחפש פולינום שיהיה האיבר האדיש החיבורי $\vec{0} \in V$, נתבונן ב$\vec{0}=-x^2$
+$$
+p \oplus \left(-x^2\right) = p(x) + \left( -x^2 \right) + x^2 = p(x)
+$$
+\subsubsection*{קיום איבר נגדי}
+יהא $p \in V$, נחפש $q \in V$ כך ש-$p\oplus q = \vec{0}$ (כאשר $\vec{0}$ הוא האדיש החיבורי שמצאנו כרגע), נתבונן ב-$-p-2x^2$
+$$
+p \oplus q = p - p -2x^2 + x^2 = -x^2 = \vec{0}
+$$
+\subsubsection*{סגירות לכפל בסקלאר}
+\begin{gather*}
+\deg(\alpha \odot p) \leq \max\left\{\deg\left(\alpha p \right), \deg\left( (\alpha-1) x^2\right) \right\} \\
+\leq \max\left\{ \deg(p), deg(x^2)  \right\} = \max\{3,2  \} \leq 3
+\\ \implies \alpha \odot p \in V
+\end{gather*}
+\subsubsection*{אסוציאטיביות בכפל בסקלאר}
+\begin{gather*}
+\alpha \odot \left( \beta \odot p \right) = \alpha \cdot \left( \beta \cdot p(x) + \left( \beta-1  \right)x^2 \right) + \left(\alpha -1 \right)x^2 \\
+\underset{\text{דיסטריבוטיביות בממשיים}}{=} \alpha\beta \cdot p(x) + (\alpha\beta - \alpha)x^2 + (\alpha-1) x^2 \\
+\underset{\text{דיסטריבוטיביות בממשיים}}{=} \alpha\beta \cdot p(x) + \left( \alpha \beta -1 \right) x^2 \\
+= \left( \alpha \beta\right) \odot p
+\end{gather*}
+
+\subsubsection*{$1$ אדיש כפלי}
+נראה שהסקלאר הממשי $1$ הוא אדיש כפלי
+\begin{gather*}
+    1 \odot p = 1 \cdot p(x) + (1-1)x^2 = p(x) + 0 \cdot x^2 = p(x)
+\end{gather*}
+\subsubsection*{דיסטריבוטיביות א'}
+\begin{gather*}
+    \alpha\odot\left(p \oplus q\right) = \alpha \odot \left( p(x) + q(x) + x^2 \right) = \alpha \cdot \left(p(x)+q(x)+x^2\right)+ \left(\alpha-1 \right)x^2 \\ \\ \\
+    \left( \alpha \odot p \right) \oplus \left( \alpha \odot q \right) = \left(\alpha p(x) + \left(\alpha-1\right)x^2\right) \oplus \left(\alpha q(x) + \left(\alpha-1\right)x^2\right) \\
+    \alpha p(x) + \left( \alpha -1 \right) x^2 + \alpha q(x) + \left(\alpha-1\right)x^2 + x^2 \\
+\alpha \cdot (p(x) + q(x) +x^2) + \left( \alpha - 1 \right) x^2
+\end{gather*}
+\subsubsection*{דיסטריבוטיביות ב'}
+\begin{gather*}
+    \left(\alpha+\beta\right)\oplus p(x) = \left(\alpha+\beta\right)p(x)+\left(\alpha+\beta-1\right)x^2 \\ \\ \\
+    \left(\alpha \odot p\right) \oplus \left(\beta\odot p\right)=\alpha p(x) + \left(\alpha-1\right)x^2 + \beta p(x) + \left( \beta-1\right)x^2+x^2\\
+    =\left(\alpha+\beta\right)p(x) + \left(\alpha+\beta-1\right)x^2
+\end{gather*}
+$V$ מקיים את כל האקסיומות של מרחב וקטורי ולכן הוא מרחב וקטורי
+\subsection*{סעיף ב'}
+לא! זה לא מקיים דיסטריבוטיביות ב', נראה דוגמה
+\begin{gather*}
+\alpha = 1, \beta = 2, x = 3, y = 4 \\ \\
+\left(1+2\right)\cdot\left(3,4\right) = \left(9,4\right)\\
+\left( 1 \cdot \left(3,4\right)\right) + \left(2\cdot\left(3,4\right)\right)= \left(3,4\right)+\left(6,4\right)=\left(9,8\right)\\
+\left(9,4\right) \neq \left(9,8\right)
+\end{gather*}
+\pagebreak
+\section*{שאלה 2}
+יהא $V$ מרחב וקטורי מעל $\mathbb{F}$. בהינתן $\vec{v}\neq\vec{0},\vec{w}\in V$, נגדיר את הישר העובר דרך $\vec{w}$ בכיוון $\vec{v}$ בתור:
+$$
+L_{\vec{w},\vec{v}}=\left\{\vec{w}+t\vec{v}|t\in\mathbb{F} \right\}
+$$
+הוכיחו כל כל שני ישרים במרחב הם או זרים, או זהים, או נחתכים בנקודה אחת בדיוק.
+\section*{פתרון 2}
+יהיו $\vec{a} \neq 0,\vec{b},\vec{c} \neq 0,\vec{d}\in V$. נתבונן בשני הישרים
+\begin{gather*}
+    L_{\vec{b},\vec{a}} = \left\{\vec{b}+t\vec{a}|t\in\mathbb{F} \right\} \\
+    L_{\vec{d},\vec{c}} = \left\{\vec{d}+t\vec{c}|t\in\mathbb{F} \right\}
+\end{gather*}
+ראשית נראה כי הם יכולים להיות זרים.
+אין לי כוח
+\section*{שאלה 3}
+\subsection*{סעיף א'}
+יהא $V$ מרחב-וקטורי מעל $\mathbb{F}$, $W,U\subset V$ תמ"ו של $V$. נניח כי $U \cup W$ תמ"ו. הוכיחו כי $U \subset W$ או $W \subset U$
+\subsection*{פתרון 3}
+נניח בשלילה כי $U \not\subset W$ ו$W \not\subset U$
+אזי קיימים
+\begin{gather*}
+    w \in W, w \notin U \\
+    u \in U, u \notin W
+\end{gather*}
+
+\fancyfoot[L]{\text{214269565}}
+\end{document}
