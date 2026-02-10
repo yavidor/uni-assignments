@@ -1,0 +1,37 @@
+\documentclass[12pt, titlepage]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מועד א'}
+\author{}
+\begin{document}
+\maketitle
+\begin{questions}
+    \question
+    \begin{parts}
+        \part[10] תהא $A \subseteq \mathbb{R}$ לא ריקה וחסומה כך שלכל $x,z \in A$ ו-$y\in\mathbb{R}$, אם $x\leq y\leq z$ אזי גם $y\in A$. הוכיחו שקבוצה זו היא קטע סגור, פתוח או חצי-סגור חצי-פתוח
+        \part[8] תהיינה $f,g:\left[0,\infty\right)$ גזירות המקיימות $f\left(0\right)=g\left(0\right)$, וכמו כן $f'\left(x\right) \leq g'\left(x\right)$ לכל $x\geq 0$. הוכיחו כי $f\left(x\right) \leq g\left(x\right)$
+        \part[8][ תהא $f:\left[0,a\right)\to \mathbb{R}$ רציפה במ"ש, הוכיחו כי קיים הגבול $\lim_{x\to a^{-}} f\left(x\right)$
+        \part[9] תהא $f:\left[0,a\right) \to \mathbb{R}$ רציפה, נתון כי הגבול $\lim_{x\to a^{-}} f\left(x\right)$ קיים. הוכיחו כי $f$ רציפה במ"ש
+    \end{parts}
+    \question
+    \begin{parts}
+        \part[7] צטטו במפורש את קריטריון היינה לקיום גבול בנקודה
+        \part[8] תהא $f:\mathbb{R}\to\mathbb{R}$ פונקציה רציפה. הוכיחו כי לכל סדרה מתכנסת $\left\{x_n\right\}_{n=1}^{\infty}$ גם $\left\{f\left(x_n\right)\right\}_{n=1}^{\infty}$ מתנכסת.
+        \part[10] תהא $f:\mathbb{R}\to\mathbb{R}$ פונקציה כך שלכל סדרה מתנכסת $\left\{x_n\right\}_{n=1}^{\infty}$ גם $\left\{f\left(x_n\right)\right\}_{n=1}^{\infty}$ מתכנסת. הוכיחו כי $f$ רציפה
+    \end{parts}
+    \question
+    \begin{parts}
+        \part[10] נסחו את קריטריון קושי להתנכסות סדרות
+        \part[10] תהא $\left\{a_n\right\}_{n=1}^{\infty}$ סדרה ויהי $q\in\left(0,1\right)$ כך שלכל $n$ מתקיים $\left|a_{n+1}-a_{n}\right|\leq q^n$ הוכיחו כי $a_n$ מתכנסת.
+        \part[7] הגדירו מתי פונקציה $f:\mathbb{R}\to\mathbb{R}$ היא ליפשיצית
+        \part[8] תהא $f:\mathbb{R}\to\mathbb{R}$ פונקציה ליפשיצית עם קבוע ליפיץ $0\leq C\leq1$. הוכיחו כי קיימת נקודה יחידה $x\in\mathbb{R}$ כך ש-$f\left(x\right)=x$
+        \part[5] תהא $f:\mathbb{R}\to\mathbb{R}$ כך שההרכבה $g=f\circ f$ היא פונקציה ליפשיצית עם קבוע ליפשיץ $0\leq C\leq1$.  הוכיחו כי קיימת נקודה יחידה $x\in\mathbb{R}$ כך ש-$f\left(x\right)=x$
+    \end{parts}
+\end{questions}
+\end{document}
