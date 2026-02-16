@@ -1,0 +1,63 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 8}
+% \author{יונתן אבידור - 214269565}
+\author{yavidor}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{תרגיל 1}
+\section*{סעיף א'}
+נתונות קבוצות $A,B,C,D$ כך ש-$\left|A\right|=\left|C\right|,\left|B\right|=\left|D\right|$, הראו: $\left|A \times B\right| = \left|C\times  D\right|$
+\section*{סעיף ב'}
+נתונה קבוצה $A$ לא ריקה. הראו
+\[
+    \left|A\right| \leq \left|A \times A\right|
+\]
+\section*{סעיף ג'}
+תנו דוגמה לקבוצה $A$ כך ש-$\left|A\right|=\left|A \times A \times A\right|$
+\section*{סעיף ד'}
+תנו דוגמה לקבוצה $A$ כך ש-$\left|A\right|<\left|A \times A \times A\right|$
+\part*{פתרון 1}
+\section*{סעיף א'}
+$\left|A\right|=\left|B\right|$, ולכן קיימת פונקציה $f:A\to B$ חח"ע ועל.\\
+$\left|C\right|=\left|D\right|$, ולכן קיימת פונקציה $g:C\to D$ חח"ע ועל.\\
+נרצה להראות $\left|A\times B\right|$ = $\left|B\times C\right|$ כלומר שקיימת פונקציה חח"ע ועל עם תחום $A\times B$ וטווח $C\times D$\\
+נעשה זאת בכך שנבנה אותה ישירות
+\begin{gather*}
+    h:A\times B\to C\times D\\
+\forall a\in A,b\in B:    h\left(a,b\right)=\left(f(a),g(b)\right)
+\end{gather*}
+כעת נראה ש-$h$ חח"ע ועל
+\subsection*{חד-חד ערכית}
+יהיו $a_1,a_2\in A,b_1,b_2 \in B$ כך ש $h(a_1,b_1)=h(a_2,b_2)$
+\[
+h(a_1,b_1)=h(a_2,b_2)\implies \left(f(a_1),g(b_2)\right)=\left(f(a_2),g(b_2)\right)
+\]
+$f,g$ חח"ע ולכן:
+\begin{gather*}
+    f(a_1)=f(a_2) \implies a_1=a_2\\
+    g(b_1)=g(b_2)\implies b_1=b_2
+\end{gather*}
+ולכן $a_1=a_2, b_1=b_2$, אזי $h$ חח"ע
+\newpage
+\part*{תרגיל 2}
+\section*{סעיף א'}
+בהינתן קבוצה $A$, מצאו פונקציה חח"ע ועל בין $\mathcal{P}\left(A\right)$ ו-$\left\{0,1\right\}^A$
+\section*{סעיף ב'}
+הראו: $\left|\mathbb{N}\right|=\left|\mathbb{N}^{\mathbb{N}}\right|$
+\newpage
+\part*{תרגיל 3}
+הראו: אם $X,Y,Z$ קבוצות כך ש-$\left|X\right|<\left|Y\right|$ וגם $\left|Y\right|<\left|Z\right|$ אז $\left|X\right|<\left|Z\right|$
+\end{document}
