@@ -8,7 +8,7 @@
 \babelfont[hebrew]{rm}{Hadasim CLM}
 \babelfont[hebrew]{sf}{Miriam Mono CLM}
 \usepackage{titlesec}
-\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 1}
+\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 3}
 \author{יונתן אבידור - 214269565}
 \titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
 \begin{document}
@@ -16,98 +16,71 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot[L]{\text{214269565}}
-\section*{תרגיל 1}
-הסימונים $F$ ו-$T$ מייצגים "ערך שקר" ו"ערך אמת". \\
-הוכיחו/הפריכו כל אחת מהטענות הבאות. \\
-1. לכל $x \in \left\{ F,T \right\}$ קיים $y \in \left\{ F,T \right\}$ כך ש-$x \lor y$ אמת. \\
-2. קיים $x \in \left\{ F,T \right\}$ כך שלכל $y \in \left\{ F,T \right\}$ מתקיים ש-$x \lor y$ אמת. \\
-3. לכל $x \in \left\{ F,T \right\}$ קיים $y \in \left\{ F,T \right\}$ כך ש-$x\land y$ אמת.
-\section*{פתרון 1}
-1. כן, נסתכל על שתי האפשרויות. אם יוצא $T$ באחת השורות בעמודה הימנית, אזי הטענה נכונה.  \\
-ראשית $x=T$
+\part*{שאלה 1}
+נתונות שלוש קבוצות $X,Y,Z$. הוכיחו או הפריכו כל אחת מהטענות הבאות:
+\section*{סעיף א'}
+אם $X \in Y$ וגם $Y\subseteq Z$ אז $X\in Z$.
+\section*{סעיף ב'}
+אם $X\in Y$ וגם $Y \subseteq Z$ אז $X\subseteq Z$.
+\section*{סעיף ג'}
+אם $X \subseteq Y \cap Z$ אז: $X \subseteq Y$ וגם $Y\subseteq Z$.
+\section*{סעיף ד'}
+אם $X \subseteq Y \cup Z$ אז: $X \subseteq Y$ וגם $X\subseteq Z$.
+\section*{סעיף ה'}
+אם $X\cup Z = Y \cup Z$ אז $X=Y$.
+\newpage
+\part*{פתרון 1}
+\section*{סעיף א'}
+כן!
 $$
-\begin{array}{|c|c|c|}  
-\hline
-x & y  & x\lor y\\  
-\hline
-T & T & T  \\
-\hline
-T & F  & T\\
-\hline
-\end{array}
+Y\subseteq Z \implies \forall X\in Y : X\in Z
 $$
-ראינו שיש (אפילו כולם) $y$ שעבורו $x \lor y$ אמת כש$x$ אמת. נבדוק לגבי $x$ שקר.
+\section*{סעיף ב'}
+לא!
 $$
-\begin{array}{|c|c|c|}  
-\hline
-x & y  & x\lor y\\  
-\hline
-F & T & T  \\
-\hline
-F & F  & F\\
-\hline
-\end{array}
+X=\{1\},Y=\{\{1\}\}Z=\{\{2\},\{1\}\}
 $$
-ראינו שיש $y$ שעבורו $x \lor y$ אמת כש$x$ אמת. מכיוון שהראינו שזה אכן מתרחש לכל $x$, הטענה נכונה. \\
-2. כן, $x=T$. נסתכל על טבלת האמת עם כל $y$. אם יוצא $T$ בכל אחת מהשורות בעמודה הימנית. אזי הטענה נכונה
+\section*{סעיף ג'}
+לא!
 $$
-\begin{array}{|c|c|c|}  
-\hline
-y & y  & x\lor y\\  
-\hline
-T & T & T  \\
-\hline
-F & T  & T\\
-\hline
-\end{array}
+X=\{1\},Y=\{1,2\},Z=\{1\}
 $$
-ראינו שעבור  כל $y$ מתרחש $x\lor y$ אמת ולכן הטענה נכונה. \\
-3. לא, נביא דוגמה נגדית. \\
-בעבור $x=F$ אין $y$ כך ש $x\land y$ אמת. נוכיח באמצעות טבלת אמת
+\section*{סעיף ד'}
+לא!
 $$
-\begin{array}{|c|c|c|}  
-\hline
-x & y  & x\lor y\\  
-\hline
-F & T & F \\
-\hline
-F & F  & F\\
-\hline
-\end{array}
+X=\{1,2\},Y=\{2\},Z=\{1,3\}
 $$
-אין $y$ שעבורו $x\land y$ אמת ולכן הטענה לא נכונה
-\section*{תרגיל 2}
-1. הראו שלכל $p$ ראשוני ו-$n$ טבעי מתקיים כי $n$ מתחלק ב-$p$ אמ"מ $n^{2}$ מתחלק ב-$p$. \\
-2. הראו שלכל $p$ ראשוני, המספר $\sqrt{p}$ אינו רציונלי.
-\section*{פתרון 2}
-1. ראשית, נוכיח את הכיוון $\impliedby$כלומר אם $p|n$ אזי $p|n^{2}$ \\
-אם $p|n$ זה אומר שקיים $r \in \mathbb{N}$ כך ש$r \cdot p =n$.  מכיוון ש$n^{2}=n\cdot n$ ניתן לומר ש$n^{2}=n\cdot r\cdot p$. מה שאומר ש$p|n^{2}$. \\
-עכשיו נוכיח את $\implies$ כלומר אם $p|n^{2}$ אזי $p|n$  \\
-אם $p|n^{2}$ זה אומר ש$p|n\cdot n$. ידוע כי אם$a|b\cdot c$ אז או ש$a|b$ או  ש$a|c$. או במקרה הזה שתי האפשרויות אומרות ש$p|n$ \\
-$\blacksquare$ \\
-2. נניח בשלילה כי לכל $p$ ראשוני, $\sqrt{p}$ רציונלי \\
-אם $\sqrt{p}$ רציונלי זה אומר שניתן לכתוב את $\sqrt{p}=\frac{a}{b}$ כש$a,b\in \mathbb{Z}$. כלומר \\
+\section*{סעיף ה'}
+לא!
 $$
-\sqrt{p}=\frac{a}{b}\implies p=\frac{a^{2}}{b^{2}}\implies pb^{2}=a^{2}
+X=\{1\},Y=\{1,2\},Z=\{1,2,3\}
 $$
-כלומר $p|a^{2}$, על פי מה שהוכחנו, זה אומר ש$p|a$. מה שסותר את היות $p$ ראשוני. \\
-$\blacksquare$
-\section*{תרגיל 3}
-לכל אחת מהקבוצות הבאות, כתבו את גודל הקבוצה, מנו את איברי הקבוצה ומנו את כל תתי הקבוצות של הקבוצה. \\
-1. $\emptyset$ \\
-2. $\left\{ \emptyset \right\}$ \\
-3. $\left\{ \left\{ \emptyset \right\} \right\}$ \\
-4. $\left\{ 1 \right\}$ \\
-5. $\left\{ 1,\emptyset \right\}$ \\
-6. $\left\{ 1,\left\{ \emptyset \right\} \right\}$ \\
-7. $\left\{ 1,\left\{ 1 \right\} \right\}$
-\section*{פתרון 3}
-1. גודל הקבוצה $0$. $P\left( \emptyset \right)=\left\{ \emptyset \right\}$ \\
-2. גודל הקבוצה $1$. $P\left( \left\{ \emptyset \right\} \right)=\left\{ \emptyset,\left\{ \emptyset \right\} \right\}$ \\
-3. גודל הקבוצה 1. $P\left( \left\{ \left\{ \emptyset \right\} \right\} \right)=\left\{ \emptyset,\left\{ \emptyset \right\} \right\}$ \\
-4. גודל הקבוצה 1, $P\left( \left\{ 1 \right\} \right)=\left\{ \emptyset,\left\{ 1 \right\} \right\}$ \\
-5. גודל הקבוצה 2. $P\left( \left\{ 1,\emptyset \right\} \right)=\left\{ \emptyset,\left\{ \emptyset \right\}\left\{ 1 \right\},\left\{ \emptyset,1 \right\} \right\}$ \\
-6. גודל הקבוצה 2. $P\left( \left\{ 1,\left\{ \emptyset \right\} \right\} \right)=\left\{ \emptyset,\left\{ 1 \right\},\left\{ \left\{ \emptyset \right\} \right\},\left\{ 1,\left\{ \emptyset \right\} \right\} \right\}$ \\
-7. גודל הקבוצה 2. $P\left( 1,\left\{ 1 \right\} \right)=\left\{ \emptyset,\left\{ 1 \right\},\left\{ \left\{ 1 \right\} \right\},\left\{ 1,\left\{ 1 \right\} \right\} \right\}$
-
+\newpage
+\part*{שאלה 2}
+\section*{סעיף א'}
+הראו: קיימת ויחידה סדרת קבוצות $A_0,A_1,A_2,\ldots$ המקיימת את התכונות (א), (ב), (ג) שלהלן:
+\subsection*{(א)}
+לכל $i=0,1,2,\ldots$ מתקיים
+$$
+\left|A_i\right|=i
+$$
+\subsection*{(ב)}
+לכל $i=0,1,2,\ldots$ מתקיים
+$$
+A_i \subseteq A_{i+1}
+$$
+\subsection*{(ג)}
+לכל $i=0,1,2,\ldots$ מתקיים
+$$
+A_i \in A_{i+1}
+$$
+\section*{סעיף ב'}
+הראו שהסדרה שהגעתם בסעיף הקודם יחידה, במובן הבא:\\
+נניח ש-$B_0,B_1,B_2,\ldots$ סדרה נוספת המקיימת את התכונות (א)(ב)(ג)\\
+אז לכל $i=0,1,2,\ldots$ מתקיים $A_i=B_i$
+\newpage
+\part*{פתרון 2}
+נבנה קבוצה כנדרש\\
+על פי תכונה (א), $\left|A_0\right| = 0$. הקבוצה היחידה שעוצמתה $0$ היא הקבוצה הריקה ($\emptyset$)\\
+לכן $A_0 = \emptyset$, 
 \end{document}

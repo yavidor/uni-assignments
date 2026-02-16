@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1766528367.546 "gilaion-3-concepts-in-mathematics-yonatan-avidor.latex" "gilaion-3-concepts-in-mathematics-yonatan-avidor.pdf" "gilaion-3-concepts-in-mathematics-yonatan-avidor" 1766528369.97198 0
+["lualatex"] 1771234745.21087 "gilaion-3-concepts-in-mathematics-yonatan-avidor.latex" "gilaion-3-concepts-in-mathematics-yonatan-avidor.pdf" "gilaion-3-concepts-in-mathematics-yonatan-avidor" 1771234747.09656 0
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/065b7f20856945fa4b5f22ea8a410c62eb1291b7f924230b1de508d11b0a3c2a.luc" 1763846071.27899 15800 953d2b8b0bce292ac96cfa085d00bac8 ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/26c8ce3fa37050763bc64d05336ff06c0df6742d953f778152e69edc7ef578e0.luc" 1763846071.21665 18657 a9b2449670badcd3955fe3e8dc5c2040 ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/3bcaa0a85c14d58cd73ca93c9024718ffd6f38bc2a6106ae695e6c4f6c5d2812.luc" 1763846071.20199 18896 179a7ab3029a81619218c2e52cecf14c ""
@@ -12,7 +12,7 @@
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc" 1763846071.02965 128299 be367f675212df055d4e2af5a576ea4b ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1763846070.60432 127670 aa0bc69e37a0327ab31f5f335b78c1f7 ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc" 1763846071.12132 128165 b4fce90878db5468ce85b9cc96dc02f8 ""
-  "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1765291718.36237 9075 4f8b77683da32e1ac378e232c3c78e7b ""
+  "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1771183179.45099 9478 c136460616d108477092dac982d35813 ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1760271571.07707 335620 c65bcb8802b1dc31dad347cca6d28869 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -35,6 +35,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm" 1136768653 1120 2b3f9b25605010c69bc328bea6ac000f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Bold.ttf" 1692308364 38076 76f4666ad58f510511b92ca5a6758c59 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Regular.ttf" 1692308364 36768 b123a555a534bb95b641c527fe967c73 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/MiriamMonoCLM-Bold.ttf" 1692308364 34000 5a530cad7aa1ba16e166d72fa8d042e1 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
@@ -42,8 +43,6 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel-bidi-basic.lua" 1741723514 13501 17dc423a2d1e25408452ac13fac069cf ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel-ca-hebrew.tex" 1735765002 7451 90408a121d34288f8349d2220cc678cf ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel-data-bidi.lua" 1737838152 123120 a82e8e5cd85f154aab52217c41147be9 ""
@@ -135,8 +134,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1760219069 5528139 daf1353d2d3d7fed9df2ebbf1b26218e ""
   "/usr/local/texlive/2025/texmf-var/tex/generic/config/language.dat" 1760219063.65938 6800 2e9f5424340d7173f71af9b11d1f0b93 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1760219421 5631957 28504e8cdfaa347511f531003229b5c9 ""
-  "gilaion-3-concepts-in-mathematics-yonatan-avidor.aux" 1766528369.63742 149 394b9e38f3c994e0703e428b4530e2e2 "lualatex"
-  "gilaion-3-concepts-in-mathematics-yonatan-avidor.latex" 1766528364.59413 5364 4e12e2c5a8fc32d7c1f9d8fdfa6b956d ""
+  "gilaion-3-concepts-in-mathematics-yonatan-avidor.aux" 1771234746.83684 149 82db74c905cbbf710e6d9d8d9a0a245a "lualatex"
+  "gilaion-3-concepts-in-mathematics-yonatan-avidor.latex" 1771234744.00484 2441 5a4575b444fc4afc30e8ff5e2f65a320 ""
   (generated)
   "gilaion-3-concepts-in-mathematics-yonatan-avidor.aux"
   "gilaion-3-concepts-in-mathematics-yonatan-avidor.log"

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.12)  24 DEC 2025 00:19
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.12)  16 FEB 2026 11:39
  restricted system commands enabled.
  file:line:error style messages enabled.
 **gilaion-3-concepts-in-mathematics-yonatan-avidor.latex
@@ -490,20 +490,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `TU/HadasimCLM(0)/bx/n' in size <24.88> not available
+(Font)              Font shape `TU/HadasimCLM(0)/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `TU/MiriamMonoCLM(0)/bx/n' in size <17.28> not available
-(Font)              Font shape `TU/MiriamMonoCLM(0)/b/n' tried instead on input line 19.
+(Font)              Font shape `TU/MiriamMonoCLM(0)/b/n' tried instead on input line 21.
 
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 83--90
-
- []
-
-
 
 [2]
+LaTeX Font Info:    Font shape `TU/HadasimCLM(0)/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/HadasimCLM(0)/b/n' tried instead on input line 62.
 
-[3] (./gilaion-3-concepts-in-mathematics-yonatan-avidor.aux)
+
+[3]
+
+[4] (./gilaion-3-concepts-in-mathematics-yonatan-avidor.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -511,18 +513,18 @@ L3 programming layer <2025-09-02>
 )
 
 Here is how much of LuaTeX's memory you used:
- 6532 strings out of 476291
+ 6535 strings out of 476291
  100000,662416 words of node,token memory allocated
- 977 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 176 attribute, 57 glue_spec, 62 attribute_list, 1 write nodes
-   avail lists: 1:1,2:7173,3:173,4:18,5:337,6:30,7:2921,8:41,9:485,10:5
- 28708 multiletter control sequences out of 65536+600000
- 85 fonts using 5886375 bytes
+ 1113 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 227 attribute, 57 glue_spec, 79 attribute_list, 1 write nodes
+   avail lists: 1:1,2:2089,3:104,4:5,5:156,6:36,7:1078,8:24,9:180,10:5
+ 28711 multiletter control sequences out of 65536+600000
+ 88 fonts using 6131903 bytes
  74i,11n,107p,486b,494s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/MiriamMonoCLM-Bold.ttf></usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Regular.ttf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on gilaion-3-concepts-in-mathematics-yonatan-avidor.pdf (4 pages, 72378 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/MiriamMonoCLM-Bold.ttf></usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Bold.ttf></usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Regular.ttf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on gilaion-3-concepts-in-mathematics-yonatan-avidor.pdf (5 pages, 63980 bytes).
 
-PDF statistics: 65 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 66 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
