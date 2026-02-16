@@ -1,0 +1,30 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מושגי יסוד במתמטיקה 01040002 \\ גליון 6}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+נתבונן ביחס השקילות "שיקלות מודולו $n$" על קבוצת השלמים, המוגדר באופן הבא: \\
+$x\equiv_n y$ אם ורק אם $n|x-y$ (כלומר, קיים $k$ שלם כך ש-$x-y=nk$).\\
+הראו: לכל $n$, היחס "שקילות מודולו $n$" מהווה יחס שקילות על קבוצת השלמים.
+\part*{פתרון 1}
+\part*{שאלה 2}
+בהינתן שני יחסי שקילות $R,S$ על קבוצה $X$, נאמר שהיחס $S$ הוא עידון של היחס $R$ אם לכל $x\in X$ מתקיים $\left[x\right]_S \subseteq \left[x\right]_R$.
+\section*{סעיף א'}
+הראו שהיחס "שקילות מודלו 4" הוא עידון של היחס "שקילות מודולו 2".
+\section*{סעיף ב'}
+נתונים שני יחסי שקילות $R,S$ על קבוצה $X$ כך ש-$S$ הוא עידון של $R$, ונתון ש$S\neq R$. נתון חתך $A$ של $S$. הראו: $A$ אינו חתך של $R$.
+\end{document}
