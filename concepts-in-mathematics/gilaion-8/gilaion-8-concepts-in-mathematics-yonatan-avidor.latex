@@ -51,6 +51,21 @@ $f,g$ חח"ע ולכן:
     g(b_1)=g(b_2)\implies b_1=b_2
 \end{gather*}
 ולכן $a_1=a_2, b_1=b_2$, אזי $h$ חח"ע
+\subsubsection*{על}
+יהי $\left(c,d\right)\in C\times D$\\
+נרצה להוכיח כי בהכרח קיים $\left(a,b\right)\in A\times B$ כך ש-$h\left(a,b\right)=\left(c,d\right)$\\
+$f$ על, ולכן עבור $c$ \pmb{בהכרח} קיים $a$ כך ש $f\left(a\right)=c$\\
+$g$ על, ולכן עבור $d$ \pmb{בהכרח} קיים $b$ כך ש $g\left(b\right)=d$
+לכן
+\[
+    h\left(a,b\right)= h\left(f(a),g(b)\right)=(c,d)
+\]
+מכאן ש-$h$ חד-חד ערכית ועל. על פי משפט שראינו בהרצאה, שתי קבוצות הן שוות עוצמה אם קיימת פונקציה חד-חד ערכית ועל מאחת לשנייה, לכן
+\[
+\left|A \times B\right| = \left|C\times  D\right|
+\]
+\blacksquare
+\section*{סעיף ב'}
 \newpage
 \part*{תרגיל 2}
 \section*{סעיף א'}

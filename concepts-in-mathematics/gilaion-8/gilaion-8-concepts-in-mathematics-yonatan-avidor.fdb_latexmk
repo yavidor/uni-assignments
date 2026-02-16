@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1771262874.41759 "gilaion-8-concepts-in-mathematics-yonatan-avidor.latex" "gilaion-8-concepts-in-mathematics-yonatan-avidor.pdf" "gilaion-8-concepts-in-mathematics-yonatan-avidor" 1771262875.13047 0
+["lualatex"] 1771267904.38658 "gilaion-8-concepts-in-mathematics-yonatan-avidor.latex" "gilaion-8-concepts-in-mathematics-yonatan-avidor.pdf" "gilaion-8-concepts-in-mathematics-yonatan-avidor" 1771267905.74471 0
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-bold.luc" 1770037307.49007 54495 6d1e04677a40f79ab14ff2024faac8eb ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-boldoblique.luc" 1770037307.48007 55799 5fef217971130cbc6fbfe77ec1f0a8c2 ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-regular.luc" 1770037307.46907 54551 36cc254eefb9c32f16f693bfada56f84 ""
@@ -44,6 +44,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-bidi-basic.lua" 1676321701 12512 69bf7efe7b9e6602824eb967f20fce2c ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-ca-hebrew.tex" 1674507072 7458 14619a0e27c5fc211b0699bd887327eb ""
@@ -131,8 +132,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1770036972.29016 4602615 ac1019cb4c4ba39710c2cf7f752b378d ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1770036720 11873540 fa2716e95faa05a65f33c1b90414577a ""
-  "gilaion-8-concepts-in-mathematics-yonatan-avidor.aux" 1771262875.05789 111 0876e6bef0fe27a1e3efde41ece49d45 "lualatex"
-  "gilaion-8-concepts-in-mathematics-yonatan-avidor.latex" 1771262873.91635 2646 4f6bed390a79bb95942d1594a8f576e8 ""
+  "gilaion-8-concepts-in-mathematics-yonatan-avidor.aux" 1771267905.59025 111 0876e6bef0fe27a1e3efde41ece49d45 "lualatex"
+  "gilaion-8-concepts-in-mathematics-yonatan-avidor.latex" 1771267903.40302 3401 ed4619b37a50a26bfccc170d77ae9cf8 ""
   (generated)
   "gilaion-8-concepts-in-mathematics-yonatan-avidor.aux"
   "gilaion-8-concepts-in-mathematics-yonatan-avidor.log"

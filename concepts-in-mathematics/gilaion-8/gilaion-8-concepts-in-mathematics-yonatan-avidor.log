@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2026.2.2)  16 FEB 2026 19:27
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2026.2.2)  16 FEB 2026 20:51
  restricted system commands enabled.
  file:line:error style messages enabled.
 **gilaion-8-concepts-in-mathematics-yonatan-avidor.latex
@@ -478,22 +478,25 @@ LaTeX Font Info:    Font shape `TU/MiriamMonoCLM(0)/bx/n' in size <17.28> not av
 (Font)              Font shape `TU/MiriamMonoCLM(0)/b/n' tried instead on input line 21.
 LaTeX Font Info:    Font shape `TU/HadasimCLM(0)/bx/n' in size <14.4> not available
 (Font)              Font shape `TU/HadasimCLM(0)/b/n' tried instead on input line 43.
- [1] [2] [3] [4] (./gilaion-8-concepts-in-mathematics-yonatan-avidor.aux))
+ [1]
+LaTeX Font Info:    Font shape `TU/HadasimCLM(0)/bx/n' in size <12> not available
+(Font)              Font shape `TU/HadasimCLM(0)/b/n' tried instead on input line 54.
+ [2] [3] [4] (./gilaion-8-concepts-in-mathematics-yonatan-avidor.aux))
 
 Here is how much of LuaTeX's memory you used:
- 6300 strings out of 478285
+ 6302 strings out of 478285
  100000,1977958 words of node,token memory allocated
- 532 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 18 attribute, 56 glue_spec, 8 attribute_list, 1 write nodes
-   avail lists: 1:1,2:654,3:131,4:8,5:173,6:41,7:1610,8:42,9:348,10:4,11:2
- 26360 multiletter control sequences out of 65536+600000
- 88 fonts using 4756863 bytes
+ 548 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 24 attribute, 56 glue_spec, 10 attribute_list, 1 write nodes
+   avail lists: 1:1,2:646,3:131,4:9,5:173,6:41,7:1610,8:42,9:348,10:5,11:6
+ 26362 multiletter control sequences out of 65536+600000
+ 89 fonts using 4798471 bytes
  73i,12n,93p,474b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/fonts/clm-miriam-mono-fonts/MiriamMonoCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on gilaion-8-concepts-in-mathematics-yonatan-avidor.pdf (5 pages, 75334 bytes).
+</usr/share/fonts/clm-miriam-mono-fonts/MiriamMonoCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on gilaion-8-concepts-in-mathematics-yonatan-avidor.pdf (5 pages, 84222 bytes).
 
-PDF statistics: 69 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+PDF statistics: 73 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
