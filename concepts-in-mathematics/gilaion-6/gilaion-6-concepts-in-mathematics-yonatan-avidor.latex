@@ -9,22 +9,64 @@
 \babelfont[hebrew]{sf}{Miriam Mono CLM}
 \usepackage{titlesec}
 \title{מושגי יסוד במתמטיקה 01040002 \\ גליון 6}
-\author{יונתן אבידור - 214269565}
+% \author{יונתן אבידור - 214269565}
+\author{yavidor}
 \titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
 \begin{document}
 \maketitle
 \pagestyle{fancy}
 \fancyhead{}
-\fancyfoot[L]{\text{214269565}}
+% \fancyfoot[L]{\text{214269565}}
 \part*{שאלה 1}
 נתבונן ביחס השקילות "שיקלות מודולו $n$" על קבוצת השלמים, המוגדר באופן הבא: \\
 $x\equiv_n y$ אם ורק אם $n|x-y$ (כלומר, קיים $k$ שלם כך ש-$x-y=nk$).\\
 הראו: לכל $n$, היחס "שקילות מודולו $n$" מהווה יחס שקילות על קבוצת השלמים.
 \part*{פתרון 1}
+יהי $n\in \mathbb{N}$, נרצה להוכיח ש $\equiv_n$ הוא יחס שקילות על $\mathbb{Z}$
+\subsubsection*{רפלקסיביות}
+יהי $x\in\mathbb{Z}$\\
+מההגדרה, $x\equiv_nx\iff \exists k\in\mathbb{Z}:x-x=nk$\\
+$x-x=0$, ולכן לכל $x$, $k=0$ מקיים את התנאי: $x-x=0=n\cdot 0$
+כלומר לכל $x$ מתקיים $x\equiv_nx$, ולכן רפלקסיבי
+\subsubsection*{סימטרי}
+יהיו $x,y\in\mathbb{Z}$ כך ש$x\equiv_ny$, נרצה להראות כי $y\equiv_nx$
+$$
+x\equiv_ny\implies\exists k \in \mathbb{Z}:x-y=nk\underset{\times -1}{\implies}y-x=n\cdot \left(-k\right)\implies y\equiv_nx
+$$
+\subsubsection*{טרנזיטיבי}
+יהיו $x,y,z\in\mathbb{Z}$ כך ש$x\equiv_ny$ ו$y\equiv_nz$, נרצה להראות כי $x\equiv_nz$
+\[
+\begin{gathered}
+    x\equiv_ny\implies\exists k_0\in\mathbb{Z}:x-y=nk_0\\
+    y\equiv_nz\implies\exists k_{1}\in\mathbb{Z}:y-z=nk_{1}
+\end{gathered}
+\underset{+}{\implies}x-y+y-z=nk_0+nk_1
+\]
+נארגן קצת את המשוואה
+\[
+    x-y+y-z=nk_0+nk_1 \implies x-z = n\cdot\left(k_0+k_1\right)\implies n|x-z\implies x\equiv_nz
+\]
+\newpage
 \part*{שאלה 2}
 בהינתן שני יחסי שקילות $R,S$ על קבוצה $X$, נאמר שהיחס $S$ הוא עידון של היחס $R$ אם לכל $x\in X$ מתקיים $\left[x\right]_S \subseteq \left[x\right]_R$.
 \section*{סעיף א'}
 הראו שהיחס "שקילות מודלו 4" הוא עידון של היחס "שקילות מודולו 2".
 \section*{סעיף ב'}
 נתונים שני יחסי שקילות $R,S$ על קבוצה $X$ כך ש-$S$ הוא עידון של $R$, ונתון ש$S\neq R$. נתון חתך $A$ של $S$. הראו: $A$ אינו חתך של $R$.
+\part*{פתרון 2}
+\section*{סעיף א'}
+יהי $x,y\in\mathbb{Z}$ כך ש $x\equiv_4y$. נרצה להוכיח כי $x\equiv_2y$.
+\begin{gather*}
+    x\equiv_4y \implies 4|x-y \implies \exists k\in\mathbb{Z}:x-y=4k\\\implies x-y=2\cdot\left(2k\right)  \implies 2|x-y\implies x\equiv_2y
+\end{gather*}
+כלומר לכל $x,y$ שנמצאים באותה מחלקת שקילות של $\equiv_4$, הם נמצאים גם באותה מחלקת שקילות של $\equiv_2$\\
+$\blacksquare$
+\section*{סעיף ב'}
+יהיו $R\neq S$ יחסי שקילות על $X$ כך ש-$S$ הוא עידון של $R$, ו-$A$ חתך של $S$. צריך להראות ש-$A$ אינו חתך של $R$\\
+נניח בשלילה כי $A$ חתך של $S$\\
+יהיו $x,y\in X$ כך ש $\left[x\right]_S=\left[y\right]_S$ \pmb{אבל} $\left[x\right]_R \neq \left[y\right]_R$, אנחנו יודעים שזה אפשרי כי $S\neq R$.\\
+יהיו $a,b\in A$ הנציגים ממחלקות השקילות של $\left[x\right]_R,\left[y\right]_R$ בהתאמה.\\
+$a$ הוא הנציג של $x$ בחתך $A$ על פי ההגדרה. $\left[x\right]_S=\left[y\right]_S$, ו$b$ הוא הנציג של $y$ ב-$A$, לכן $b$ הוא הנציג של $x$ ב-$A$, סתירה\\
+קיבלנו שאו שיש ל-$x$ שני נציגים בחתך, וזו סתירה להגדרת חתך, או ש$a=b$, שזו סתירה לזה שלכל מחלקת שקילות קיים נציג יחיד בחתך\\
+$\blacksquare$
 \end{document}
