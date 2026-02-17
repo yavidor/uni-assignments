@@ -80,7 +80,7 @@ f(a_1)=(a_1,a_1)=f(a_2)=(a_2,a_2)\implies (a_1,a_1)=(a_2,a_2)\\
 \implies a_1 = a_2 \land a_1 = a_2\\
 \implies a_1=a_2
 \end{gather*}
-הראינו שקיימת פונקציה חח"ע $A\to A\times A$ ולכן לפי הגדרה $\left|A\right|\leq\left|A\times A\right|$
+הראינו שקיימת פונקציה חח"ע $A\to A\times A$ ולכן לפי הגדרה $\left|A\right|\leq\left|A\times A\right|$\\
 $\blacksquare$
 \section*{סעיף ג'}
 $A=\emptyset$\\
@@ -94,7 +94,7 @@ $\blacksquare$
 \section*{סעיף א'}
 בהינתן קבוצה $A$, מצאו פונקציה חח"ע ועל בין $\mathcal{P}\left(A\right)$ ו-$\left\{0,1\right\}^A$
 \section*{סעיף ב'}
-הראו: $\left|\mathbb{N}\right|=\left|\mathbb{N}^{\mathbb{N}}\right|$
+הראו: $\left|\mathbb{N}\right|<\left|\mathbb{N}^{\mathbb{N}}\right|$
 \newpage
 \part*{פתרון 2}
 \section*{סעיף א'}
@@ -111,12 +111,83 @@ $\blacksquare$
 נראה כי $F$ חח"ע ועל
 \subsubsection*{חד-חד ערכית}
 יהיו $A_1,A_2\in\mathcal{P}(A)$ כך ש$F(A_1)=F(A_2)$\\
-כלומר לכל $a_1\in A_1, a_2 \in A_2$ מתקיים $f_{A_1}(a_1)=f_{A_2}(a_2)$\\
-מכאן שלכל $a\in A$
+כלומר לכל $a\in A$ מתקיים $f_{A_1}(a)=f_{A_2}(a)$\\
+מכאן שלכל $a\in A$, אם $f_{A_1}\left(a\right)=1$ אזי גם $f_{A_2}\left(a\right)=1$ כלומר אם $a\in A_1$ גם $a\in A_2$\\
+ואם $f_{A_1}\left(a\right)=0$ אזי גם $f_{A_2}\left(a\right)=0$ כלומר אם $a\notin A_1$ אז גם $a\notin A_2$
+אם כך
+\[
+\forall a\in A:    \begin{cases}
+    a\in A_1 \implies a\in A_2\\
+    a\notin A_1 \implies a\notin A_2
+    \end{cases}\implies A_1 = A_2
+\]
+\subsubsection*{על}
+תהא $f_{\tilde{A}}\in \left\{0,1\right\}^{A}$, נרצה למצוא $\tilde{A}$ כך ש-$F\left(\tilde{A}\right)=f_{\tilde{A}}$
+\[
+    \tilde{A}=\left\{a\in A\big|f_{\tilde{A}}\left(a\right)=1\right\}
+\]
+בנינו איבר כנדרש\\
+\blacksquare
+\section*{סעיף ב'}
+ראשית נראה כי $\left|\mathbb{N}\right|\leq\left|\mathbb{N}^{\mathbb{N}}\right|$, נבנה פונקציה חח"ע מ-$\mathbb{N}$ אל $\mathbb{N}^\mathbb{N}$
 \begin{gather*}
-    f_{A_1}(a)=1\implies f_{A_2}
+    F:\mathbb{N}\to\mathbb{N}^\mathbb{N}\\
+    \forall n\in\mathbb{N}:F\left(n\right)=f_n\\
+    f_n:\mathbb{N}\to\mathbb{N}\\
+    \forall k\in\mathbb{N}: f_n\left(k\right)=n
 \end{gather*}
+נראה כי $F$ חח"ע
+יהיו $n_1,n_2$ כך ש-$F(n_1)=F(n_2)$
+\begin{gather*}
+    F(n_1)=f_{n_1}=F(n_2)=f_{n_2}\\
+    f_{n_1}=f_{n_2}\implies   \forall k\in\mathbb{N}:f_{n_1}\left(k\right)=f_{n_2}\left(k\right)
+\end{gather*}
+מכיוון ש-$f_{n_1}$ היא הפונקציה הקבועה $n_1$ ו-$f_{n_2}$ היא הפונקציה הקבועה $n_2$, ולכל $k\in\mathbb{N}$ $f_{n_1}(k)=f_{n_2}(k)$, מתקבל כי $n_1=n_2$
+מכאן ש -$F$ חח"ע\\
+משפט קנטור, $\left|\mathbb{N}\right|<\left|\mathcal{P}\left(\mathbb{N}\right)\right|$, מטרנזיטיביות של יחס סדר על עוצמות, אם נוכיח ש-$\left|\mathcal{P}\left(\mathbb{N}\right)\right|\leq\left|\mathbb{N}^{\mathbb{N}}\right|$ זה יוכיח את הנדרש, כי
+\[
+    \left|\mathbb{N}\right|<\left|\mathcal{P}\left(\mathbb{N}\right)\right|\land\left|\mathcal{P}\left(\mathbb{N}\right)\right|\leq\left|\mathbb{N}^{\mathbb{N}}\right|\implies \left|\mathbb{N}\right|<\left|\mathbb{N}^\mathbb{N}\right|
+\]
+על מנת לעשות כן, נבנה פנקציה חח"ע
+\begin{gather*}
+    G:\mathcal{P}\left(\mathbb{N}\right)\to\mathbb{N}^\mathbb{N}\\
+    \forall A\in\mathcal{P}\left(\mathbb{N}\right):G\left(A\right)=g_{A}\\
+    g_{A}: \mathbb{N} \to \mathbb{N}\\
+    \forall n\in\mathbb{N}: g_A(n)=\begin{cases}
+        1&n\in A\\
+        0&n\notin A
+    \end{cases}
+\end{gather*}
+נראה כי $G$ חח"ע\\
+יהיו $A,B\in\mathcal{P}\left(\mathbb{N}\right)$ כך ש$G(A)=G(B)$
+\[
+    G\left(A\right)=g_A=g_B=G\left(B\right)
+\]
+כלומר לכל $n\in\mathbb{N}$ מתקיים 
+\[
+    \begin{cases}
+        g_A(a) = 1 \implies g_B(a)=1 \implies a\in A \land a\in B\\
+        g_A(a) = 0 \implies g_B(a)=0 \implies a\notin A \land a\notin B
+    \end{cases}
+\]
+כלומר אם $a\in A$ אזי $a\in B$ ואם $a\notin A$ אזי $a\notin B$, מכאן שכל איבר ב$A$ נמצא ב-$B$ ולהיפך, בנוסף כל טבעי שלא $A$ גם לא ב-$B$ ולהיפך, אזי $A=B$\\
+לכן $G$ חח"ע\\
+$G$ חח"ע ולכן $\left|\mathcal{P}\left(\mathbb{N}\right)\right|\leq\left|\mathbb{N}^\mathbb{N}\right|$
+\[
+    \left|\mathcal{P}\left(\mathbb{N}\right)\right|\leq\left|\mathbb{N}^\mathbb{N}\right| \land \left|\mathbb{N}\right| < \left|\mathcal{P}\left(\mathbb{N}\right)\right| \implies \left|\mathbb{N}\right| < \left|\mathbb{N}^\mathbb{N}\right|
+\]
+כנדרש\\
+$\blacksquare$
 \newpage
 \part*{תרגיל 3}
 הראו: אם $X,Y,Z$ קבוצות כך ש-$\left|X\right|<\left|Y\right|$ וגם $\left|Y\right|<\left|Z\right|$ אז $\left|X\right|<\left|Z\right|$
+\part*{פתרון 3}
+יהיו $X,Y,Z$ קבוצות כך ש-$\left|X\right|<\left|Y\right|$ וגם $\left|Y\right|<\left|Z\right|$\\
+כלומר קיימות פונקציות חח"ע ולא על $f:X\to Y$ ו-$g:Y\to Z$\\
+נבנה פונקציה $h:X\to Z$
+\[
+    \forall x\in X: h\left(x\right) = g(f(x))
+\]
+ממשפט שהוכחנו בכיתה על תכונות הרכבה, מכיוון ש-$f,g$ חח"ע, גם $h$ חח"ע, נוכיח כי היא לא על.\\
+אם $h$ על, אזי לכל $z\in Z$ קיים $x\in X$ כך ש-$h\left(x\right)=z$\\
 \end{document}
