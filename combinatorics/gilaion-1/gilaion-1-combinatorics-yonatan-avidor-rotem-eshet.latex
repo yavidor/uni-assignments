@@ -27,7 +27,7 @@
 ספרת העשרות-אלפים יכולה להיות רק $3$ או $4$ ולכן יש $2$ אפשרויות.
 סה"כ
 \[
-    720 \cdot 10 \cdot 2 = 14,400
+	720 \cdot 10 \cdot 2 = 14,400
 \]
 \newpage
 \part*{שאלה 2}
@@ -52,25 +52,25 @@
 \newpage
 \part*{תרגיל 5}
 \begin{enumerate}[A.]
-    \item כמה מחלקים חיוביים יש למספר $2000$?
-    \item בהתנן מספר טבעי
-        \[
-            n=p_1^{k_1}p_2^{k_2}\cdots p_m^{k_m}
-        \]
-        כאשר $p_1,\ldots,p_m$ ראשוניים שונים, ו-$k_1,\ldots,k_m$ מספרים טבעיים חיוביים, כמה מחלקים חיוביים יש ל-$n$?
+	\item כמה מחלקים חיוביים יש למספר $2000$?
+	\item בהתנן מספר טבעי
+	      \[
+		      n=p_1^{k_1}p_2^{k_2}\cdots p_m^{k_m}
+	      \]
+	      כאשר $p_1,\ldots,p_m$ ראשוניים שונים, ו-$k_1,\ldots,k_m$ מספרים טבעיים חיוביים, כמה מחלקים חיוביים יש ל-$n$?
 \end{enumerate}
 \part*{פתרון 5}
 \newpage
 \part*{תרגיל 6}
 נסמן ב-$\left[n\right]$ את קבוצת המספרים מ-$1$ עד $n$, כלומר
 \[
-    \left[n\right] = \left\{1,2,3,\ldots,n\right\}.
+	\left[n\right] = \left\{1,2,3,\ldots,n\right\}.
 \]
 ענו על הסעיפים הבאים:
 \begin{enumerate}[A.]
-\item מהו מספר הפונקציות מ-$\left[10\right]$ ל-$\left[20\right]$?
-\item מהו מספר הפונקציות החד-חד-ערכיות מ-$\left[10\right]$ ל-$\left[20\right]$?
-\item מהו מספר הפונקציות שאינן חד-חד-ערכיות מ-$\left[10\right]$ ל-$\left[20\right]$?
+	\item מהו מספר הפונקציות מ-$\left[10\right]$ ל-$\left[20\right]$?
+	\item מהו מספר הפונקציות החד-חד-ערכיות מ-$\left[10\right]$ ל-$\left[20\right]$?
+	\item מהו מספר הפונקציות שאינן חד-חד-ערכיות מ-$\left[10\right]$ ל-$\left[20\right]$?
 \end{enumerate}
 \part*{פתרון 6}
 \newpage
