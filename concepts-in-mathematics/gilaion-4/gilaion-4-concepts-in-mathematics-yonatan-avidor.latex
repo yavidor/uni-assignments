@@ -47,7 +47,6 @@ $\blacksquare$
 X=\left\{ \left\{ 1 \right\},\left\{ 2 \right\},\left\{ 3 \right\} \right\} \\
 Y=\left\{ \left\{ 3 \right\} ,\left\{ 2 \right\} ,\left\{ 1 \right\}  \right\} 
 \end{gather*}
-
 $$
 \underbrace{ \left( \bigcup_{i\in I}X_{i} \right) \cap \left( \bigcup_{i\in I}Y_{i} \right) }_{ \left\{ \left\{ 1 \right\} ,\left\{ 2 \right\} ,\left\{ 3 \right\}  \right\}  } \supset\underbrace{ \bigcup_{i\in I}\left( X_{i}\cap Y_{i} \right)  }_{ \left\{ 2 \right\}  }
 $$

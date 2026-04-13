@@ -1,0 +1,40 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[shortlabels]{enumitem}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import,Alph=letters]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{קומבינטוריקה 1040286 \\ גליון 1}
+\author{יונתן אבידור - 214269565\\רותם עשת}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+בכמה מהמספרים הזוגיים בקטע $\left[30000,40000\right]$ ספרות האחדות, העשרות ומהאות הן ספרות שונות?
+\part*{פתרון 1}
+\part*{שאלה 2}
+כמה מספרים בעלי חמש ספרות יש, כשכל הספרות בסדר עולה, שונות זו מזו, וההפרש בין הספרה הראשונה לאחרונה הוא 5?\\
+למשל: 76542 הוא דוגמה למספר כזה.
+\part*{פתרון 2}
+\part*{שאלה 3}
+אבי, בני, גדי, דינה, הילה ו-ורד מסתדרים במעגל. לכל אחד מן התנאים הבאים, מצאו את מספר הסידורים השונים המקיימים את התנאי )אין להבחין בין סידורים המקבלים זה מזה על ידי סיבוב).
+\begin{enumerate}[A.]
+	\item אבי ובני אינם עומדים זה על יד זו.
+	\item בני והילה עומדים זה מול זו.
+	\item בנים ובנות מופיעים לסרוגין.
+	\item גדי קרוב יותר להילה מאשר לורד.
+\end{enumerate}
+\part*{פתרון 3}
+\part*{שאלה 4}
+סביב שולחן עגול רוצים לסדר $10$ כלבים ו$10$ חתולים. החתולים והכלבים ממוספרים. חתולים מספר $1,2,3,4$ יושבים אחד ליד השני, לא בהכרח בסדר הזה. וכלבים מספר $1,2,3$ יושבים אחד ליד השני, לא בהכרח בסדר הזה.\\
+שני סידורים יחשבו זהים אם הם מתקבלים אחד מהשני על ידי סיבוב. כמה סידורים שונים יש?
+\part*{פתרון 4}
+\end{document}

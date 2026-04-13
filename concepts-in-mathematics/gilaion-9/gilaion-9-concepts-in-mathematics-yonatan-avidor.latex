@@ -1,0 +1,24 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+% \babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+% \title{מושגי יסוד במתמטיקה 01040002 \\ גליון 9}
+\title{DEez}
+% \author{יונתן אבידור - 214269565}
+\author{yavidor}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{Q 1}
+Let the following function $f: S_4 \to S_4$ be defined as $f\left(\sigma\right) = \sigma^2$.\\
+Show: $\sigma \in \mathrm{Im}\left(f\right)$ if and only if $\sigma$ is an Even permutation
+\end{document}
