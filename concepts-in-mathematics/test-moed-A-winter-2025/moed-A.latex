@@ -1,0 +1,96 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מושגי יסוד במתמטיקה 01040002 מועד א' חורף 2025}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+\section*{סעיף א'}
+$\left[a\right]_R$, המכונה גם מחלקת השקילות של $a$ תחת $R$, היא קבוצה המכילה את כל האיברים $b\in A$ כך ש $\left(a,b\right) \in R$, כלומר כל האיברים ב$A$ שעומדים ביחס $R$ עם $a$\\
+$A\setminus R$, המכונה גם קבוצת המנה של $R$ היא קבוצת כל מחלקות השקילות של $A$, כלומר
+\[
+    R=\bigl\{\left[a\right]_R~|~a\in A \bigr\}
+\]
+\section*{סעיף ב'}
+\subsection*{i.}
+נתון כי $S_1 = S_2$ ו-$S_2$ הוא חתך של $R_2$, לכן $S_1$ הוא גם חתך של $R_2$.\\
+נטען כי $\left|S_1\right|=\left|A\setminus R_1\right|$ וכי $\left|S_1\right|=\left|A\setminus R_2\right|$
+\subsubsection*{טענת עזר}
+תהא קבוצה $A$, יהי $R$ יחס שקילות על $A$, יהי $S$ חתך של $R$.\\
+אזי
+\[
+ \left|S\right|=\left|A\setminus R\right|
+\]
+\subsubsection*{הוכחת הטענה}
+נבנה פונקציה חד-חד ערכית ועל מהחתך לקבוצת המנה
+\begin{gather*}
+    f:S\to A\setminus R\\
+    \forall s\in S:    f\left(s\right)=\left[s\right]_R
+\end{gather*}
+נוכיח כי היא חד-חד ערכית ועל\\
+חד-חד ערכית\\
+יהיו $s_1,s_2\in S$ כך ש-$f\left(s_1\right) = f\left(s_2\right)$, נרצה להראות ש-$s_1=s_2$
+\[
+    f\left(s_1\right)=f\left(s_2\right)\implies \left[s_1\right]_R = \left[s_2\right]_R
+\]
+מהגדרת חתך, לכל מחלקת שקילות יש נציג אחד בלבד\\
+לכן אם שני איברים בחתך הם מאותה מחלקת שקילות, הם אותו האיבר.\\
+מכאן $s_1 = s_2$\\
+על:\\
+תהא $X \in A\setminus R$, נרצה להראות כי $\exists s\in S: f\left(s\right)=X$\\
+מהגדרת חתך, \pmb{לכל} מחלקת שקילות קיים נציג בחתך, מכיוון שהפונקציה ממפה את איברי החתך למחלקת השקילות שלהם, לכל מחלקת השקילות בהכרח יהיה איבר בחתך שנמצא באותה מחלקת שקילות, ולכן הוא מקור אליה תחת $f$
+\bigskip\\
+נחזור כעת להוכחה עצמה.\\
+על פי טענת העזר, עוצמת קבוצת המנה של יחס שווה לעוצמת חתך שלה\\
+מהנתון, $S_1$ חתך של $R_1$ ולכן $\left|S_1\right|=\left|A\setminus R_1\right|$, בנוסף, הראינו כי $S_1$ חתך של $R_2$ ולכן, מטענת העזר $\left|S_1\right|=\left|A\setminus R_2\right|$
+\[
+    \left|S_1\right|=\left|A\setminus R_1\right|\land\left|S_1\right|=\left|A\setminus R_2\right|\implies\left|A\setminus R_1\right|=\left|A\setminus R_2\right|
+\]
+כנדרש\\
+\blacksquare
+\subsubsection*{ii.}
+לא נכון, נביא דוגמה נגדית
+\begin{gather*}
+    A=\{1,2,3\}\\
+    R_1 = \left\{\left(1,1\right),\left(2,2\right),\left(3,3\right),\left(1,2\right),\left(2,1\right)\right\}\\
+    R_2 = \left\{\left(1,1\right),\left(2,2\right),\left(3,3\right),\left(3,2\right),\left(2,3\right)\right\}\\
+    S_1= \left\{1,3\right\}\\
+    S_2= \left\{1,3\right\}
+\end{gather*}
+$S_1=S_2$ כי בשניהם יש אך ורק את האיברים $1,3$, אבל $R_1\neq R_2$זה מכיוון ש $\left(1,2\right)\in R_1$  אבל $\left(1,2\right) \notin R_2$, קיים ב-$R_1$ איבר שלא נמצא ב-$R_2$ ולכן $R_1 \not\subseteq R_2$ ולכן $R_1 = R_2$
+\part*{שאלה 2}
+\section*{סעיף א'}
+$f$ אינה חח"ע\\
+נראה באמצעות שתי קבוצות $A,B\in\mathcal{P}\left(\mathbb{N}\right)$ כך ש$A\neq B$ אבל $f(A)=f(B)$
+\begin{gather*}
+    A=\{1\}\\
+    B=\emptyset\\
+    1\notin \emptyset \implies A\not\subseteq B\implies A \neq B\\
+    f(A)=A\setminus\{1\}=\{1\}\setminus\{1\}=\emptyset\\
+    f(B)=B\setminus\{1\}=\emptyset\setminus\{1\}=\emptyset
+\end{gather*}
+$f(A)=f(B)$ אבל $A\neq B$ ולכן $f$ לא חח"ע
+\section*{סעיף ב'}
+נרצה שסכום או הפרש של שני מספרים יהיה כפולה של $10$\\
+על מנת שהסכום או ההפרש של שני מספרים יהיה 10, יש 6 אפשרויות לפי השארית החלוקה של המספרים עם $10$
+\begin{gather*}
+    \boxed{\left(0,10\right)~\left(10,0\right)}~~\boxed{\left(1,9\right)~\left(9,1\right)}~~\boxed{\left(2,8\right)~\left(8,2\right)}\\
+    \boxed{\left(3,7\right)~\left(7,3\right)}~~\boxed{\left(4,6\right)~\left(6,4\right)}~~\boxed{\left(5,5\right)}
+\end{gather*}
+על פי עיקרון שובך היונים, יש לנו $6$ "תאים" ו$7$ "יונים", אזי בהכרח באחד מהם יהיו שני "יונים"
+\part*{שאלה 3}
+\section*{סעיף א'}
+$\left|X\right|<\left|Y\right|$ אומר ש $|X|\leq|Y|$ וגם $|X|\neq|Y|$, כלומר שקיימת פונקציה חח"ע מ-$X$ ל-$Y$ וגם שלא קיימת פונקציה חח"ע ועל מ-$X$ ל$Y$
+\end{document}
