@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1776148042.18208 "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.latex" "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.pdf" "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet" 1776148043.40765 0
+["lualatex"] 1776177526.43337 "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.latex" "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.pdf" "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet" 1776177527.2503 0
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-bold.luc" 1770037307.49007 54495 6d1e04677a40f79ab14ff2024faac8eb ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-boldoblique.luc" 1770037307.48007 55799 5fef217971130cbc6fbfe77ec1f0a8c2 ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-regular.luc" 1770037307.46907 54551 36cc254eefb9c32f16f693bfada56f84 ""
@@ -16,6 +16,7 @@
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1770037307.44706 322405 2c7e5d909e1e23eb406353a55bb20f48 ""
   "/usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf" 1537994615 38076 76f4666ad58f510511b92ca5a6758c59 ""
   "/usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf" 1753228800 36852 f277d70fdd3c6e9a67c43c066037ed8c ""
+  "/usr/share/fonts/clm-miriam-mono-fonts/MiriamMonoCLM-Bold.ttf" 1537994615 34000 5a530cad7aa1ba16e166d72fa8d042e1 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -37,6 +38,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm" 1136768653 1120 2b3f9b25605010c69bc328bea6ac000f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
@@ -44,6 +46,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1248133631 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-bidi-basic.lua" 1676321701 12512 69bf7efe7b9e6602824eb967f20fce2c ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-ca-hebrew.tex" 1674507072 7458 14619a0e27c5fc211b0699bd887327eb ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-data-bidi.lua" 1674507072 128205 91863dd1d9eba1568b788b861a43441e ""
@@ -132,8 +135,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775907030.30225 4602002 62dba5fc29055c16380d7393a2adb07a ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1775906709 11873968 150a8b2484ec4a38e5501e952b73c379 ""
-  "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.aux" 1776148043.29565 111 7477188ce0778b852b126b4ff450657f "lualatex"
-  "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.latex" 1776148040.30567 4761 a22c506bc8e8ce51bbe6c47e4d6f44c8 ""
+  "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.aux" 1776177527.12648 111 7477188ce0778b852b126b4ff450657f "lualatex"
+  "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.latex" 1776177525.04204 5731 da33f1ea9d916b3e787bdcb0c07bcc42 ""
   (generated)
   "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.aux"
   "gilaion-1-combinatorics-yonatan-avidor-rotem-eshet.log"
