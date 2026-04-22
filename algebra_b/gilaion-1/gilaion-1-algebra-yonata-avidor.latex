@@ -8,7 +8,7 @@
 \babelfont[hebrew]{rm}{Hadasim CLM}
 \babelfont[hebrew]{sf}{Miriam Mono CLM}
 \usepackage{titlesec}
-\title{אלגברה א' 01040066 \\ גליון 1}
+\title{אלגברה ב' - 01040168 \\ גליון 1}
 \author{יונתן אבידור - 214269565}
 \titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
 \begin{document}
@@ -25,8 +25,128 @@
 הראו כי $\rho_{\mathcal{E}}: \mathbb{F}^n \to \mathbb{F}^n$
 \part*{תשובה 1}
 יהא $v \in \mathbb{F}^n$, קיימים $\alpha_1,\ldots,\alpha_n\in \mathbb{F}$ כך ש $v=\begin{pmatrix}\alpha_1\\\vdots\\\alpha_n\end{pmatrix}$.\\
-$\mathcal{E}$ הוא בסיס ל-$\mathbb{F}^n$ ולכן ניתן קיימים $\beta_1,\ldots,\beta_n\in\mathbb{F}$ כך ש $v=e_1\cdot\beta_1+\ldots+e_n\cdot\beta_n$.\\
+$\mathcal{E}$ הוא בסיס ל-$\mathbb{F}^n$ ולכן ניתן קיימים $\beta_1,\ldots,\beta_n\in\mathbb{F}$ כך ש $v=\beta_1e_1+\ldots+\beta_ne_n$.\\
 מההגדרה של וקטור קואורדניטות ניתן לכתוב $\left[v\right]_{\mathcal{E}}=\begin{pmatrix}\beta_1\\\vdots\\\beta_n\end{pmatrix}$.\\
 מכיוון ש-$\rho_{\mathcal{E}}$ שולחת את $v$ ל$\left[v\right]_{\mathcal{E}}$, על מנת להוכיח שהיא העתקת הזהות, מספיק להוכיח כי $v=\left[v\right]_{\mathcal{E}}$, כלומר $\begin{pmatrix}\beta_1\\\vdots\\\beta_n\end{pmatrix}=\begin{pmatrix}\alpha_1\\\vdots\\\alpha_n\end{pmatrix}$.\\
-ממשפט שהוכחנו באלגברה א', הצירוף הלינארי $e_1\cdot\beta_1+\ldots+e_n\cdot\beta_n$  היא הדרך היחידה לבטא את $v$ באמצעות איברי $\mathcal{E}$
+נתבונן בצירוף הלינארי $\alpha_1e_1+\ldots+\alpha_ne_n$
+\[
+	\alpha_1e_1+\ldots+\alpha_ne_n = \alpha_1\begin{pmatrix}
+		1 \\0\\\vdots\\0
+	\end{pmatrix}+\alpha_2\begin{pmatrix}
+		0 \\1\\\vdots\\0
+	\end{pmatrix}+\ldots+\alpha_n\begin{pmatrix}
+		0 \\0\\\vdots\\1
+	\end{pmatrix}=\begin{pmatrix}\alpha_1\\\vdots\\\alpha_n\end{pmatrix}=v
+\]
+ממשפט שהוכחנו באלגברה א', כל וקטור במרחב וקטורי ניתן לכתיבה באופן יחיד על ידי איברי בסיס כלשהו.\\
+לכן, מכיוון שגם $\beta_1e_1+\ldots+\beta_ne_n$ וגם $\alpha_1e_1+\ldots+\alpha_ne_n$ הם צירופים לינארים של הבסיס $\mathcal{E}$ ושניהם שווים ל$v$, המקדמים שלהם שווים, כלומר
+\[
+	\forall i \in \left[n\right] : \alpha_i = \beta_i \implies
+	\begin{pmatrix}\beta_1\\\vdots\\\beta_n\end{pmatrix}=\begin{pmatrix}\alpha_1\\\vdots\\\alpha_n\end{pmatrix}
+\]
+$\blacksquare$
+\newpage
+\part*{שאלה 2}
+יהי $\mathcal{B}:=\left(v_i\right)_{i\in\left[n\right]}=\left(v_1,\ldots,v_n\right)$ בסיס למרחב וקטורי $V$. נתונה $T:V\to V$ הפיכה הקמיימת
+\[
+	T\left(v_1+2v_2\right) = \sum_{i\in\left[n\right]} v_i
+\]
+מצאו את כל מקדמי המטריצה $\left[T^{-1}\right]_{\mathcal{B}}$
+\part*{פתרון 2}
+נתון כי $T\left(v_1+2v_2\right) = v_1+\ldots+v_n$ ולכן מהגדרת העתקה הופכית
+\[
+	T^{-1}\left(v_1+\ldots+v_n\right)=v_1+2v_2
+\]
+ובשפה של מטריצות מייצגות
+\[
+	\left[T^{-1}\right]_{\mathcal{B}} \cdot \left[v_1+\ldots+v_n\right]_{\mathcal{B}} = \left[v_1+2v_2\right]_{\mathcal{B}}
+\]
+מכיוון ש-$v_1,\ldots,v_n$ הם איברים הבסיס $\mathcal{B}$, ניתן לכתוב
+\begin{gather*}
+	\left[v_1+\ldots+v_n\right]_{\mathcal{B}} = \begin{pmatrix}
+		1 \\\vdots\\1
+	\end{pmatrix}\\
+	\left[v_1+2v_2\right]_{\mathcal{B}} = \begin{pmatrix}
+		1 \\2\\0\\\vdots\\0
+	\end{pmatrix}
+\end{gather*}
+נציב במשוואה
+\[
+	\left[T^{-1}\right]_{\mathcal{B}} \cdot \begin{pmatrix}
+		1 \\\vdots\\1
+	\end{pmatrix} = \begin{pmatrix}
+		1 \\2\\0\\\vdots\\0
+	\end{pmatrix}
+\]
+נשים לב שלהכפיל מטריצה בוקטור עמודה של $1$ בלבד, התוצאה תהיה וקטור עמודה שהכניסה ה-$i$ שלו הוא סכום השורה ה-$i$ של המטריצה.\\
+לכן, סכום השורה הראשונה של $\left[T^{-1}\right]_{\mathcal{B}}$ הוא $1$, סכום השורה השנייה הוא $2$, והסכום של כל שאר השורות הוא $0$.\\
+נסכום את כל סכומי השורות של המטריצה על מנת לקבל את סכום כל הכניסות.
+\[
+	1 + 2 + 0 + \ldots + 0  = \boxed{3}
+\]
+$\blacksquare$
+\newpage
+\part*{שאלה 3}
+יהיו $V,W$ מרחבים וקטוריים סוף-מימדיים מעל שדה $\mathbb{F}$ ותהי $T\in \mathrm{Hom}_{\mathbb{F}}\left(V,W\right)$ העתקה לינארית חד-חד-ערכית.\\
+יהיו
+\begin{align*}
+	\mathcal{B} & = \left(v_1,\ldots,v_n\right) \\
+	\mathcal{C} & = \left(u_1,\ldots,u_n\right) \\
+\end{align*}
+בסיסים של $V$ ויהיו
+\begin{align*}
+	\mathcal{B}' & = \left(T\left(v_1\right),\ldots,T\left(v_n\right)\right) \\
+	\mathcal{C}' & = \left(T\left(u_1\right),\ldots,T\left(u_n\right)\right) \\
+\end{align*}
+\begin{enumerate}
+	\item הראו כי $\dim V= \dim\left(\mathrm{Im} \left(T\right)\right)$
+	\item הראו כי $B',C'$ קבוצות בלתי תלויות ליאנרית, והסיקו כי הן בסיסי של $\mathrm{Im}\left(T\right)$
+	\item הראו כי $M^{\mathcal{B}}_{\mathcal{C}}=M^{\mathcal{B}'}_{\mathcal{C}'}$
+\end{enumerate}
+\part*{תשובה 3}
+\section*{סעיף א'}
+על פי משפט המימדים השני
+\[
+	\dim\left(V\right) = \dim\left(Ker\left(T\right)\right) + \dim\left(\mathrm{Im}\left(T\right)\right)
+\]
+נתון לנו כי $T$ חח"ע ולכן
+\[
+	Ker\left(T\right)=\left\{\vec{0}\right\}\implies\dim\left(Ker\left(T\right)\right)=0
+\]
+ולכן
+\[
+	\dim\left(V\right) = 0 + \dim\left(\mathrm{Im}\left(T\right)\right) \implies \dim\left(V\right) = \dim\left(\mathrm{Im}\left(T\right)\right)
+\]
+כנדרש\\
+$\blacksquare$
+\section*{סעיף ב'}
+יהיו $\alpha_1,\ldots,\alpha_n,\beta_1,\ldots,\beta_n\in\mathbb{F}$ כך ש
+\begin{align*}
+	\alpha_1T\left(v_1\right)+\ldots+\alpha_nT\left(v_n\right) & =0 \\
+	\beta_1T\left(u_1\right)+\ldots+\beta_nT\left(u_n\right)   & =0
+\end{align*}
+מספיק להוכיח כי $\alpha_1=\ldots=\alpha_n=\beta_1=\ldots=\beta_n=0$\\
+מלינאריות של $T$:
+\begin{align*}
+	T\left(\alpha_1v_1+\ldots+\alpha_nv_n\right) & =0 \\
+	T\left(\beta_1u_1+\ldots+\beta_nu_n\right)   & =0
+\end{align*}
+מכאן ש-$\left(\alpha_1v_1+\ldots+\alpha_nv_n\right),\left(\beta_1u_1+\ldots+\beta_nu_n\right)\in Ker\left(T\right)$\\
+$T$ חח"ע, ולכן $Ker\left(T\right)=\left\{\vec{0}\right\}$, מכאן נובע:
+\[
+	\left(\alpha_1v_1+\ldots+\alpha_nv_n\right)=\left(\beta_1u_1+\ldots+\beta_nu_n\right)=0
+\]
+$\mathcal{B},\mathcal{C}$ בסיסים ל-$V$, ובפרט שניהם בת"ל, ולכן עבור כל צ"ל של איבריהם שמתאפס, כל הסקלארים הם $0$, ולכן:
+\[
+	\alpha_1=\ldots=\alpha_n=\beta_1=\ldots=\beta_n=0
+\]
+כנדרש.\\
+כעת נראה ש$\mathcal{B}',\mathcal{C}'$ בסיסים ל-$\mathrm{Im}\left(T\right)$.\\
+כפי שבדיוק הראנו, $\mathcal{B}',\mathcal{C}'$ בת"ל, ושתיהן מורכבות מ-$n$ וקטורים שונים. בסעיף הקודם הראינו ש-$\dim\left(\mathrm{Im}\left(T\right)\right)=n$, מה שאומר ש-$\mathcal{B}',\mathcal{C}'$ קבוצות בת"ל שגודלן שווה למימד המ"ו, ולכן הן בסיסים לאותו מ"ו.\\
+$\blacksquare$
+\section*{סעיף ג'}
+נכתוב את עמודות $M^{\mathcal{B}}_{\mathcal{C}}$
+\[
+	\forall i\in\left[n\right] : M^{\mathcal{B}}_{\mathcal{C}_i} = \left[I_d\left(v_i\right)\right]_{\mathcal{C}}
+\]
 \end{document}
