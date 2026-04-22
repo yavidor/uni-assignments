@@ -145,8 +145,39 @@ $\mathcal{B},\mathcal{C}$ בסיסים ל-$V$, ובפרט שניהם בת"ל, ו
 כפי שבדיוק הראנו, $\mathcal{B}',\mathcal{C}'$ בת"ל, ושתיהן מורכבות מ-$n$ וקטורים שונים. בסעיף הקודם הראינו ש-$\dim\left(\mathrm{Im}\left(T\right)\right)=n$, מה שאומר ש-$\mathcal{B}',\mathcal{C}'$ קבוצות בת"ל שגודלן שווה למימד המ"ו, ולכן הן בסיסים לאותו מ"ו.\\
 $\blacksquare$
 \section*{סעיף ג'}
-נכתוב את עמודות $M^{\mathcal{B}}_{\mathcal{C}}$
+נכתוב במפורש את $M^{\mathcal{B}}_{\mathcal{C}}$ ואת  $M^{\mathcal{B}'}_{\mathcal{C}'}$
+\begin{gather*}
+	M^{\mathcal{B}}_{\mathcal{C}} = \begin{pmatrix}
+		\vert                          &        & \vert                          \\
+		\left[v_1\right]_{\mathcal{C}} & \ldots & \left[v_n\right]_{\mathcal{C}} \\
+		\vert                          &        & \vert
+	\end{pmatrix} \\
+	M^{\mathcal{B}'}_{\mathcal{C}'} = \begin{pmatrix}
+		\vert                                         &        & \vert                                         \\
+		\left[\left(Tv_1\right)\right]_{\mathcal{C}'} & \ldots & \left[T\left(v_n\right)\right]_{\mathcal{C}'} \\
+		\vert                                         &        & \vert
+	\end{pmatrix}
+\end{gather*}
+יהי $i\in\left[n\right]$ מהיות $\mathcal{C}$ בסיס, קיימים $\alpha_{i_1},\ldots,\alpha_{i_n}\in \mathbb{F}$ כך ש
 \[
-	\forall i\in\left[n\right] : M^{\mathcal{B}}_{\mathcal{C}_i} = \left[I_d\left(v_i\right)\right]_{\mathcal{C}}
+	\alpha_{i_1}u_1+\ldots+\alpha_{i_n}u_n=v_i
 \]
+מהגדרת קואורדינטות, זה אומר ש-$\left[v_i\right]_{\mathcal{C}} = \begin{pmatrix}
+		\alpha_{i_1} \\
+		\vdots       \\
+		\alpha_{i_n}
+	\end{pmatrix}$.\\
+נפעיל $T$ על שני צדדי המשוואה ונקבל
+\[
+	T\left(\alpha_{i_1}u_1+\ldots+\alpha_{i_n}u_n\right)=T\left(v_i\right)\underset{T\text{ לינאריות}}{=} \alpha_{i_i}T\left(u_1\right)+\ldots+\alpha_{i_n}T\left(u_n\right)
+\]
+קיבלנו צ"ל של איברי $\mathcal{C}'$ עם הסקלארים $\alpha_{i_1},\ldots,\alpha_{i_n}$ שיוצר את הוקטור $T\left(v_i\right)$.\\
+מהגדרת קואורדניטות, זה אומר ש-$\left[T\left(v_i\right)\right]_{\mathcal{C}'} = \begin{pmatrix}
+		\alpha_{i_1} \\
+		\vdots       \\
+		\alpha_{i_n}
+	\end{pmatrix}$\\
+קיבלנו ש$\left[v_i\right]_{\mathcal{C}} = \left[T\left(v_i\right)\right]_{\mathcal{C}'}$, מכיוון שהם וקטורי העמודי ה-$i$ של $M^{\mathcal{B}}_{\mathcal{C}}$ ו-$M^{\mathcal{B}'}_{\mathcal{C}'}$ בהתאה, זה אומר שהעמודות ה-$i$ של שתי המטריצות שוות.\\
+משרירותיות $i$, זה אומר שכל עמודה של המטריצות הללו שוות. מה שאומר שהמטריצות שוות, כנדרש.\\
+$\blacksquare$
 \end{document}

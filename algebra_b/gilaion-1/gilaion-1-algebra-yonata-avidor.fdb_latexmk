@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1776826980.49979 "gilaion-1-algebra-yonata-avidor.latex" "gilaion-1-algebra-yonata-avidor.pdf" "gilaion-1-algebra-yonata-avidor" 1776826983.966 0
+["lualatex"] 1776855215.24982 "gilaion-1-algebra-yonata-avidor.latex" "gilaion-1-algebra-yonata-avidor.pdf" "gilaion-1-algebra-yonata-avidor" 1776855217.60317 0
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/065b7f20856945fa4b5f22ea8a410c62eb1291b7f924230b1de508d11b0a3c2a.luc" 1763846071.27899 15800 953d2b8b0bce292ac96cfa085d00bac8 ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/26c8ce3fa37050763bc64d05336ff06c0df6742d953f778152e69edc7ef578e0.luc" 1763846071.21665 18657 a9b2449670badcd3955fe3e8dc5c2040 ""
   "/home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/3bcaa0a85c14d58cd73ca93c9024718ffd6f38bc2a6106ae695e6c4f6c5d2812.luc" 1763846071.20199 18896 179a7ab3029a81619218c2e52cecf14c ""
@@ -43,6 +43,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
@@ -140,8 +141,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1760219069 5528139 daf1353d2d3d7fed9df2ebbf1b26218e ""
   "/usr/local/texlive/2025/texmf-var/tex/generic/config/language.dat" 1760219063.65938 6800 2e9f5424340d7173f71af9b11d1f0b93 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1760219421 5631957 28504e8cdfaa347511f531003229b5c9 ""
-  "gilaion-1-algebra-yonata-avidor.aux" 1776826982.91193 149 061efcd3e96b602f7b4f64647eb2c689 "lualatex"
-  "gilaion-1-algebra-yonata-avidor.latex" 1776826979.97519 7750 9a7f315f98e2efe60050187d92747c92 ""
+  "gilaion-1-algebra-yonata-avidor.aux" 1776855217.34051 149 c5830c989e70e7761ddfc00530e89854 "lualatex"
+  "gilaion-1-algebra-yonata-avidor.latex" 1776855214.8049 9763 ec6701565171bb79a3d4fbea388a8c87 ""
   (generated)
   "gilaion-1-algebra-yonata-avidor.aux"
   "gilaion-1-algebra-yonata-avidor.log"
