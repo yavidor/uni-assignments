@@ -1,0 +1,359 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה א' ???????? \\ גליון 11}
+\author{????? ?????? - ?????????}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{?????????}}
+\part*{שאלה 1}
+\section*{סעיף א'}
+נתונה המטריצה הבאה:
+\[
+    A=\begin{pmatrix}
+        1 & -2 & -5 \\
+        -1 & 3 & 8 \\
+        -1 & 1 & 3
+    \end{pmatrix}
+\]
+חשבו את $adj\left(A\right)$. באמצעות חישוב זה, חשבו את $A^{-1}$
+\section*{סעיף ב'}
+נתון כי $\left|B\right|=\frac{1}{3}, \left|A^{t}B^{2}\right| = \frac{2}{9}$. חשבו את
+\[
+    \left|AB^{t}B^{-1}A^{t}B^{4}\left(A^{-1}\right)^{t}\left(A^{t}\right)^{-1}\right|
+\]
+\section*{סעיף ג'}
+תהא $A\in\mathbb{R}^{4\times4}$. נבצע את פעולות הדירוג הבאות על שורות ועמודות לפי הסדר
+\begin{gather*}
+    R_4 \to -3R_4 \\
+    R_3 \to R_3 + 4R_2 \\
+    C_1 \leftrightarrow C_3
+\end{gather*}
+נסמן את המטריצה שהתקבלה לאחר הפעולות ב-$B$. נתון כי $\left|\left(B^{-1}\right)^{t}\right|=\frac{1}{4}$. חשבו את $\left|A\right|$
+\newpage
+\part*{פתרון 1}
+נחשב את $adj\left(A\right)$ \\
+ראשית, נחשב את המינורים:
+\begin{gather*}
+    M_{1,1} = 3\cdot3-8\cdot1=1 \\
+    M_{1,2} = -1 \cdot 3 - 8 \cdot -1  = -3 + 8 = 5\\
+    M_{1,3} = -1 \cdot 1 - 3 \cdot -1 = -1 + 3 = 2 \\
+    M_{2,1} = -2 \cdot 3 - -5 \cdot 1 = -6 - -5 = -6 + 5 = -1 \\
+    M_{2,2} = 1 \cdot 3 - -5 \cdot -1 = 3 - 5 = -2 \\
+    M_{2,3} = 1 \cdot 1 - -2 \cdot -1 = 1 - 2 = -1 \\
+    M_{3,1} = -2 \cdot 8 - -5 \cdot 3 = -16 + 15 = -1 \\
+    M_{3,2} = 1 \cdot 8 - -5\cdot -1 = 8-5 = 3 \\
+    M_{3,3} = 1 \cdot 3 - -2 \cdot -1 = 3 -2 = 1
+\end{gather*}
+על פי זה ניצור את $adj\left(A\right)$
+\[
+    adj\left(A\right) = \begin{pmatrix}
+        1 & -5 & 2 \\
+        1 & -2 & 1 \\
+        -1 & -3 & 1
+    \end{pmatrix}^{t} = \begin{pmatrix}
+        1 & 1 & -1 \\
+        -5 & -2 & -3 \\
+        2 & 1 & 1
+    \end{pmatrix}
+\]
+כעת, נחשב את $A^{-1}$ על פי הנוסחה
+\[
+    A^{-1} = \frac{1}{\left|A\right|} \cdot adj\left(A\right)
+\]
+ראשית, נחשב את הדטרמיננטה של $A$ (ונגלה אם היא בכלל הפיכה)
+\[
+    \left|A\right| = \begin{vmatrix}
+         1 & -2 & -5 \\
+        -1 & 3 & 8 \\
+        -1 & 1 & 3
+    \end{vmatrix}
+\]
+נעשה פעולות דירוג, ונשים לב לשינויים שהם עלולים ליצור לדטרמיננטה
+\begin{gather*}
+     \begin{vmatrix}
+         1 & -2 & -5 \\
+        -1 & 3 & 8 \\
+        -1 & 1 & 3
+    \end{vmatrix} \\
+    \xrightarrow{R_2 \to R_2 + R_1, R_3 \to R_3 + R_1} \begin{vmatrix}
+        1 & -2 & -5 \\
+        0 & 1 & 3 \\
+        0 & -1 & -2
+    \end{vmatrix}\\
+    \xrightarrow{R_3 \to R_3 + R_2 } \begin{vmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 3 \\
+        0 & 0 & 1
+    \end{vmatrix}
+\end{gather*}
+במטריצה משולשת עליונה, הדטרמיננטה היא מכפלת האלכסון ולכן $\left|A\right| = 1$\\
+מכאן ניתן לחשב את ההופכית
+\[
+    A^{-1} = 1 \cdot adj\left(A\right) = adj\left(A\right) = \begin{pmatrix}
+        1 & 1 & -1 \\
+        -5 & -2 & -3 \\
+        2 & 1 & 1
+    \end{pmatrix}
+\]
+\section*{סעיף ב'}
+נציין כמה תכונות דטרמיננטה
+\begin{gather*}
+    \left|A^t\right| = \left|A\right| \\
+    \left|A^{-1}\right| = \left|A\right|^{-1} \\
+    \left|A^{n}\right| = \left|A\right|^{n}
+    \left|A\cdot B\right| = \left|A\right| \cdot \left|B\right|
+\end{gather*}
+\[
+    \left|AB^{t}B^{-1}A^{t}B^{4}\left(A^{-1}\right)^{t}\left(A^{t}\right)^{-1}\right| = \left|A\right| \cdot \left|B\right| \cdot \left|B\right|^{-1} \cdot \left|A\right| \cdot \left|B\right|^{4} \cdot \left|A\right|^{-1} \cdot \left|A\right|^{-1}
+\]
+מקומוטטוביות כפל סקלארים מעל השדה $\mathbb{F}$
+\[
+    \left|A\right| \cdot \left|B\right| \cdot \left|B\right|^{-1} \cdot \left|A\right| \cdot \left|B\right|^{4} \cdot \left|A\right|^{-1} \cdot \left|A\right|^{-1} = \left|A\right|\cdot\left|A\right|^{-1}\cdot\left|A\right|\cdot\left|A\right|^{-1}\cdot \left|B\right|\cdot\left|B\right|^{-1}\cdot\left|B\right|^{4}
+\]
+מאקסיומת השדה האומרת $\forall a\in\mathbb{F}: a\cdot a^{-1} = 1$: 
+\[
+    \left|A\right|\cdot\left|A\right|^{-1}\cdot\left|A\right|\cdot\left|A\right|^{-1}\cdot \left|B\right|\cdot\left|B\right|^{-1}\cdot\left|B\right|^{4} = 1 \cdot 1 \cdot 1 \cdot \left|B\right|^{4} = \left|B\right|^{4}
+\]
+נתון לנו כי $\left|B\right|=\frac{1}{3}$ ולכן:
+\[
+    \boxed{  \left|B\right|^{4} = \frac{1}{3}^4 = \frac{1}{3^4} = 81}
+\]
+\section*{סעיף ג'}
+נסמן $x=\left|A\right|,y=\left|B\right|$, נרצה למצוא את $x$
+\[
+    y = x \cdot -3 \cdot 1 \cdot -1 \implies = 3x
+\]
+מכיוון שדטרמיננטה לא משתנה תחת שחלוף, $\left|B^{-1}\right|=\left|B\right|^{-1}$, ו$y=\left|B\right|$ אנחנו מקבלים כי
+\[
+    \frac{1}{4} = \left|\left(B^{-1}\right)\right| = \left|B^{-1}\right| = \left|B\right|^{-1} = y^{-1} \implies y=4 = 3x \implies x = \frac{4}{3} = \left|A\right|
+\]
+\newpage
+\part*{שאלה 2}
+תהא $A\in \mathrm{M}_n\left(\mathbb{F}\right)$ המקיימת $A^{n}=0$ אך $A^{n-1} \neq 0$
+\section*{סעיף א'}
+הוכיחו כי קיים $v\in\mathbb{F}^n$ כך ש$A^{n-1}v\neq 0$
+\section*{סעיף ב'}
+עבור אותו $v$, הוכיחו כי הקבוצה $\left\{v,Av,A^2v,\ldots,A^{n-1}v\right\}$ בת"ל.
+\section*{סעיף ג'}
+הוכיחו כי $A$ דומה למטריצה הבאה:
+\[
+    J=\begin{pmatrix}
+        0 & 0 & \ldots & 0 & 0 \\
+        1 & 0 & \ldots & 0 & 0 \\
+        0 & 1 & \ldots & 0 & 0 \\
+        \ldots & \ldots & \ldots & \ldots & \ldots \\
+        0 & 0 & \ldots & 1 & 0
+    \end{pmatrix}
+\]
+\section*{סעיף ד'}
+חשבו את $r\left(A\right)$ ואת $tr\left(A\right)$
+\newpage
+\part*{פתרון 2}
+\section*{סעיף א'}
+\[
+    A^{n-1} \neq 0 \implies \exists i,j \in \left[n\right]: \left(A^{n-1}\right)_{ij} \neq 0
+\]
+נתבונן ב$v:=e_j$, כלומר וקטור העמודה שבכל הכניסות שלו יש $0$ מלבד האחת הכניסה ה$j$-ית שם יש $1$\\
+נתבונן ב$A^{n-1}v$ במקום ה$i,1$
+\[
+    \left(A^{n-1}v\right)_{i,1} = \sum_{k=1}^{n} \left(A^{n-1}\right)_{ik} \cdot v_{k1}
+\]
+הביטוי שבתוך הסכום מתאפס עבור כל $k\neq j$ שכן $\forall k \in \left[n\right]: v_{k1} \neq 0 \iff k=j$ לכן
+\[
+    \left(A^{n-1}v\right)_{i,1} = 0 + 0 + \ldots + \left(A^{n-1}\right)_{ij} \cdot v_{j1} + \ldots + 0
+\]
+נזכור ש$v_{j1} = 1, \left(A^{n-1}\right)_{ij} \neq 0$ ולכן הכפל שלהם גם הוא לא שווה ל-$0$ \\
+לכן $\left(A^{n-1}v\right)_{i,1}\neq 0 \implies A^{n-1}v \neq \vec{0}$\\
+\blacksquare
+\section*{סעיף ב'}
+יהיו $\alpha_0,\ldots,\alpha_{n-1}\in\mathbb{F}$ כך ש:
+\[
+    \alpha_0v+\alpha_1\left(Av\right)+\alpha_2\left(A^2v\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right) =\vec{0}
+\]
+על מנת להוכיח ש $\left\{v,Av,A^2v,\ldots,A^{n-1}v\right\}$ בת"ל, מספיק להוכיח כי
+\[
+    \alpha_0=\alpha_1=\ldots=\alpha_{n-1}=0
+\]
+נוכיח את זה אינדוקטיבית על $k\in\left[n\right]$
+נכפיל משמאל את שני צדדי המשוואה ב$A^{n-1}$
+\[
+    A^{n-1}\cdot\left(\alpha_0v+\alpha_1\left(Av\right)+\alpha_2\left(A^2v\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right) \right)=A^{n-1}\vec{0}
+\]
+נשים לב שצד ימין נשאר $\vec{0}$\\
+נפתח את הצד השמאלי של המשוואה באמצעות דיסטריבוטיביות כפל מעל חיבור עם מטריצות
+\begin{gather*}
+A^{n-1}\cdot\left(\alpha_0v+\alpha_1\left(Av\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right) \right)\\
+=A^{n-1}\alpha_0v + A^{n-1}\alpha_1\left(Av\right) +\ldots+A^{n-1}\alpha_{n-1}\left(A^{n-1}v\right)\\
+ \underset{\left(*\right)}{=}\alpha_0\left(A^{n-1}v \right)+\alpha_1\left(\underbrace{A^{n-1}A}_{A^n}v\right) +\ldots+\alpha_{n-1}\left(\underbrace{A^{n-1}A^{n-1}}_{A^{2n-2}}v\right)
+\end{gather*}
+$\left(*\right)$ קומוטטיביות כפל בסקלאר של במטריצות, אסוציאטיביות של כפל בסקלאר של מטריצות\\
+נתון כי $A^n=0$, לכן עבור כל $n'>n$ מתקיים
+\[
+    A^k = A^{n'-n}\cdot A^n = A^{n'-n} \cdot 0 = 0
+\]
+ולכן
+\begin{gather*}
+\alpha_0\left(A^{n-1}v \right)+\alpha_1\left(A^{n-1}Av\right) +\ldots+\alpha_{n-1}\left(A^{n-1}A^{n-1}v\right) \\
+= \alpha_0\left(A^{n-1}v\right) + 0 + \ldots + 0 = \alpha_0\left(A^{n-1}v\right) \implies \alpha_0\left(A^{n-1}v\right) =0
+\end{gather*}
+נתון לנו כי $A^{n-1}v\neq0$ לכן $\alpha_0 = 0$\\
+צעד האינדוקציה\\
+נניח כי הוכחנו כי כל המקדמים עד $\alpha_{k-2}$ (כולל) הם $0$, נוכיח כי גם $\alpha_{k-1}=0$ (נזכיר שאת האלפות התחלנו לספור ב-$0$)
+\begin{gather*}
+    \underbrace{\alpha_0}_{0}v+\underbrace{\alpha_1}_{0}\left(Av\right)+\ldots+\alpha_{k-1}\left(A^{k-1}v\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right) =\vec{0}\\
+    = \alpha_{k-1}\left(A^kv\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right)\\
+    \underset{\times A^{n-k}}{\implies} A^{n-k}\left(\alpha_{k-1}\left(A^{k-1}v\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right)\right) =A^{n-k} 0=0
+\end{gather*}
+באותה צורה שעשינו בהנחת האינדוקציה נעביר את המקדמים להתחלה
+\begin{gather*}
+    A^{n-k}\left(\alpha_{k-1}\left(A^{k-1}v\right)+\ldots+\alpha_{n-1}\left(A^{n-1}v\right)\right) \\
+= \alpha_{k-1}\left(\underbrace{A^{n-k}A^{k-1}}_{A^{n-1}}v\right)+\alpha_{k}\left(\underbrace{A^{n-k}A^{k}}_{A^n}v\right)+\ldots+\alpha_{n-1}\left(\underbrace{A^{n-k}A^{n-1}}_{A^{2n-k-1}}v\right) \\
+= \alpha_{k-1} \left(A^{n-1}v\right) =0 \implies \alpha_{k-1}=0
+\end{gather*}
+הוכחנו באינדוקציה כי כל $\alpha=0$ לכן הקבוצה בת"ל\\
+$\blacksquare$
+\section*{סעיף ג'}
+נרצה להוכיח ש$A\sim J$, נעשה זאת בכך שנוכיח ששתיהן מטריצות מייצגות לאותה העתקה לינארית\\
+תהא העתקה $T$
+\begin{gather*}
+    T:\mathbb{F}^n \to \mathbb{F}^n\\
+    \forall u\in\mathbb{F}: T\left(u\right) = Au
+\end{gather*}
+ראינו בכיתה כי $\left[T\right]_E = A$\\
+נסמן $B=\left\{v,Av,A^2v,\ldots,A^{n-1}v\right\}$ \\
+נשים לב $B$ קבוצה בת"ל בגודל $n$ ולכן היא בסיס ל-$\mathbb{F}^n$
+נטען כי $\left[T\right]_B = J$\\
+נתבונן ב$\left[T\right]$
+\begin{gather*}
+T\left(b_1\right) = A\cdot b_1 = Av = b_2 \implies \left[T\left(b_1\right)\right]_B = \begin{pmatrix}0\\1\\\vdots\\0\end{pmatrix}\\
+T\left(b_2\right) = A\cdot b_2 = A\left(Av\right) = A^2v = b_3 \implies \left[T\left(b_1\right)\right]_B = \begin{pmatrix}0\\0\\1\\\vdots\\0\end{pmatrix}\\
+\vdots\\
+T\left(b_n\right) = A\cdot b_n = A\left(A^{n-1}v\right) = A^nv = 0 \implies \left[T\left(b_n\right)\right]_B = \begin{pmatrix}0\\0\\\vdots\\0\end{pmatrix}
+\end{gather*}
+קיבלנו ש
+\[
+    \left[T\right]_B = \begin{pmatrix}
+        0 & 0 & \ldots & 0 & 0 \\
+        1 & 0 & \ldots & 0 & 0 \\
+        0 & 1 & \ldots & 0 & 0 \\
+        \ldots & \ldots & \ldots & \ldots & \ldots \\
+        0 & 0 & \ldots & 1 & 0
+\end{pmatrix} = J
+\]
+מכיוון ש-$A$ ו-$J$ מטריצות מייצגות של אותה ההעתקה בבסיסים שונים, הן דומות\\
+$\blacksquare$
+\newpage
+\part*{שאלה 3}
+תהא $A\in\mathbb{F}^{n\times n}$ ונגדיר העתקה לינארית $T:\mathbb{F}^{n\times n} \to \mathbb{F}^{n \times n}$ ע"י
+\[
+    T\left(X\right) = AX
+\]
+הראו שקבוצת הערכים העצמיים של $T$ שווה לקבוצת הערכים העצמיים של $A$
+\newpage
+\part*{פתרון 3}
+על מנת להראות שקבוצת הע"ע של $T$ שווה לקבוצת הע"ע $A$ צריך להראות שכל ע"ע של $T$ הוא גם ע"ע של $A$ ולהיפך (הכלה דו כיוונית)
+\subsection*{$\lambda_T\subseteq\lambda_A$}
+יהי$\lambda$ ע"ע של $T$, נרצה להוכיח כי $\lambda$ ע"ע של $A$\\
+$\lambda$ ע"ע של $T$ ולכן קיימת מטריצה $0\neq X\in\mathrm{M}_n\left(\mathbb{F}\right)$ המקיימת
+\[
+    T\left(X\right) = \lambda X = A\cdot X
+\]
+נחפש $0\neq v\in\mathbb{F}^{n}$ כך ש$Av = \lambda v$
+\[
+    X\neq 0 \implies \exists i,j \in \left[n\right]: X_{ij} \neq 0
+\]
+עם ה-$j$ הזו, נסתכל על העמודה ה$j$ של $AX$ ונקרא לה $v$ \\
+נתבונן ב$Av$ \\
+מכיוון ש$v$ היא העמודה ה-$j$ של $X$, $Av$ יביא את העמודה ה-$j$ של $AX$, ולכן $\lambda v$ היא הכפלה ב-$\lambda$ של העמודה ה-$j$ של $AX$, אבל הרי $AX=\lambda X$ לעמודה ה-$j$ של $\lambda X$, כלומר $\lambda v$. קיבלנו ש $Av = \lambda v$ ולכן $\lambda$ ע"ע של $A$
+\subsection*{$\lambda_A\subseteq\lambda_T$}
+יהא $\lambda \in \mathbb{F}$ ערך עצמי של $A$, נרצה להוכיח כי $\lambda$ ע"ע של $T$.\\
+מהיות $\lambda$ ע"ע של $A$ קיים $0\neq v \in \mathbb{F}^n$ כך ש\\
+נרצה להראות כי קיים $X\in\mathrm{M}_n\left(\mathbb{F}\right)$ כך ש$T\left(X\right)=\lambda X$\\
+נגדיר את $X$ בצורה הבאה:
+\[
+    X = \begin{pmatrix}
+        \vert & & \vert\\
+        v & \ldots & v\\
+        \vert & & \vert
+    \end{pmatrix}
+\]
+נתבונן ב$AX$. כל עמודה של $AX$ היא $A\cdot v=\lambda v$. לכן $AX = T\left(X\right) =\lambda X$ \\
+$\blacksquare$
+\newpage
+\part*{שאלה 4}
+נתונה העתקה לינארית $T:\mathrm{M}_2\left(\mathbb{Z}_5\right) \to \mathrm{M}_2\left(\mathbb{Z}_5\right)$ המוגדרת על ידי:
+\[
+    T\begin{pmatrix}
+        a&b\\c&d
+    \end{pmatrix}=\begin{pmatrix}
+        a&a+b\\b+c&c+d
+    \end{pmatrix}
+\]
+\section*{סעיף א'}
+מצאו את כל הע"ע + ו"ע של $T$
+\section*{סעיף ב'}
+מהי העקבה של המטריצה המייצגת של ההעתקה $T^2+3T$
+\newpage
+\part*{תשובה 4}
+\section*{סעיף א'}
+נמצא מטריצה מייצגת ל$T$ לפי הבסיס הסטנדרטי $E$
+\[
+\begin{gathered}
+    T\left(e_1\right) = \begin{pmatrix}1&1\\0&0\end{pmatrix}\implies\left[T\left(e_1\right)\right]_E=\begin{pmatrix}1\\1\\0\\0\end{pmatrix}\\
+    T\left(e_2\right) = \begin{pmatrix}0&1\\1&0\end{pmatrix}\implies\left[T\left(e_2\right)\right]_E=\begin{pmatrix}0\\1\\1\\0\end{pmatrix}\\
+    T\left(e_3\right) = \begin{pmatrix}0&0\\1&1\end{pmatrix}\implies\left[T\left(e_3\right)\right]_E=\begin{pmatrix}0\\0\\1\\1\end{pmatrix}\\
+    T\left(e_4\right) = \begin{pmatrix}0&0\\0&1\end{pmatrix}\implies\left[T\left(e_4\right)\right]_E=\begin{pmatrix}0\\0\\0\\1\end{pmatrix}
+\end{gathered}\implies \left[T\right]_E = \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    1 & 1 & 0 & 0 \\
+    0 & 1 & 1 & 0 \\
+    0 & 0 & 1 & 1
+\end{pmatrix}
+\]
+המטריצה משולשת לכן הע"ע הם איברי האלכסון, האלכסון מורכב כולו מ-$1$ ולכן הע"ע היחיד הוא $1$ בריבוי אלגברי של $4$, נמצא ו"ע
+\begin{gather*}
+    A-I = \begin{pmatrix}
+        0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0
+    \end{pmatrix} \to \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 
+    \end{pmatrix}
+\end{gather*}
+לכן הגרעין של $A-I$ הוא $\mathrm{sp}\left\{\begin{pmatrix}0\\0\\0\\1\end{pmatrix}\right\}$\\
+אנחנו מחפשים וקטורים עצמיים לכן זה לא כולל את וקטור האפס
+
+\[
+v_A  = \left\{ \begin{pmatrix} 0&0\\0&1\end{pmatrix},\begin{pmatrix} 0&0\\0&2\end{pmatrix},\begin{pmatrix} 0&0\\0&3\end{pmatrix},\begin{pmatrix} 0&0\\0&4\end{pmatrix} \right\}
+\]
+\section*{סעיף ב'}
+מלינאריות העקבה
+\[
+    tr\left(T^2+3T\right) = tr\left(T^2\right) + tr\left(3T\right)
+\]
+נחשב את $tr(T^2)=4$
+נחשב את $tr\left(T\right)$
+\[
+    tr\left(T\right) = 1+1+1+1 =4
+\]
+נציב
+\[
+    tr\left(T^2\right) + tr\left(3T\right) = 4+ 12 = 16 \equiv_5 = 1
+\]
+
+\end{document}
