@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.12)  6 MAY 2026 20:10
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.12)  7 MAY 2026 13:33
  restricted system commands enabled.
  file:line:error style messages enabled.
-**moed-a.latex
-(./moed-a.latex
+**moed-b.latex
+(./moed-b.latex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -332,12 +332,18 @@ Inserting `Babel.pre_otfload_h' in `hpack_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
 \bbl@attr@dir=\attribute5
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 12.
 )
-Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4309.
- (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2025/10/01 v25.13 Nil language
-\l@nil=\language92
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 108.
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/he/babel-hebrew.tex)
 Package babel Info: Importing data for hebrew
 (babel)             from babel-he.ini. Reported on input line 6.
@@ -388,7 +394,7 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen166
 \titlewidthlast=\dimen167
 \titlewidthfirst=\dimen168
-) (./moed-a.aux
+) (./moed-b.aux
 
 Package babel Info: The following font families will use the default
 (babel)             settings for all or some languages:
@@ -458,7 +464,7 @@ Package fontspec Info:
 (fontspec)             CLM/BI:mode=harf;script=hebr;language=IWR;+tlig;family=sf;"
 
 )
-\openout1 = moed-a.aux
+\openout1 = moed-b.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -554,10 +560,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `TU/HadasimCLM(0)/bx/n' in size <17.28> not available
+(Font)              Font shape `TU/HadasimCLM(0)/b/n' tried instead on input line 14.
+
 
 [1]
-This exam contains 3 questions with 12 parts, 0 subparts, and 0 subsubparts.
-(./moed-a.aux)
+LaTeX Font Info:    Font shape `TU/HadasimCLM(0)/bx/n' in size <12> not available
+(Font)              Font shape `TU/HadasimCLM(0)/b/n' tried instead on input line 28.
+
+
+[2]
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+This exam contains 5 questions with 13 parts, 0 subparts, and 0 subsubparts.
+(./moed-b.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -565,19 +587,19 @@ L3 programming layer <2025-09-02>
 )
 
 Here is how much of LuaTeX's memory you used:
- 7392 strings out of 476291
- 100000,662416 words of node,token memory allocated
- 829 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 80 attribute, 78 glue_spec, 30 attribute_list, 2 write nodes
-   avail lists: 1:1,2:6637,3:257,4:5,5:266,6:30,7:2920,8:13,9:378,10:5,11:4
- 29563 multiletter control sequences out of 65536+600000
- 82 fonts using 5640271 bytes
- 74i,10n,107p,444b,494s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Regular.ttf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on moed-a.pdf (2 pages, 74140 bytes).
+ 7452 strings out of 476291
+ 125028,662416 words of node,token memory allocated
+ 1786 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 1 glyph, 437 attribute, 79 glue_spec, 149 attribute_list, 2 write nodes
+   avail lists: 1:4,2:7241,3:233,4:11,5:392,6:26,7:3322,8:56,9:786,10:5,11:2
+ 29616 multiletter control sequences out of 65536+600000
+ 85 fonts using 5885735 bytes
+ 74i,16n,107p,491b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Bold.ttf></usr/local/texlive/2025/texmf-dist/fonts/truetype/public/culmus/HadasimCLM-Regular.ttf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on moed-b.pdf (7 pages, 98748 bytes).
 
-PDF statistics: 57 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+PDF statistics: 78 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

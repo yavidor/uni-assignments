@@ -1,0 +1,203 @@
+\documentclass[12pt, titlepage,answers]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[english,bidi=basic]{babel}
+\babelprovide[main,import,Alph=letters]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{מועד ב'}
+\author{גלעד גור}
+\begin{document}
+\maketitle
+\section*{הערה}
+משום מה כתוב points הפוך, גם סדר הספרות הפוך אז אם כתוב $21$ הכוונה היא $12$ ולהיפך.\\
+אם עשיתי טעויות בבקשה תכתבו לי - יונתן אבידור 054-2166594, אעדכן ואשלח מתוקן \\
+מקווה שהלך לכולם מצויין ונתראה באלגברה ב'!
+\begin{questions}
+	\newpage
+	\question
+	תהא $T:\mathbb{R}_3\left[x\right] \to \mathbb{R}_3\left[x\right]$ המוגדרת כך
+	\[
+		T\left(ax^3+bx^2+cx+d\right) = \left(a+b+c\right)x^3 + \left(3a+c-d\right)x^2 + \left(a+b+c\right)x + \left(3a+c-d\right)
+	\]
+	\begin{parts}
+		\part[12] הגדירו מהו פולינום אופייני עבור העתקה לינרארית וחשבו את הפולינום האופייני של $T$
+		\begin{solution}
+			מחשבים את המטריצה המייצגת לפי הבסיס הסטנדרטי $E=\left(x^3,x^2,x,1\right)$, יוצא
+			\[
+				\left[T\right]_E^E = \begin{pmatrix}
+					1 & 1 & 1 & 0  \\
+					3 & 0 & 1 & -1 \\
+					1 & 1 & 1 & 0  \\
+					3 & 0 & 1 & -1
+				\end{pmatrix}
+			\]
+			סכום כל השורות זהה, לכן נעשה את הטריק שהיה גם במועד א'
+			נעשה $C_1\to C_1 + C_2 + C_3 + C_4$ \\
+			ואז כל האיברים ב-$C_1$ יהיו אותו דבר\\
+			נעשה $R_2\to R_2 - R_1, R_3 \to R_3 - R_1, R_4 \to R_4 - R_1$
+			ואז יהיה לנו $0$ בכל $C_1$ מלבד השורה הראשונה. כמה פעולות משם ויש לנו מטריצה משולשת עליונה ושלום על ישראל \\
+			יוצאים ע"ע $3,0,0,-2$
+		\end{solution}
+		\part[5] האם $T$ הפיכה?
+		\begin{solution}
+			לא, $R_1 = R_3, R_2 = R_4$, לכן השורות ת"ל ו-$T$ לא הפיכה
+		\end{solution}
+		\part[13] האם $T$ לכסינה? אם כן מצאו בסיס $B$ ומטריצה אלכסונית $D$ כך ש $\left[T\right]^B_B =D$
+		\begin{solution}
+			טעיתי בזה אבל התשובה היא כן.\\
+			בגלל ש-$r_a\left(\lambda\right) \geq r_g\left(\lambda\right) \geq 1$\\
+			הריבוי האלגברי של כל הע"ע מלבד $0$ הוא $1$ ולכן בהכרח $r_g=r_a$\\
+			אפשר לראות בעיניים שעבור ע"ע $0$ הדרגה היא $2$ ולכן מכיוון ש$4-2=2$ המימד העצמי של $0$ הוא $2$ וזה גם הריבוי האלגברי \\
+			קיבלנו שהריבוי האלגברי זהה לריבוי הגיאומטרי לכל ע"ע וביחד זה יוצא $4=n$, לכסין.
+			\[
+				\begin{pmatrix}
+					3 & 0 & 0 & 0  \\
+					0 & 0 & 0 & 0  \\
+					0 & 0 & 0 & 0  \\
+					0 & 0 & 0 & -2
+				\end{pmatrix}
+			\]
+			אין לי מושג מה הבסיס העצמי
+		\end{solution}
+	\end{parts}
+	\newpage
+	\question
+	יהי $V$ מרחב וקטורי סוף-מימדי מעל שדה $\mathbb{C}$ ויהיו $T,S:V\to V$ העתקות לינאריות מתחלפות, כלומר $ST=TS$
+	\begin{parts}
+		\part[3] הראו כי ל-$T$ קיים לפחות ערך עצמי אחד $\alpha \in \mathbb{C}$
+		\begin{solution}
+			אם הפולינום האופייני פריק, יש ערך עצמי. כל פולינום מעל $\mathbb{C}$ הוא פריק.
+		\end{solution}
+		\part[7?] נסמן ב-$V_\alpha$ את המרחב העצמי עבור הערך העצמי $\alpha$ של $T$. הראו כי עבור כל $v\in V_\alpha$ מתקיים $S\left(v\right) \in V_\alpha$
+		\begin{solution}
+			\begin{gather*}
+				T\left(v\right) = \alpha v \\
+				\implies S\left(T\left(v\right)\right) = S\left(\alpha v\right) \\
+				\implies T\left(S\left(v\right)\right) = \alpha S\left(v\right)
+				\implies S\left(v\right) = V_\alpha
+			\end{gather*}
+		\end{solution}
+		\part[3] תהא העתקה $S': V_\alpha  \to V_\alpha$ המוגדרת כ$S'\left(v\right)=S\left(v\right)$ עבור כל $v\in V_\alpha$. הראו כי ל-$S'$ קיים ערך עצמי.
+		\begin{solution}
+			אם הפולינום האופייני פריק, יש ערך עצמי. כל פולינום מעל $\mathbb{C}$ הוא פריק. \\
+			שאלה טריקית, קצת לא קול לשים את אותו הדבר בתור שני סעיפים, למה שזה לא יהיה סעיף אחד בשווי 6 נקודות?
+		\end{solution}
+		\part[7?] הראו כי קיים וקטור עצמי משותף ל-$T$ ול-$S$
+		\begin{solution}
+			וואלה אין לי מושג, אני חירטטתי בטירוף
+			כנראה קשור ל$S'\left(v\right)$ מהסעיף הקודם
+		\end{solution}
+	\end{parts}
+	\newpage
+	\question
+	לפניכם שלוש טענות, קבעו אם הטענות נכונות או לא. אם נכונות יש להוכיח, אם לא יש להביא דוגמה נגדית מנומקת. בכל האחת מהשאלות $V$ הוא מרחב וקטורי סוף-מימדי מעל שדה $\mathbb{F}$ ו-$T$ היא העתקה לינארית $T:V\to V$.
+	\begin{parts}
+		\part[5] אם $Ker\left(T\right)=\mathrm{Im}\left(T\right)$ אזי $T$ היא העתקת האפס
+		\begin{solution}
+			לא, דוגמה נספק דוגמה נגדית
+			\begin{gather*}
+				\mathbb{F} = \mathbb{R}\\
+				V=\mathbb{F}^2\\
+				T\left(\begin{pmatrix}
+						a \\b
+					\end{pmatrix}\right)= \begin{pmatrix}
+					0 \\a
+				\end{pmatrix}
+				Ker\left(T\right) = \begin{pmatrix}
+					0 \\1
+				\end{pmatrix}\\
+				\mathrm{Im}\left(T\right) = \begin{pmatrix}
+					0 \\1
+				\end{pmatrix}\\
+				T\left(\begin{pmatrix}
+						1 \\1
+					\end{pmatrix}\right) = \begin{pmatrix}
+					0 \\1
+				\end{pmatrix} \neq \begin{pmatrix}
+					0 \\0
+				\end{pmatrix}
+			\end{gather*}
+		\end{solution}
+		\part[5] אם $T^2 = T$ אזי $Ker\left(T\right) \oplus \mathrm{Im}\left(T\right) = V$
+		\begin{solution}
+			נכון, צריך להראות שהם זרים ואז באמצעות שימוש בשני משפטי המימדים (שניהם רלוונטים כי $T$ אופרטור) הראות ש-$Ker+Im=V$
+			על מנת להראות שהם זרים בוחרים איבר שאינו $0_V$ בגרעין, מניחים בשלילה שהוא בתמונה, לכן יש לו איבר מקור, מגיעים לסתירה שאומרת ש$v=0_V$ כסתירה להגדרת $v$
+		\end{solution}
+		\part[5] נניח $T$ הפיכה עם ע"ע $\lambda$. הוכיחו כי $\lambda \neq 0$ וכי $\lambda^{-1}$ ערך עצמי של $T^{-1}$ (אני חושב שהיה שם הרבה טקסט אז משהו לא מסתדר לי אבל זה מה שאני זוכר)
+		\begin{solution}
+			כן, אני טעיתי ממש בהוכחה, חירטטתי שטות לגבי הפולינום האופייני ומטריצה משולשת אבל תכלס
+			$\lambda\neq 0$ כי אז יש שורת אפסים במטריצה האלכסונית שדומה ל-$A$ כש-$A$ היא מטריצה מייצגת כלשהי של $T$, דרגה נשמרת בדמיון ולכן גם ל-$A$ יש דרגה לא מלאה, סתירה לכך ש-$A$ הפיכה.\\
+			על מנת להוכיח ש$\lambda^{-1}$ היא ע"ע של $A^{-1}$
+			\begin{gather*}
+				Av = \lambda v                                        \\
+				\implies A^{-1}Av = A^{-1}\lambda v                   \\
+				\implies v = \lambda A^{-1}v                          \\
+				\implies \lambda^{-1}v = \lambda^{-1}\lambda A^{-1} v \\
+				\implies \lambda^{-1}v = A^{-1}v
+			\end{gather*}
+			הלוואי והייתי חושב על זה במבחן פאק
+		\end{solution}
+	\end{parts}
+	\newpage
+	\question
+	\begin{parts}
+		\part[3] נסחו את משפט המימדים עבור העתקות לינאריות
+		\begin{solution}
+			יהי $\mathbb{F}$ שדה ו-$V,W$ מרחבים וקטורים ממימד סופי (יש שיגידו שרק $V$ צריך להיות ממימד סופי, אני כתבתי על שניהם כי אני לא יודע כלום על מרחבים ממימד אין-סופי) מעל $\mathbb{F}$ ותהא $T:V\to W$ העתקה לינארית, אזי
+			\[
+				\dim\left(Ker\left(T\right)\right) + \dim\left(\mathrm{Im}\left(T\right)\right) = \dim\left(V\right)
+			\]
+		\end{solution}
+		\part[12?] הוכיחו את משפט המימדים עבור העתקות לינאריות
+		\begin{solution}
+			מסמנים את מימד התחום כ-$n$, מימד הגרעין כ-$k$ ורוצים להוכיח כי מימד התמונה הוא $n-k$\\
+			בונים בסיס לגרעין, משלימים אותו לבסיס לתחום. התמונות של איברי קבוצה שפורשת את התחום תפרוש את התמונה ולכן נפעיל $T$ על הכל, נראה שהחלקים שמגיעים מהבסיס של הגרעין הם $0$ ולכן נבחר את ה$n-k$ וקטורים שנותרו ונטען כי הם בסיס לתמונה, על מנת לעשות את זה צריך להוכיח כי הם בתל \\
+			עושים צ"ל שלהם, מלינאריות מוצאים שהם כולם בגרעין, משווים אותם לצ"ל של איברי בסיס הגרעין, מעבירים אגף ורואים שמדובר בצירוף של איברי בסיס התחום לכן מתאפס
+		\end{solution}
+	\end{parts}
+	\newpage
+	\question
+	שאלת שיעורי הבית
+	\begin{parts}
+		\part[15] יהא $V$ ממימד $2$ מעל $\mathbb{R}$. תהא $T:V\to V$ העתקה לינארית המקיימת
+		\[
+			T^2 = -I
+		\]
+		הוכיחו כי קיים בסיס סדור $B$ ל-$V$ כך שמתקיים:
+		\[
+			\left[T\right]_B^B = \begin{pmatrix}
+				0  & 1 \\
+				-1 & 0
+			\end{pmatrix}
+		\]
+	\end{parts}
+	\begin{solution}
+		יהא $0_V\neq v \in V$ \\
+		שולפים מהמותן את הקבוצה $B=\left(T\left(v\right), v\right)$ היא קבוצה בגודל $2$ לכן היא בסיס אם היא בת"ל. \\
+		מניחים בשלילה שהיא תלויה לינארית לכן
+		\begin{gather*}
+			\exists \alpha \in \mathbb{R}: v=\alpha T\left(v\right) \\
+			\implies T\left(v\right) = \alpha T^2\left(v\right) \\
+			\implies \alpha T\left(v\right) = -\alpha^2 v \\
+			\implies v = -\alpha^2 v \\
+			\implies \left(1+\alpha^2\right)v = 0\\
+			\implies		1+\alpha^2 =0\\
+			\alpha^2 = -1
+		\end{gather*}
+		סתירה, לא קיים סקלאר שכזה מעל $\mathbb{R}$. לכן הקבוצה הזו בת"ל ובסיס.\\
+		עכשיו צריך להראות שהבסיס הזה אכן עונה לדרישה, מראים את המטריצה המייצגת ביחס לבסיס הזה
+		\[
+			\begin{aligned}
+				T\left(T\left(v\right)\right) = -v = 0 \cdot T\left(v\right) -1\cdot v \\
+				T\left(v\right) = 1 \cdot T\left(v\right) + 0 \cdot v
+			\end{aligned} \implies \left[T\right]_B^B = \begin{pmatrix}
+				0 & 1 \\ -1 & 0
+			\end{pmatrix}
+		\]
+		איזה כיף
+	\end{solution}
+\end{questions}
+\end{document}

@@ -1,7 +1,7 @@
-PWD /home/yavidor/uni-assignments/infi_1/test-moed-A
+PWD /home/yavidor/uni-assignments/algebra_a/test-moed-B
 INPUT /usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt
-INPUT ./moed-a.latex
-OUTPUT moed-a.log
+INPUT ./moed-b.latex
+OUTPUT moed-b.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tex-ini-files/lualatexquotejobname.lua
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/ltluatex.lua
 INPUT /usr/local/texlive/2025/texmf-dist/tex/luatex/luaotfload/luaotfload-main.lua
@@ -82,7 +82,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel-data-bidi.lua
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel-bidi-basic.lua
-INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/nil.ldf
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-en.ini
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/he/babel-hebrew.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/he/babel-he.ini
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/shared/babel-Hebr.ini
@@ -100,7 +102,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
-INPUT ./moed-a.aux
+INPUT ./moed-b.aux
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/otl/lmmono12-regular.luc
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc
@@ -112,7 +114,7 @@ INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/ccc9314
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/f529f6709fe96c3148a2be898cef87ea97c51e2ea90789a8c5d11d8ac8e57c7f.luc
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/065b7f20856945fa4b5f22ea8a410c62eb1291b7f924230b1de508d11b0a3c2a.luc
 INPUT /home/yavidor/.texlive2025/texmf-var/luatex-cache/generic/fonts/hb/c92a32d6d231457d9094df3ae25b16351552261dfc852246f9c3e337df16fa0a.luc
-OUTPUT moed-a.aux
+OUTPUT moed-b.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
@@ -133,7 +135,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr7.tfm
-OUTPUT moed-a.pdf
+OUTPUT moed-b.pdf
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
@@ -153,12 +155,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
-INPUT ./moed-a.aux
+INPUT ./moed-b.aux
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
