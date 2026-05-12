@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1778600602.00835 "gilaion-2-algebra-yonatan-avidor.latex" "gilaion-2-algebra-yonatan-avidor.pdf" "gilaion-2-algebra-yonatan-avidor" 1778600602.75186 0
+["lualatex"] 1778616816.53118 "gilaion-2-algebra-yonatan-avidor.latex" "gilaion-2-algebra-yonatan-avidor.pdf" "gilaion-2-algebra-yonatan-avidor" 1778616817.86833 0
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-bold.luc" 1770037307.49007 54495 6d1e04677a40f79ab14ff2024faac8eb ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-boldoblique.luc" 1770037307.48007 55799 5fef217971130cbc6fbfe77ec1f0a8c2 ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-regular.luc" 1770037307.46907 54551 36cc254eefb9c32f16f693bfada56f84 ""
@@ -16,6 +16,7 @@
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1770037307.44706 322405 2c7e5d909e1e23eb406353a55bb20f48 ""
   "/usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf" 1537994615 38076 76f4666ad58f510511b92ca5a6758c59 ""
   "/usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf" 1753228800 36852 f277d70fdd3c6e9a67c43c066037ed8c ""
+  "/usr/share/fonts/clm-miriam-mono-fonts/MiriamMonoCLM-Bold.ttf" 1537994615 34000 5a530cad7aa1ba16e166d72fa8d042e1 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -133,8 +134,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775907030.30225 4602002 62dba5fc29055c16380d7393a2adb07a ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1775906709 11873968 150a8b2484ec4a38e5501e952b73c379 ""
-  "gilaion-2-algebra-yonatan-avidor.aux" 1778600602.68281 111 9d9591746120a70381ff1e8e1fa86a1e "lualatex"
-  "gilaion-2-algebra-yonatan-avidor.latex" 1778600600.7658 4820 9b8c6197a9dc9d59fa9609a5420eab72 ""
+  "gilaion-2-algebra-yonatan-avidor.aux" 1778616817.72862 111 dbdac005e154589788814431de8a7a5c "lualatex"
+  "gilaion-2-algebra-yonatan-avidor.latex" 1778616816.03662 9641 020c11b8cd2d3ffe1e75cae89bdb3c85 ""
   (generated)
   "gilaion-2-algebra-yonatan-avidor.aux"
   "gilaion-2-algebra-yonatan-avidor.log"

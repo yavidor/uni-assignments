@@ -130,4 +130,154 @@ D := \begin{pmatrix}
 \end{gather*}
 \newpage
 \part*{שאלה 2}
+חשבו את הדטרמיננטות של האופרטורים הבאים
+\section*{סעיף א'}
+\begin{gather*}
+    T:\mathrm{Mat}_2\left(\mathbb{R}\right) \to \mathrm{Mat}_2\left(\mathbb{R}\right) \\
+    A\mapsto A^t
+\end{gather*}
+\section*{סעיף ב'}
+\begin{gather*}
+    T:\mathrm{Mat}_2\left(\mathbb{R}\right) \to \mathrm{Mat}_2\left(\mathbb{R}\right) \\
+    A\mapsto \begin{pmatrix}
+        0 & 1 \\ 1 & 0
+    \end{pmatrix}A
+\end{gather*}
+\section*{סעיף ג'}
+\begin{gather*}
+    T:\mathbb{C}_2\left[x\right] \to\mathbb{C}_2\left[x\right]  \\
+    p\left(x\right)\mapsto p'\left(x\right)
+\end{gather*}
+\part*{פתרון 2}
+
+\section*{סעיף א'}
+נחשב את המטריצה המייצגת
+לפי הבסיס הסטנדרטי 
+\[
+    \mathcal{E}=\left(\begin{pmatrix}
+        1 & 0 \\ 0 & 0
+\end{pmatrix},\begin{pmatrix}
+        0 & 1 \\ 0 & 0
+\end{pmatrix},\begin{pmatrix}
+        0 & 0 \\ 1 & 0
+\end{pmatrix},\begin{pmatrix}
+        0 & 0 \\ 0 & 1
+\end{pmatrix}\right)
+\]
+\begin{gather*}
+    T\left(
+e_1\right) = \begin{pmatrix}
+        1 & 0 \\ 0 & 0
+    \end{pmatrix} \implies \left[T\left(e_1\right)\right]_\mathcal{E} = \begin{pmatrix}
+        1\\0\\0\\0  \end{pmatrix} \\
+     T\left(
+e_2\right) = \begin{pmatrix}
+        0 & 0 \\ 1 & 0
+    \end{pmatrix} \implies \left[T\left(e_2\right)\right]_\mathcal{E} = \begin{pmatrix}
+        0\\0\\1\\0
+    \end{pmatrix} \\ 
+ T\left(
+e_3\right) = \begin{pmatrix}
+        0 & 1 \\ 0 & 0
+    \end{pmatrix} \implies \left[T\left(e_3\right)\right]_\mathcal{E} = \begin{pmatrix}
+        0\\1\\0\\0
+    \end{pmatrix} \\ 
+ T\left(
+e_4\right) = \begin{pmatrix}
+        0 & 0 \\ 0 & 1
+    \end{pmatrix} \implies \left[T\left(e_4\right)\right]_\mathcal{E} = \begin{pmatrix}
+        0\\0\\0\\1
+    \end{pmatrix} \\ 
+\end{gather*}
+ולכן
+\begin{gather*}
+    \left[T\right]_\mathcal{E} = \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{gather*}
+ואם נבצע $R_2\leftrightarrow R_3$ נקבל את מטריצת היחידה.\\
+ולכן 
+\[
+    \boxed{\det\left(T\right) = -1}
+\]
+\section*{סעיף ב'}
+נחשב את המטריצה המייצגת
+לפי הבסיס הסטנדרטי 
+\[
+    \mathcal{E}=\left(\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix},\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix},\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}\right) \]
+\begin{gather*}
+    T\left(e_1\right) = \begin{pmatrix}
+        0 &1 \\ 1 & 0
+    \end{pmatrix} \cdot \begin{pmatrix}
+        1 & 0 \\ 0 & 0 
+    \end{pmatrix} = \begin{pmatrix}
+        0 & 0 \\ 1 & 0
+    \end{pmatrix} \implies \left[T\left(e_1\right)\right]_\mathcal{E} = \begin{pmatrix}
+        0\\0\\1\\0  \end{pmatrix} \\
+     T\left(
+e_2\right)  = \begin{pmatrix}0&1\\1&0\end{pmatrix}             \cdot \begin{pmatrix}
+                0 & 1 \\ 0 & 0 
+            \end{pmatrix}
+ =\begin{pmatrix}
+     0 & 0 \\ 0 & 1
+ \end{pmatrix} \implies \left[T\left(e_2\right)\right]_\mathcal{E} = \begin{pmatrix}
+        0\\0\\0\\1
+    \end{pmatrix} \\ 
+ T\left(e_3\right) =\begin{pmatrix}
+     0 & 1 \\ 1 & 0
+ \end{pmatrix}   \cdot \begin{pmatrix}
+     0 & 0 \\ 1 & 0
+ \end{pmatrix} = \begin{pmatrix}
+     1 & 0 \\ 0 & 0 
+ \end{pmatrix}  \implies \left[T\left(e_3\right)\right]_\mathcal{E} = \begin{pmatrix}
+        1\\0\\0\\0
+    \end{pmatrix} \\ 
+ T\left(e_4\right) = \begin{pmatrix}
+        0 & 1 \\ 1 & 0
+        \end{pmatrix} \cdot \begin{pmatrix}
+        0 & 0 \\ 0 & 1
+    \end{pmatrix} = \begin{pmatrix}
+        0 & 1 \\ 0 & 0
+    \end{pmatrix} \implies \left[T\left(e_4\right)\right]_\mathcal{E}  = \begin{pmatrix}
+        0\\1\\0\\0
+    \end{pmatrix} \\ 
+\end{gather*}
+ולכן
+\[
+    \left[T\right]_\mathcal{E} = \begin{pmatrix}
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0
+    \end{pmatrix}
+\]
+ואם נבצע $R_1\leftrightarrow R_3$ ו$R_2\leftrightarrow R_4$ נקבל את מטריצת היחידה.\\
+ולכן
+\[
+    \boxed{\det\left(T\right) = 1}
+\]
+\section*{סעיף ג'}
+נחשב את המטריצה המייצגת
+לפי הבסיס הסטנדרטי 
+\[
+    \mathcal{E} = \left(1,x,x^2\right)
+\]
+\begin{gather*}
+    T\left(e_1\right) = 0 \implies \left[T\left(e_1\right)\right]_\mathcal{E} = \begin{pmatrix} 0\\0\\0\end{pmatrix}\\
+    T\left(e_2\right) = 1 \implies \left[T\left(e_2\right)\right]_\mathcal{E} = \begin{pmatrix} 1\\0\\0\end{pmatrix}\\
+    T\left(e_3\right) = 2x \implies \left[T\left(e_1\right)\right]_\mathcal{E} = \begin{pmatrix} 0\\2\\0\end{pmatrix}\\
+\end{gather*}
+ולכן
+\[
+    \left[T\right]_{\mathcal{E}} = \begin{pmatrix}
+        0 & 0 & 0\\ 0& 1 & 0\\0 & 0 & 2
+    \end{pmatrix}
+\]
+קיבלנו מטריצה אלכסונית, לכן
+\[
+    \boxed{\det\left(T\right) = 0 \cdot 1 \cdot 2 = 0}
+\]
 \end{document}
