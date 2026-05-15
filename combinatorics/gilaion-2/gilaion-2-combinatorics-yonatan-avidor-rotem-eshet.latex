@@ -1,0 +1,61 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage[shortlabels]{enumitem}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import,Alph=letters]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{קומבינטוריקה 1040286 \\ גליון 2}
+\author{יונתן אבידור - 214269565\\רותם עשת - 212674683}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\fancyfoot[R]{\text{212674683}}
+\part*{שאלה 1}
+מצאו את מספר הפתרונות בשלמים אי שליליים למשוואות הבאות:
+\section*{סעיף א'}
+$2x_1+2x_2+x_3=11$ כאשר $x_2 \geq 1$
+\section*{סעיף ב'}
+$\left(x_1 + x_2 + x_3\right)\left(x_4+x_5\right)=18$
+\part*{פתרון 1}
+\section*{סעיף א'}
+נשים לב כי $2x_1$ זוגי אי-שלילי ולכן קיים $a$ שלם אי-שלילי כך ש-$2x_1=2a$.\\
+בנוסף לכך, $2x_2$ זוגי חיובי ולכן קיים $b$ שלם אי-שלילי כך ש-$2x_2 =2b+2$.\\
+מכיוון ש-$2a+2b+2$ הוא מספר זוגי, ו-$11$ הוא מספר אי-זוגי, בהכרח $x_3$ הוא מספר אי-זוגי.\\
+$x_3$ מספר אי-זוגי אי-שלילי ולכן קיים $c$ שלם אי-שלילי כך ש-$x_3 = 2c+1$\\
+לכן
+\begin{gather*}
+    2x_1 + 2x_2 + x_3 = 11 \implies 2a + 2b + 2 + 2c  + 1 = 11 \\
+    \implies 2\left(a+b+c\right) = 8 \implies a+b+c = 4
+\end{gather*}
+צמצנו את הבעיה למציאת מספר הפתרונות של משוואה בשלושה נעלמים שלמים אי-שליליים ללא תנאים נוספים ולכן כמות הפתרונות היא
+\[
+    \binom{4+3-1}{3-1} = \binom{6}{2} = \frac{6!}{2!4!} = \frac{720}{48} =\frac{60}{4} = \boxed{15}
+\]
+\section*{סעיף ב'}
+נסמן
+\begin{gather*}
+    \mathbb{N} \ni  a := \left(x_1+x_2+x_3\right) \\
+    \mathbb{N}  \ni b:= \left(x_4+x_5\right) \\
+    a + b = 18 \implies b= \frac{18}{a}
+\end{gather*}
+נוכל לבחור את $a$ כמחלק כלשהו של $18$, ואז יש $\binom{a+2}{2}$ אפשרויות עבור $x_1,x_2,x_3$\\
+לאחר מכן מכיוון ש-$b=\frac{18}{a}$, יהיו לנו $\binom{\frac{18}{a}+1}{1} =\frac{18}{a}+1$ אפשרויות עבור $x_4,x_5$ \\
+על מנת למצוא את כמות האפשרויות עבור $x_{1-5}$, צריך לבחור בנפרד $x_{1-3}$ ואז עבור $x_{4-5}$.\\
+לכן מכלל הכפל יש להכפיל את האפשרויות שלהם.\\ 
+מכיוון ש-$a$ יכול להיות כל אחד מהמחלקים של $18$ בנפרד, מכלל החיבור נסכום את כמות האפשרויות עבור כל אחד מהם
+\newpage
+\part*{שאלה 2}
+כמה מספרים טבעיים בני $5$ ספרות יש שסכום ספרותיהם הוא 10?
+\newpage
+\part*{בדיחת קרש}
+אבא שלי לימד אותי לספור בבינארית מגיל צעיר, הוא תמיד קרא לי אפס אחד.
+\end{document}
