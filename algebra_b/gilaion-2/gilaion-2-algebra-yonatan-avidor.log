@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2026.4.11)  12 MAY 2026 23:13
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2026.5.13)  17 MAY 2026 12:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **gilaion-2-algebra-yonatan-avidor.latex
@@ -488,7 +488,7 @@ Here is how much of LuaTeX's memory you used:
  93 fonts using 5087375 bytes
  73i,18n,93p,458b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/fonts/clm-miriam-mono-fonts/MiriamMonoCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on gilaion-2-algebra-yonatan-avidor.pdf (9 pages, 104834 bytes).
+Output written on gilaion-2-algebra-yonatan-avidor.pdf (9 pages, 105311 bytes).
 
 PDF statistics: 89 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
