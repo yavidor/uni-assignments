@@ -280,5 +280,96 @@ e_2\right)  = \begin{pmatrix}0&1\\1&0\end{pmatrix}             \cdot \begin{pmat
 \[
     \boxed{\det\left(T\right) = 0 \cdot 1 \cdot 2 = 0}
 \]
+\newpage
 \part*{תרגיל 3}
+קבעו אילו מהטענות הבאות נכונה.הוכיחו את קביעותכן, ועבור טענות שאינן נכונות מיצאו דוגמה נגדית.
+\section*{סעיף א'}
+עבור מטריצה $A\in \mathrm{M}_n\left(\mathbb{C}\right)$ המקיימת $A^*:=\bar{A}^t=A$ מתקיים $\det\left(A\right)\in\mathbb{R}$
+\section*{סעיף ב'}
+לכל $A,B\in\mathrm{M}_n\left(\mathbb{F}\right)$ מתקיים $\det\left(A+B\right) =\det\left(A\right) + \det\left(B\right)$
+\section*{סעיף ג'}
+הדטרמיננטה של מטריצה $A$ שמקדמיה $a_{i,j}$ מקיימים
+\[
+    \forall i,j \in \left[n\right]: \left(i+j > n \implies a_{i,j} =0\right)
+\]
+היא מכפלת המקדמים $\left\{a_{i,j}|i+j=n\right\}$
+\section*{סעיף ד'}
+הקבוצה
+\[
+    W:=\left\{A\in\mathrm{M}_3\left(\mathbb{C}\right)|\left|\det\left(A\right)\right|=1\right\}
+\]
+סגורה לכפל. כלומר, לכל $A,B\in W$ מתקיים $AB \in W$.
+\part*{פתרון 3}
+\section*{סעיף א'}
+נכון! נוכיח
+\section*{סעיף ב'}
+לא נכון! נראה דוגמה נגדית
+\begin{gather*}
+    \mathbb{F} = \mathbb{R} \\
+    n = 3\\
+    A = \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix} \\ \\
+    B = \begin{pmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}
+\end{gather*}
+$A=I_3$ ולכן $\det\left(A\right)=1$, ל-$B$ יש שורות אפסים ולכן $\det\left(B\right)=0$. נסתכל על $A+B$
+\[
+A+B = \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0\\
+    0 & 0 & 0
+\end{pmatrix}
+\]
+ל-$A+B$ יש שורת אפסים, ולכן $\det\left(A+B\right)=0$
+\[
+    \det\left(A+B\right) = 0 \neq 1 = \det\left(A\right) + \det\left(B\right) \implies \det\left(A+B\right) \neq \det\left(A\right) + \det\left(B\right)
+\]
+\section*{סעיף ג'}
+לא נכון!
+\section*{סעיף ד'}
+לא נכון!
+\newpage
+\part*{תרגיל 4}
+מצאו את הערכים $\alpha$ עבורם
+\[
+    W_\alpha := \left\{A\in\mathrm{M}_3\left(\mathbb{R}\right)|\det\left(A\right)=\alpha\right\}
+\]
+הינו מרחב וקטורי
+\part*{פתרון 4}
+ראשית, נשים לב שעבור כל $0\neq \alpha \in \mathbb{R}$, $W_{\alpha}$ לא מרחב וקטורי, שכן היא לא סגורה לכפל בסקלאר.
+\[
+    \forall m \in W_{\alpha}: \left|0 \cdot m \right| = \left| 0_{3\times 3} \right| = 0
+\]
+אולם $\alpha \neq 0 \implies \left| m \right|\neq 0$
+לכן האפשרות היחידה שיש היא $\alpha = 0$\\
+אבל $W_0$ לא סגור לחיבור, לדוגמה
+\[
+    A=\begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 0
+    \end{pmatrix},B=\begin{pmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix} \in \mathrm{M}_3\left(\mathbb{R}\right)
+\]
+נשים לב שבשתי המטריצות יש שורת אפסים, לכן הדטרמיננטה שלהם היא $0$, ולכן $A,B\in W_0$
+אבל!
+\[
+    A+B = \begin{pmatrix}
+        
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix} = I_3 \implies \left|A+B\right| = 1 \implies A+B \notin W_0
+\]
+לכן גם עבור $\alpha=0$, $W_\alpha$ לא מרחב וקטורי\\
+מכאן, שאין $\alpha \in \mathbb{R}$ כך ש $W_\alpha$ מרחב וקטורי
 \end{document}
