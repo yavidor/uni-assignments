@@ -17,6 +17,7 @@
 \fancyhead{}
 \fancyfoot[L]{\text{214269565}}
 \part*{שאלה 1}
+Hello WOrld
 \begin{enumerate}
  \item   \begin{gather*}
         A:= \begin{pmatrix}
@@ -301,7 +302,8 @@ e_2\right)  = \begin{pmatrix}0&1\\1&0\end{pmatrix}             \cdot \begin{pmat
 סגורה לכפל. כלומר, לכל $A,B\in W$ מתקיים $AB \in W$.
 \part*{פתרון 3}
 \section*{סעיף א'}
-נכון! נוכיח
+נכון! נוכיח\\
+תהי $A\in \mathrm{M}_n\left(\mathbb{C}\right)$ כך ש-$\bar{A}^t = A$
 \section*{סעיף ב'}
 לא נכון! נראה דוגמה נגדית
 \begin{gather*}
@@ -331,30 +333,51 @@ A+B = \begin{pmatrix}
     \det\left(A+B\right) = 0 \neq 1 = \det\left(A\right) + \det\left(B\right) \implies \det\left(A+B\right) \neq \det\left(A\right) + \det\left(B\right)
 \]
 \section*{סעיף ג'}
-לא נכון!
+לא נכון! נראה דוגמה נגדית
+\begin{gather*}
+    \mathbb{F} = \mathbb{R} \\
+    n = 3\\
+    A = \begin{pmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 0 \\
+        0 & 0 & 0
+    \end{pmatrix}
+\end{gather*}
+ל-$A$ יש שורת אפסים לכן $\det\left(A\right) = 0$\\
+$i,j\in \{1,2,3\}: i+j = 3 \iff i=2,j=1 \lor i=1,j=2$
+נסתכל על מכפלת המקדמים המקיימים את התנאי
+\[
+    \prod_{\left(i,j\right)\in\{\left(1,2\right),\left(2,1\right)\}} a_{i,j} = a_{1,2} \cdot a_{2,1} = 1 \cdot 1 = 1 \neq 0 = \det\left(A\right)
+    \]
 \section*{סעיף ד'}
-לא נכון!
+נכון! נוכיח\\
+יהיו $A,B \in W$
+\begin{gather*}
+  \left| \det\left(A\cdot B\right) \right| \underset{\text{כפליות הדטרמיננטה}}{=} \left| \det\left(A\right) \cdot \det\left(B\right) \right|\\
+  \underset{\text{כפליות מודול מספר מרכב}}{=} \left|\det\left(A\right)\right| \cdot \left|\det\left(B\right)\right| \underset{A,B\in W}{=} \left|1\right| \cdot \left|1\right| = 1 \implies A\cdot B \in W
+\end{gather*}
+\blacksquare
 \newpage
 \part*{תרגיל 4}
 מצאו את הערכים $\alpha$ עבורם
 \[
-    W_\alpha := \left\{A\in\mathrm{M}_3\left(\mathbb{R}\right)|\det\left(A\right)=\alpha\right\}
+    W_{\alpha} := \left\{A\in\mathrm{M}_3\left(\mathbb{R}\right)|\det\left(A\right)=\alpha\right\}
 \]
 הינו מרחב וקטורי
 \part*{פתרון 4}
 ראשית, נשים לב שעבור כל $0\neq \alpha \in \mathbb{R}$, $W_{\alpha}$ לא מרחב וקטורי, שכן היא לא סגורה לכפל בסקלאר.
 \[
-    \forall m \in W_{\alpha}: \left|0 \cdot m \right| = \left| 0_{3\times 3} \right| = 0
+    \forall A \in W_{\alpha}: \det\left(0 \cdot A \right) = \det\left( 0_{3\times 3} \right) = 0
 \]
-אולם $\alpha \neq 0 \implies \left| m \right|\neq 0$
+אולם $\alpha \neq 0 \implies \det\left( A \right)\neq 0$
 לכן האפשרות היחידה שיש היא $\alpha = 0$\\
 אבל $W_0$ לא סגור לחיבור, לדוגמה
 \[
-    A=\begin{pmatrix}
+    A:=\begin{pmatrix}
         1 & 0 & 0 \\
         0 & 1 & 0 \\
         0 & 0 & 0
-    \end{pmatrix},B=\begin{pmatrix}
+    \end{pmatrix},B:=\begin{pmatrix}
         0 & 0 & 0 \\
         0 & 0 & 0 \\
         0 & 0 & 1
@@ -368,7 +391,7 @@ A+B = \begin{pmatrix}
         1 & 0 & 0 \\
         0 & 1 & 0 \\
         0 & 0 & 1
-    \end{pmatrix} = I_3 \implies \left|A+B\right| = 1 \implies A+B \notin W_0
+    \end{pmatrix} = I_3 \implies \det\left(A+B\right) = 1 \implies A+B \notin W_0
 \]
 לכן גם עבור $\alpha=0$, $W_\alpha$ לא מרחב וקטורי\\
 מכאן, שאין $\alpha \in \mathbb{R}$ כך ש $W_\alpha$ מרחב וקטורי
