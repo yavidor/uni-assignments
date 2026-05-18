@@ -285,7 +285,7 @@ e_2\right)  = \begin{pmatrix}0&1\\1&0\end{pmatrix}             \cdot \begin{pmat
 \part*{תרגיל 3}
 קבעו אילו מהטענות הבאות נכונה.הוכיחו את קביעותכן, ועבור טענות שאינן נכונות מיצאו דוגמה נגדית.
 \section*{סעיף א'}
-עבור מטריצה $A\in \mathrm{M}_n\left(\mathbb{C}\right)$ המקיימת $A^*:=\bar{A}^t=A$ מתקיים $\det\left(A\right)\in\mathbb{R}$
+עבור מטריצה $A\in \mathrm{M}_n\left(\mathbb{C}\right)$ המקיימת $A^*:=\overline{A^t}=A$ מתקיים $\det\left(A\right)\in\mathbb{R}$
 \section*{סעיף ב'}
 לכל $A,B\in\mathrm{M}_n\left(\mathbb{F}\right)$ מתקיים $\det\left(A+B\right) =\det\left(A\right) + \det\left(B\right)$
 \section*{סעיף ג'}
@@ -303,7 +303,34 @@ e_2\right)  = \begin{pmatrix}0&1\\1&0\end{pmatrix}             \cdot \begin{pmat
 \part*{פתרון 3}
 \section*{סעיף א'}
 נכון! נוכיח\\
-תהי $A\in \mathrm{M}_n\left(\mathbb{C}\right)$ כך ש-$\bar{A}^t = A$
+תהי $A\in \mathrm{M}_n\left(\mathbb{C}\right)$ כך ש-$\overline{A^t} = A$, נחשב את הדטרמיננטה של $A$
+\[
+    \det\left(A\right) = \sum_{\sigma \in S_n} \mathrm{sgn}\left(\sigma\right) \cdot \prod_{i=1}^{n} a_{i,\sigma\left(i\right)}
+\]
+נחשב את הדטרמיננטה של $A^*$\\
+מכיוון שהדטרמיננטה של מטריצה שווה לדטרמיננטה של השחלוף שלה
+\[
+    \det\left(A^*\right) = \det\left(\left(A^*\right)^t\right) = \det\left(\overline{A}\right) = \sum_{\sigma \in S_n} \mathrm{sgn}\left(\sigma\right) \cdot \prod_{i=1}^n \overline{a}_{i,\sigma\left(i\right)}
+\]
+ניזכר בחוקי צמוד
+\[
+    \forall z_1,z_2 \in \mathbb{C}: \overline{z_1} \cdot \overline{z_2} = \overline{z_1 \cdot z_2},\overline{z_1} + \overline{z_2} = \overline{z_1 + z_2} 
+\]
+ולכן
+\[
+ \sum_{\sigma \in S_n} \mathrm{sgn}\left(\sigma\right) \cdot \prod_{i=1}^n \overline{a}_{i,\sigma\left(i\right)}=
+ \overline{\sum_{\sigma \in S_n} \mathrm{sgn}\left(\sigma\right) \cdot \prod_{i=1}^n a_{i,\sigma\left(i\right)}}= \overline{\det\left(A\right)}
+\]
+מהגדרת $A$, $A=A^*\implies \det\left(A\right) = \det\left(A^*\right)$ ולכן
+\[
+    \det\left(A\right) = \overline{\det\left(A\right)}
+\]
+מספר מרוכב שווה לצמוד שלו אם ורק אם המקדם המדומה שלו הוא $0$, ולכן
+\[
+    \exists \alpha \in \mathbb{R} :    \det\left(A\right) = \alpha + 0i \implies \det\left(A\right) = \alpha \implies \boxed{\det\left(A\right) \in \mathbb{R}}
+\]
+כנדרש\\
+$\blacksquare$
 \section*{סעיף ב'}
 לא נכון! נראה דוגמה נגדית
 \begin{gather*}
