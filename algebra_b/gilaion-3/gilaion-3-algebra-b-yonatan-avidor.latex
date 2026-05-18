@@ -1,0 +1,240 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה ב' - 01040168 \\ גליון 3}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+יהי $V=\mathbb{R}_3\left[x\right]$ ותהי
+\begin{gather*}
+    D: V\to V\\
+    p\left(x\right) \mapsto p'\left(x\right)
+\end{gather*}
+העתקת הנגזרת. תהי $T:=Id_V  +D$
+\section*{סעיף א'}
+ הראו כי $T$ הפיכה
+ \section*{סעיף ב'}
+ מיצאו באמצעות כלל קרמר פולינום $p\left(x\right)$ עבורו $T\left(p\right)=x^3$
+\part*{פתרון 1}
+\section*{סעיף א'}
+נחשב את המטריצה המייצגת של $T$ ביחס לבסיס הסטנדרטי
+\begin{gather*}
+    \mathcal{E} = \left(1,x,x^2,x^3\right)\\
+    T\left(e_1\right) = D\left(1\right) + Id_V\left(1\right) =  1 \implies \left[T\left(e_1\right)\right]_{\mathcal{E}} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} \\
+    T\left(e_2\right) = D\left(x\right) + Id_V\left(x\right) = 1+x \implies \left[T\left(e_2\right)\right]_{\mathcal{E}} = \begin{pmatrix} 1 \\ 1 \\ 0 \\ 0 \end{pmatrix}\\
+    T\left(e_3\right) = D\left(x^2\right) + Id_V\left(x^2\right) = 2x+x^2 \implies \left[T\left(e_3\right)\right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 2 \\ 1 \\ 0 \end{pmatrix}\\
+    T\left(e_4\right) = D\left(x^3\right) + Id_V\left(x^3\right) = 3x^2+x^3 \implies \left[T\left(e_4\right)\right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 0 \\ 3 \\ 1 \end{pmatrix}\\
+\end{gather*}
+ולכן
+\[
+    \left[T\right]_\mathcal{E} = \begin{pmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 1 & 2 & 0 \\
+        0 & 0 & 1 & 3 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\]
+נשים לב שמדובר במטריצה משולשית עליונה, לכן הדטרמיננטה שלה שווה לכפל איברי האלכסון
+\[
+    \det\left(\left[T\right]_\mathcal{E}\right) = 1 \cdot 1 \cdot 1 \cdot 1
+\]
+הדטרמיננטה שונה מאפס, לכן המטריצה הפיכה. אם מטריצה מייצגת כלשהי של העתקה היא הפיכה אזי ההעתקה היא הפיכה ולכן $T$ הפיכה\\
+$\blacksquare$
+\section*{סעיף ב'}
+ראשית, למען נוחות הכתיבה והקריאה נגדיר $A:=\left[T\right]_\mathcal{E}$\\
+נחפש פולינום $p\left(x\right)$ כך ש
+\[
+    A \cdot \left[p\right]_\mathcal{E} = \begin{pmatrix}
+        0\\0\\0\\1
+    \end{pmatrix}
+\]
+אנחנו יודעים כי קיים פולינום יחיד שכזה כי $A$ הפיכה וכי $\mathbb{R}_3\left[x\right]$ איזומורפי ל-$\mathbb{R}^4$\\
+נסמן $v:=\left[p\right]_\mathcal{E}$, על פי כלל קרמר אנחנו יכולים לחשב את הכניסות של $v$
+\[
+    \forall i \in \left[4\right]: v_i = \frac{\det\left(A_i\right)}{\det\left(A\right)}
+\]
+כאשר $A_i$ היא המטריצה המתקבלת על-ידי החלפת העמודה ה-$i$ ב-$\begin{pmatrix} 0\\0\\0\\1\end{pmatrix}$
+\[
+A_1 = \begin{pmatrix}
+        0 & 1 & 0 & 0 \\
+        0 & 1 & 2 & 0 \\
+        0 & 0 & 1 & 3 \\
+        1 & 0 & 0 & 1
+    \end{pmatrix} 
+\]
+נחשב את $\det\left(A_1\right)$
+\begin{gather*}
+ \left|A_1\right| = \begin{vmatrix}
+        0 & 1 & 0 & 0 \\
+        0 & 1 & 2 & 0 \\
+        0 & 0 & 1 & 3 \\
+        1 & 0 & 0 & 1 \end{vmatrix}
+        \xrightarrow{R_2\to R_2- R_1, C_4 \to C_4 - C_1}
+\begin{vmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 1 & 3 \\ 1 & 0 & 0 & 0\end{vmatrix}\\
+\xrightarrow{R_3 \to R_3 - \frac{1}{2}R_2} 
+\begin{vmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 3 \\ 1 & 0 & 0 & 0\end{vmatrix}\\
+\end{gather*}
+נשים לב שהתמורה היחידה שלא מתאפסת בסיטואציה הזו היא
+\[
+    \sigma = \begin{pmatrix}
+2 & 3 & 4 & 1
+    \end{pmatrix}
+\]
+נחשב את הסימן שלה
+\[
+    \left(4;1\right)\circ\left(3;1\right)\circ\left(2;1\right)\circ\sigma = I_4 \implies \mathrm{sgn}\left(\sigma\right) = -1
+\]
+לכן
+\[
+    \det\left(A_1\right) = -1 \cdot 1 \cdot 2 \cdot 3 \cdot 1 = -6
+\]
+ומכאן נובע כי
+\[
+    v_1 = \frac{-6}{1} = -6
+\]
+\[
+A_2 = \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 2 & 0 \\
+        0 & 0 & 1 & 3 \\
+        0 & 1 & 0 & 1
+    \end{pmatrix}
+\]
+נחשב את $\det\left(A_2\right)$
+\[
+\begin{vmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 2 & 0 \\
+        0 & 0 & 1 & 3 \\
+        0 & 1 & 0 & 1
+    \end{vmatrix} \xrightarrow{R_3 \to R_3 - \frac{1}{2}R_2,C_4 \to C_4-C_2}
+    \begin{vmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 2 & 0 \\
+        0 & 0 & 0 & 3 \\
+        0 & 1 & 0 & 0
+    \end{vmatrix}
+\]
+נשים לב שהתמורה היחידה שלא מתאפסת בסיטואציה הזו היא
+\[
+    \sigma = \begin{pmatrix}
+1 & 3 & 4 & 2
+    \end{pmatrix}
+\]
+נחשב את הסימן שלה
+\[
+    \left(4;2\right)\circ\left(3;2\right)\circ\sigma = I_4 \implies \mathrm{sgn}\left(\sigma\right) = 1
+\]
+לכן
+\[
+    \det\left(A_2\right) = 1 \cdot 1 \cdot 2 \cdot 3 \cdot 1 = 6
+\]
+ומכאן נובע כי
+\[
+    v_2 = \frac{6}{1} = 6
+\]
+\[
+    A_3 = \begin{pmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 3 \\
+        0 & 0 & 1 & 1
+    \end{pmatrix}
+\]
+נחשב את $\det\left(A_3\right)$
+\[
+\begin{vmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 3 \\
+        0 & 0 & 1 & 1
+    \end{vmatrix} \xrightarrow{R_1 \to R_1 - R_2,C_4 \to C_4-C_3}
+    \begin{vmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 3 \\
+        0 & 0 & 1 & 0
+    \end{vmatrix}
+\]
+נשים לב שהתמורה היחידה שלא מתאפסת בסיטואציה הזו היא
+\[
+    \sigma = \begin{pmatrix}
+        1 & 2 & 4 & 3
+    \end{pmatrix}
+\]
+נחשב את הסימן שלה
+\[
+    \left(4;3\right)\circ\sigma = I_4 \implies \mathrm{sgn}\left(\sigma\right) = -1
+\]
+\[
+    \det\left(A_3\right) = -1 \cdot 1 \cdot 1 \cdot 3 \cdot 1 = -3
+\]
+ומכאן נובע כי
+\[
+    v_3 = \frac{-3}{1} = -3
+\]
+\[
+A_4  = \begin{pmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 1 & 2 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\]
+נשים לב שמדובר במטריצה משולשית עליונה ולכן הדטרמיננטה היא מכפלת איברי האלכסון
+\[
+ \det   \left(A_4\right) = 1 \cdot 1 \cdot 1 \cdot 1=  1
+\]
+ומכאן נובע כי
+\[
+    v_4 = \frac{1}{1} =1
+\]
+לכן
+\[
+    v = \begin{pmatrix}
+        -6\\6\\-3\\1
+    \end{pmatrix}
+\]
+נצא מקואודרינטות ונקבל
+\[
+    p\left(x\right) = -6 + 6x -3x^2 + x^3
+\]
+בדיקת שפיות אחרונה, נבדוק שאכן $T\left(p\right) = x^3$
+\[
+    T\left(p\right) = p'\left(x\right) + p\left(x\right) = 6 -6x + 3x^2 -6 + 6x -3x^2 + x^3= x^3
+\]
+\newpage
+\part*{שאלה 2}
+תהי $A\in\mathrm{M}_n\left(\mathbb{F}\right)$ הפיכה.
+\section*{סעיף א'}
+הוכיחו כי
+\[
+    \mathrm{adj}\left(\mathrm{adj}\left(A\right)\right) = \det\left(A\right)^{n-2}A
+\]
+\section*{סעיף ב'}
+הוכיחו כי
+\[
+    \det\left(\mathrm{adj}\left(A\right)\right) = \det\left(A\right)^{n-1}
+\]
+\section*{סעיף ג'}
+נניח גם כי $A$ דומה למטריצה אלכסונית $D:=\mathrm{diag}\left(\lambda_1,\ldots,\lambda_n\right)$, $\left(D\right)_{i,j} = \delta_{i,j}\lambda_i$ כאשר
+\[
+    \delta_{i,j} = \begin{cases}
+        0 & i\neq j\\
+        1 & i=j
+    \end{cases}
+\]
+מיצאו מטריצה אלכסונית $D^{\mathrm{adj}}$ הדומה ל-$\mathrm{adj}\left(A\right)$, והוכיחו כי הן דומות.
+\end{document}

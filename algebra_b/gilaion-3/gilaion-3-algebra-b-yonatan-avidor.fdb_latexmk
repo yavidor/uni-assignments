@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1779121112.25265 "gilaion-2-algebra-yonatan-avidor.latex" "gilaion-2-algebra-yonatan-avidor.pdf" "gilaion-2-algebra-yonatan-avidor" 1779121113.79999 0
+["lualatex"] 1779132527.64788 "gilaion-3-algebra-b-yonatan-avidor.latex" "gilaion-3-algebra-b-yonatan-avidor.pdf" "gilaion-3-algebra-b-yonatan-avidor" 1779132528.38991 0
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-bold.luc" 1770037307.49007 54495 6d1e04677a40f79ab14ff2024faac8eb ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-boldoblique.luc" 1770037307.48007 55799 5fef217971130cbc6fbfe77ec1f0a8c2 ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-regular.luc" 1770037307.46907 54551 36cc254eefb9c32f16f693bfada56f84 ""
@@ -31,7 +31,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr7.tfm" 1136768653 1300 53d07721103816e093902637bc167021 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
@@ -41,7 +40,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
@@ -136,10 +134,10 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775907030.30225 4602002 62dba5fc29055c16380d7393a2adb07a ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1778620680 11867377 5fee1746992e102670e342e0fa08e2ae ""
-  "gilaion-2-algebra-yonatan-avidor.aux" 1779121113.64713 112 90a199b8034320048010ac145c18bea5 "lualatex"
-  "gilaion-2-algebra-yonatan-avidor.latex" 1779121106.96006 15559 53fc7a37c3f30f2396b52057204c9f05 ""
+  "gilaion-3-algebra-b-yonatan-avidor.aux" 1779132528.30374 111 4bd9af6337208514ce6ecba3638ffd19 "lualatex"
+  "gilaion-3-algebra-b-yonatan-avidor.latex" 1779132527.05154 7069 8e7fe7a3bf594f6ea710dcaa37dc75c9 ""
   (generated)
-  "gilaion-2-algebra-yonatan-avidor.aux"
-  "gilaion-2-algebra-yonatan-avidor.log"
-  "gilaion-2-algebra-yonatan-avidor.pdf"
+  "gilaion-3-algebra-b-yonatan-avidor.aux"
+  "gilaion-3-algebra-b-yonatan-avidor.log"
+  "gilaion-3-algebra-b-yonatan-avidor.pdf"
   (rewritten before read)
