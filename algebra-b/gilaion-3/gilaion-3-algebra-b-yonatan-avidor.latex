@@ -12,6 +12,7 @@
 \author{יונתן אבידור - 214269565}
 \titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
 \begin{document}
+    \newcommand{\adj}[1]{\mathrm{adj}\left(#1\right)}
 \maketitle
 \pagestyle{fancy}
 \fancyhead{}
@@ -221,12 +222,12 @@ A_4  = \begin{pmatrix}
 \section*{סעיף א'}
 הוכיחו כי
 \[
-    \mathrm{adj}\left(\mathrm{adj}\left(A\right)\right) = \det\left(A\right)^{n-2}A
+    \adj{\adj{A}} = \det\left(A\right)^{n-2}A
 \]
 \section*{סעיף ב'}
 הוכיחו כי
 \[
-    \det\left(\mathrm{adj}\left(A\right)\right) = \det\left(A\right)^{n-1}
+    \det\left(\adj{A}\right) = \det\left(A\right)^{n-1}
 \]
 \section*{סעיף ג'}
 נניח גם כי $A$ דומה למטריצה אלכסונית $D:=\mathrm{diag}\left(\lambda_1,\ldots,\lambda_n\right)$, $\left(D\right)_{i,j} = \delta_{i,j}\lambda_i$ כאשר
@@ -236,5 +237,15 @@ A_4  = \begin{pmatrix}
         1 & i=j
     \end{cases}
 \]
-מיצאו מטריצה אלכסונית $D^{\mathrm{adj}}$ הדומה ל-$\mathrm{adj}\left(A\right)$, והוכיחו כי הן דומות.
+מיצאו מטריצה אלכסונית $D^{\mathrm{adj}}$ הדומה ל-$\adj{A}$ והוכיחו כי הן דומות.
+\part*{פתרון 2}
+\section*{סעיף א'}
+נזכר כי $\adj{A} = \det\left(A\right)A^{-1}$
+\[
+    \adj{\adj{A}} = \det\left(\adj{A}\right) \left(\adj{A}\right)^{-1}
+\]
+נשתמש שוב במשפט הזה ונקבל
+\[
+    \det\left(\adj{A}\right) =\det\left(A\right) A^{-1}
+\]
 \end{document}
