@@ -385,19 +385,20 @@ A= \begin{pmatrix}
 \]
 עכשיו נחשב את $\alpha\adj{A}$
 \[
-    \alpha\adj{A} = 2\adj{\begin{pmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-\end{pmatrix}} = 2 \begin{pmatrix}
+    \alpha\adj{A} = 2\adj{I} = 2 \begin{pmatrix}
         \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} & \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} & \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix} \\ \\
         \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} & \begin{vmatrix} 1 & 0 \\0 & 1 \end{vmatrix} & \begin{vmatrix} 1 & 0 \\ 0 & 0\end{vmatrix} \\ \\
         \begin{vmatrix} 0 & 1 \\ 0 & 0\end{vmatrix} & \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} & \begin{vmatrix} 1 & 0 \\ 0 & 1\end{vmatrix}
-\end{pmatrix} = 2 \begin{pmatrix}
+\end{pmatrix} = 2 \cdot I= \begin{pmatrix}
     
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
+    2 & 0 & 0 \\
+    0 & 2 & 0 \\
+    0 & 0 & 2
 \end{pmatrix}
 \]
+קיבלנו כי
+\[
+    \adj{\alpha A} \neq \alpha \adj{A}
+\]
+לכן $\mathrm{adj}$ אינה לינארית
 \end{document}
