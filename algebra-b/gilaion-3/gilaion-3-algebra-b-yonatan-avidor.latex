@@ -243,7 +243,7 @@ A_4  = \begin{pmatrix}
 נראה ש-$\adj{A}$ הפיכה \\
 $A$ הפיכה, ולכן ממשפט
 \[
-    A^{-1} = \frac{1}{\det\left(A\right)}\adj{A} \underset{\times A}{\implies} I = \frac{1}{\det\left(A\right)}A\cdot\adj{A}
+    A^{-1} = \frac{1}{\det\left(A\right)}\adj{A} \underset{\times A}{\implies} I_n = \frac{1}{\det\left(A\right)}A\cdot\adj{A}
 \]
 מצאנו מטריצה שכאשר מכפילים אותה ב-$\adj{A}$ מקבלים את מטריצת היחידה\\
 לכן $\adj{A}$ הפיכה ובפרט, $\adj{A}^{-1}=\det\left(A\right)^{-1}A$\\
@@ -296,18 +296,108 @@ $A \sim D$, לכן קיימת מטריצה הפיכה $P\in\mathrm{M}_n\left(\ma
 $D$ היא המטריצה שבנויה מהערכים העצמיים של $A$. $A$ הפיכה, ולכן $0$ לא ערך עצמי של $A$, לכן אין $0$ באלכסון של $D$\\
 $D$ אלכסונית, ולכן הדטרמיננטה שלה היא מכפלת איברי האלכסון, ומכיוון שאין אפסים על האלכסון של $D$, $\det\left(D\right)\neq 0$ ולכן גם $D$ הפיכה
 \[
-    A^{-1} = \left(PDP^{-1}\right) = \left(P^{-1}\right)^{-1} D^{-1} P^{-1} = PD^{-1}P^{-1}
-    \]
-    נזכר במשפט שגם השתמשנו בו בסעיפים הקדומים שאומר $A^{-1}=\frac{1}{\det\left(A\right)}\adj{A}$, נציב את זה במשוואה שלנו
-    \begin{gather*}
-    \frac{1}{\det\left(A\right)} \adj{A} = PD^{-1}P^{-1} \\
-    \underset{\times \det\left(A\right)}{\implies} \adj{A}= \det\left(A\right)\left(PDP^{-1}\right)\\
-    =\left(\det\left(A\right) P\right) \left(\det\left(A\right)D^{-1}\right) \left(\det\left(A\right)P^{-1}\right)
-    \end{gather*}
-    נסמן $Q=\det\left(A\right)P$ ונקבל
-    \[
-        \adj{A} = Q\left(\det\left(A\right)D^{-1}\right)Q^{-1}
-    \]
-    מהגדרת דמיון, $\adj{A}\sim \det\left(A\right) D^{-1}$\\
-    נסמן $D^{\mathrm{adj}}=\det\left(A\right)D^{-1}$, נוכיח כי $D^{\mathrm{adj}}$ אלכסונית
+A^{-1} = \left(PDP^{-1}\right) = \left(P^{-1}\right)^{-1} D^{-1} P^{-1} = PD^{-1}P^{-1}
+\]
+נזכר במשפט שגם השתמשנו בו בסעיפים הקדומים שאומר $A^{-1}=\frac{1}{\det\left(A\right)}\adj{A}$, נציב את זה במשוואה שלנו
+\begin{gather*}
+\frac{1}{\det\left(A\right)} \adj{A} = PD^{-1}P^{-1} \\
+\underset{\times \det\left(A\right)}{\implies} \adj{A}= \det\left(A\right)\left(PDP^{-1}\right)\\
+=\left(\det\left(A\right) P\right) \left(\det\left(A\right)D^{-1}\right) \left(\det\left(A\right)P^{-1}\right)
+\end{gather*}
+נסמן $Q=\det\left(A\right)P$ ונקבל
+\[
+\adj{A} = Q\left(\det\left(A\right)D^{-1}\right)Q^{-1}
+\]
+מהגדרת דמיון, $\adj{A}\sim \det\left(A\right) D^{-1}$\\
+נשאר להוכיח כי $\det\left(A\right)D^{-1}$ אלכסונית \\
+$\det\left(A\right)D^{-1}$ היא כפל בסקלאר של $D^{-1}$, לכן יש להראות פשוט כי $D^{-1}$ אלכסונית  \\
+$D^{-1}$ היא ההופכית של $D$ לכן $D\cdot D^{-1}=I_n$ 
+\begin{gather*}
+    \forall i\neq j \in \left[n\right]: \left(D\cdot D^{-1}\right)_{i,j} = \sum_{k=0}^{n} \left(D\right)_{i,k} \cdot \left(D^{-1}\right)_{k,j} \\ \underset{i\neq k\implies \left(D\right)_{i,k}=0}{=} \left(D\right)_{i,i} \cdot \left(D^{-1}\right)_{i,j} = 0 \implies \left(D^{-1}\right)_{i,j} = 0
+\end{gather*}
+כל הכניסות שלא על האלכסון של $D^{-1}$ הן אפס, לכן $D^{-1}$ אלכסונית.\\
+הערכים העצמיים של $D^{-1}$ הם $\lambda_1^{-1},\ldots,\lambda_n^{-1}$ לכן $D^{-1}=\mathrm{diag}\left(\lambda_1^{-1},\ldots,\lambda_n^{-1}\right)$\\
+$D$ היא אלכסונית ולכן $\det\left(D\right)  = \prod_{i\in\left[n\right]}\lambda_i$, $A$ ו-$D$ דומות ולכן משמורות דמיון יש להן את אותה הדטרמיננטה ולכן $\det\left(A\right)=\det\left(D\right)$
+\begin{gather*}
+    \det\left(A\right) D^{-1} = \prod_{i\in\left[n\right]}\lambda_i \cdot D^{-1} \\
+    = \mathrm{diag}\left(\frac{\prod_{i\in\left[n\right]}\lambda_i}{\lambda_1},\ldots,\frac{\prod_{i\in\left[n\right]}\lambda_i}{\lambda_n}\right)\\
+    =  \mathrm{diag}\left(\prod_{i\in\left(\left[n\right]\setminus\left\{1\right\}\right)}\lambda_i,\ldots,\prod_{i\in\left(\left[n\right]\setminus\left\{n\right\}\right)}\lambda_i\right)
+\end{gather*}
+ולכן נסמן
+\[
+    D^{\mathrm{adj}} =   \mathrm{diag}\left(\prod_{i\in\left(\left[n\right]\setminus\left\{1\right\}\right)}\lambda_i,\ldots,\prod_{i\in\left(\left[n\right]\setminus\left\{n\right\}\right)}\lambda_i\right)
+\]
+ואכן, $D^{\mathrm{adj}}$ מטריצה אלכסונית הדומה ל-$\adj{A}$\\
+$\blacksquare$
+\newpage
+\part*{שאלה 3}
+הוכיחו או הפריכו את כל אחת מהטענות הבאות. עבור הטענות שאינן נכונות, מיצאו דוגמה נגדית.
+\section*{סעיף א'}
+ההעתקה
+\begin{gather*}
+    \mathrm{adj}: \mathrm{M}_n\left(\mathbb{F}\right) \to \mathrm{M}_n\left(\mathbb{F}\right)\\
+    A\mapsto \adj{A}
+\end{gather*}
+הינה לינארית
+\section*{סעיף ב'}
+לכל $A,B\in \mathrm{M}_n\left(\mathbb{F}\right)$ מתקיים
+\[
+    \adj{AB} = \adj{A}\adj{B}
+\]
+\section*{סעיף ג'}
+לכל $A\in \mathrm{M}_n\left(\mathbb{F}\right)$
+\[
+    \adj{A^t}  = \left(\adj{A}\right)^t
+\]
+\section*{סעיף ד'}
+לכל $A\in \mathrm{M}_n\left(\mathbb{F}\right)$
+\[
+    \adj{A^{-1}} = \left(\adj{A}\right)^{-1}
+\]
+\section*{סעיף ה'}
+אם $A\in \mathrm{M}_n \left(\mathbb{F}\right)$ סימטרית $\adj{A}$ סימטרית.
+\part*{תשובה 3}
+\section*{סעיף א'}
+לא נכון! נביא דוגמה נגדית
+\begin{gather*}
+    \mathbb{F}= \mathbb{R}\\
+    n = 3\\
+A= \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+\end{gather*}
+נראה כי כפל בסקלאר אינו לינארי, נגדיר $\alpha = 2$ \\
+נחשב את $\adj{\alpha A}$
+\[
+    \adj{\alpha A} = \adj{\begin{pmatrix}
+            2 & 0 & 0 \\
+            0 & 2 & 0 \\
+            0 & 0 & 2
+    \end{pmatrix}} = \begin{pmatrix}
+        \begin{vmatrix} 2 & 0 \\ 0 & 2 \end{vmatrix} & \begin{vmatrix} 0 & 0 \\ 0 & 2 \end{vmatrix} & \begin{vmatrix} 0 & 0 \\ 2 & 0 \end{vmatrix} \\ \\
+        \begin{vmatrix} 0 & 0 \\ 0 & 2 \end{vmatrix} & \begin{vmatrix} 2 & 0 \\0 & 2 \end{vmatrix} & \begin{vmatrix} 2 & 0 \\ 0 & 0\end{vmatrix} \\ \\
+        \begin{vmatrix} 0 & 2 \\ 0 & 0\end{vmatrix} & \begin{vmatrix} 2 & 0 \\ 0 & 0 \end{vmatrix} & \begin{vmatrix} 2 & 0 \\ 0 & 2\end{vmatrix}
+     \end{pmatrix} = \begin{pmatrix}
+        4 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 4        
+     \end{pmatrix}
+\]
+עכשיו נחשב את $\alpha\adj{A}$
+\[
+    \alpha\adj{A} = 2\adj{\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}} = 2 \begin{pmatrix}
+        \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} & \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} & \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix} \\ \\
+        \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} & \begin{vmatrix} 1 & 0 \\0 & 1 \end{vmatrix} & \begin{vmatrix} 1 & 0 \\ 0 & 0\end{vmatrix} \\ \\
+        \begin{vmatrix} 0 & 1 \\ 0 & 0\end{vmatrix} & \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} & \begin{vmatrix} 1 & 0 \\ 0 & 1\end{vmatrix}
+\end{pmatrix} = 2 \begin{pmatrix}
+    
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+\]
 \end{document}
