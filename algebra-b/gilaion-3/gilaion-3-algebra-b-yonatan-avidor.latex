@@ -401,4 +401,17 @@ A= \begin{pmatrix}
     \adj{\alpha A} \neq \alpha \adj{A}
 \]
 לכן $\mathrm{adj}$ אינה לינארית
+\section*{סעיף ב'}
+לא נכון! נביא דוגמה נגדית
+\begin{gather*}
+    \mathbb{F}=\mathbb{R}\\
+    n=2\\
+A = \begin{pmatrix}
+    1 & 1 \\ 0 & 1
+\end{pmatrix} \\
+B = \begin{pmatrix}
+    1 & 0 \\ 1 & 1
+\end{pmatrix}\\
+\end{gather*}
+נחשב את $\adj{AB}$ ואת $\adj{A}\cdot\adj{B}$ ונראה כי הן אינן שוות
 \end{document}
