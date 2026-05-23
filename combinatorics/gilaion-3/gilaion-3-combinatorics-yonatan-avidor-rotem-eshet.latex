@@ -161,11 +161,17 @@
 \part*{שאלה 4}
 העריכו בעזרת סטרלינג את העצרת הכפולה $\left(2n\right)!!$.
 \part*{פתרון 4}
-נשתמש בנוסחת סטרלינג פעמיים\\
-ראשית נעריך את $\left(2n\right)!$
+לפי הגדרת עצרת כפולה
 \begin{gather*}
-    \left(2n\right)! \approx \left(\frac{2n}{e}\right)^{2n} \cdot \sqrt{4\pi n}
+  \left(2n\right)!! =2n\cdot \left(2n-2\right) \cdot \left(2n-4\right) \cdots 2 \\
+= \left(2\cdot n\right) \cdot \left(2\left(n-1\right)\right) \cdot \left(2\left(n-2\right)\right) \cdots \left(2 \cdot 1\right)\\
+=  \underbrace{2\cdot 2 \cdots 2}_{n} \cdot \left(n-1\right)\cdot\left(n-2\right)\cdots1 \\
+= 2^n \cdot n!
 \end{gather*}
+נשתמש בנוסחת סטירלינג
+\[
+    2^n \cdot n! \approx 2^n \cdot \left(\frac{n}{e}\right)^n \cdot \sqrt{2\pi n} =\boxed{\left(\frac{2n}{e}\right)^n \cdot \sqrt{2 \pi n}}
+\]
 \newpage
 \part*{שאלה 5}
 \section*{סעיף א'}
@@ -181,7 +187,19 @@
 \]
 \part*{פתרון 5}
 \section*{סעיף א'}
-כמסקנה משאלה $2$ סעיף ב'...
+נחפש את סכום כל המקדמים $\binom{30}{a,b,c}$
+\[
+    \sum_{a+b+c=30} \binom{30}{a,b,c} 
+\]
+נכפיל את כל הביטוי ב-$1^a\cdot1^b\cdot1^c$, נשים לב כי $1^a\cdot1^b\cdot1^c=1\cdot1\cdot1=1$, לכן הכפלה שכזו לא משנה את ערך הביטוי
+\[
+    \sum_{a+b+c=30} \binom{30}{a,b,c}=   1^a \cdot 1^b \cdot 1^c
+    \sum_{a+b+c=30} \binom{30}{a,b,c} 
+\]
+לפי נוסחת המולטינום, זה שווה לפתרון של המשוואה $\left(1+1+1\right)^{30}$, לכן
+\[
+\sum_{a+b+c=30} \binom{30}{a,b,c}  = \left(1+1+1\right)^{30} = \boxed{3^{30}}
+\]
 \section*{סעיף ב'}
 רעיון הוכחה אמיתי אין לי, אבל לפי משולש פסקל זה אמור להיות מה שבאמצע, השאלה אם באמת דיברנו על משולש פסקל. וכמה זה רלוונטי למולטינום
 \section*{סעיף ג'}
