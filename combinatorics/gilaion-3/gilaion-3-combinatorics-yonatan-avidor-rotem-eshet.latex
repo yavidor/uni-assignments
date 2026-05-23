@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{cancel}
+\usepackage{xcolor}
 \usepackage[shortlabels]{enumitem}
 \usepackage[bidi=basic-r]{babel}
 \babelprovide[main,import,Alph=letters]{hebrew}
@@ -13,6 +14,7 @@
 \title{קומבינטוריקה 1040286 \\ גליון 3}
 \author{יונתן אבידור - 214269565\\רותם עשת - 212674683}
 \titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 \begin{document}
 \maketitle
 \pagestyle{fancy}
@@ -38,7 +40,7 @@
  a\frac{k!}{1! \left(k-1\right)!} + b\frac{k!}{2!\left(k-2\right)!}\\
     = a \frac{k!}{\left(k-1\right)!} + b\frac{k!}{2!\left(k-2\right)!}\\
     = a \frac{k\cdot\cancel{\left(k-1\right)\cdot\left(k-2\right)\cdots 1}}{\cancel{\left(k-1\right)\cdot\left(k-2\right)\cdots 1}} + b\frac{k\cdot\left(k-1\right)\cdot\cancel{\left(k-2\right)\cdots 1}}{\cancel{\left(k-2\right)\cdots 1} \cdot 2 \cdot 1} \\
-    = a \cdot k + b \cdot \frac{k\cdot\left(k-1\right)}{2}\\
+    = a \cdot k + b \cdot \frac{k\cdot\left(k-1\right)}{2}
 \end{gather*}
 נשווה ל-$k^2$
 \begin{gather*}
@@ -62,15 +64,29 @@
 \]
 \section*{סעיף ב'}
 נשים לב שמכיוון ש $0^2 =0$, מתקיים $\sum_{k=0}^n k^2 = \sum_{k=1}^n k^2$\\
-נציב את מה שמצאנו בסעיף א'
+כנראה נציב את מה שמצאנו בסעיף א'
 \begin{gather*}
-    \sum_{k=0}^n k^2 =   \sum_{k=0}^n \binom{k}{1} + 2\binom{k}{2} = \sum_{k=0}^n \binom{k}{1} + 2\sum_{k=0}^n \binom{k}{2}
+    \sum_{k=0}^n k^2=   \sum_{k=1}^n k^2 =   \sum_{k=1}^n \binom{k}{1} + 2\binom{k}{2} = \sum_{k=1}^n \binom{k}{1} + 2\sum_{k=1}^n \binom{k}{2}
 \end{gather*}
+אין דרכים לבחור שני איברים מקבוצה בגודל $1$ ולכן $\binom{1}{2}=0$, מכאן ש
+    \[
+\sum_{k=1}^n \binom{k}{2}=0+\sum_{k=2}^n \binom{k}{2} = \sum_{k=2}^n\binom{k}{2}
+\]
 נזכר ב"נוסחת מקל ההוקי" שראינו בתרגול
 \[
-\sum_{i=r}^n \binom{i}{r} = \binom{n+1}{r+2}
+\sum_{i=r}^n \binom{i}{r} = \binom{n+1}{r+1}
 \]
-על פניו 
+נשתמש בה על שני המחוברים
+\begin{gather*}
+    \sum_{k=1}^n \binom{k}{1} + 2\sum_{k=2}^n \binom{k}{2} = \binom{n+1}{2}+ 2\binom{n+1}{3}
+\end{gather*}
+נפתח את נוסחאות הבינום ונפשט
+\begin{gather*}
+    \binom{n+1}{2} + 2\binom{n+1}{3} = \frac{\left(n+1\right)!}{2\left(n-1\right)!} + \cancel{2}\frac{\left(n+1\right)!}{3\cdot\cancel{2}\left(n-2\right)!} \\
+    =    \frac{\left(n+1\right)!}{2\left(n-1\right)!} + \frac{\left(n+1\right)!}{3\left(n-2\right)!} = \frac{n\left(n+1\right)}{2} + \frac{\left(n-1\right)\cdot n\cdot \left(n+1\right)}{3}\\
+    \frac{3\left(n\left(n+1\right)\right)+2\left(n\left(n+1\right)\right)\left(n-1\right)}{6} = \frac{\left(n\left(n+1\right)\right)\left(3+2\left(n-1\right)\right)}{6}\\
+    = \boxed{\frac{n\left(n+1\right)\left(2n+1\right)}{6}}
+\end{gather*}
 \newpage
 \part*{שאלה 2}
 השתמשו בנוסחת המולטינום על מנת למצוא את המספרים הבאים.
@@ -82,22 +98,74 @@
 \section*{סעיף א'}
 נוסחת המולטינום היא
 \[
-    \left(x_1+x_2+\ldots+x_m\right)^n = \sum_{k_1+k_2+\ldots+k_m=n} \binom{n}{k_1,k_2,k_m}\cdot x_1^{k_1} \cdots x_m^{k_n}
+    \left(x_1+x_2+\ldots+x_m\right)^n = \sum_{k_1+k_2+\ldots+k_m=n} \binom{n}{k_1,k_2,\ldots,k_m}\cdot x_1^{k_1} \cdots x_m^{k_n}
 \]
-סה"כ אנחנו סוכמים $\binom{n+m-1}{m-1}$ אפשרויות שכאלה\\
-בדומה לשאלה מהגליון הקודם נרצה למצוא כמה אפשרויות (יש במפלצת הזו למקדמים שאנחנו מחפשים, אולי כדאי להבין את זה בצורה יותר מוכללת?
+לכן
+\[
+    \left(x^2+y^2+z\right)^{10} = \sum_{k_1+k_2+k_3=10} \binom{10}{k_1,k_2,k_3} \cdot x^{2k_1} \cdot y^{2k_2} \cdot z^{k_3}
+\]
+אנחנו מחפשים את המקדם של $x^6y^8z^3$\\
+נתחיל בלמצוא את $k_{1-3}$
+\begin{gather*}
+    x^{2k_1} = x^6 \implies 2k_1 = 6 \implies k_1 = 3\\
+    y^{2k_2} = y^8 \implies 2k_2 = 8 \implies k_2 = 4 \\
+    z^{k_3} = z^3 \implies k_3 = 3
+\end{gather*}
+לכן המקדם הוא $\binom{10}{3,4,3}$
+\[
+    \binom{10}{3,4,3} = \frac{10!}{3!\cdot4!\cdot 3!} = \frac{10\cdot\Ccancel[teal]{9}\cdot\Ccancel[orange]{8}\cdot7\cdot\Ccancel[green]{6}\cdot5\cdot\Ccancel[blue]{4\cdot3\cdot2}}{\Ccancel[green]{3\cdot2}\cdot \Ccancel[blue]{4\cdot3\cdot2}\cdot\Ccancel[teal]{3}\cdot\Ccancel[orange]{2}} = 10 \cdot 3 \cdot 4 \cdot 7 \cdot 5 = \boxed{4200}
+\]
 \section*{סעיף ב'}
-נראה לי שזה פשוט לחשב $\binom{30+3-1}{3-2}$??? אני לא סגור
+לפי נוסחת המולטינום, הפיתוח של $\left(x+y+z\right)^{30}$ הוא
+\[
+    \sum_{k_1+k_2+k_3=30} \binom{30}{k_1,k_2,k_3}x^{k_1}\cdot y^{k_2} \cdot z^{k_3}
+\]
+בכל "סבב" של הסכום הנ"ל יש מחובר אחד, לכן כמות המחוברים שווה לכמות ה"סבבים", מכאן  שכמות המחוברים שווה לכמות הפתרונות למשוואה $k_1+k_2+k_3=30$ כאשר $k_1,k_2,k_3$ הם שלמים אי-שליליים\\
+על פי נוסחה שלמדנו, כמות הפתרונות למשוואה כזו היא $\binom{30+3-1}{3-1}$
+\[
+    \binom{30+3-1}{3-1}= \binom{32}{2}  =\frac{32!}{2! \cdot 30!} = \frac{32\cdot 31 \cdot \cancel{30 \cdots 2}}{2 \cdot \cancel{30 \cdots 2}}= \frac{32\cdot31}{2} = \frac{992}{2} = \boxed{496} 
+\]
 \newpage
 \part*{שאלה 3}
-יש כיתה של $3n$ תלמידים. בכמה דרכים אפשר לחלק אותם לשלשות )לא מסונמנות(.\\
+יש כיתה של $3n$ תלמידים. בכמה דרכים אפשר לחלק אותם לשלשות (לא מסומנות)?\\
 השתמשו בנוסחת סטירלינג
 \part*{פתרון 3}
-אני לא חושב שבאמת הבנתי את נוסחת סטירלינג, אבל גם לא הבנתי מה זה שלשה לא מסומנת אז יש לי בעיה עוד לפני
+על מנת לחלק את הקבוצה לשלשות, נבחר $3$ תלמידים עבור השלשה הראשונה, ואז עוד $3$ עבור השלשה השלישית וכן הלאה $n$ פעמים, עד שכולם מחולקים לשלשות
+\begin{gather*}
+    \binom{3n}{3} \cdot \binom{3n-3}{3} \cdots \binom{6}{3}\cdot \binom{3}{3}\\
+    \frac{\left(3n\right)!}{3!\cdot\cancel{\left(3n-3\right)!}}\cdot \frac{\cancel{\left(3n-3\right)!}}{3!\cancel{\left(3n-6\right)!}}\cdots \frac{\cancel{6!}}{3!\cdot\cancel{3!}}\cdot\frac{\cancel{3!}}{3!} \\
+    = \frac{\left(3n\right)!}{\left(3!\right)^n}
+\end{gather*}
+כעת, על מנת "להיפטר" מהסדר בין השלשות, נחלק בכמות הדרכים לסדר את השלשות השונות ($n!$)
+\[
+    \frac{\frac{\left(3n\right)!}{\left(3!\right)^n}}{n!}= \frac{\left(3n\right)!}{6^n\cdot n!}
+\]
+נשתמש בנוסחת סטירלינג על מנת למצוא קירוב לביטוי\\
+נתחיל עם המונה
+\[
+    \left(3n\right)! \approx \left(\frac{3n}{e}\right)^{3n} \sqrt{6\pi n} 
+\]
+נעבור למכנה
+\[
+    6^n \cdot n! \approx  6^n \cdot \left(\frac{n}{e}\right)^n \sqrt{2\pi n} 
+\]
+וביחד
+\begin{gather*}
+    \frac{\left(3n\right)!}{6^n\cdot n!} \approx  \frac{\left(\frac{3n}{e}\right)^{3n} \sqrt{6\pi n}}{6^n \cdot \left(\frac{n}{e}\right)^n \sqrt{2\pi n} }\\ \\
+= \frac{27^{n}\cdot n^{3n} \cdot \frac{1}{e^{3n}} \cdot \left(\sqrt{3}\cdot\sqrt{2\pi n}\right)}{6^n \cdot n^n \cdot \frac{1}{e^n} \cdot \sqrt{2\pi n}} \\ \\
+=    \frac{27^n}{6^n} \cdot \frac{n^{3n}}{n^n} \cdot \frac{e^{n}}{e^{3n}} \cdot \frac{\sqrt{3}\cdot \sqrt{2\pi n}}{\sqrt{2\pi n}} \\ \\
+= \left(\frac{9}{2}\right)^n \cdot n^{2n} \cdot \frac{1}{e^{2n}} \cdot \sqrt{3} \\\\
+= \sqrt{3} \cdot \left(\frac{9n^2}{2e^2}\right)^{n}
+\end{gather*}
 \newpage
 \part*{שאלה 4}
 העריכו בעזרת סטרלינג את העצרת הכפולה $\left(2n\right)!!$.
 \part*{פתרון 4}
+נשתמש בנוסחת סטרלינג פעמיים\\
+ראשית נעריך את $\left(2n\right)!$
+\begin{gather*}
+    \left(2n\right)! \approx \left(\frac{2n}{e}\right)^{2n} \cdot \sqrt{4\pi n}
+\end{gather*}
 \newpage
 \part*{שאלה 5}
 \section*{סעיף א'}
@@ -146,9 +214,8 @@ $\left(2\right)$ (סדרה זוגית) \\
 \[
     \boxed{  \lfloor \frac{3^n}{2}\rfloor+1 = \frac{3^n+1}{2}}
 \]
-
 \newpage
 \part*{בדיחת קרש}
-איך קוראים לחתול אובדני\\
+איך קוראים לחתול שעושה שיעורי בית ביום ההולדת שלו\\
 מיציתי
 \end{document}
