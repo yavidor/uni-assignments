@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2026.5.13)  24 MAY 2026 18:45
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2026.5.13)  24 MAY 2026 19:00
  restricted system commands enabled.
  file:line:error style messages enabled.
 **gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.latex
@@ -531,12 +531,12 @@ Here is how much of LuaTeX's memory you used:
  125026,1977958 words of node,token memory allocated
  4088 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 4 dir, 2 glue, 4 kern, 1 glyph, 1344 attribute, 56 glue_spec, 450 attribute_list, 1 write nodes
-   avail lists: 1:7,2:1540,3:166,4:75,5:383,6:40,7:2878,8:130,9:1488,10:4,11:18
+   avail lists: 1:6,2:1540,3:166,4:75,5:384,6:40,7:2713,8:130,9:1488,10:4,11:16
  27692 multiletter control sequences out of 65536+600000
  89 fonts using 4798471 bytes
  73i,20n,93p,476b,464s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/fonts/clm-miriam-mono-fonts/MiriamMonoCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf></usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.pdf (14 pages, 137139 bytes).
+Output written on gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.pdf (14 pages, 138030 bytes).
 
 PDF statistics: 114 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
