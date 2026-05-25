@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1779641620.12579 "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.latex" "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.pdf" "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet" 1779641620.93416 0
+["lualatex"] 1779705430.9406 "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.latex" "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.pdf" "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet" 1779705432.32265 0
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-bold.luc" 1770037307.49007 54495 6d1e04677a40f79ab14ff2024faac8eb ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-boldoblique.luc" 1770037307.48007 55799 5fef217971130cbc6fbfe77ec1f0a8c2 ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-regular.luc" 1770037307.46907 54551 36cc254eefb9c32f16f693bfada56f84 ""
@@ -142,8 +142,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775907030.30225 4602002 62dba5fc29055c16380d7393a2adb07a ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1778620680 11867377 5fee1746992e102670e342e0fa08e2ae ""
-  "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.aux" 1779641620.85518 112 90a199b8034320048010ac145c18bea5 "lualatex"
-  "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.latex" 1779641618.17503 15848 7511167e6f836715e63c9521efd1c1f7 ""
+  "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.aux" 1779705432.19353 112 90a199b8034320048010ac145c18bea5 "lualatex"
+  "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.latex" 1779705429.96842 15830 2c701db2b2be9d397706ef8bcf028fb2 ""
   (generated)
   "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.aux"
   "gilaion-3-combinatorics-yonatan-avidor-rotem-eshet.log"
