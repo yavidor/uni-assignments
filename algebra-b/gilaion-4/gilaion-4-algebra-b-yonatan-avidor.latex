@@ -1,0 +1,595 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{אלגברה ב' - 01040168 \\ גליון 4}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\newcommand{\adj}[1]{\mathrm{adj}\left(#1\right)}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{תרגיל 1}
+עבור כל אחת מההעתקות הבאות $T\in End\left( V \right)$, קיבעו האם היא לכסינה. עבור אלו שהינן לכסינות, מיצאו בסיס $\mathcal{B}$ של $V$ ומטריצה אלכסונית $D$ עבורם $\left[ T \right]_{\mathcal{B}}=D$. עבור אלו שאינן לכסינות, הוכיחו את טענתכן.
+\section*{סעיף א'}
+\begin{gather*}
+	T:\mathbb{R}^{2}\to \mathbb{R}^{2} \\
+	\begin{pmatrix}
+	x \\
+	y
+	\end{pmatrix} \mapsto \begin{pmatrix}
+	-y \\
+	x
+	\end{pmatrix}
+\end{gather*}
+\section*{סעיף ב'}
+\begin{gather*}
+	T:\mathbb{C}^{2}\to \mathbb{C}^{2} \\
+	\begin{pmatrix}
+	x \\
+	y
+	\end{pmatrix} \mapsto \begin{pmatrix}
+	-y \\
+	x
+	\end{pmatrix}
+\end{gather*}
+\section*{סעיף ג'}
+\begin{gather*}
+	T:\mathrm{M}_{2}\left( \mathbb{R} \right) \to \mathrm{M}_{2}\left( \mathbb{R} \right)  \\
+	A\mapsto A^{t}
+\end{gather*}
+\section*{סעיף ד'}
+\begin{gather*}
+	T:\mathbb{C}_{2}\left[ x \right] \to \mathbb{C}_{2}\left[ x \right]  \\
+	p\left( x \right) \mapsto p'\left( x \right) 
+\end{gather*}
+\part*{פתרון 1}
+\section*{סעיף א'}
+$T$ אינה לכסינה, שכן אין לה אפילו ערכים עצמיים.\\
+נחשב את המטריצה המייצגת $\left[ T \right]_{\mathcal{E}}$ עבור הבסיס הסדור
+$$
+	\mathcal{E}=\left( e_{1}=\begin{pmatrix}
+	1 \\
+	0
+	\end{pmatrix},e_{2}=\begin{pmatrix}
+	0 \\
+	1
+	\end{pmatrix} \right) 
+$$
+\[
+\begin{gathered}
+	T\left( e_{1} \right) =\begin{pmatrix}
+	0 \\
+	1
+	\end{pmatrix} \implies \left[ T\left( e_{1} \right)  \right] _{\mathcal{E}} = \begin{pmatrix}
+	0 \\
+	1
+	\end{pmatrix} \\
+	T\left( e_{2} \right) =\begin{pmatrix}
+	-1 \\
+	0
+	\end{pmatrix} \implies \left[ T\left( e_{2} \right)  \right] _{\mathcal{E}}=\begin{pmatrix}
+	-2 \\
+	0
+	\end{pmatrix}
+	\end{gathered}  \implies \left[ T \right] _{\mathcal{E}}=\begin{pmatrix}
+	0 & -1 \\
+	1 & 0
+	\end{pmatrix}
+    \]
+נחשב את הפולינום האופייני
+\[
+	p_{T}\left( x \right) =\det\begin{pmatrix}
+	x & 1 \\
+	-1 & x
+	\end{pmatrix}  = x^{2}+1
+    \]
+השורשים הם $\pm i\not\in \mathbb{R}$ ולכן אין ערכים עצמיים, ולכן $T$ אינה לכסינה
+\section*{סעיף ב'}
+$T$ לכסינה, נוכיח.\\
+נשתמש באותו בסיס כמו בשאלה הקודמת $\left( \begin{pmatrix}1 \\  0\end{pmatrix},\begin{pmatrix}0 \\  1\end{pmatrix} \right)$ ונקבל את אותה מטריצה מייצגת,\\
+מכאן שיש את אותו הפולינום האופייני $x^{2}+1$.\\
+$\pm i\in \mathbb{C}$ לכן יש ערכים עצמיים, יש שני ערכים עצמיים בריבוי אלגברי של $1$, מכיוון שלכל ע"ע $\lambda$ מתקיים $1\leq r_{g}\left( \lambda \right)\leq r_{a}\left( \lambda \right)$  ו $r_{a}\left( i \right)=1$, $r_{g}\left( i \right)=1$, אותו דבר עבור $r_{a}\left( -i \right)$. קיבלנו שיש $2$ ערכים עצמיים שלכל אחד מהם $r_{g}=r_{a}$ עבור אופרטור על מרחב ממימד $2$, לכן $T$ לכסינה.\\
+נמצא וקטורים עצמיים
+$$
+ iI-\left[ T \right] _{\mathcal{E}}   = \begin{pmatrix}
+	i & 1 \\
+	-1 & i
+	\end{pmatrix}
+$$
+נדרג על מנת למצוא בסיס למרחב הפתרונות (המרחב העצמי עבור $i$)
+$$
+	\begin{pmatrix}
+	i & 1 \\
+	-1 & i
+	\end{pmatrix} \xrightarrow{ R_{2}\to R_{2}-iR_{1} } \begin{pmatrix}
+	i & 1 \\
+	0 & 0
+	\end{pmatrix}
+$$
+מכאן ש $V_{i}=\text{sp}\left\{ \begin{pmatrix}i \\  -1\end{pmatrix} \right\}$, ו$\mathcal{B}_{i}=\begin{pmatrix}i \\  -1\end{pmatrix}$ בסיס ל-$V_{i}$\\
+עכשיו עבור $\lambda=-i$
+$$
+	-iI-\left[ T \right] _{\mathcal{E}}= \begin{pmatrix}
+	-i & 1 \\
+	-1 & -i
+	\end{pmatrix}
+$$
+נדרג
+$$
+	\begin{pmatrix}
+	-i & 1 \\
+	-1 & -i
+	\end{pmatrix} \xrightarrow{ R_{2}\to R_{2}+iR_{1} }\begin{pmatrix}
+	-i & 1 \\
+	0 & 0
+	\end{pmatrix}
+$$
+מכןא ש $V_{-i}=\mathrm{sp}\left\{ \begin{pmatrix}i \\  1\end{pmatrix} \right\}$ ו-$\mathcal{B}_{-i}=\begin{pmatrix}i \\  1\end{pmatrix}$ בסיס ל-$V_{-i}$\\
+מטענה שהוכחנו בכיתה, זה אומר ש $\mathcal{B}=\mathcal{B}_{i}\uplus \mathcal{B}_{-i}\subseteq \mathbb{C}^{2}$ בסיס מלכסן עבור $T$
+$$
+	\boxed{\begin{gathered}
+	\mathcal{B} = \left( \begin{pmatrix}
+	i \\
+	-1
+	\end{pmatrix}, \begin{pmatrix}
+	i \\
+	1
+	\end{pmatrix} \right)  \\
+	D:=\left[ T \right] _{\mathcal{B}} = \begin{pmatrix}
+	i & 0 \\
+	0 & -i
+	\end{pmatrix}
+	\end{gathered}}
+$$
+\section*{סעיף ג'}
+$T$ לכסין, נוכיח\\
+נחשב את המטריצה המייצגת $\left[ T \right]_{\mathcal{E}}$ עבור הבסיס הסדור
+$$
+	\mathcal{E}= \left( e_{1}=\begin{pmatrix}
+1 & 0 \\
+0 & 0	
+	\end{pmatrix},e_{2}=\begin{pmatrix}
+	0 & 1 \\
+	0 & 0
+	\end{pmatrix}, e_{3}=\begin{pmatrix}
+	0 & 0 \\
+	1 & 0
+	\end{pmatrix},e_{4}=\begin{pmatrix}
+	0 & 0 \\
+	0 & 1
+	\end{pmatrix} \right) 
+$$
+\[
+\begin{gathered}
+	T\left( e_{1} \right) = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \implies \left[ T\left( e_{1} \right)  \right]_{\mathcal{E}} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} \\ \\
+	T\left( e_{2} \right) = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} \implies \left[ T\left( e_{2} \right)  \right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix} \\ \\
+	T\left( e_{3} \right) = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \implies \left[ T\left( e_{3} \right)  \right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} \\ \\ 
+	T\left( e_{4} \right) = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \implies \left[ T\left( e_{4} \right)  \right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix} \\
+	\end{gathered}\implies \left[ T \right] _{\mathcal{E}} = \begin{pmatrix}
+	1 & 0 & 0 & 0 \\
+	0 & 0 & 1 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 0 & 1
+	\end{pmatrix}
+    \]
+נחשב את הפולינום האופייני
+\begin{gather*}
+	p_{T}\left( x \right) = \det \begin{pmatrix}
+	x-1 & 0 & 0 & 0 \\
+	0 & x & -1 & 0 \\
+	0 & -1 & x & 0 \\
+	0 & 0 & 0 & x-1
+	\end{pmatrix}   \\
+	=\left( x-1 \right) \cdot \det \begin{pmatrix}
+	x & -1 & 0 \\
+	-1 & x & 0 \\
+	0 & 0 & x-1
+	\end{pmatrix}  \\
+	=\left( x-1 \right) \left( x-1 \right) \cdot \begin{pmatrix}
+	x & -1 \\
+	-1 & x
+	\end{pmatrix}  \\
+	= \left( x-1 \right)\cdot \left( x-1 \right) \cdot \left(x^{2}-1  \right)  =\left( x-1 \right) \cdot \left( x-1 \right) \cdot \left( x-1 \right) \cdot\left( x+1 \right) 
+\end{gather*}
+הפולינום מתפצל, לכן יש $4$ ע"ע. $1$ ע"ע עם ריבוי אלגברי של $3$ ו-$-1$  ע"ע עם ריבוי אלגברי של $1$.\\
+מכיוון שהריבוי הגיאומטרי תמיד קטן-שווה מהריבוי האלגברי וגדול-שווה ל-$1$, הריבוי הגיאומטרי של $-1$ הוא בהכרח $1$. נבדוק ריבוי גיאומטרי של $\lambda=1$. נחשב את $\dim\left(Ker\left( Id-T \right)\right)$ בכך שנדרג את המטריצה $I-\left[ T \right]_{\mathcal{E}}$
+$$
+	I-\left[ T \right] _{\mathcal{E}} = \begin{pmatrix}
+	0 & 0 & 0 & 0 \\
+	0 & 1 & -1 & 0 \\
+	0 & -1 & 1 & 0 \\
+	0 & 0 & 0 & 0
+	\end{pmatrix}
+$$
+נדרג
+$$
+ \begin{pmatrix}
+	0 & 0 & 0 & 0 \\
+	0 & 1 & -1 & 0 \\
+	0 & -1 & 1 & 0 \\
+	0 & 0 & 0 & 0
+	\end{pmatrix} \xrightarrow{ R_{3}\to R_{3}+R_{2} }  \begin{pmatrix}
+	0 & 0 & 0 & 0 \\
+	0 & 1 & -1 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0
+	\end{pmatrix} \xrightarrow{ R_{1}\leftrightarrow R_{3} } \begin{pmatrix}
+	0 & 1 & -1 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0
+	\end{pmatrix}
+$$
+קיבלנו שיש שלוש שורות אפסים, לכן מימד מרחב הפתרונות של המערכת ההומוגנית (הלא הוא הגרעין) שווה $1$.\\
+קיבלנו ש $r_{g}\left( 1 \right)=1\neq 3=r_{a}\left( 1 \right)\implies r_{g}\left( 1 \right)\neq r_{a}\left( 1 \right)$\\
+לכל ע"ע, הר"א שווה לר"ג. בנוסף סכום הר"א  $3+1=4$ שווה למימד המרחב שעליו $T$ פועל, מכאן ש-$T$ לכסין.\\
+נשתמש בדירוג שעשינו על מנת למצוא בסיס ל-$V_{1}$\\
+נזכר שלפי הגדרה, הפתרונות לממ"ל ההומוגנית המיוצגת ע"י $\lambda Id-T$ הם הוקטורים העצמיים של $T$ עם הערך העצמי $\lambda$, נכתוב את הפתרון הכללי לפי הדירוג שעשינו
+\begin{gather*}
+	V_{1}=\left\{  \alpha_{1}x_{1}+\beta x_{2}-\beta x_{3}+\gamma x_{4}|\alpha,\beta ,\gamma \in \mathbb{R}\right\} \\
+	= \mathrm{sp}\left\{\begin{pmatrix}
+	1 &
+	0 \\
+	0 &
+	0
+	\end{pmatrix}, \begin{pmatrix}
+	0 &
+	1 \\
+	-1 &
+	0
+	\end{pmatrix},\begin{pmatrix}
+	0 &
+	0 \\
+	0 &
+	1
+	\end{pmatrix}  \right\} 
+\end{gather*}
+יש לנו קבוצה פורשת בגודל המימד של $V_{1}$, ולכן היא בסיס
+$$
+	\mathcal{B}_{1}=\left( \begin{pmatrix}
+	1 &
+	0 \\
+	0 &
+	0
+	\end{pmatrix}, \begin{pmatrix}
+	0 &
+	1 \\
+	-1 &
+	0
+	\end{pmatrix},\begin{pmatrix}
+	0 &
+	0 \\
+	0 &
+	1
+	\end{pmatrix}  \right)
+$$
+עכשיו עבור $\lambda=-1$
+$$
+	-I-\left[ T \right] _{\mathcal{E}}= \begin{pmatrix}
+	-2 & 0 & 0 & 0 \\
+	0 & -1 & -1 & 0 \\
+	0 & -1 & -1 & 0 \\
+	0 & 0 & 0 & -2
+	\end{pmatrix}
+$$
+נדרג
+$$
+\begin{gathered}
+\begin{pmatrix}
+	-2 & 0 & 0 & 0 \\
+	0 & -1 & -1 & 0 \\
+	0 & -1 & -1 & 0 \\
+	0 & 0 & 0 & -2
+	\end{pmatrix} \xrightarrow{ R_{2}\to R_{2}-R_{3} }\begin{pmatrix}
+	-2 & 0 & 0 & 0 \\
+	0 & -1 & -1 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & -2
+	\end{pmatrix} \\ \\
+	 \xrightarrow{ R_{4}\leftrightarrow R_{3} } \begin{pmatrix}
+	-2 & 0 & 0 & 0 \\
+	0 & -1 & -1 & 0 \\
+	0 & 0 & 0 & -2 \\
+	0 & 0 & 0 & 0
+	\end{pmatrix}
+\end{gathered}
+$$
+נמצא את המרחב העצמי
+$$
+	V_{-1}=\left\{ 0x_{1}+\alpha x_{2}-\alpha x_{3} + 0x_{4} |\alpha \in \mathbb{R}\right\}  = \mathrm{span}\left\{ \begin{pmatrix}
+	0 & 1 \\
+	-1 & 0
+	\end{pmatrix} \right\} 
+$$
+יש לנו קבוצה פורשת בגודל המימד של $V_{-1}$, ולכן היא בסיס
+$$
+	\mathcal{B}_{-1}= \left( \begin{pmatrix}
+	0 & 1 \\
+	-1 & 0
+	\end{pmatrix} \right) 
+$$
+לכן, כפי שהראינו בסעיף הקודם. $\mathcal{B}=\mathcal{B}_{1}\uplus\mathcal{B}_{-1}\subseteq \mathrm{M}_{2}\left( \mathbb{R} \right)$ בסיס מלכסן עבור $T$ 
+$$
+	\boxed{
+\begin{gathered}
+	\mathcal{B}=\left( \begin{pmatrix}
+	1 &
+	0 \\
+	0 &
+	0
+	\end{pmatrix}, \begin{pmatrix}
+	0 &
+	1 \\
+	-1 &
+	0
+	\end{pmatrix},\begin{pmatrix}
+	0 &
+	0 \\
+	0 &
+	1
+	\end{pmatrix},\begin{pmatrix}
+	0 & 1 \\
+	-1 & 0
+	\end{pmatrix}  \right) \\ \\
+	D:= \left[ T \right] _{\mathcal{B}}= \begin{pmatrix}
+	1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0  \\
+	0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & -1
+	\end{pmatrix} 
+\end{gathered}
+	}
+$$
+\section*{סעיף ד'}
+$T$ לא לכסין.\\
+נחשב את המטריצה המייצגת $\left[ T \right]_{\mathcal{E}}$ עבור הבסיס הסדור
+$$
+	\mathcal{E}=\left( e_{0}=1,e_{1}=x,e_{2}=x^{2} \right) 
+$$
+($e_{0}$ לשם הנוחות כי אז $e_{i}=x^{i}$)
+$$
+\begin{gathered}
+	T\left( e_{0} \right) =0 \implies \left[ T \right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 0 \\ 0  \end{pmatrix} \\ \\
+	T\left( e_{1} \right) =1 \implies \left[ T \right]_{\mathcal{E}} = \begin{pmatrix} 1 \\ 0 \\ 0  \end{pmatrix} \\ \\
+	T\left( e_{2} \right) =2x \implies \left[ T \right]_{\mathcal{E}} = \begin{pmatrix} 0 \\ 2 \\ 0  \end{pmatrix} \\ \\
+	\end{gathered} \implies \left[ T \right] _{\mathcal{E}}= \begin{pmatrix}
+	0 & 1 & 0 \\
+	0 & 0 & 2 \\
+	0 & 0 & 0
+	\end{pmatrix}
+$$
+נחשב את הפולינום האופייני
+$$
+p_{T}\left( x \right) =\det \begin{pmatrix}
+x & -1 & 0 \\
+0 & x & -2 \\
+0 & 0 & x
+\end{pmatrix}	 = x \cdot x\cdot x
+$$
+השורשים הם $0$ בריבוי אלגברי של $3$. \\
+נבדוק ריבוי גיאומטרי
+$$
+	0I-\left[ T \right] _{\mathcal{E}}= \begin{pmatrix}
+	0 & -1 & 0 \\
+	0 & 0 & -2 \\
+	0 & 0 & 0
+	\end{pmatrix}
+$$
+המטריצה מדורגת עם שורת אפסים אחת, לכן $\dim\left( Ker\left( -T \right) \right)=3-1=2$\\
+הריבוי הגיאומטרי לא שווה לריבוי האלגברי, לכן האופרטור אינו לכסין
+\part*{תרגיל 2}
+תהי $A\in \mathrm{M}_{n}\left( \mathbb{F} \right)$ עם פולינום אופייני
+$$
+	p_{A}\left( x \right) =\sum_{i=0}^{n} a_{i}x^{i}
+$$
+הוכיחו כי $a_{n-1}=-\mathrm{tr}\left( A \right)$
+\part*{פתרון 2}
+נתחיל בלהוכיח טענת עזר
+\section*{למה}
+אין תמורות ב-$S_{n}$ בהן יש בדיוק $n-1$ אינדקסים בהן $\sigma \left( i \right)= i$
+\section*{הוכחת הלמה}
+תהי $\sigma \in S_{n}$, נניח בשלילה שיש בדיוק $n-1$ אינדקסים $i$ בהם $\sigma \left( i \right)=i$, אזי קיים אינדקס אחד $k$ אשר עבורו $\sigma \left( k \right)\neq k$, אבל מכיוון ש-$\sigma$ היא חח"ע, התמונה של $k$ צריכה להיות מספר כלשהו $j\neq k\in \left[ n \right]$, אבל $j$ הוא כבר התמונה של $\sigma \left( j \right)$, מה שסותר את היות $\sigma$ חח"ע, מכאן שלא קיימת $\sigma$ שכזו. לכן כל $\sigma\neq Id$ "מקבעת" לכל היותר $n-2$ איברים ב-$\left[ n \right]$.
+\section*{הוכחת התרגיל}
+נסמן $\left( b_{i,j} \right)=A,\left( c_{_{i,j}} \right)=xI-A$ על מנת להמנע מכפל סימונים עם ה-$a_{i}$ שהם המקדמים בפולינום האופייני.
+מהגדרת הפולינום האופייני, $p_{A}=\det \left( xI-A \right)$. נזכר בנוסחה שלמדנו לחישוב דטרמיננטות 
+$$
+	\det \left( xI-A \right)=\det \left( (c)_{i,j} \right)  = \sum_{\sigma \in S_{n}} \mathrm{sgn}\left( \sigma \right) \cdot \prod_{i=1}^{n} c_{i,\sigma \left( i \right) }
+$$
+ראינו בהרצאה שהתמורה היחידה שתורמת ל$x^{n}$ היא תמורת הזהות $\sigma \left( i \right)=i$, נטען כי היא גם התמורה היחידה שתורמת ל-$x^{n-1}$.\\
+על מנת שתמורה כלשהי תתרום למקדם של $x^{i}$ כלשהו, היא לכלול בחירה של $i$ איברי אלכסון לפחות, אבל לפי הלמה, אין תמורה שכוללת $n-1$ איברי אלכסון. לכן כל תמורה שאינה תמורת הזהות תורמת לפולינום האופייני עד המקדם $x^{n-2}$ לכל היותר, ולכן אינה רלוונטית לנו.\\
+הסימן של תמורת הזהות הוא $1$, לכן מספיק לחשב את המקדם של $x^{n-1}$ בפולינום: 
+$$
+	\prod_{i=1}^{n} c_{i,\sigma \left( i \right) }=\prod_{i=1}^{n} c_{i,i}
+$$
+נתבונן במכפלה הזו
+$$
+	\prod_{i=1}^{n} c_{i,i}= \left( x-b_{1,1} \right) \cdot \left( x-b_{2,2} \right) \cdots\left( x-b_{n,n} \right) 
+$$
+כמו שהדרך היחידה לקבל את $a_{n}$ היא לבחור בכל פעם את ה-$x$. על מנת לקבל את $a_{n-1}$ יש לבחור בכל פעם את $x$ מלבד פעם אחת שבוחרים את $-b_{i,i}$, ישנן $n$ אפשרויות שונות כאלה (אחת לכל $i\in \left[ n \right]$).\\
+לכן  אם נסתכל רק על המקדמים של $x^{n-1}$ נראה כי הם
+$$
+	\left( -b_{1,1} \right) x^{n-1}+\left( -b_{2,2} \right) x^{n-1}+\ldots+\left( -b_{n,n} \right) x^{n-1}
+$$
+מדיסטריבוטיביות נקבל כי המקדם הוא
+$$
+	-b_{1,1}-b_{2,2}-\ldots-b_{n,n} =-\left( b_{1,1}+b_{2,2}+\ldots+ b_{n,n}\right)  = -\mathrm{tr}\left( A \right) 
+$$
+כנדרש\\
+$\blacksquare$
+\part*{תרגיל 3}
+יהי $T\in End_{\mathbb{F}}\left( V \right)$ אופרטור לינארי, ויהי $\lambda \in \mathbb{F}$. הוכיחו כי
+$$
+	P_{\lambda T}\left( x \right) =\lambda^{\dim_{\mathbb{F}}\left( V \right) }p_{T}\left( \frac{x}{\lambda}  \right) 
+$$
+\part*{פתרון 3}
+אם $\lambda=0_{\mathbb{F}}$, אגף ימין אינו מוגדר, לכן $\lambda\neq 0_{\mathbb{F}}$\\
+נסמן $\mathbb{F}\ni n=\dim_{\mathbb{F}}\left( V \right)$ מהגדרת פולינום אופייני של אופרטור:
+$$
+	p_{\lambda T}\left( x \right) = \det \left( xI-\lambda T \right)=	 \det \left( \lambda \left( \frac{x}{\lambda}I-T \right)  \right)  
+$$
+ממולטי-לינאריות, עבור סקלאר $\alpha \in \mathbb{F}$ ואופרטור $S$, מתקיים $\det \left( \alpha S \right)=\alpha^{k}\det \left( S \right)$ כאשר $k$ הוא מימד המרחב עליו מוגדר $S$, לכן
+$$
+	\det \left( \lambda \left( \frac{x}{\lambda} I-T\right)  \right) = \lambda^{n}\left( \frac{x}{\lambda}I-T \right) =\lambda^{n}p_{T}\left( \frac{x}{\lambda} \right) 
+$$
+כנדרש\\
+$\blacksquare$
+\part*{תרגיל 4}
+תהיינה $A,B\in \mathrm{M}_{n}\left( \mathbb{F} \right)$. הוכיחו או הפריכו את הטענות הבאות. עבור הטענות שאינן נכונות, מיצאו דוגמה נגדית.
+\section*{סעיף א'}
+$$
+	p_{AB}=p_{A}\left( x \right) p_{B}\left( x \right) 
+$$
+\section*{סעיף ב'}
+לא רלוונטי
+\section*{סעיף ג'}
+$$
+	p_{A+B}\left( x \right) =p_{A}\left( x \right) +p_{B}\left( x \right) 
+$$
+\section*{סעיף ד'}
+אם $A,B$ לכסינות, גם $AB$ לכסינה.
+\section*{סעיף ה'}
+אם $A,B$ לכסינות, גם $A+B$ לכסינה.
+\part*{פתרון 4}
+\section*{סעיף א'}
+לא נכון! נראה דוגמה נגדית
+\begin{gather*} 
+	\mathbb{F}=\mathbb{R}  \\
+	n=2 \\
+	A=\begin{pmatrix}
+	0 & 0 \\
+	0 & 1
+	\end{pmatrix} \\ \\
+	B=\begin{pmatrix}
+	1 & 0 \\
+	0 & 2 
+	\end{pmatrix}  \\ \\
+	p_{A}\left( x \right) = \det \left( xI-A \right) =\det \begin{pmatrix}
+	x & 0 \\
+	0 & x-1
+	\end{pmatrix} = x\left( x-1 \right)  \\
+	p_{B}\left( x \right) =\det \left( xI-B \right)  = \det \begin{pmatrix}
+	x-1 & 0 \\
+	0 & x-2
+	\end{pmatrix} = \left( x-1 \right) \left( x-2 \right)  \\
+	p_{A}\left( x \right) \cdot p_{B}\left( x \right) = x\left( x-1 \right) \left( x-1 \right) \left( x-2 \right) = \\
+	(x^{2}-2x)\cdot \left( x^{2}-2x+2 \right) =x^{4}-4x^{3}+4x^{2}-4x \\
+	AB= \begin{pmatrix}
+	0 & 0 \\
+	0 & 2
+	\end{pmatrix} \\
+	p_{AB}\left( x \right) =\det \left( xI-A \right) = \det \begin{pmatrix}
+	x & 0 \\
+	0 & x-2
+	\end{pmatrix} = x\left( x-2 \right) =x^{2}-2x \\
+	\underbrace{ x^{2}-2x }_{ p_{AB}\left( x \right)  }\neq \underbrace{ x^{4}-4x^{3}+4x^{2}-4x }_{ p_{A}\left( x \right) \cdot p_{B}\left( x \right)  }\implies p_{AB}\left( x \right) \neq p_{A}\left( x \right) \cdot p_{B}\left( x \right) 
+\end{gather*}
+\section*{סעיף ג'}
+לא נכון! נראה דוגמה נגדית (אותה דוגמה)
+\begin{gather*} 
+	\mathbb{F}=\mathbb{R}  \\
+	n=2 \\
+	A=\begin{pmatrix}
+	0 & 0 \\
+	0 & 1
+	\end{pmatrix} \\ \\
+	B=\begin{pmatrix}
+	1 & 0 \\
+	0 & 2 
+	\end{pmatrix}  \\  \\
+	p_{A}\left( x \right) =x\left( x-1 \right) =x^{2}-x \\
+	p_{B}\left( x \right) =\left( x-1 \right) \left( x-2 \right) =x^{2}-3x+3 \\
+	p_{A}\left( x \right) +p_{B}\left( x \right) =2x^{2}-4x+3 \\
+	A+B=\begin{pmatrix}
+	1 & 0 \\
+	0 & 3
+	\end{pmatrix} \\
+	p_{A+B}\left( x \right) = \det \left( xI-\left( A+B \right)  \right) =\det \begin{pmatrix}
+	x-1 & 0 \\
+	0 & x-3
+	\end{pmatrix} \\
+	 = \left( x-1 \right) \left( x-3 \right) 	=x^{2}-4x+3 \\ \\
+	 \underbrace{ x^{2}-4x+3 }_{ p_{A+B}\left( x \right)   }\neq \underbrace{ 2x^{2}-4x+3 }_{ p_{A}\left( x \right) +p_{B}\left( x \right)  }\implies p_{A+B}\left( x \right) \neq p_{A}\left( x \right) +p_{B}\left( x \right) 
+\end{gather*}
+\section*{סעיף ד'}
+לא נכון! נביא דוגמה נגדית
+\begin{gather*}
+	\mathbb{F}=\mathbb{R} \\
+	n=2 \\
+	A = \begin{pmatrix}
+	1 & 0 \\
+	0 & 0
+	\end{pmatrix} \\  \\
+	B = \begin{pmatrix}
+	0 & 1 \\
+	0 & 1
+	\end{pmatrix}
+\end{gather*}
+$A$ היא כבר מטריצה אלכסונית, נוכיח כי $B$ לכסינה.
+$$
+	p_{B}\left( x \right) = \det \begin{pmatrix}
+	x & -1 \\
+	0 & x-1
+	\end{pmatrix} = x\left( x-1 \right)
+$$
+קיבלנו פולינום שמתפצל לשני גורמים לינאריים, לכן השורשים הם $0,1$\\
+ יש שני ערכים עצמיים בריבוי אלגברי של $1$, מכיוון שלכל ע"ע $\lambda$ מתקיים $1\leq r_{g}\left( \lambda \right)\leq r_{a}\left( \lambda \right)$  ו $r_{a}\left( 1 \right)=1$, $r_{g}\left( 1 \right)=1$, אותו דבר עבור $r_{a}\left(0 \right)$. קיבלנו שיש $2$ ערכים עצמיים שלכל אחד מהם $r_{g}=r_{a}$ עבור מטריצה מסדר $2\times 2$, לכן $B$ לכסינה.\\
+ נתבונן ב$AB$
+ $$
+	AB = \begin{pmatrix}
+	0 & 1 \\
+	0 & 0
+	\end{pmatrix}
+ $$
+ נחשב פולינום אופייני
+ $$
+	p_{AB}\left( x \right) =\det\begin{pmatrix}
+	x & -1 \\
+	0 & x
+	\end{pmatrix} = x \cdot x
+ $$
+ השורשים הם $0$ מריבוי אלגברי $2$. נבדוק ריבוי גיאומטרי
+ $$
+	-AB = \begin{pmatrix}
+	0 & -1 \\
+	0 & 0
+	\end{pmatrix}
+ $$
+ קיבלנו מטריצה מדורגת עם שורת אפסים אחת לכן, $\dim\left( Ker\left( AB \right) \right)=2-1=1$. הר"ג הוא $1$, הר"א הוא $2$, הר"ג שונה מהר"א ולכן המטריצה אינה לכסינה.\\
+ לכן על אף ש$A,B$ לכסינות, $AB$ אינה לכסינה.
+\section*{סעיף ה'}
+לא נכון! נביא דוגמה נגדית
+\begin{gather*}
+	\mathbb{F}=\mathbb{R} \\
+	n=2 \\
+	A = \begin{pmatrix}
+	0 & 0 \\
+	0 & -1
+	\end{pmatrix} \\  \\
+	B = \begin{pmatrix}
+	0 & 1 \\
+	0 & 1
+	\end{pmatrix}
+\end{gather*}
+$A$ היא כבר מטריצה אלכסונית, בסעיך הקודם הוכחנו כי $B$ לכסינה.\\
+נתבונן ב-$A+B$
+$$
+	A+B = \begin{pmatrix}
+	0 & 0+1 \\
+	0 & -1+1 
+	\end{pmatrix} = \begin{pmatrix}
+	0 & 1 \\
+	0 & 0
+	\end{pmatrix}
+$$
+בסעיף הקודם הראינו כי $\begin{pmatrix}0 & 1 \\  0 & 0\end{pmatrix}$ אינה לכסינה.\\
+לכן על אף ש$A,B$ לכסינות, $A+B$ אינה לכסינה.
+\end{document}
