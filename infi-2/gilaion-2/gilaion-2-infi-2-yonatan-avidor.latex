@@ -1,0 +1,279 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפי 2 - 01040281 \\ גליון 2}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+תהא $f$ פונקציה אינטגרבילית בקטע $\left[ a,b \right]$. תהא $g$ פונקציה מוגדרת בקטע $\left[ a,b \right]$ המקיימת $f\left( x \right)=g\left( x \right)$ לכל $x \in \left[ a,b \right]$ מלבד כמות סופית של נקודות.\\
+הוכיחו כי $g$ אינטגרבילית וש
+\[
+	\int_{a}^{b} g\left( x \right)   \, dx =\int_{a}^{b} f\left( x \right)  \, dx 
+    \]
+\part*{פתרון 1}
+נסמן $I=\int_{a}^{b} f\left( x \right) \, dx$, ידוע לנו ש$I\in \mathbb{R}$ מכך ש$f$ אינטגרבילית\\
+יהי $\varepsilon>0$, נרצה למצוא $\delta>0$ כך שלכל חלוקה $P=\left\{ a_{i} \right\}$ המקיימת $\lambda \left( P \right)<\delta$ ולכל בחירת $\left\{ t_{i} \right\}$ כך ש $t_{i}\in \left[ a_{i},a_{i-1} \right]$ מתקיים
+$$
+\left| R\left( g,P,\left\{ t_{i} \right\}  \right) -I \right| <\varepsilon
+$$
+מהטריק הידוע (להוסיף ביטוי ולהחסיר אותו) ואי שוויון המשלוש מקבלים
+$$
+	\left| R\left( g,P,\left\{ t_{i} \right\}  \right)-I  \right| \leq \left| R\left( g,P,\left\{ t_{i} \right\}\right)  -R\left( f,P,\left\{ t_{i} \right\}   \right)  \right| + \left| R\left( f,P,\left\{ t_{i} \right\}  \right) -I \right| 
+$$
+נסמן $B:=\left\{ b_{1},b_{2},\ldots,b_{k} \right\}$ להיות קבוצת הנקודות כך שלכל $j\in \left[ k \right]$ $g\left( b_{j} \right)\neq f\left( b_{j} \right)$. אם $k=0$ אזי $g=f$ לאורך כל $\left[ a,b \right]$ ולכן אינטגרבילית עם אותו האינטגרל כמו $f$, לכן מעתה נניח $k\geq 1$\\
+נתבונן בהפרש סכומי רימן של $f$ ו-$g$
+\begin{gather*}
+	\left| R\left(g, P,\left\{t_i\right\}\right) - R\left(f, P,\left\{t_i\right\}\right) \right|   \\
+	= \left| \sum g\left( t_{i} \right) \Delta _{i}- \sum f\left( t_{i} \right) \Delta _{i} \right|  \\
+        = \left| \sum \left( g\left( t_{i} \right) - f\left( t_{i} \right) \right) \Delta_{i}  \right|  \\
+	= \sum \left| \left( g\left( t_{i}\right)-f\left( t_{i} \right)  \right) \cdot\Delta_{i} \right|  \\
+        \underset{ \Delta_{i}\geq 0 }{ = } \sum \left| g\left( t_{i} \right) -f\left( t_{i} \right)  \right| \Delta_{i}
+\end{gather*}
+נשים לב ש $\Delta_{i}\leq\lambda \left( P \right)$, כי מההגדרה $\lambda \left( P \right)=\max_{i}\Delta _i$.\\
+נתרכז בביטוי $\left| g\left( t_{i} \right)-f\left( t_{i} \right) \right|$. עבור כל נקודה $x_{0}\in \left[ a,b \right]$ מתקיים $g\left( x_{0} \right)=f\left( x_{0} \right)$ אלא אם $x_{0}\in B$. $B$ סופית, לכן הביטוי $\left| g\left( x_{0} \right)-f\left( x_{0} \right) \right|$ חסום על ידי 
+$$
+M:=\max_{j\in \left[ k \right]}\left\{ \left|g\left( b_{j} \right)-f\left( b_{j} \right)  \right| \right\}
+$$
+אם $x_{0}\not\in B$, $\left| g\left( x_{0} \right)-f\left( x_{0} \right) \right|=0$, לכן במקרה הגרוע ביותר שבו $k$ שווה לכמות תת-הקטעים ב-$P$, ו$\left\{ t_{i} \right\}=B$, כלומר כל $b_{j}$ נמצא על גבול של החלוקה וגם בחירת הנקודות בוחרת כל $b_{j}$ פעמיים, סכום כל ה-$\left| g\left( t_{i} \right)-f\left( t_{i} \right) \right|$ חסום על ידי $2k\cdot M$. לכן
+$$
+	\sum \left| g\left( t_{i} \right) -f\left( t_{i} \right)  \right| \Delta_{i}\leq 2k\cdot M\cdot\lambda \left( P \right) 
+$$
+נרצה להשוות את מה שקיבלנו ל $\frac{\varepsilon}{2}$
+$$
+	2k\cdot M\cdot\lambda \left( P \right) < \frac{\varepsilon}{2}\implies \lambda \left( P \right) < \frac{\varepsilon}{4kM}
+$$
+לכן נוכל להגדיר $\delta_{1}= \frac{\varepsilon}{4kM}$, ואז לכל חלוקה $P=\left\{ a_{i} \right\}$ המקיימת $\lambda \left( P \right)<\delta_{1}$ וכל בחירת נקודות $\left\{ t_{i} \right\}$ כך ש-$t_{i}\in \left[ a_{i},a_{i-1} \right]$ מתקיים
+$$
+	\left| R\left(g, P,\left\{t_i\right\}\right) - R\left(f, P,\left\{t_i\right\}\right) \right|  < \frac{\varepsilon}{2}
+$$
+$f$ אינטגרבילית, לכן עבור $\frac{\varepsilon}{2}$ קיימת $\delta_{2}>0$ כך שלכל חלוקה $P=\left\{ a_{i} \right\}$ המקיימת $\lambda \left( P \right)<\delta_{1}$ ולכל בחירת $\left\{ t_{i} \right\}$ כך ש $t_{i}\in \left[ a_{i},a_{i-1} \right]$ מתקיים
+$$
+	\left| R\left( f,P,\left\{ t_{i} \right\}  \right)-I  \right|< \frac{\varepsilon}{2}
+$$
+לכן נבחר $\delta=\min=\left( \delta_{1},\delta_{2} \right)$, תהי חלוקה $P=\left\{ a_{i} \right\}$ המקיימת $\lambda \left( P \right)<\delta$ ובחירת נקודות $\left\{ t_{i} \right\}$ כך ש $t_{i}\in \left[ a_{i},a_{i-1} \right]$, ואכן מתקיים כי
+\begin{gather*}
+		\left| R\left( g,P,\left\{ t_{i} \right\}  \right)-I  \right| \leq\left| R\left( g,P,\left\{ t_{i} \right\}\right)  -R\left( f,P,\left\{ t_{i} \right\}   \right)  \right| + \left| R\left( f,P,\left\{ t_{i} \right\}  \right) -I \right| \\
+		  \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon \\
+		  \implies \left| R\left(g, P,\left\{t_i\right\}\right) -I \right| <\varepsilon
+\end{gather*}
+קיבלנו כי  לפי הגדרת אינטגרביליות, $g$ אינטגרבילית כאשר $\int_{a}^{b} g\left( x \right) \, dx=I=\int_{a}^{b} f\left( x \right) \, dx$ כנדרש
+$\blacksquare$
+\part*{שאלה 2}
+תהי $f$ פונקציה גזירה בקטע $\left[ a,b \right]$ ונניח כי $\left| f'\left( x \right) \right|\leq M$ לכל $x \in \left[ a,b \right]$. הוכיחו כי לכל חלוקה $P$ מתקיים
+$$
+	\Omega \left( f,P \right) \leq M\lambda \left( P \right) \left( b-a \right)
+$$
+\part*{פתרון 2}
+תהא חלוקה $P=\left\{ a_{i} \right\}$, נתבונן ב-$\Omega \left( f,P \right)$
+$$
+	\Omega \left( f,P \right) = \sum_{i}\omega_{i}\Delta_{i}
+$$
+כאשר
+\begin{gather*}
+	\Delta_{i}=  a_{i}-a_{i-1}  \\
+	\omega_{i}=M_{i} -  m_{i} \\
+	M_{i}=\underset{ x \in \left[ a_{i-1},a_{i} \right]  }{ \sup }f\left( x \right) \\
+m_{i}	\underset{ x \in \left[a_{i-1}, a_{i} \right]  }{ \inf } f\left( x \right)
+\end{gather*}
+$f$ גזירה ב$\left[ a,b \right]$, לכן רציפה שם ולכן בכל קטע סגור $\left[ a_{i-1},a_{i} \right]$ היא מקבלת את המקסימום והמינימום שלה, ולכן
+\begin{gather*}
+	M_{i}= \underset{ x \in \left[ a_{i-1},a_{i} \right]  } { \max }f\left( x \right)  \\
+	m_{i}= \underset{ x \in \left[ a_{i-1},a_{i} \right]  } { \min }f\left( x \right) 
+\end{gather*}
+לכל $\left[ a_{i-1},a_{i} \right]$ קטע בחלוקה $P$, נסמן $\beta_{i}\in \left[ a_{i-1},a_{i} \right]$, להיות הנקודה האחרונה בקטע בה מתקבל $M_{i}$, ו $\alpha_{i}\in \left[ a_{i-1},a_{i} \right]$  להיות הנקודה הראשונה בקטע בה מתקבל $m_{i}$ (נשים לב ש-$\alpha_{i}\neq\beta_{i}$, שכן אפילו אם $m_i=M_{i}$, $\alpha_{i}=a_{i-1}$ ו-$\beta_{i}=a_{i}$\\
+ממשפט לגרנז' ידוע לנו כי קיימת נקודה $c_{i}$ בין $\alpha_{i}$ ל-$\beta_{i}$ כך ש
+$$
+	f'\left( c \right)  = \frac{M_{i}-m_{i}}{\beta{i}-\alpha_{i}}
+$$
+מתכונות ערך מוחלט, ומהנתון כי $\left| f'\left( x \right) \right|\leq M$ לכל $x \in \left[ a,b \right]$ נקבל
+$$
+f'\left( c_{i} \right)\leq \left| f'\left( c_{i} \right) \right| \leq M
+$$
+בנוסף, $\alpha_{i},\beta_{i}\in \left[ a_{i-1},a_{i} \right]$ לכן $\beta_{i}-\alpha_{i}\leq a_{i}-a_{i-1}=\Delta_{i}$ 
+לכן
+$$
+	\frac{M_{i}-m_{i}}{\alpha_{i}-\beta_{i}}\leq M \implies M_{i}-m_{i}=\omega_{i}\leq M \cdot \left( \beta_{i}-\alpha_{i} \right) \leq M\cdot\Delta_{i}
+$$
+(למען הנוחות, נסמן $n=\left| P \right|-1$)\\
+נזכר שלפי הגדרת קוטר החלוקה $\lambda \left( P \right)$, עבור כל ,$i\in \left[ n \right]$ מתקיים $\Delta_{i}\leq\lambda \left( P \right)$.\\
+נשים את כל מה שקיבלנו במשוואת התנודה
+\begin{gather*}
+	\Omega \left( f,P \right) = \sum_{i} \omega_{i}\underbrace{ \Delta_{i} }_{ \leq \lambda \left( P \right)  } \leq \sum_{i}\omega_{i}\lambda \left( P \right)  \underset{ \left( * \right)  }{ = } \lambda \left( P \right) \sum_{i}\underbrace{ \omega_{i} }_{ \leq M\cdot\Delta_{i} }\leq\lambda \left( P \right) \sum_{i}M\Delta_{i} \\
+	\underset{ \left( * \right)  }{ = }M\lambda \left( P \right) \sum_{i}\Delta_{i}= \\
+	 M\lambda \left( P \right) \cdot \left( \cancel{a_{1}}-a_{0}+\cancel{a_{2}}-\cancel{a_{1}}+\ldots+\cancel{a_{n-1}}-\cancel{a_{n-2}}+a_{n-1}-\cancel{a_{n-1}} \right) \\
+	 = M\lambda \left( P \right) \left( \underbrace{ a_{n} }_{ b }-\underbrace{ a_{0} }_{ a } \right) = M\lambda \left( P \right) \left( b-a \right)  \\ 
+	 \implies \boxed{\Omega \left( f,P \right) \leq M\lambda \left( P \right) \left( b-a \right) }
+\end{gather*}
+כנדרש
+$\blacksquare$
+\part*{שאלה 3}
+\section*{סעיף א'}
+תהי $f$ פונקציה רציפה בקטע $\left[ a,b \right]$ המקיימת $f\geq 0$ ו $f\not\equiv 0$. הוכיחו כי $\int_{a}^{b} f\left( x \right) \, dx>0$ 
+\section*{סעיף ב'}
+תנו דוגמה לפונקציה אינטגרבילית $f$ בקטע $\left[ a,b \right]$ המקיימת $f\geq 0,f\not\equiv 0$ ו \\
+$\int_{a}^{b} f\left( x \right) \, dx=0$
+\part*{פתרון 3}
+\section*{סעיף א'}
+$f$ רציפה ולכן אינטגרבילית.\\
+מכאן ש
+$$
+	\int_{a}^{b} f\left( x \right)  \, dx = \underline{\int_{a}^{b}} f\left( x \right)  \, dx = \underset{ P }{ \sup }L\left( P,f \right) 
+$$
+מכיוון ש $f\geq 0$ אבל $f\not\equiv0$, קיימת נקודה כלשהי $x_{0}\in \left( a,b \right)$ (ידוע לנו כי קיימת נקודה כזו על $\left[ a,b \right]$, ומרציפות ומשפט ערך הביניים זה נותן כי קיימת סביבת של אותה הנקודה בה הפונקציה עדיין חיובית, לכן נוכל לבחור נקודה בתוך הקטע הפתוח)  בה $f\left( x_{0} \right)>0$.\\
+מרציפות ומשפט ערך הביניים, קיים $\delta>0$ כך שלכל $x \in \left[ x_{0}-\delta,x_{0}+\delta \right]$ מתקיים $f\left( x \right)\geq \frac{f\left( x_{0} \right)}{2}$.\\
+נבחר את $\delta$ כך ש $\delta<\min\left\{ x_{0}-a,b-x_{0} \right\}$ כדי לוודא שנשאר בתחום $\left[ a,b \right]$.\\
+נגדיר חלוקה $Q=\left\{a,x_{0}-\delta,x_{0}+\delta,b \right\}$.\\
+כל נקודה $x$ בתת-קטע $\left[x_{0}-\delta,x_{0}+\delta\right]$  מקיימת $f\left( x \right)\geq \frac{f\left( x_{0} \right)}{2}$,\\
+לכן $m_{2}=\inf_{x \in \left[ x_{0}-\delta,x_{0}+\delta \right]}f\left( x \right)\geq \frac{f\left( x_{0} \right)}{2}$\\
+נסתכל על $L\left( Q,f \right)$
+$$
+	L\left( Q,f \right) = \sum_{i}m_{i}\Delta_{i}= \underbrace{ m_{1}\Delta_{1} }_{ \geq 0 }+\underbrace{ m_{2}\Delta_{2} }_{ > 0 } + \underbrace{ m_{3}\Delta_{3} }_{ \geq 0 }> 0
+$$
+מצאנו חלוקה שעבורה $L\left( Q,f \right)>0$, מכיוון ש $L\left( Q,f \right)\leq\sup_{P}L\left( P,f \right)$:
+$$
+\sup_{P}L\left( P,f \right)>0
+$$
+מכיוון ש $\sup_{P}L\left( P,f \right)=\int_{a}^{b} f\left( x \right) \, dx$ אנחנו מקבלים כי
+$$
+	\boxed{\int_{a}^{b} f\left( x \right)  \, dx >0}
+$$
+כנדרש\\
+$\blacksquare$
+\section*{סעיף ב'}
+נגדיר את $f$ כדלהלן:
+\begin{gather*}
+	f:\left[ a,b \right] \to \mathbb{R} \\
+	f\left( x \right) =\begin{cases}
+	24601 & x= \frac{a+b}{2} \\
+	0 & \text{Otherwise}
+	\end{cases}
+\end{gather*}
+ל-$f$ יש נקודת אי-רציפות אחת. לכן מהמשפט שאומר כי פונקציה בעלת כמות בת מנייה של נקודות אי-רציפות היא אינטגרבילית, $f$ אינטגרבילית. קיימת נקודה בה $f= 24601$  ולכן $f\equiv 0$ ו-$f\geq 0$.\\
+נשאר רק להראות כי $\int_{a}^{b} f\left( x \right) \, dx=0$. נגדיר פונקציה $g$ 
+\begin{gather*}
+	g:\left[ a,b \right] \to \mathbb{R} \\
+	g\left( x \right) =0
+\end{gather*}
+$g\equiv 0$ ולכן $\int_{a}^{b} g\left( x \right) \, dx$.\\
+יש רק נקודה אחת בה $g\neq f$ ולכן מההוכחה של שאלה 1.
+\begin{gather*}
+	\int_{a}^{b} f\left( x \right)  \, dx =\int_{a}^{b} g\left( x \right)  \, d\land \int_{a}^{b} g\left( x \right)  \, dx =0 \implies \boxed{\int_{a}^{b} f\left( x \right)  \, dx =0} 
+\end{gather*}
+$\blacksquare$
+\part*{שאלה 4}
+תהא $f$ פונקציה רציפה בקטע $\left[ a,b \right]$. יהי $M=\sup_{x \in \left[ a.b \right]}\left| f\left( x \right) \right|$.
+\section*{סעיף א'}
+הראו כי 
+$$
+	\int_{a}^{b} \left| f\left( x \right)  \right|^{n}  \, dx \leq M^{n}\left( b-a \right) 
+$$
+\section*{סעיף ב'}
+הראו כי לכל $\varepsilon \in \left( 0,M \right)$, קיים $\delta>0$ כך ש
+$$
+\int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \geq \delta \left( M-\varepsilon \right) ^{n}
+$$
+\section*{סעיף ג'}
+הראו כי
+$$
+\lim_{ n \to \infty } \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right) ^{\frac{1}{n}}=\underset{ x \in \left[ a,b \right]  }{ \sup }\left| f\left( x \right)  \right| 
+$$
+\part*{פתרון 4}
+\section*{סעיף א'}
+(הערה, עניתי על הסעיף הזה לפני שלמדנו על מונוטוניות האינטגרל, השארתי את ההוכחה כפי שהיא כי לדעתי זה מעניין יותר כך)\\
+תהי  $Q=\left\{ a_{i} \right\}$ חלוקה של הקטע $\left[ a,b \right]$. נתבונן בסכום דרבו העליון של 
+$$
+U\left( Q,\left| f \right|^{n}  \right)  =  \sum_{i}M_{i}\cdot\Delta_{i} 
+$$
+נתון כי $M=\sup_{x \in \left[ a.b \right]}\left| f\left( x \right) \right|$, לכן $\forall x \in \left[ a,b \right]:\left| f\left( x \right) \right|\leq M$, על כן $\forall x \in \left[ a,b \right]:\left| f\left( x \right) \right|^{n}\leq M^{n}$, ולכן לכל תת-קטע $\left[ a_{i-1},a_{i} \right]$, $M_{i}\leq M^{n}$
+\begin{gather*}
+	\sum_{i}\underbrace{M_{i}}_{ \leq M^{n} }\Delta_{i} \leq \sum_{i}M^{n}\Delta_{i}= M^{n}\sum_{i}\Delta_{i}  \\
+	= M^{n} \cdot\left( \cancel{a_{1}}-a_{0}+\cancel{a_{2}}-\cancel{a_{1}}+\ldots+\cancel{a_{n-1}}-\cancel{a_{n-2}}+a_{n-1}-\cancel{a_{n-1}} \right) \\
+	=M^{n}\cdot\left( \underbrace{ a_{n} }_{ b }-\underbrace{ a_{0} }_{ a } \right)  \\
+	= M^{n}\left( b-a \right) 
+\end{gather*}
+נתון כי $M=\sup_{x \in \left[ a.b \right]}\left| f\left( x \right) \right|$, $f$ רציפה ולכן $\left| f \right|$ כהרבת פונקציות (פונקציית הערך המוחלט מורכבת על $f$). לכן גם $\left| f\left( x \right) \right|^{n}$ כהעלאה בחזקה של פונקציה רציפה. $\left| f\left( x \right) \right|^{n}$ רציפה ולכן אינטגרבילית.\\
+$\left| f\left( x \right) \right|^{n}$ אינטגרבילית ולכן 
+\begin{gather*}
+	\int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx = \inf_{P}U\left( P,\left| f \right| ^{n}\right)\underset{ \left( * \right)  }{ \leq } U\left( Q,\left| f \right| ^{n} \right)\leq M^{n}\left( b-a \right) \\
+	  \implies \boxed{	\int_{a}^{b} \left| f\left( x \right)  \right|^{n}  \, dx \leq M^{n}\left( b-a \right) }
+\end{gather*}
+$\left( * \right)$ כל איבר בקבוצה כלשהי גדול או שווה לאינפימום של הקבוצה\\
+כנדרש\\
+$\blacksquare$
+\section*{סעיף ב'}
+יהי $\varepsilon\in \left( 0,M \right)$. $\left| f \right|$ רציפה בקטע הסגור $\left[ a,b \right]$, ממשפט ויירשטראס, $f$ חסומה ומקבלת את המקסימום והמינימום שלה בקטע הזה, לכן $M=\max_{x \in \left[ a,b \right]}\left| f\left( x \right) \right|$. נסמן ב-$x_{0}$ את הנקודה הראשונה בה $\left| f\left( x \right) \right|=M$\\
+מרציפות, קיים $\delta_{1}>0$ כך ש 
+\begin{gather*}
+	\forall x \in \left[ a,b\right] : \left| x-x_{0} \right| <\delta_{1} \implies \left| \left| f\left( x \right)  \right|  -\left| \underbrace{ f\left( x_{0} \right) }_{ M }  \right|   \right| <\varepsilon  \\
+	\implies  -\varepsilon<\left| f\left( x \right)  \right|  -M<\varepsilon \\
+	\implies \left| f\left( x \right)  \right| > M-\varepsilon \implies \left| f\left( x \right)  \right| ^{n}>\left( M-\varepsilon \right) ^{n}
+\end{gather*}
+מכיוון ש $x_{0}\in \left[ a,b \right]\land x_{0}\in \left[ x_{0}-\delta_{1},x_{0}+\delta_{1} \right]$, נוכל להגדיר תת-קטע $\left[ c,d \right]\subseteq \left[ a,b \right]\cap \left[ x_{0}-\delta_{1},x_{0}+\delta_{1} \right]$\\
+לכן $\forall x \in \left[c,d \right] :  \left| x-x_{0} \right| <\delta_{1}$, ולכן
+$$
+	\forall x \in \left[ c,d \right] : \left| f\left( x \right)  \right| ^{n}>\left( M-\varepsilon \right) ^{n}
+$$
+לכן נגדיר $\delta=d-c$\\
+נסתכל על האינטגרל $\int_{a}^{b} \left| f\left( x \right) \right|^{n} \, dx$
+\begin{gather*}
+	\int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx \underset{ \text{אדטיביות} }{ = } \int_{a}^{c} \left| f\left( x \right)  \right| ^{n} \, dx  + \int_{c}^{d} \left| f\left( x \right)  \right|^{n}  \, dx  + \int_{d}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  
+\end{gather*}
+$\int_{a}^{c} \left| f\left( x \right) \right|^{n} \, dx,\int_{d}^{b} \left| f\left( x \right) \right|^{n} \, dx$ הם אינטגרלים עם טווח חיובי ($c>a,b>d$) של פונקציה המקיימת $\left| f\left( x \right) \right|^{n}\geq0$, לכן $\int_{a}^{c} \left| f\left( x \right) \right|^{n} \, dx\geq 0,\int_{d}^{b} \left| f\left( x \right) \right|^{n}\geq 0$\\
+לכן
+\begin{gather*}
+\underbrace{ \int_{a}^{c} \left| f\left( x \right)  \right| ^{n} \, dx  }_{ \geq 0 } + \int_{c}^{d} \left| f\left( x \right)  \right|^{n}  \, dx  + \underbrace{ \int_{d}^{b} \left| f\left( x \right)  \right| ^{n} \, dx   }_{ \geq 0 }\geq \int_{c}^{d} \underbrace{ \left| f\left( x \right)  \right| ^{n} }_{ \geq \left( M-\varepsilon \right)^{n} }  \, dx  \\
+\geq \int_{c}^{d} \left( M-\varepsilon \right) ^{n} \, dx \underset{ \text{לינאריות האינטגרל} }{ = } \left( M-\varepsilon \right) ^{n}\int_{d}^{d} 1 \, dx  \\
+= \left( M-\varepsilon \right)^{n} \underbrace{ \left( d-c \right) }_{ =\delta }  = \delta \left( M-\varepsilon \right) ^{n} \\
+\implies \boxed{\int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx \geq \delta \left( M-\varepsilon \right)^{n} }
+\end{gather*}
+כנדרש\\
+$\blacksquare$
+\section*{סעיף ג'}
+יהי $\varepsilon \in \left( 0,M \right)$, מסעיף $2$ קיים $\delta>0$ כך ש
+$$
+	\delta \left( M-\varepsilon \right) ^{n}\leq \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx 
+$$
+מסעיף $1$, מתקיים 
+$$
+	\int_{a}^{b} \left| f\left( x \right) \right|^{n}  \, dx \leq M^{n}\left(  b-a\right)
+$$
+נעלה את שלושת החלקים של אי-השוויון שלנו בחזקת $\frac{1}{n}$
+$$
+	\delta^{\frac{1}{n}}\left( M-\varepsilon \right) \leq \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right)^{\frac{1}{n}}\leq M\left( b-a\right)^{\frac{1}{n}}
+$$
+מיחס סדר של גבולות מתקבל כי
+$$
+	\lim_{ n \to \infty } 	\delta^{\frac{1}{n}}\left( M-\varepsilon \right) \leq \lim_{ n \to \infty } \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right)^{\frac{1}{n}} \leq \lim_{ n \to \infty }M\left( b-a\right)^{\frac{1}{n}}
+$$
+נשים לב כי $\delta^{\frac{1}{n}}\xrightarrow{ n\to \infty }1,\left( b-a \right)^{\frac{1}{n}}\xrightarrow{ n\to \infty }1$ ולכן מחשבון גבולות
+$$
+		\lim_{ n \to \infty } \left( M-\varepsilon \right) \leq \lim_{ n \to \infty } \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right)^{\frac{1}{n}} \leq \lim_{ n \to \infty }M
+$$
+מצד שמאל קיבלנו כי לכל $\varepsilon \in \left( 0,M \right)$ קיים גבול $L$ המקיים $M-\varepsilon\leq L\leq M$ לכן מכיוון שזה נכון עבור $\varepsilon$ קרוב כרצוננו ל-$0$ מתקבל כי $M-\varepsilon \xrightarrow{ \varepsilon\to0^{+} }M$ ולכן
+$$
+	\lim_{ n \to \infty } M\leq  \lim_{ n \to \infty } \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right)^{\frac{1}{n}} \leq \lim_{ n \to \infty } M
+$$
+לכן ממשפט הסנדוויץ מתקבל כי
+$$
+  \lim_{ n \to \infty } \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right)^{\frac{1}{n}} = M
+$$
+ומהגדרת $M=\sup_{x \in \left[ a,b \right]}\left| f\left( x \right) \right|$ נקבל כי 
+$$
+ \boxed{ \lim_{ n \to \infty } \left( \int_{a}^{b} \left| f\left( x \right)  \right| ^{n} \, dx  \right)^{\frac{1}{n}} = \sup_{x \in \left[ a,b \right] }\left| f\left( x \right)  \right| }
+$$
+כנדרש\\
+$\blacksquare$
+\end{document}
