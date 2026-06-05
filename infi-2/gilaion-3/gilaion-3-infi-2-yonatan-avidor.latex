@@ -1,0 +1,121 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפי 2 - 01040281 \\ גליון 3}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+חשבו
+\section*{סעיף א'}
+\[
+	\int^{1}_0 \frac{1}{1+\sqrt{x}}\, dx
+\]
+\section*{סעיף ב'}
+\[
+    \int^2_1 \log^2(x)\,dx
+\]
+\part*{פתרון 1}
+\section*{סעיף א'}
+נציב $t=1+\sqrt{x}$
+\[
+	dt = \frac{1}{2\sqrt{x}}\,dx \implies dx = 2\left(t-1\right) \,dt
+\]
+נציב את גבולות האינטגרציה
+\begin{gather*}
+	\sqrt{1} + 1 = 2\\
+	\sqrt{0} + 1 = 1
+\end{gather*}
+\begin{gather*}
+	\int^{1}_0 \frac{1}{1+\sqrt{x}}\, dx = \int^2_1 \frac{1}{t}\cdot \left(2t-2\right)\,dt=  \int^{2}_{1} 2 - \frac{2}{t}  \,dt =  2\int^{2}_1 1-\frac{1}{t}\,dt\\
+	= 2\left( \int^2_1 1 \,dt - \int^2_1 \frac{1}{t}\,dt\right)    =2\left(t\bigg|^2_1 - \log(t)\bigg|^2_1\right) =\boxed{ 2 \left(1 - \log(2)\right)}
+\end{gather*}
+\section*{סעיף ב'}
+נציב $t=\log(x)$
+\[
+	dt = \frac{1}{x} dx \implies dx = e^t\, dt
+\]
+נציב את גבולות האינטגרציה
+\[
+	\log(1) = 0
+\]
+את $\log(2)$ אין לנו דרך לפשט אז זה נשאר $\log(2)$
+\[
+	\int_1^2 \log^2 x =\int^{\log(2)}_0 t^2 e^t \, dt
+\]
+נעשה אינטגרציה בחלקים
+\[
+	\begin{array}{cc}
+		u = t^2 & v' = e^t \\
+		u' = 2t & v = e^t
+	\end{array}
+        \]
+\[
+    \int^{\log(2)}_0 t^2 e^t \, dt =  \left(t^2 \cdot e^t\right) \bigg|^{\log(2)}_0 -  \int^{\log(2)}_0 2t\cdot e^t\,dt 
+\]
+נפתור את האינטגרל שנשאר
+\[
+    \int^{\log(2)}_0 2t \cdot e^t\,dt = 2\int^{\log(2)}_0 t\cdot e^t \, dt
+\]
+נבצע שוב אינטגרציה בחלקים
+\[
+    \begin{array}{cc}
+		u = t & v' = e^t \\
+		u' = 1 & v = e^t
+	\end{array}
+\]
+\begin{gather*}
+    \int^{\log(2)}_0 t \cdot e^t \, dt = \left(t\cdot e^t\right)\bigg|^{\log(2)}_0 - \int^{\log(2)}_0 e^t\,dt\\
+    = \left(\log(2)\cdot e^{\log(2)}\right) \left(0\cdot e^0 \right) - e^t \bigg|^{\log(2)}_0 \\
+    = 2\log(2) - \left(e^{\log(2)} - e^0\right)\\
+    = 2\log(2) -1
+\end{gather*}
+נציב את זה בביטוי שקיבלנו
+\begin{gather*}
+    \left(t^2 \cdot e^t\right) \bigg|^{\log(2)}_0 -  \int^{\log(2)}_0 2t\cdot e^t\,dt \\
+    =\left(t^2 \cdot e^t\right) \bigg|^{\log(2)}_0 - 2 \left(2\log(2)-1\right)\\
+    = \left(\log^2(2) \cdot e^{\log(2)}\right) - \left(0^2 \cdot e^0\right) - 4\log(2)+2\\
+    = 2\log^2(2) - 4\log(2) + 2 \\
+    = \boxed{2\left(\log(2)-1\right)^2}
+\end{gather*}
+\newpage
+\part*{שאלה 2}
+חשבו
+\section*{סעיף א'}
+\[
+    \lim_{n\to\infty} n^3 \sum^{n}_{j=1} \frac{1}{\left(n^2+j^2\right)^2}
+\]
+\section*{סעיף ב'}
+\[
+    \lim_{n\to\infty} n^2 \sum_{j=1}^{n} \frac{1}{\left(n^2+j^2\right)^2}
+\]
+\part*{שאלה 3}
+\section*{סעיף א'}
+נתבונן בביטוי בתוך הסכום
+\[
+    \frac{1}{\left(n^2+j^2\right)^2}= \frac{1}{\left(n^2\left(1+\frac{j^2}{n^2}\right)\right)^2} = \frac{1}{n^4\left(1+\left(\frac{j}{n}\right)^2\right)^2}
+\]
+נציב
+\[
+    \lim_{n\to \infty} \cancel{n^3} \sum_{j=1}^{n} \frac{1}{\cancel{n^4}\left(1+\left(\frac{j}{n}\right)^2\right)^2} = \lim_{n\to\infty} \frac{1}{n} \sum_{j=1}^{n} \frac{1}{\left(1+\left(\frac{j}{n}\right)^2\right)^2}
+\]
+\newpage
+\part*{שאלה 5}
+\begin{gather*}
+    t = \sqrt{1+x^2} \\
+    dt = \frac{x}{\sqrt{x^2+1}}\,dx\\
+    dx =  \frac{t}{\left(t-1\right)\left(t+1\right)} \,dt
+\end{gather*}
+\end{document}

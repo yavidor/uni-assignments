@@ -1,15 +1,30 @@
 #set text(lang: "he", font: "David CLM")
 #set page(margin: 1.75in, footer: context {
-  set text(size: 10pt)
-  "214269565"
-  h(40%)
-  counter(page).display()
+  let page_num = counter(page).get().first()
+  if page_num > 1 {
+    set text(size: 10pt)
+    "214269565"
+    h(40%)
+    counter(page).display()
+  }
 })
 #set document(author: "יונתן אבידור - 214269565", title: "אלגברה ב' 01040168", description: " גליון 4", date: auto)
 #set par(leading: 0.55em, spacing: 0.55em, first-line-indent: 1.8em, justify: true)
-#show heading: set block(above: 1.4em, below: 1em)
 #import "@preview/ouset:0.2.0": underset
-#title()
+#let Im = math.op("Im")
+#let Ker = math.op("Ker")
+#align(center + horizon)[
+  #set text(font: "Hadasim CLM")
+
+  #text(size: 22pt, weight: "bold")[אלגברה ב' - 01040168] \
+  #v(0.5em)
+  #text(size: 18pt)[גיליון 5]
+
+  #v(1cm)
+  #text(size: 14pt)[יונתן אבידור - 214269565]
+
+]
+#pagebreak()
 = תרגיל 1
 יהי $V$ מרחב וקטורי ממימד $n in bb(N)_+$ מעל שדה $bb(F)$ ותהי $T in "End"(V)$.
 == סעיף א'
@@ -128,9 +143,9 @@ $
 $
 == סעיף ב'
 תהי $T in "End"_CC (V)$ הטלה ויהיו
-$ m:= dim (ker(T))\ n := dim("Im"(T)) $
+$ m:= dim (ker(T))\ n := dim(Im(T)) $
 הראו כי
-$ p_T (x) = x^m(x-1)^n $
+$ p_T (x) = x^m (x-1)^n $
 #pagebreak()
 = פתרון 2
 == סעיף א'
@@ -145,7 +160,60 @@ $
 כנדרש\
 $square.filled$
 == סעיף ב'
-
+יהי $cal(B)_Ker=(v_1,dots,v_m)$ בסיס ל-$Ker(T)$ ו-$cal(B)_Im=(u_1,dots,u_m)$ בסיס ל-$Im(T)$\
+$T$ הטלה, לכן $Ker(T)plus.o Im(T) =V$\
+מטענה שהוכחנו בכיתה $cal(B) = cal(B)_Ker union.plus cal(B)_Im$ הוא בסיס ל-$V$\
+נסתכל על המטריצה המייצגת של $T$ ביחס ל-$cal(B)$
+$
+  [T]_cal(B) = mat(
+    bar.v, , bar.v, bar.v, , bar.v;
+    [T(v_1)]_cal(B), dots.c, [T(v_m)]_cal(B), [T(u_1)]_cal(B), dots.c, [T(u_n)]_cal(B);
+    bar.v, , bar.v, bar.v, , bar.v;
+  )
+$
+$v_1,dots,v_m in Ker(T)$, לכן
+$
+  [T]_cal(B) = mat(
+    bar.v, , bar.v, bar.v, , bar.v;
+    0, dots.c, 0, [T(u_1)]_cal(B), dots.c, [T(u_n)]_cal(B);
+    bar.v, , bar.v, bar.v, , bar.v;
+  )
+$
+$u_1,dots,u_n in Im(T)$. לכן קיימים $w_1,dots,w_n in V$ כך ש $ forall i in [n]: T(w_i) = u_i $
+$T$ הטלה, לכן
+$ forall i in [n] : T(u_i) = T(T(w_i)) = T(w_i) = u_i $
+לכן
+$
+  [T]_cal(B) = mat(
+    bar.v, , bar.v, bar.v, , bar.v;
+    0, dots.c, 0, [u_1]_cal(B), dots.c, [u_n]_cal(B);
+    bar.v, , bar.v, bar.v, , bar.v;
+  )
+$
+$u_1,dots,u_n in cal(B)$, ולכל $i in [n]$, המיקום של $u_i$ ב-$cal(B)$ שווה ל-$i+m$\
+$cal(B)$ בסיס ולכן כל איבר ב-$V$ ניתן לכתיבה ביחידות כצירוף לינארי של איברי $cal(B)$, בפרט זה נכון עבור איברי $cal(B)$ עצמם כאשר כל המקדמים בצירוף יהיו $0$ מלבד המקדם של האיבר עצמו, אשר יהיה אחד.\
+מכאן שהמטריצה המייצגת $[T]_cal(B)$ תראה כך:
+$
+  [T]_cal(B) = mat(
+    0_(m times m ), 0_(m times n);
+    0_(n times m), I_(n)
+  )
+$
+נסתכל על $p_T (x)$\
+לפי הגדרת פולינום אופייני לאופרטורים, $p_T (x)=det(x I - A)$ כאשר $A$ היא מטריצה מייצגת כלשהי של $T$, לכן $p_T (x)= det(x I - [T]_cal(B))$
+$
+  det(x I - [T]_cal(B)) = det
+  mat(
+    x I_(m times m), 0_(m times n);
+    0_(n times m), (x I - I)_(n)
+  )
+$
+נשי ם לב שזו דטרמיננטה של מטריצה משולשית עליונה, כאשר $n$ איברי האלכסון הראשונים הם $x$, ו$n$ איברי האלכסונים הבאים הם $x-1$, לכן
+$
+  p_T (x)= det(x I - [T]_cal(B)) = underbrace(x dot.c x dot.c x dots.c x, m) dot.c underbrace((x-1)dot.c(x-1)dot.c(x-1)dots.c(x-1), n) = x^m dot.c (x-1)^n
+$
+כנדרש\
+$square.filled$
 #pagebreak()
 = תרגיל 3
 יהי $V = "Mat"_n(RR)$ ויהיו
@@ -166,7 +234,7 @@ $ cal(E) = (E_(1,1), E_(1,2), E_(2,1), E_(2,2)) $
 = פתרון 3
 == סעיף א'
 === למה
-לכל מטריצה $A in V$, מתקיים כי $(A + A^t) in V_("sym")$ ו-$(A - A^t in V_("antisym")$
+לכל מטריצה $A in V$, מתקיים כי $(A + A^t) in V_("sym")$ ו-$(A - A^t )in V_("antisym")$
 ==== הוכחת הלמה
 נסתכל על השחלוף של הביטויים
 $
@@ -196,7 +264,28 @@ $
   tilde(C)-C = 0 ==> tilde(C) = C
 $
 כלומר כל דרך לכתוב מטריצה ב-$V$ באמצעות מטריצה מ-$V_("sym")$ ומטריצה מ-$V_("antisym")$ היא זהה, לכן יש רק כתיבה אחת.\
-הראינו כי כל מטריצה מ-$V$ ניתנת לכתיבה כצ"ל של מטריצה מ-$V_("sym")$ ומטריצה מ-$V_("antisym")$ וכן שכתיבה זו היא יחידה ולכן
+הראינו כי כל מטריצה מ-$V$ ניתנת לכתיבה כצירוף לינארי של מטריצה מ-$V_("sym")$ ומטריצה מ-$V_("antisym")$ וכן שכתיבה זו היא יחידה ולכן
 $ V = V_("sym") plus.o V_("antisym") $
 כנדרש \
 $square.filled$
+== סעיף ב'
+נחפש את ההעתקה $P in "End"(V)$ שהיא ההטלה על $V_("sym")$ לאורך $V_"antisym"$. \
+$
+  forall A in V: P(A) underset(=, "הראינו בסעיף הקודם")P(1/2 (A+A^t) + 1/2 (A-A^t))
+  \ underset(=, "לינאריות") P(underbrace(1/2 (A+A^t), in V_"sym")) + P(underbrace(1/2(A-A^t), in V_"antisym"))underset(=, "הגדרת הטלה על X לאורך Y") 1/2(A+A^t) + 0 = 1/2 (A+A^t)
+$
+לכן
+$P(A) = 1/2 (A+A^t)$ היא ההטלה על $V_"sym"$ לאורך $V_"antisym"$
+== סעיף ג'
+נסתכל על איברי הבסיס $cal(E)$
+$ cal(E) = (E_(1,1)=mat(1, 0; 0, 0),E_(1,2)=mat(0, 1; 0, 0),E_(2,1)=mat(0, 0; 1, 0),E_(2,2)=mat(0, 0; 0, 1)) $
+נשים לב כי $E_(1,1)$ ו-$E_(2,2)$ הן מטריצות סימטריות, לכן $ P(E_(1,1))=E_(1,1),P_(E_(2,2))=E_(2,2) $
+נחשב עכשיו עבור איברי הבסיס האחרים
+$
+  P(E_(1,2)) = 1/2 (mat(0, 1; 0, 0)+mat(0, 0; 1, 0)) = mat(0, 1/2; 1/2, 0)\
+  P(E_(2,1))= 1/2 (mat(0, 0; 1, 0)+mat(0, 1; 0, 0)) = mat(0, 1/2; 1/2, 0)
+$
+לכן
+$
+  [P]_(cal(E)) = mat(1, 0, 0, 0; 0, 1/2, 1/2, 0; 0, 1/2, 1/2, 0; 0, 0, 0, 1)
+$
