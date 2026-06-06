@@ -159,7 +159,7 @@
     \end{gathered}
 \]
 \section*{סעיף ב'}
-נשי ם לב כי
+נשים לב כי
 \[
     n^2 \sum_{j=1}^{n} \frac{1}{\left(n^2+j^2\right)^2} =    \frac{1}{n}\left( n^3 \sum_{j=1}^{n}  \frac{1}{\left(n^2+j^2\right)^2}\right)
 \]
@@ -174,7 +174,45 @@
 \]
 \newpage
 \part*{שאלה 3}
+תהא $g$ פונקציה רציפה בקטע $\left[0,1\right]$ ונניח כי $g\left(x\right) < \frac{1}{2\sqrt{x}}$ לכל $0\leq x\leq 1$.\\
+הוכיחו כי למשוואה $x=\int^2_0 g(x)\,dy$ יש פתרון אחד בלבד עבור $x \in \left[0,1\right]$, בפרט ב-$x=0$
 \part*{פתרון 3}
+נגדיר פונקציית עזר
+\begin{gather*}
+    f: \left[0,1\right] \to\mathbb{R} \\
+    \forall x \in \left[0,1\right]: f\left(x\right) = x - \int^{x^2}_0 g\left(y\right)\,dy
+\end{gather*}
+מכיוון ש-$f$ היא פונקציית ההפרש בין צדדי המשוואה, נותר להוכיח רק כי $f\left(0\right)=0$ וכי אין אף נקודה $x\in\left(0,1\right]$ בה $f\left(x\right)=0$\\
+נראה כי $f\left(0\right)=0$
+\[
+f\left(0\right) = 0- \int^{0}_{0}g\left(y\right)\,dy
+\]
+כל אינטגרל מ-$0$ ל-$0$ שווה $0$, לכן
+\[
+    f\left(0\right) = 0-0 =0
+\]
+כעת נשאר להראות שזה השורש היחיד של הפונקציה בקטע $\left[0,1\right]$\\
+נעשה זאת בכך שנראה שהפונקציה מונוטונית עולה ממש.\\
+נגזור את $f$
+\[
+    f'\left(x\right) = 1 - \left( \int^{x^2}_0 g\left(y\right)\,dy\right)'
+\]
+מהמשפט היסודי של החדו"א אנחנו מקבלים כי
+\[
+\left( \int^{x^2}_0 g\left(y\right)\,dy\right)' = g\left(x^2\right) \cdot 2x
+\]
+לכן
+\[
+    f'(x) = 1 - g\left(x^2\right) \cdot 2x
+\]
+נתון כי $g\left(x\right) < \frac{1}{2\sqrt{x}}$ לכן
+\[
+    g\left(x^2\right) < \frac{1}{2\sqrt{x^2}} = \frac{1}{2x}
+\]
+נזכר ש-$x\in\left(0,1\right]$ לכן ניתן להכפיל את שני צדדי המשוואה ב-$2x$  בלי לשנות את הכיוון של אי השוויון
+\[
+    g\left(x^2\right) < \frac{1}{2x} \underset{\times 2x}{\implies} g\left(x^2\right) \cdot 2x < \frac{1}{2x} 
+\]
 \newpage
 \part*{שאלה 5}
 \begin{gather*}
