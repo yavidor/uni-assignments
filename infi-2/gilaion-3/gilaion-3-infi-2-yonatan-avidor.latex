@@ -211,8 +211,35 @@ f\left(0\right) = 0- \int^{0}_{0}g\left(y\right)\,dy
 \]
 נזכר ש-$x\in\left(0,1\right]$ לכן ניתן להכפיל את שני צדדי המשוואה ב-$2x$  בלי לשנות את הכיוון של אי השוויון
 \[
-    g\left(x^2\right) < \frac{1}{2x} \underset{\times 2x}{\implies} g\left(x^2\right) \cdot 2x < \frac{1}{2x} 
+    g\left(x^2\right) < \frac{1}{2x} \underset{\times 2x}{\implies} g\left(x^2\right) \cdot 2x < \frac{1}{\cancel{2x}}  \cdot \cancel{2x} \implies g\left(x^2\right) \cdot 2x < 1
 \]
+לכן
+\[
+    f'\left(x\right) = 1 - \underbrace{g\left(x^2\right)\cdot 2x}_{< 1} > 0
+\]
+מכאן ש-$f'$ חיובית ממש בכל התחום, ו-$f$ עולה ממש.\\
+$f$ עולה ממש בכל הקטע $\left(0,1\right)$ ו-$f\left(0\right)$, לכן לא קיים $x\in\left(0,\right]$ אשר עבורו מתקיים $f\left(x\right)=0$\\
+כנדרש\\
+$blacksquare$
+\newpage
+\part*{שאלה 4}
+חשבו
+\[
+    \lim_{x\to 0} \frac{\int^{x^3}_0 \tan t \, dt}{\int^{\sin^2x}_0 t^2\,dt}
+\]
+\part*{פתרון 4}
+כאשר $x\to 0$, גם $x^3\to 0$ ו-$sin^2 x\to 0$ ולכן
+\begin{gather*}
+    \lim_{x\to0}\int^{x^3}_0 \tan t\,dt=0\\
+    \lim_{x\to0}\int^{\sin^2 x}_0 t^2\,dt=0
+\end{gather*}
+לכן נעשה לופיטל מסוג $"\frac{0}{0}"$
+\begin{gather*}
+    \lim_{x\to 0} \frac{\int^{x^3}_0 \tan t \, dt}{\int^{\sin^2x}_0 t^2\,dt} = 
+    \lim_{x\to 0} \frac{\left(\int^{x^3}_0 \tan t \, dt\right)'}{\left(\int^{\sin^2x}_0 t^2\,dt\right)'}\\
+    = \lim_{x\to 0} \frac{\tan\left(x^3\right)\cdot 3x^2}{\sin^4x\cdot 2\cos x \sin x} \\
+    = 
+\end{gather*}
 \newpage
 \part*{שאלה 5}
 \begin{gather*}
