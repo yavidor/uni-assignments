@@ -101,7 +101,7 @@
 \[
     \lim_{n\to\infty} n^2 \sum_{j=1}^{n} \frac{1}{\left(n^2+j^2\right)^2}
 \]
-\part*{שאלה 3}
+\part*{פתרון 2}
 \section*{סעיף א'}
 נתבונן בביטוי בתוך הסכום
 \[
@@ -109,8 +109,72 @@
 \]
 נציב
 \[
-    \lim_{n\to \infty} \cancel{n^3} \sum_{j=1}^{n} \frac{1}{\cancel{n^4}\left(1+\left(\frac{j}{n}\right)^2\right)^2} = \lim_{n\to\infty} \frac{1}{n} \sum_{j=1}^{n} \frac{1}{\left(1+\left(\frac{j}{n}\right)^2\right)^2}
+    \lim_{n\to \infty} \cancel{n^3} \sum_{j=1}^{n} \frac{1}{\cancel{n^4}\left(1+\left(\frac{j}{n}\right)^2\right)^2} = \lim_{n\to\infty}  \sum_{j=1}^{n} \frac{1}{\left(1+\left(\frac{j}{n}\right)^2\right)^2} \cdot \frac{1}{n} 
 \]
+נגדיר את הפונקציה הבאה:
+\begin{gather*}
+    f:\mathbb{R} \to \mathbb{R} \\
+    \forall x\in\mathbb{R}:    f\left(x\right) = \frac{1}{\left(1+x^2\right)^2}
+\end{gather*}
+הפונקציה הזו רציפה, ולכן אינטגרבילית\\
+נשים לב שעבור סדרת החלוקות $P_n=\left\{0,\frac{1}{n},\frac{2}{n},\dots,\frac{n-1}{n},1\right\}$ על הקטע $\left[0,1\right]$ מתקיים
+\[
+    \forall n \in \mathbb{N}: \lambda(P_n) = \frac{1}{n} \implies \lambda(P_n) \xrightarrow{n\to\infty}0
+\]
+לכן, עבור כל בחירת נקודות, ובפרט $\left\{t_j\right\}: t_j \in \left[x_{j-1}, x_j\right] = x_j = \frac{j}{n}$, כלומר בחירת הנקודה הימנית ביותר בכל תת-קטע מתקיים
+    
+\begin{gather*}
+    \forall n\in \mathbb{N}: \int_0^1 f\left(x\right)\,dx = \lim_{n\to\infty}    R    \left(f,P_n,\left\{t_j\right\}\right) \\
+    =\lim_{n\to\infty} \sum_{j=1}^n f\left(t_j\right) \cdot \Delta_j =\lim_{n\to\infty} \sum_{j=1}^{n} f\left(\frac{j}{n}\right) \cdot \frac{1}{n} =\lim_{n\to\infty}  \sum_{j=1}^{n} \frac{1}{\left(1+\left(\frac{j}{n}\right)^2\right)^2} \cdot \frac{1}{n}
+\end{gather*}
+מכאן שמספיק לחשב את $\int_0^1 f\left(x\right)\,dx$.\\
+נעשה זאת בכך שנמצא פונקציה קדומה ונשתמש במשפט ניוטון-לייבניץ\\
+נחפש את
+\[
+    \int \frac{1}{\left(1+x^2\right)^2}\,dx
+\]
+נעשה הצבה טיגרונומטרית עבור המכנה
+\begin{gather*}
+        x=\tan\left(\theta\right)\\
+        dx = \frac{1}{\cos^2\left(\theta\right)}\,d\theta\\
+        x(0) = 0 \implies 0 = \tan\left(\theta\right) = \theta = 0\\
+        x(1) = 1 \implies 1 = \tan\left(\theta\right)\implies \theta = \frac{\pi}{4}\\ \\
+        \int_0^{\frac{\pi}{4}} \frac{1}{\left(1+x^2\right)^2}\,dx = \int_0^{\frac{\pi}{4}} \frac{1}{\left(1+\tan^2\left(\theta\right)\right)^2}\cdot\frac{1}{\cos^2\left(\theta\right)}\,d\theta\\
+        =\int_0^{\frac{\pi}{4}}\frac{1}{\left(\frac{1}{\cos^2\left(\theta\right)}\right)^2}\cdot \frac{1}{\cos^2\left(\theta\right)}\,d\theta=\cancel{\cos^4\left(\theta\right)}\cdot \frac{1}{\cancel{\cos^2\left(\theta\right)}}\,d\theta
+        \\=\int_0^{\frac{\pi}{4}} \cos^2(\theta) \, d\theta
+\end{gather*}
+נשתמש בזהות $\cos^2\left(\theta\right)=\frac{1}{2}\left(1+\cos\left(2\theta\right)\right)$
+    \[
+        \int_0^{\frac{\pi}{4}} \cos^2(\theta) \, d\theta = \int_0^{\frac{\pi}{4}}\frac{1}{2}\left(1+\cos\left(2\theta\right)\right) \, d\theta = \frac{1}{2}\left( \int_0^{\frac{\pi}{4}} 1\,d\theta  + \int_0^{\frac{\pi}{4}} \cos\left(2\theta\right)\,d\theta\right)
+\]
+לפי כללי גזירה של הרכבה
+\[
+     \sin\left(\theta\right)'=\cos\left(\theta\right) \implies  \sin\left(2\theta\right)' = 2\cos\left(2\theta\right) \implies  \frac{1}{2} \sin\left(2\theta\right)' = \cos\left(2\theta\right)
+\]
+לכן
+\[
+    \begin{gathered}
+    \frac{1}{2}\left( \int_0^{\frac{\pi}{4}} 1\,d\theta  + \int_0^{\frac{\pi}{4}} \cos\left(2\theta\right)\,d\theta\right) = \frac{1}{2}\left(1\bigg|^{\frac{\pi}{4}}_0+\left(\frac{1}{2}\sin\left(2\theta\right)\right)\bigg|^{\frac{\pi}{4}}_0\right)\\
+    =\frac{1}{2} \left(\frac{\pi}{4}-0+\frac{1}{2}-0\right) = \frac{\pi}{8} + \frac{1}{4} = \boxed{\frac{\pi+2}{8}}
+    \end{gathered}
+\]
+\section*{סעיף ב'}
+נשי ם לב כי
+\[
+    n^2 \sum_{j=1}^{n} \frac{1}{\left(n^2+j^2\right)^2} =    \frac{1}{n}\left( n^3 \sum_{j=1}^{n}  \frac{1}{\left(n^2+j^2\right)^2}\right)
+\]
+בסעיף הקודם הראינו כי $\lim_{n\to \infty} n^3 \sum_{j=1}^{n}  \frac{1}{\left(n^2+j^2\right)^2}= \frac{\pi+2}{8}$ לכן
+\[
+    \lim_{n\to\infty}     \frac{1}{n}\left( n^3 \sum_{j=1}^{n}  \frac{1}{\left(n^2+j^2\right)^2}\right) \underset{\text{אריתמטיקת גבולות - כפל}}{=} \lim_{n\to\infty} \frac{1}{n} \cdot \lim_{n\to\infty}      n^3 \sum_{j=1}^{n}  \frac{1}{\left(n^2+j^2\right)^2}
+\]
+הגבול $\lim_{n\to\infty}$ הוא גבול ידוע מאינפי $1$ ושווה ל-$0$, לכן.
+לכן
+\[
+\lim_{n\to\infty} \frac{1}{n} \sum_{j=1}^n n^3 \frac{1}{\left(n^2+j^2\right)^2} \underset{\text{חסומה כפול אפסה}}{=}\boxed{0}
+\]
+\newpage
+\part*{שאלה 3}
+\part*{פתרון 3}
 \newpage
 \part*{שאלה 5}
 \begin{gather*}
