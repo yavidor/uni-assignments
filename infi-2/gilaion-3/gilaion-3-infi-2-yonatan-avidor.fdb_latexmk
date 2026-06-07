@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1780779588.53908 "gilaion-3-infi-2-yonatan-avidor.latex" "gilaion-3-infi-2-yonatan-avidor.pdf" "gilaion-3-infi-2-yonatan-avidor" 1780779590.01163 0
+["lualatex"] 1780819103.64104 "gilaion-3-infi-2-yonatan-avidor.latex" "gilaion-3-infi-2-yonatan-avidor.pdf" "gilaion-3-infi-2-yonatan-avidor" 1780819104.97811 0
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-bold.luc" 1770037307.49007 54495 6d1e04677a40f79ab14ff2024faac8eb ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-boldoblique.luc" 1770037307.48007 55799 5fef217971130cbc6fbfe77ec1f0a8c2 ""
   "/home/yavidor/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/hadasimclm-regular.luc" 1770037307.46907 54551 36cc254eefb9c32f16f693bfada56f84 ""
@@ -47,6 +47,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1248133631 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-bidi-basic.lua" 1676321701 12512 69bf7efe7b9e6602824eb967f20fce2c ""
@@ -136,8 +137,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775907030.30225 4602002 62dba5fc29055c16380d7393a2adb07a ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1778620680 11867377 5fee1746992e102670e342e0fa08e2ae ""
-  "gilaion-3-infi-2-yonatan-avidor.aux" 1780779589.87781 112 3edc41fac716cc1fc9a6af18ff353691 "lualatex"
-  "gilaion-3-infi-2-yonatan-avidor.latex" 1780779586.802 10931 ff32ab210755eb753a5e6cd85f28688e ""
+  "gilaion-3-infi-2-yonatan-avidor.aux" 1780819104.83445 112 d91737ae631da68817d9a8949d75ea91 "lualatex"
+  "gilaion-3-infi-2-yonatan-avidor.latex" 1780819103.26874 13290 731f9cea03b68e02eb2e0062bb1b7629 ""
   (generated)
   "gilaion-3-infi-2-yonatan-avidor.aux"
   "gilaion-3-infi-2-yonatan-avidor.log"

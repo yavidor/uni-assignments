@@ -238,13 +238,55 @@ $blacksquare$
     \lim_{x\to 0} \frac{\int^{x^3}_0 \tan t \, dt}{\int^{\sin^2x}_0 t^2\,dt} = 
     \lim_{x\to 0} \frac{\left(\int^{x^3}_0 \tan t \, dt\right)'}{\left(\int^{\sin^2x}_0 t^2\,dt\right)'}\\
     = \lim_{x\to 0} \frac{\tan\left(x^3\right)\cdot 3x^2}{\sin^4x\cdot 2\cos x \sin x} \\
-    = 
+    =  \lim_{x\to0} \frac{3}{2} \cdot \frac{x^5}{\sin^5 x} \cdot \frac{\frac{\sin\left(x^3\right)}{\cos\left(x^3\right)}}{\cos x\cdot x^3} \\
+    = \lim_{x\to 0} \frac{3}{2} \underbrace{\frac{x^5}{\sin^5x}}_{\to 1} \cdot \underbrace{\frac{\sin\left(x^3\right)}{x^3}}_{\to 1} \underbrace{\cdot\frac{1}{\cos x\cos\left(x^3\right)}}_{\to 1} \\
+    = \frac{3}{2} \cdot 1 \cdot 1 \cdot 1 = \boxed{\frac{3}{2}}
 \end{gather*}
 \newpage
 \part*{שאלה 5}
+חשבו את אורך הקשת של העקום $y=\log x, 1\leq x\leq 2$
+\part*{פתרון 5}
+נשתמש בנוסחה לחישוב אורך קשת
+\[
+    A = \int_1^2 \sqrt{1+\frac{1}{x^2}}\,dx= \int_1^2 \sqrt{\frac{x^2+1}{x^2}} \,dx= \int_1^2 \frac{\sqrt{x^2+1}}{\sqrt{x^2}} \,dx= \int_1^2 \frac{\sqrt{1+x^2}}{x}
+\]
+נשתמש בהצבה
 \begin{gather*}
     t = \sqrt{1+x^2} \\
     dt = \frac{x}{\sqrt{x^2+1}}\,dx\\
-    dx =  \frac{t}{\left(t-1\right)\left(t+1\right)} \,dt
+    dx =  \frac{t}{\sqrt{t^2-1}} \,dt\\
+    t(1) = \sqrt{1+1^2} = \sqrt{2}\\
+    t(2) = \sqrt{1+2^2} = \sqrt{5}
+\end{gather*}
+נציב
+\begin{gather*}
+    \int^2_1 \frac{\sqrt{1+x^2}}{x}\,dx = \int^{\sqrt{5}}_{\sqrt{2}} \frac{t}{\sqrt{t^2-1}}\cdot \frac{t}{\sqrt{t^2-1}}\,dt\\
+    =\int^{\sqrt{5}}_{\sqrt{2}} \frac{t^2}{t^2-1}\,dt
+\end{gather*}
+נשתמש ב"טריק הידוע" (להוסיף ולהחסיר אחד)
+\begin{gather*}
+    \int^{\sqrt{5}}_{\sqrt{2}} \frac{t^2}{t^2-1}\,dt = \int^{\sqrt{5}}_{\sqrt{2}} \frac{t^2+1-1}{t^2-1}\,dt = \int^{\sqrt{5}}_{\sqrt{2}} 1 + \frac{1}{t^2-1}\,dt \\
+    \underset{\text{לינאריות האינטגרל}}{=} \int^{\sqrt{5}}_{\sqrt{2}} 1\,dt + \int^{\sqrt{5}}_{\sqrt{2}} \frac{1}{t^2-1}\,dt\\
+    \underset{\text{ניוטון לייבניץ}}{=} \left(\sqrt{5}-\sqrt{2}\right) + \int^{\sqrt{5}}_{\sqrt{2}} \frac{1}{t^2-1}\,dt
+\end{gather*}
+נפרק לשברים חלקיים
+\begin{gather*}
+    \frac{1}{t^2-1} = \frac{A}{t-1}+\frac{B}{t+1} \\
+    \implies A\left(t+1\right) + B\left(t-1\right)=1\\
+    \implies \begin{cases}
+        A-B = 1 \\
+        A+B = 0
+    \end{cases}
+\end{gather*}
+נפתור את המשוואה
+\begin{gather*}
+    A+B =0 \implies A = -B\\
+    \implies A-B = = -2B = 1 \implies B = -\frac{1}{2} \implies A = \frac{1}{2}
+\end{gather*}
+לכן
+\begin{gather*}
+    \int^{\sqrt{5}}_{\sqrt{2}} \frac{1}{t^2-1}\,dt = \int^{\sqrt{5}}_{\sqrt{2}} \frac{\frac{1}{2}}{t-1}\,dt+\int^{\sqrt{5}}_{\sqrt{2}}\frac{-\frac{1}{2}}{t+1}\,dt \\
+    =    \frac{1}{2}\int^{\sqrt{5}}_{\sqrt{2}}\frac{1}{t-1}\,dt - \frac{1}{2}\int^{\sqrt{5}}_{\sqrt{2}}\frac{1}{t+1}\,dt\\
+    \underset{\int \frac{1}{a+t}=ln\left({a+t}\right)}{=}
 \end{gather*}
 \end{document}
