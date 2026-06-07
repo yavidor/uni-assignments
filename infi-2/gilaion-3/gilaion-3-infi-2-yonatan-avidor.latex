@@ -218,9 +218,9 @@ f\left(0\right) = 0- \int^{0}_{0}g\left(y\right)\,dy
     f'\left(x\right) = 1 - \underbrace{g\left(x^2\right)\cdot 2x}_{< 1} > 0
 \]
 מכאן ש-$f'$ חיובית ממש בכל התחום, ו-$f$ עולה ממש.\\
-$f$ עולה ממש בכל הקטע $\left(0,1\right)$ ו-$f\left(0\right)$, לכן לא קיים $x\in\left(0,\right]$ אשר עבורו מתקיים $f\left(x\right)=0$\\
+$f$ עולה ממש בכל הקטע $\left(0,1\right)$ ו-$f\left(0\right)$, לכן לא קיים $x\in\left(0,1\right]$ אשר עבורו מתקיים $f\left(x\right)=0$\\
 כנדרש\\
-$blacksquare$
+$\blacksquare$
 \newpage
 \part*{שאלה 4}
 חשבו
@@ -281,12 +281,52 @@ $blacksquare$
 נפתור את המשוואה
 \begin{gather*}
     A+B =0 \implies A = -B\\
-    \implies A-B = = -2B = 1 \implies B = -\frac{1}{2} \implies A = \frac{1}{2}
+    \implies A-B  = -2B = 1 \implies B = -\frac{1}{2} \implies A = \frac{1}{2}
 \end{gather*}
 לכן
 \begin{gather*}
     \int^{\sqrt{5}}_{\sqrt{2}} \frac{1}{t^2-1}\,dt = \int^{\sqrt{5}}_{\sqrt{2}} \frac{\frac{1}{2}}{t-1}\,dt+\int^{\sqrt{5}}_{\sqrt{2}}\frac{-\frac{1}{2}}{t+1}\,dt \\
     =    \frac{1}{2}\int^{\sqrt{5}}_{\sqrt{2}}\frac{1}{t-1}\,dt - \frac{1}{2}\int^{\sqrt{5}}_{\sqrt{2}}\frac{1}{t+1}\,dt\\
-    \underset{\int \frac{1}{a+t}=ln\left({a+t}\right)}{=}
+    \underset{\int \frac{1}{a+t}=ln\left({a+t}\right), \text{ניוטון לייבניץ}}{=} \frac{1}{2} \left(\log\left(t-1\right)\bigg|^{\sqrt{5}}_{\sqrt{2}}\right) - \frac{1}{2} \left(\log\left(t+1\right)\bigg|^{\sqrt{5}}_{\sqrt{2}}\right) \\
+    = \frac{1}{2}\left(\log\left(\sqrt{5}-1\right)-\log\left(\sqrt{2}-1\right)-\log\left(\sqrt{5}+1\right)+\log\left(\sqrt{2}+1\right)\right) \\
+=    \frac{1}{2}\left(\log\left(\frac{\sqrt{5}-1}{\sqrt{5}+1}\right)-\log\left(\frac{\sqrt{2}-1}{\sqrt{2}+1}\right)\right)
+\end{gather*}
+נציב את כל החלקים שקיבלנו
+\[
+    \int^{\sqrt{5}}_{\sqrt{2}} \frac{t^2}{t^2-1}\,dt =\boxed{\sqrt{5}-\sqrt{2} +     \frac{1}{2}\left(\log\left(\frac{\sqrt{5}-1}{\sqrt{5}+1}\right)-\log\left(\frac{\sqrt{2}-1}{\sqrt{2}+1}\right)\right)}
+\]
+\newpage
+\part*{שאלה 6}
+חשבו את השטח של האסטרואיד $A_a$ המוגדר על ידי
+\[
+    A_a = \left\{\left(x,y\right):x^{\frac{2}{3}}+y^{\frac{2}{3}} \leq a^{\frac{2}{3}}\right\}
+\]
+עבור $a>0$ כלשהו
+\part*{פתרון 6}
+נשים לב כי האסטרואיד סימטרי ביחס לציר ה-$y$ וגם ביחס לציר ה-$x$, לכן מספיק לחשב את השטח בין האסטרואיד לציר ה-$x$ ברביע הראשון ולהכפיל ב-$4$\\
+נכתוב בצורה אחרת את המשוואה על מנת להתאים אותה לאינטגרל
+\[
+    x^{\frac{2}{3}} + y^{\frac{2}{3}} \leq a^{\frac{2}{3}} \implies a^{\frac{2}{3}}-x^{\frac{2}{3}} \geq y^{\frac{2}{3}}
+\]
+מכיוון שאנחנו ברביע הראשון, ניתן להעלות את כל הביטוי בחזקת $\frac{3}{2}$, וזה ישמור על יחס הסדר
+\[
+    \left( a^{\frac{2}{3}}-x^{\frac{2}{3}}\right)^{\frac{3}{2}} \geq y
+\]
+כלומר שטח האסטרואיד (ברביע הראשון) הוא השטח שמתחת לגרף $\left(a^{\frac{2}{3}}-x^{\frac{2}{3}}\right)^{\frac{3}{2}}$ בקטע $\left[0,a\right]$, מהגדרת האינטגרל זה
+\[
+    \int^{a}_0 \left(a^{\frac{2}{3}} -x^{\frac{2}{3}}\right)^{\frac{3}{2}}\,dx
+\]
+השורש $ \left(a^{\frac{2}{3}} -x^{\frac{2}{3}}\right)^{\frac{3}{2}}$ קיים, לכן $a^{\frac{2}{3}} > x^{\frac{2}{3}}$
+נציב $A=a^{\frac{1}{3}}$, קיימת $\theta$ כך ש-$x^{\frac{1}{3}} = A\sin \theta$
+\begin{gather*}
+    x=A^3\sin^3\theta\\
+    dx =  3A^3\sin^2\theta\cos\theta\\
+    x(0) = 0 = 3A^3\sin^2\theta \implies 0 = \sin\theta\implies \theta = 0\\
+    x(a) = a \implies A^3 = A ^3\sin^2\theta \implies 1  =\sin^2\theta \implies \theta = \frac{\pi}{2}
+\end{gather*}
+נציב
+\begin{gather*}
+    \int^{a}_0 \left(a^{\frac{2}{3}} -x^{\frac{2}{3}}\right)^{\frac{3}{2}}\,dx = \int^{\frac{\pi}{2}}_0 \left(A^2-A^2\sin^2\theta\right)^{\frac{3}{2}}\cdot 3A^3 \sin^2\theta \cos\theta\,d\theta  \\
+    =3A^5\int^{\frac{\pi}{2}}_0
 \end{gather*}
 \end{document}
