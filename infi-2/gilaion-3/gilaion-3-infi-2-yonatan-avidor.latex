@@ -322,11 +322,60 @@ $\blacksquare$
     x=A^3\sin^3\theta\\
     dx =  3A^3\sin^2\theta\cos\theta\\
     x(0) = 0 = 3A^3\sin^2\theta \implies 0 = \sin\theta\implies \theta = 0\\
-    x(a) = a \implies A^3 = A ^3\sin^2\theta \implies 1  =\sin^2\theta \implies \theta = \frac{\pi}{2}
+    x(a) = a \implies A^3 = A ^3\sin^3\theta \implies 1  =\sin^2\theta \implies \theta = \frac{\pi}{2}
 \end{gather*}
 נציב
 \begin{gather*}
     \int^{a}_0 \left(a^{\frac{2}{3}} -x^{\frac{2}{3}}\right)^{\frac{3}{2}}\,dx = \int^{\frac{\pi}{2}}_0 \left(A^2-A^2\sin^2\theta\right)^{\frac{3}{2}}\cdot 3A^3 \sin^2\theta \cos\theta\,d\theta  \\
-    =3A^5\int^{\frac{\pi}{2}}_0
+    =\int^{\frac{\pi}{2}}_0 \left(A^2\left(1-\sin^2\theta\right)\right)^{\frac{3}{2}}\cdot 3A^3\sin^2\theta\cos\theta\,d\theta\\
+    =\int^{\frac{\pi}{2}}_0 A^3\sqrt{\cos^6 \theta}\cdot 3A^3\sin^2\theta\cos\theta\,d\theta \\
+    =3A^6 \int^{\frac{\pi}{2}}_{0} \cos^4\theta \sin^2\theta\,d\theta
+    \underset{\sin2\theta = 2\sin\theta\cos\theta}{=} 3A^6 \int^{\frac{\pi}{2}}_{0} \cos^2\theta \left(\frac{1}{2}\sin2\theta\right)^2\,d\theta\\
+    \underset{cos^2\theta=\frac{1}{2}\left(1+\cos2\theta\right)}{=} 3A^6\int^{\frac{\pi}{2}}_{0} \frac{1}{2}\left(1+\cos2\theta\right)\frac{1}{4}\left(\sin2\theta\right)^2\,d\theta\\
+    = \frac{3A^6}{8} \int^{\frac{\pi}{2}}_{0} \sin^22\theta +\sin^22\theta\cos2\theta\,d\theta\\
+    = \frac{3A^6}{8} \int^{\frac{\pi}{2}}_{0} \sin^2\theta\,d\theta + \int^{\frac{\pi}{2}}_{0} \sin^22\theta\cos2\theta \,d\theta
 \end{gather*}
+ראשית, נפתור את האינטגרל הימני
+\begin{gather*}
+    \int^{\frac{\pi}{2}}_{0} \sin^22\theta\cos2\theta \,d\theta
+\end{gather*}
+נציב $t=\sin2\theta$, נמנע לעתה מלשנות את גבולות האינטגרציה, לכן נצטרך להחזיר בסוף לביטוי של $\theta$
+\begin{gather*}
+    t= \sin2\theta\\
+    dt = 2\cos2\theta\,d\theta\\
+    d\theta = \frac{1}{2\cos2\theta}\,dt
+\end{gather*}
+נציב באינטגרל לא מסויים
+\[
+    \int \sin^22\theta\cos2\theta\,d\theta=    \int t^2 \cancel{\cos2\theta} \frac{1}{2\cancel{\cos2\theta}}\,dt = \frac{1}{2}\int t^2\,dt = \frac{1}{2} \cdot \frac{t^3}{3}+C
+\]
+נחזיר את ההצבה
+\[
+    \int^{\frac{\pi}{2}}_{0}\sin^22\theta\cos2\theta = \frac{\sin^32\theta}{6}\bigg|^{\frac{\pi}{2}}_{0}= 0-0=0
+\]
+נעבור לאינטגרל השני
+\begin{gather*}
+    \int^{\frac{\pi}{2}}_{0} \sin^22\theta\,d\theta = \int^{\frac{\pi}{2}}_{0} \frac{1}{2}\left(1-\cos4\theta\right)\,d\theta\\
+    = \frac{1}{2} \int^{\frac{\pi}{2}}_{0} 1\,d\theta - \frac{1}{2}\int^{\frac{\pi}{2}}_{0} \cos4\theta\,d\theta = \frac{\pi}{4} - \frac{1}{2}\int^{\frac{\pi}{2}}_{0} \cos4\theta\,d\theta\\
+\end{gather*}
+נגדיר $\phi:=4\theta$ ונציב
+\begin{gather*}\phi=4\theta\\d\phi=4\,d\theta\\d\theta=\frac{1}{4}\,d\phi\\\theta\left(\frac{\pi}{2}\right)=\frac{\pi}{2}\implies\phi\left(\frac{\pi}{2}\right)=2\pi\\
+\theta\left(0\right)=0\implies\phi(0)=0
+\end{gather*}
+\begin{gather*}
+  \frac{\pi}{4} - \frac{1}{2}\int^{\frac{\pi}{2}}_{0} \cos4\theta\,d\theta= \frac{\pi}{4} - \int^{2\pi}_{0} \cos\phi \frac{1}{4}\,d\phi = \frac{\pi}{4} - \frac{1}{4} \sin4\theta\bigg|^{2\pi}_{0}
+    \\ = \frac{\pi}{4} - 0 = \frac{\pi}{4}
+\end{gather*}
+שני האינטגרלים ביחד הם
+\[
+    \frac{\pi}{4} + 0 = \frac{\pi}{4}
+\]
+אם כך, שטח רבע מהאסטרואיד הוא
+\[
+    \frac{3A^6}{8} \cdot \frac{\pi}{4} = \frac{3A^6\pi}{32} \underset{A=a^{\frac{1}{3}}}{=} \frac{3A^2\pi}{32}
+\]
+ולכן שטח האסטרואיד השלם הוא
+\[
+    \frac{3a^2\pi}{32}\cdot 4 = \boxed{\frac{3a^2\pi}{8}}
+\]
 \end{document}
