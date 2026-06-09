@@ -1,0 +1,192 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage[bidi=basic-r]{babel}
+\babelprovide[main,import,Alph=letters]{hebrew}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric,babel}
+\babelprovide{english}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{קומבינטוריקה 1040286 \\ גליון 5}
+\author{יונתן אבידור - 214269565\\רותם עשת - 212674683}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\fancyfoot[R]{\text{212674683}}
+\part*{שאלה 1}
+הוכיחו כי אם $m,n$ זרים אזי
+\[
+    \varphi\left(nm\right)=\varphi\left(n\right)\varphi\left(m\right)
+\]
+\part*{פתרון 1}
+יהיו $m,n$ זרים\\
+לפי הגדרת פונקציית אוילר
+\[
+    \varphi\left(nm\right) = nm \cdot \prod_{p|nm} \left(1-\frac{1}{p}\right)
+\]
+$n$ ו-$m$ זרים, לכן $\Phi(n) \cap \Phi(m) = \left\{1\right\}$
+מכאן ש
+\[
+    \prod_{p|nm} \left(1-\frac{1}{p}\right) = \prod_{p|n} \left(1-\frac{1}{p}\right) \cdot \prod_{p|m} \left(1-\frac{1}{p}\right)
+\]
+לכן
+\begin{gather*}
+    \varphi\left(nm\right) = nm \cdot  \prod_{p|n} \left(1-\frac{1}{p}\right) \cdot \prod_{p|m} \left(1-\frac{1}{p}\right)\\
+    = \underbrace{\left(n \cdot \prod_{p|n} \left(1-\frac{1}{p}\right)\right)}_{\varphi\left(n\right)} \cdot \underbrace{\left(m \cdot \prod_{p|m} \left(1-\frac{1}{p}\right)\right)}_{\varphi\left(m\right)} \\
+    = \varphi(n)  \varphi\left(m\right)\\
+    \implies \boxed{\varphi(nm) = \varphi(n)\varphi(m)}
+\end{gather*}
+$\blacksquare$
+\newpage
+\part*{שאלה 2}
+מהו מספר הסדרות
+\[
+    \begin{array}{ccc}
+        \left(x_1,\ldots,x_7\right) &  & x_i \in \left\{0,1,2\right\}
+    \end{array}
+\]
+שאינן מכילות באף שלושה מקומות עוקבים את הרצף $010$?
+\part*{פתרון 2}
+נשתמש בעיקר ההכלה וההפרדה על מנת לגלות את כמות הסדרות בהן הרצף מופיע פעם אחת, פעמיים ושלוש פעמים, ואז נחסר את זה מכמות הסדרות הכוללת.\\
+נסמן
+\begin{gather*}
+    S = \left\{\left(x_1,\ldots,x_7\right) |\forall i \in \left[7\right] :x_i \in \left\{0,1,2\right\}\right\} \\
+    S_1 =\left\{ s\in S |\text{ מופיע פעם אחת}\left(1,0,1\right)\text{הרצף }\right\}\\
+    S_2 =\left\{s\in S| \text{ מופיע פעמיים}\left(1,0,1\right)\text{הרצף }\right\}\\
+    S_3 =\left\{s \in S| \text{ מופיע שלוש פעמים}\left(1,0,1\right)\text{הרצף }\right\}\\
+    S_0 \left\{s \in S | s \notin S_1\cap S_2\cap S_3 \right\}
+\end{gather*}
+מעיקרון החיבור
+\[
+    \left|S_0 \right| = \left|S\right| - \left| S_1 \cap S_2 \cap S_3 \right|
+\]
+מכלל ההכלה וההפרדה $\left| S_1 \cap S_2 \cap S_3 \right|$ שווה ל:
+\[
+  \left|S_1\right| + \left|S_2\right| + \left|S_3\right| - \left|S_1\cap S_2\right| - \left|S_1\cap S_3\right| - \left|S_2 \cap S_3\right| + \left| S_1 \cap S_2 \cap S_3\right|
+\]
+נחשב את גדלי הקבוצות
+\subsection*{$\left|S_1\right|$}
+"נקבץ" שלושה איברים שיהיו $010$ ונתייחס אליהם כאיבר אחד\\
+ואז נשאר לנו למלא את שאר $4$ המקומות בסדרה, יש $3$ אפשרויות, יש משמעות לסדר ומותר חזרות ולכן הכמות היא $4^3 $\\
+את זה יש להכפיל באפשרויות למקם את ה$010$ שזה $5$, לכן סה"כ
+\[
+    \left|S_1\right| = 5 \cdot 4^3 = 5 \cdot 64 = 320
+\]
+\subsection*{$\left|S_2\right|$}
+יש שתי דרכים לסדרה עם הרצף פעמיים, או  שני מקרים שונים, או רצף אחד גדול של $01010$.\\
+עבור שני מקרים שונים, כמו ב-$S_1$, נקבץ שלושה איברים, ונקבץ עוד שלושה איברים\\
+נותר לנו איבר אחד, כמות האפשרויות עבורו היא $3$ ואת זה יש להכפיל ב-$3!$ הדרכים לסדר את שלושת האיברים \\
+עבור רצף אחד גדול, נשארים שני איברים שיש $2^3$ אפשרויות עבורם ואז יש להכפיל ב$3!$ הדרכים לסדר את שלושת האיברים, מה שמביא לנו $3! \cdot 2^3$\\
+סה"כ נקבל
+\[
+    \left|S_2\right| = 3! \cdot 3 + 3! \cdot 2^3 = 6 \cdot 3 + 6 \cdot 8 = 66
+\]
+\subsection*{$\left|S_3\right|$}
+ישנה סדרה אח בלבד ב-$S_3$ והיא $0101010$, לכן
+\[
+    \left|S_3\right| = 1
+\]
+\newpage
+\part*{שאלה 3}
+נתעניין בסידורים של $8$ צריחים על לוח שחמט רגיל $8 \times 8$.
+\section*{סעיף א'}
+בכמה דרכים ניתן למקם את שמונת הצריחים על הלוח כך שאף אחד מהם לא יאיים על אף צריח אחר?
+\section*{סעיף ב'}
+בכמה דרכים ניתן למקם את הצריחים על הלוח, כך שאף אחד מהם לא יאיים על אף צריח אחר ואף צריח לא ממוקם על האלכסון של המשבצות הלבנות?
+\part*{פתרון 3}
+\newpage
+\part*{שאלה 4}
+$n$ אנשים מגיעים לבית האופרה ביום גשום, ותולים בכניסתם מעיל וכובע.\\
+בסיום המופע, כל אחד מהצופים לוקח מעיל וכובע כלשהם ושב לביתו.\\
+בכמה דרכים יכולים האנשים לשוב לביתם, כך שאף אדם אינור אוחז במעיל ובכובע איתם הגיע להופעה?
+\part*{פתרון 4}
+\newpage
+\part*{שאלה 5}
+יהא $1\leq i\leq n-1$.\\
+נסמן ב-$P_i$ את אוסף התמורות באורך $n$ שבהן $i+1$ מופיע מיד אחרי $i$.
+\section*{סעיף א'}
+חשבו את $\left|P_i\right|$.
+\section*{סעיף ב'}
+יהא $n\geq 6$. חשבו את גדלי החיתוכים
+\[
+    \begin{array}{ccc}
+        \left|P_1\cap P_2 \cap P_3\right| & \left|P_1\cap P_2 \cap P_4\right| & \left|P_1\cap P_3 \cap P_5\right|
+    \end{array}
+\]
+\section*{סעיף ג'}
+תהא $I\subseteq \left[n\right]$ קבוצה מגודל $k$.\\
+חשבו את גודל החיתוך
+\[
+    \left|\bigcap_{i\in i}P_i\right|
+\]
+\section*{סעיף ד'}
+חשבו את מספר התמורות באורך $n$ בהן לכל$1\leq i\leq n-1$ מתקיים ש-$i+1$ אינו מופיע מיד אחרי $i$.
+\part*{פתרון 5}
+\newpage
+\part*{שאלה 6}
+בפקולטה למתמטיקה ישנם $n$ גברים ו-$m-1$ נשים
+\section*{סעיף א'}
+בכמה דרכים ניתן לבחור ועדה, שתכיל $m$ חברי סגל, אבל לא תכיל את כל $n$ הגברים?
+\section*{סעיף ב'}
+חשבו את הסכום:
+\[
+    \sum_{k=0}^{n}\left(-1\right)^k\binom{n}{k}\binom{m+n-k-1}{m}
+\]
+\part*{פתרון 6}
+\newpage
+\part*{שאלה 7}
+במתנ"ס השכונתי יש שלושה קורסי שפה ושבעה חוגי ספורט:\\
+למתנ"ס רשומים $11$ ילדים, כל ילד נרשם לשני קורסי שפה ולשלושה חוגי ספורט.\\
+הוכיחו כי קיימים ארבעה ילדים הלומדים אותו קורס שפה, והולכים לאוו חוג ספורט.
+\part*{פתרון 7}
+\newpage
+\part*{שאלה 8}
+נתונות חמש נקודות בתוך משולש שווה-צלעות שאורך צלעו $2$\\
+הוכיחו כי קיימות שתי נקודות שהמרחק ביניהן לכל היותר $1$
+\part*{פתרון 8}
+נחלק את המשולש לארבעה משולשים בשיטת הטרייפורס
+\begin{otherlanguage}{english}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (90:1.5cm) -- (210:1.5cm) -- (-30:1.5cm) -- cycle;
+                \draw[->, thick] (2,0.5) -- (4,0.5);
+                \begin{scope}[shift={(6,0)}]
+                    \draw (90:1.5cm) -- (210:1.5cm) -- (-30:1.5cm) -- cycle;
+                    \draw (-90:0.75cm) -- (30:0.75cm) -- (150:0.75cm) -- cycle;
+                \end{scope}
+        \end{tikzpicture}
+    \end{center}
+\end{otherlanguage}
+נשים לב שאפשר לחסום כל אחד מהמשולשים במעגל עם קוטר $1$
+\begin{otherlanguage}{english}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (90:1.5cm) -- (210:1.5cm) -- (-30:1.5cm) -- cycle;
+            \draw (-90:0.75cm) -- (30:0.75cm) -- (150:0.75cm) -- cycle;
+            \draw[color=red] (0,0) circle (0.75cm);
+            \draw[color=red] (90:0.75cm) circle (0.75cm);
+            \draw[color=red] (210:0.75cm) circle (0.75cm);
+            \draw[color=red] (-30:0.75cm) circle (0.75cm);
+        \end{tikzpicture}
+    \end{center}
+\end{otherlanguage}
+מכאן שהמרחק בין כל שתי נקודות בתוך אחד מהמשלושים הוא לכל היותר $1$\\
+יש לנו $5$ נקודות שנמצאות ב$5-1=4$ משולשים\\
+מעיקרון שובך היונים, יש (לפחות) שתי נקודות שנמצאות על אותו המשולש\\
+לכן, המרחק בין אותן שתי נקודות קטן מ-$1$\\
+כנדרש\\
+$\blacksquare$
+\newpage
+\part*{בדיחת קרש}
+\end{document}
