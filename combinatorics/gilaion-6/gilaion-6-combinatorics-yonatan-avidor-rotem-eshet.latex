@@ -1,0 +1,56 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage[bidi=basic-r]{babel}
+\babelprovide[main,import,Alph=letters]{hebrew}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric,babel}
+\babelprovide{english}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{קומבינטוריקה 1040286 \\ גליון 6}
+\author{יונתן אבידור - 214269565\\רותם עשת - 212674683}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\fancyfoot[R]{\text{212674683}}
+\part*{שאלה 1}
+תהא $S\subseteq \left[2n\right]$ קבוצה מגודל $n+1$. הוכיחו שקיימים $x,y\in S$ כך ש-$x|y$
+\part*{פתרון 1}
+נחלק את $S$ ל-$n$ תאים, כך שלכל $k\in\left[n\right]$, האיברים שיכנסו לתא ה-$k$ הם $k,2k$\\
+יש $n$ תאים ו-$n+1$ איברים, לכן מעיקרון שובך היונים בהכרח יהיה תא שבו יש שני איברים.\\
+כלומר, קיים $k\in\left[n\right]$ כך ש-$k \in S$ וגם $2k \in S$.\\ $k|2k$ בהכרח ולכן קיימים שני איברים ב-$S$ כך שאחד מחלק את השני.\\
+$\blacksquare$
+\newpage
+\part*{שאלה 2}
+בספר בן $60$ עמודים,יש לפחות שגיאת דפוס אחת בכל עמוד,ובסך הכול לכל היותר $100$ שגיאות דפוס.\\
+הוכיחו שיש רצף של מספר כלשהו של עמודים עוקבים המכילים ביחד בדיוק $20$ שגיאות דפוס.
+\part*{פתרון 2}
+\newpage
+\part*{שאלה 3}
+נתונה קבוצה של עשרה מספרים דו-ספרתיים. הוכיחו כי ניתן למצוא שתי תת-קבוצות זרות שסכום איבריהן שווה.
+\part*{פתרון 3}
+נקרא לקבוצה שלנו $A$.\\
+נספור כמה תתי-קבוצות יש ל-$A$.
+\[
+	\left|\mathcal{P}\left(A\right)\right| = 2^{\left|A\right|} = 2^{10} = 1024
+\]
+אין תת-קבוצה זרה ל-$A$ עצמה לכן כמות התתי-קבוצות \textbf{הרלוונטיות} היא $1023$
+
+\newpage
+\part*{בדיחת קרש}
+לקורס נושאים נבחרים בקומבינטוריקה צריך לקרוא
+\[
+	\binom{\text{קומבינטוריקה}}{\text{נושאים}}
+\]
+\end{document}
