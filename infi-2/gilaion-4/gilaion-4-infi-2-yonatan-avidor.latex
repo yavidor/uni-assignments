@@ -1,0 +1,54 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפי 2 - 01040281 \\ גליון 4}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+חשבו את הערך של האינטגרל הלא אמיתי הבא:
+\[
+	\int^{\infty}_1 \frac{\arctan x}{x^2} \, dx
+\]
+\part*{פתרון 1}
+נשתמש באינטגרציה בחלקים
+\[
+	\begin{array}{cc}
+		u = \arctan x        & v' =  x^{-2}     \\
+		u' = \frac{1}{1+x^2} & v = \frac{-1}{x}
+	\end{array}
+\]
+ונקבל
+\begin{gather*}
+	\lim_{c \to \infty}\int^{c}_{1} \frac{\arctan x}{x^2} \, dx = -\frac{\arctan x}{x}\bigg{|}^c_1 - \int_1^c \frac{-1}{x(1+x^2)} \, dx \\= \lim_{c\to\infty} -\frac{\arctan c}{c} + \underbrace{\arctan{1}}_{\frac{\pi}{4}} + \int_1^c \frac{1}{x(1+x^2)}\,dx\\
+	\underset{\text{ארימתמטיקה של גבולות, חיבור}}{=} \lim_{c\to\infty} -\frac{\arctan c}{c} + \frac{\pi}{4} + \lim_{c\to\infty}\int_1^c \frac{1}{x(1+x^2)}\,dx
+\end{gather*}
+יש לציין שההשלב האחרון יעבוד רק אם אכן נמצא שהאיטנגרל הלא אמיתי מימין קיים, נבדוק זאת:
+\begin{gather*}
+	\lim_{c\to\infty}\int^c_1 \frac{1}{x\left(1+x^2\right)}\,dx
+\end{gather*}
+נעשה פירוק לשברים חלקיים
+\[
+	\frac{1}{x\left(1+x^2\right)} = \frac{A}{x} + \frac{Bx+C}{x^2+1}
+\]
+נפתח ונקבל
+\begin{gather*}
+	(A+B)x^2+Cx +A = 0x^2 + 0x + 1
+\end{gather*}
+לכן $A+B = 0, C= 0, A=1$, מכאן ש-$B=-1$, ומתקבל
+\[
+	\frac{1}{x(1+x^2)} = \frac{1}{x} - \frac{x}{x^2+1}
+\]
+\end{document}
