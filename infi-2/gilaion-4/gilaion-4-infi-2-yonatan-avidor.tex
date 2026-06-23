@@ -1,0 +1,252 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\title{חשבון אינפי 2 - 01040281 \\ גליון 4}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+חשבו את הערך של האינטגרל המוכלל הבא:
+\[
+	\int^{\infty}_1 \frac{\arctan x}{x^2} \, dx
+\]
+\part*{פתרון 1}
+נשתמש באינטגרציה בחלקים
+\[
+	\begin{array}{cc}
+		u = \arctan x        & v' =  x^{-2}     \\
+		u' = \frac{1}{1+x^2} & v = \frac{-1}{x}
+	\end{array}
+\]
+ונקבל
+\begin{gather*}
+	\lim_{c \to \infty}\int^{c}_{1} \frac{\arctan x}{x^2} \, dx = -\frac{\arctan x}{x}\bigg{|}^c_1 - \int_1^c \frac{-1}{x(1+x^2)} \, dx \\= \lim_{c\to\infty} -\frac{\arctan c}{c} + \underbrace{\arctan{1}}_{\frac{\pi}{4}} + \int_1^c \frac{1}{x(1+x^2)}\,dx\\
+	\underset{\text{ארימתמטיקה של גבולות, חיבור}}{=} \lim_{c\to\infty} -\frac{\arctan c}{c} + \frac{\pi}{4} + \lim_{c\to\infty}\int_1^c \frac{1}{x(1+x^2)}\,dx
+\end{gather*}
+יש לציין שההשלב האחרון יעבוד רק אם אכן נמצא שהאיטנגרל המוכלל מימין קיים, נבדוק זאת:
+\begin{gather*}
+	\lim_{c\to\infty}\int^c_1 \frac{1}{x\left(1+x^2\right)}\,dx
+\end{gather*}
+נעשה פירוק לשברים חלקיים
+\[
+	\frac{1}{x\left(1+x^2\right)} = \frac{A}{x} + \frac{Bx+C}{x^2+1}
+\]
+נפתח ונקבל
+\begin{gather*}
+	(A+B)x^2+Cx +A = 0x^2 + 0x + 1
+\end{gather*}
+לכן $A+B = 0, C= 0, A=1$, מכאן ש-$B=-1$, ומתקבל
+\[
+	\frac{1}{x(1+x^2)} = \frac{1}{x} - \frac{x}{x^2+1}
+\]
+ולכן
+\begin{gather*}
+	\lim_{c\to\infty} \int^{c}_1 \frac{1}{x(1+x^2)}\,dx = \lim_{c\to\infty} \int^{c}_1 \frac{1}{x}-\frac{x}{x^2+1} \\
+	\underset{\text{לינאריות, חשבון גבולות} }{=} \lim_{c\to\infty}\int_1^c  \frac{1}{x}\,dx -\lim_{c\to\infty}\int_1^c  \frac{x}{x^2+1}\,dx\\
+	\underset{\text{ניוטון לייבניץ}}{=} \lim_{c\to\infty}\log x \bigg{|}^c_1 - \lim_{c\to\infty}\int_1^c  \frac{x}{x^2+1}\,dx
+\end{gather*}
+נטפל באינטגרל שנותר
+\[
+	\lim_{c\to\infty} \frac{x}{x^2+1}\,dx \underset{\text{הכפלה וחילוק ב-$2$, לינאריות}}{=} \lim_{c\to\infty} \frac{1}{2} \int^c_1 \frac{2x}{x^2+1}\,dx
+\]
+נשים לב ש-$\left(x^2+1\right)' = 2x$ ולכן יש לנו נגזרת חלקי הפונקציה ולכן
+\[
+	\lim_{c\to\infty} \frac{1}{2} \int^c_1 \frac{2x}{x^2+1}\,dx = \lim_{c\to\infty} \frac{1}{2} \log(x^2+1)\bigg{|}^c_1
+\]
+נשים לב ש-$x^2+1$ חיובית תמיד לכן אין צורך בערך מוחלט\\
+נחזיר את הגבולות לביטוי אחד (מאריתמטיקת גבולות, חיבור)
+\begin{gather*}
+	\lim_{c\to\infty} \log x - \frac{1}{2}\log (x^2+1)\bigg{|}^c_1 \underset{\text{חוקי לוגים}}{=}\lim_{c\to\infty} \log\left(\frac{x}{\sqrt{x^2+1}}\right)\bigg{|}^c_1 \\
+	= \lim_{c\to\infty} \log\left(\frac{c}{\sqrt{c^2+1}}\right) - \log\left(\frac{1}{\sqrt{2}}\right)
+\end{gather*}
+נמצא את הגבול בתוך הלוגריתם
+\[
+	\lim_{c\to\infty} \frac{c}{\sqrt{c^2+1}} = \lim_{c\to\infty} \frac{\cancel{c}}{\cancel{c}\sqrt{1+\underbrace{\frac{1}{c^2}}_{\to 0}}} = \lim_{c\to\infty} \frac{1}{\sqrt{1}} = 1
+\]
+לכן
+\[
+	\lim_{c\to\infty} \log\left(\frac{c}{\sqrt{c^2+1}}\right) - \log\left(\frac{1}{\sqrt{2}}\right) = \log(1) - \log(\frac{1}{\sqrt{2}}) = \frac{\log(2)}{2}
+\]
+הגבול אכן קיים ולכן החיבור עובד. סה"כ קיבלנו
+\[
+	\boxed{\int_1^\infty \frac{\arctan x}{x^2} =\frac{\pi}{4} + \frac{\log(2)}{2}}
+\]
+\newpage
+\part*{שאלה 2}
+מצאו את כל הערכים של $p>0$ ושל $q>0$ בהם האינטגרלים הבאים מתכנסים
+\section*{סעיף א'}
+\[
+	\int_1^\infty \frac{\sin x}{x^p}\,dx
+\]
+\section*{סעיף ב'}
+\[
+	\int_0^\infty \frac{1}{x^p+x^q}\,dx
+\]
+\section*{סעיף ג'}
+\[
+	\int_0^\infty \frac{1}{x^p\left(1+x\right)^q}\,dx
+\]
+\part*{פתרון 2}
+\section*{סעיף א'}
+נטען כי האינטגרל מתכנס לכל $p>0$, נרצה להשתמש במשפט דיריכלה.\\
+נגדיר $f(x) = \sin(x), g(x) = \frac{1}{x^p}$\\
+$F(x)$ חסומה\\
+נחשב את $g'(x)$
+\[
+	g(x) = \frac{1}{x^{p}} = x^{-p} \implies g'(x) = -p\cdot x^{p+1} = -\frac{p}{x^{p+1}}
+\]
+נבדוק את $\int^\infty_1 \left|g'(x)\right|\,dx$, נשים לב שלכל $x$ ולכל $p>0$, $\left|-\frac{p}{x^{p+1}}\right| = \frac{p}{x^{p+1}}$
+\[
+	\lim_{c\to\infty} \int_1^c\frac{p}{x^{p+1}}\,dx = \lim_{c\to\infty} p \int^c_1 x^{-p-1} \,dx= \lim_{c\to\infty}  \left(\frac{-1}{x^{p}}\right)\bigg{|}^c_1 = \lim_{c\to\infty} \underbrace{\frac{-1}{c^p}}_{\to 0} - \underbrace{\frac{-1}{1^p}}_{\to -1} = 1
+\]
+הגבול קיים ולכן האינטגרל המוכלל מתכנס.\\
+לכל $p>0$ $\lim_{x\to\infty}\frac{1}{x^{p}}=0$ כגבול ידוע מאינפי $1$\\
+כל התנאים של משפט דיריכלה מתקיימים, לכן לפי משפט דיריכלה, האינטגרל המוכלל $\int^\infty_1(f\cdot g)(x)=\int^\infty_1 \frac{\sin x}{x^p}\,dx$ מתכנס לכל $\boxed{p>0}$
+\section*{סעיף ב'}
+הפונקציה "בעייתית" בשני איזורים, כאשר $x\to 0$ וכאשר $x\to \infty$, נרצה לטפל במקרים הללו בנפרד, לכן נפצל את האינטגרל בדרך הבאה:
+\[
+	\int_0^\infty \frac{1}{x^p+x^q}\,dx \underset{\text{אדטיביות, אם האינטגרלים מתכנסים}}{=}	\int_0^1 \frac{1}{x^p+x^q}\,dx + 	\int_1^\infty \frac{1}{x^p+x^q}\,dx
+\]
+נשים לב שהפונקציה חיובית בכל תחום האינטגרציה, נשתמש במבחן ההשוואה הגבולי
+נגדיר $m:= \min\{p,q\}$
+נתבונן ב-$\lim_{x\to 0^{+}} \frac{\frac{1}{x^p+x^q}}{\frac{1}{x^m}}$
+\[
+	x^{p-m} + x^{q-m}	\lim_{x\to0^{+}} \frac{\frac{1}{x^p+x^q}}{\frac{1}{x^m}} =\lim_{x\to0^{+}} \frac{x^m}{x^p+x^q} = \lim_{x\to0^+}\frac{1}{x^{p-m} + x^{q-m}}
+\]
+מכיוון ש-$m$ הוא המינימום של $p,q$, אחד מהמעריכים הוא $0$ והשני הוא אי-שלילי, לכן הגבול הוא מספר חיובי כלשהו, לכן מבחן ההשוואה הגבולי תקף.\\
+$\frac{1}{x^m}$ מתכנס לכל $m>1$, לכן $\int_0^1 \frac{1}{x^p+x^q}\,dx$ מתכנס אמ"מ $\min\{p,q\}< 1$\\
+עבור $\left[1,\infty\right)$ נשתמש גם במבחן ההשוואה הגבולי\\
+נגדיר $M:=\max\left\{p,q\right\}$\\
+נתבונן ב-$\lim_{x\to \infty} \frac{\frac{1}{x^p+x^q}}{\frac{1}{x^M}}$
+\[
+	\lim_{x\to \infty} \frac{\frac{1}{x^p+x^q}}{\frac{1}{x^M}} = \lim_{x\to\infty}\frac{x^M}{x^p+x^q} = \lim_{x\to\infty} \frac{1}{x^{p-M}+x^{q-M}}
+\]
+מכיוון ש-$M$ הוא המקסימום של $p,q$, אחד מהמעריכים הוא $0$ והשני הוא אי-חיובי,\\
+לכן הגבול הוא מספר חיובי כלשהו, לכן מבחן ההשוואה הגבולי תקף.\\
+$\frac{1}{x^M}$ מתכנס לכל $M>1$, לכן $\int_1^\infty \frac{1}{x^p+x^q}\,dx$ מתכנס אמ"מ $\max\{p,q\} > 1$\\
+האינטגרל $\int_0^\infty \frac{1}{x^p+x^q}\,dx$ מתכנס אם ורק אם $\int_0^1 \frac{1}{x^p+x^q}\,dx $ ו-$\int_1^\infty \frac{1}{x^p+x^q}\,dx$ מתכנסים, כלומר כאשר
+\[
+	\boxed{\min\{p,q\} < 1 < \max\{p,q\}}
+\]
+\section*{סעיף ג'}
+מנימוק זהה לסעיף ב', נפצל את האינטגרל
+\[
+	\int_0^\infty \frac{1}{x^p\left(1+x\right)^q}\,dx =\int_0^1 \frac{1}{x^p\left(1+x\right)^q}\,dx + \int_1^\infty \frac{1}{x^p\left(1+x\right)^q}\,dx
+\]
+עבור האינטגרל הראשון נשתמש במבחן ההשוואה הגבולי עם $\frac{1}{x^p}$
+$x^p \leq x^p\left(1+x\right)^q$ ולכן $\frac{1}{x^p} \geq \frac{1}{x^p+\left(1+x\right)^q}$
+\[
+	\lim_{x\to0^+} \frac{\frac{1}{x^p(1+x)^q}}{\frac{1}{x^p}} =\lim_{x\to0^+} \frac{1}{\left(1+x\right)^q} = 1
+\]
+הגבול קיים וחיובי ולכן ניתן להשתמש במבחן ההשוואה\\
+$\int_0^1 \frac{1}{x^p}$ קיים אם ורק אם $p<1$, נעבור לאינטגרל השני\\
+נשתמש שוב במבחן ההשוואה הגבולי, אבל הפעם עם $\frac{1}{x^{p+q}}$\\
+כאשר $x\geq 1$, $x^{p+q} \leq x^p(1+x)^q$ ולכן $\frac{1}{x^{p+q}} \geq \frac{1}{x^p\left(1+x\right)^q}$
+\[
+	\lim_{x\to\infty} \frac{\frac{1}{x^p\left(1+x\right)^q}}{\frac{1}{x^{p+q}}} = \lim_{x\to\infty} \frac{x^{p}\cdot x^{q}}{x^p+ x^{p+q}} = \lim_{x\to\infty} \frac{x^q}{\left(1+x\right)^q} =  \lim_{x\to\infty} \left(\frac{x}{1+x}\right)^q = 1
+\]
+הגבול קיים וחיובי ולכן ניתן להשתמש במבחן ההשוואה\\
+$\int_0^1 \frac{1}{x^{p+q}}$ קיים אם ורק אם $p+q > 1$. לכן
+\[
+	\boxed{p < 1,  q > 1-p}
+\]
+\newpage
+\part*{שאלה 3}
+בדקו האם האינטגרלים המוכללים הבאים קיימים
+\section*{סעיף א'}
+\[
+	\int_0^1 \frac{e^x}{x}\,dx
+\]
+\section*{סעיף ב'}
+\[
+	\int_0^1 \frac{1}{\log x}\,dx
+\]
+\section*{סעיף ג'}
+\[
+	\int_{-\infty}^\infty \frac{2x}{e^x-e^{-x}}\,dx
+\]
+\part*{פתרון 3}
+\section*{סעיף א'}
+$\forall x \in \left[0,1 \right]:e^x \geq 1$ ולכן $\frac{e^x}{x} \geq \frac{1}{x}$, בנוסף לכך, שתי הפונקציות אי-שליליות, לכן ניתן להשתמש במבחן ההשוואה.\\
+$\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מתבדר גם כן
+\section*{סעיף ב'}
+יש שתי נקודות בעייתיות\\
+$x=1$ ו-$x=0$ \\
+$\$
+נציב $y= \log x$
+\begin{gather*}
+	y = \log x \\
+	e^y = x\\
+	dy = \frac{1}{x}\,dx\\
+	dx = x \,dy = e^y \,dy
+\end{gather*}
+\newpage
+\part*{שאלה 4}
+תהא $f$ רציפה ב-$\left[0,1\right]$ ותיהיו $0 < a < b$. הראו כי הגבול הבא קיים ומצאו אותו
+\[
+	\lim_{\varepsilon \to 0^+} \int^{\varepsilon b}_{\varepsilon a} \frac{f\left(x\right)}{x}\,dx
+\]
+\section*{סעיף ב'}
+\[
+	\int_0^1 \frac{1}{\log x}\,dx
+\]
+\part*{פתרון 4}
+\newpage
+\part*{שאלה 5}
+בדקו האם הטורים הבאים מתכנסים
+\section*{סעיף א'}
+\[
+	\sum_{n=1}^\infty \frac{\left(n!\right)^2}{\left(2n\right)!}
+\]
+\section*{סעיף ב'}
+\[
+	\sum_{n=1}^\infty \frac{4n^2+5n}{n\left(n^2+1\right)^{\frac{3}{2}}}
+\]
+\part*{פתרון 5}
+\newpage
+\part*{שאלה 6}
+בדקו האם הטורים הבאים מתכנסים
+\section*{סעיף א'}
+\[
+	\sum_{n=1}^\infty \left(\frac{1}{\sqrt{2n+1}}-\frac{1}{\sqrt{3n+1}}\right)
+\]
+\section*{סעיף ב'}
+\[
+	\sum_{n=1}^\infty \frac{\cos n\pi}{n^\frac{1}{4}}
+\]
+\part*{פתרון 6}
+\newpage
+\part*{שאלה 7}
+תהא $\left\{a_n\right\}^\infty_{n=1}$ סדרה חיובית. הוכיחו כי
+\[
+	\sum_{n=1}^\infty a_n < \infty \iff \sum_{n=1}^\infty \frac{a_n}{1+a_n} < \infty
+\]
+\part*{פתרון 7}
+\newpage
+\part*{שאלה 8}
+\section*{סעיף א'}
+תהא $f$ פונקציה חיובית מונוטונית יורדת בקרן $\left[1,\infty\right)$.\\
+יהיו $I_n = \int^n_1 f\left(x\right)\,dx$ ו-$S_n = \sum_{k=1}^n f\left(k\right), n = 1,2,\ldots$.\\
+נגדיר $u_n = S_n - I_n$.\\
+הוכיחו כי הסדרה $\left\{u_n\right\}_{n=1}^{\infty}$ מתכנסת
+\section*{סעיף ב'}
+השתמשו בסעיף א' על מנת להוכיח כי הגבול
+\[
+	\lim_{n\to\infty} \sum_{j=1}^n \frac{1}{j} - \log n
+\]
+קיים.
+\part*{פתרון 8}
+\newpage
+\end{document}
