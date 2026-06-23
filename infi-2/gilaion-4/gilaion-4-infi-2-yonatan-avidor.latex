@@ -51,4 +51,55 @@
 \[
 	\frac{1}{x(1+x^2)} = \frac{1}{x} - \frac{x}{x^2+1}
 \]
+ולכן
+\begin{gather*}
+	\lim_{c\to\infty} \int^{c}_1 \frac{1}{x(1+x^2)}\,dx = \lim_{c\to\infty} \int^{c}_1 \frac{1}{x}-\frac{x}{x^2+1} \\
+	\underset{\text{לינאריות, חשבון גבולות} }{=} \lim_{c\to\infty}\int_1^c  \frac{1}{x}\,dx -\lim_{c\to\infty}\int_1^c  \frac{x}{x^2+1}\,dx\\
+	\underset{\text{ניוטון לייבניץ}}{=} \lim_{c\to\infty}\log x \bigg{|}^c_1 - \lim_{c\to\infty}\int_1^c  \frac{x}{x^2+1}\,dx
+\end{gather*}
+נטפל באינטגרל שנותר
+\[
+	\lim_{c\to\infty} \frac{x}{x^2+1}\,dx \underset{\text{הכפלה וחילוק ב-$2$, לינאריות}}{=} \lim_{c\to\infty} \frac{1}{2} \int^c_1 \frac{2x}{x^2+1}\,dx
+\]
+נשים לב ש-$\left(x^2+1\right)' = 2x$ ולכן יש לנו נגזרת חלקי הפונקציה ולכן
+\[
+	\lim_{c\to\infty} \frac{1}{2} \int^c_1 \frac{2x}{x^2+1}\,dx = \lim_{c\to\infty} \frac{1}{2} \log(x^2+1)\bigg{|}^c_1
+\]
+נשים לב ש-$x^2+1$ חיובית תמיד לכן אין צורך בערך מוחלט\\
+נחזיר את הגבולות לביטוי אחד (מאריתמטיקת גבולות, חיבור)
+\begin{gather*}
+	\lim_{c\to\infty} \log x - \frac{1}{2}\log (x^2+1)\bigg{|}^c_1 \underset{\text{חוקי לוגים}}{=}\lim_{c\to\infty} \log\left(\frac{x}{\sqrt{x^2+1}}\right)\bigg{|}^c_1 \\
+	= \lim_{c\to\infty} \log\left(\frac{c}{\sqrt{c^2+1}}\right) - \log\left(\frac{1}{\sqrt{2}}\right)
+\end{gather*}
+נמצא את הגבול בתוך הלוגריתם
+\[
+	\lim_{c\to\infty} \frac{c}{\sqrt{c^2+1}} = \lim_{c\to\infty} \frac{\cancel{c}}{\cancel{c}\sqrt{1+\underbrace{\frac{1}{c^2}}_{\to 0}}} = \lim_{c\to\infty} \frac{1}{\sqrt{1}} = 1
+\]
+לכן
+\[
+	\lim_{c\to\infty} \log\left(\frac{c}{\sqrt{c^2+1}}\right) - \log\left(\frac{1}{\sqrt{2}}\right) = \log(1) - \log(\frac{1}{\sqrt{2}}) = \frac{\log(2)}{2}
+\]
+הגבול אכן קיים ולכן החיבור עובד. סה"כ קיבלנו
+\[
+	\boxed{\int_1^\infty \frac{\arctan x}{x^2} =\frac{\pi}{4} + \frac{\log(2)}{2}}
+\]
+\newpage
+\part*{שאלה 2}
+מצאו את כל הערכים של $p>0$ ושל $q>0$ בהם האינטגרלים הבאים מתכנסים
+\section*{סעיף א'}
+\[
+	\int_1^\infty \frac{\sin x}{x^p}\,dx
+\]
+\section*{סעיף ב'}
+\[
+	\int_0^\infty \frac{1}{x^p+x^q}\,dx
+\]
+\section*{סעיף ג'}
+\[
+	\int_0^\infty \frac{1}{x^p\left(1+x\right)^q}\,dx
+\]
+\part*{פתרון 2}
+\section*{סעיף א'}
+נטען כי האינטגרל מתכנס לכל $p>0$, נרצה להשתמש במשפט דיריכלה.\\
+נגדיר $g)x)
 \end{document}
