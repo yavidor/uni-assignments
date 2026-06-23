@@ -182,16 +182,39 @@ $\int_0^1 \frac{1}{x^{p+q}}$ קיים אם ורק אם $p+q > 1$. לכן
 $\forall x \in \left[0,1 \right]:e^x \geq 1$ ולכן $\frac{e^x}{x} \geq \frac{1}{x}$, בנוסף לכך, שתי הפונקציות אי-שליליות, לכן ניתן להשתמש במבחן ההשוואה.\\
 $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מתבדר גם כן
 \section*{סעיף ב'}
-יש שתי נקודות בעייתיות\\
-$x=1$ ו-$x=0$ \\
-$\$
+יש שתי נקודות בעייתיות. $x=1$ ו-$x=0$ \\
+לכן נפצל את האינטגרל
+\[
+	\int_0^1 \frac{1}{\log x}\,dx = \int_0^\frac{1}{2} \frac{1}{\log x}\,dx  + \int_\frac{1}{2}^1 \frac{1}{\log x}\,dx
+\]
 נציב $y= \log x$
 \begin{gather*}
 	y = \log x \\
 	e^y = x\\
 	dy = \frac{1}{x}\,dx\\
-	dx = x \,dy = e^y \,dy
+	dx = x \,dy = e^y \,dy\\
+	x \to 0^+ \implies y \to -\infty \\
+	x = \frac{1}{2} \implies y = -\log{2} \\
+	x \to 1^- \implies y \to 0^-
 \end{gather*}
+ואז
+\[
+	\int_0^\frac{1}{2} \frac{1}{\log x}\,dx  + \int_\frac{1}{2}^1 \frac{1}{\log x}\,dx = 	\int_{-\infty}^{-\log 2} \frac{e^y}{y}\,dy  + \int_{-\log 2}^0 \frac{e^y}{y} \,dy
+\]
+לכל $y\in(-\infty,-\log 2]$ $\left|y\right|>1$, לכן $\frac{e^y}{\left|y\right|} < e^y$, נשתמש במבחן ההשוואה\\
+נבדוק אם $\int_{-\infty}^{-\log 2} e^y \, dy$ מתכנס
+\[
+    \int_{-\infty}^{-\log 2} e^y \, dy  = \lim_{c\to\infty} \int_{-c}^{-\log 2} e^y \, dy \underset{N-L}{=} \lim_{c\to\infty} e^y \bigg{|}^{-\log 2}_{-c}  = \lim_{c\to\infty} e^{-\log 2} - \underbrace{e^{-c}}_{\to 0} = \frac{1}{2}
+\]
+הגבול קיים לכן $\frac{e^y}{\left|y\right|}$ מתכנס, לכן $\frac{e^y}{y}$ מתכנס בהחלט.\\
+אינטגרל שמתכנס בהחלט בהחלט מתכנס ולכן $\frac{e^y}{y}$ מתכנס.\\
+נעבור לאינטגרל השני\\
+נשתמש במבחן ההשוואה הגבולי
+\[
+    \lim_{y\to0^-} \frac{\frac{e^y}{y}}{\frac{1}{y}} = \lim_{y\to0^-} e^y = 1
+\]
+האינטגרל $\int^0_{-\log 2} \frac{1}{y} \, dy$ מתבדר, וקטן מ-$\frac{e^y}{y}$, ולכן ממבחן ההשוואה הגבולי $\frac{e^y}{y}$ מתבדר גם הוא.\\
+אינטגרל אחד מתבדר והשני מתכנס, לכן האינטגרל כולו מתבדר.
 \newpage
 \part*{שאלה 4}
 תהא $f$ רציפה ב-$\left[0,1\right]$ ותיהיו $0 < a < b$. הראו כי הגבול הבא קיים ומצאו אותו
