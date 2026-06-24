@@ -185,7 +185,7 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 יש שתי נקודות בעייתיות. $x=1$ ו-$x=0$ \\
 לכן נפצל את האינטגרל
 \[
-	\int_0^1 \frac{1}{\log x}\,dx = \int_0^\frac{1}{2} \frac{1}{\log x}\,dx  + \int_\frac{1}{2}^1 \frac{1}{\log x}\,dx
+	\int_0^1 \frac{1}{\log x}\,dx = \int_0^\frac{1}{e} \frac{1}{\log x}\,dx  + \int_\frac{1}{e}^1 \frac{1}{\log x}\,dx
 \]
 נציב $y= \log x$
 \begin{gather*}
@@ -194,17 +194,17 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 	dy = \frac{1}{x}\,dx\\
 	dx = x \,dy = e^y \,dy\\
 	x \to 0^+ \implies y \to -\infty \\
-	x = \frac{1}{2} \implies y = -\log{2} \\
+	x = \frac{1}{e} \implies y = -1 \\
 	x \to 1^- \implies y \to 0^-
 \end{gather*}
 ואז
 \[
-	\int_0^\frac{1}{2} \frac{1}{\log x}\,dx  + \int_\frac{1}{2}^1 \frac{1}{\log x}\,dx = 	\int_{-\infty}^{-\log 2} \frac{e^y}{y}\,dy  + \int_{-\log 2}^0 \frac{e^y}{y} \,dy
+	\int_0^\frac{1}{e} \frac{1}{\log x}\,dx  + \int_\frac{1}{e}^1 \frac{1}{\log x}\,dx = 	\int_{-\infty}^{-1} \frac{e^y}{y}\,dy  + \int_{-1}^0 \frac{e^y}{y} \,dy
 \]
-לכל $y\in(-\infty,-\log 2]$ $\left|y\right|>1$, לכן $\frac{e^y}{\left|y\right|} < e^y$, נשתמש במבחן ההשוואה\\
-נבדוק אם $\int_{-\infty}^{-\log 2} e^y \, dy$ מתכנס
+לכל $y\in(-\infty,-1]$ $\left|y\right|\geq1$, לכן $\frac{e^y}{\left|y\right|} \leq e^y$, נשתמש במבחן ההשוואה\\
+נבדוק אם $\int_{-\infty}^{-1} e^y \, dy$ מתכנס
 \[
-    \int_{-\infty}^{-\log 2} e^y \, dy  = \lim_{c\to\infty} \int_{-c}^{-\log 2} e^y \, dy \underset{N-L}{=} \lim_{c\to\infty} e^y \bigg{|}^{-\log 2}_{-c}  = \lim_{c\to\infty} e^{-\log 2} - \underbrace{e^{-c}}_{\to 0} = \frac{1}{2}
+    \int_{-\infty}^{-1} e^y \, dy  = \lim_{c\to\infty} \int_{-c}^{-1} e^y \, dy \underset{N-L}{=} \lim_{c\to\infty} e^y \bigg{|}^{-1}_{-c}  = \lim_{c\to\infty} e^{-1} - \underbrace{e^{-c}}_{\to 0} = \frac{1}{e}
 \]
 הגבול קיים לכן $\frac{e^y}{\left|y\right|}$ מתכנס, לכן $\frac{e^y}{y}$ מתכנס בהחלט.\\
 אינטגרל שמתכנס בהחלט בהחלט מתכנס ולכן $\frac{e^y}{y}$ מתכנס.\\
@@ -213,17 +213,25 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 \[
     \lim_{y\to0^-} \frac{\frac{e^y}{y}}{\frac{1}{y}} = \lim_{y\to0^-} e^y = 1
 \]
-האינטגרל $\int^0_{-\log 2} \frac{1}{y} \, dy$ מתבדר, וקטן מ-$\frac{e^y}{y}$, ולכן ממבחן ההשוואה הגבולי $\frac{e^y}{y}$ מתבדר גם הוא.\\
+האינטגרל $\int^0_{-1} \frac{1}{y} \, dy$ מתבדר, ולכן ממבחן ההשוואה הגבולי $\frac{e^y}{y}$ מתבדר גם הוא.\\
 אינטגרל אחד מתבדר והשני מתכנס, לכן האינטגרל כולו מתבדר.
+\section*{סעיף ג'}
+נראה שהפונקציה זוגית
+\[
+    \frac{2(-x)}{e^{-x}-e^{x}} = \frac{-2x}{-(e^x-e^{-x})}= \frac{2x}{e^x-e^{-x}}
+\]
+הפונקציה זוגית, לכן מספיק להראות כי $\int_0^\infty \frac{2x}{e^x-e^{-x}}\,dx$ קיים\\
+נשתמש במבחן ההשוואה הגבולי עם הפונקציה $\frac{1}{x^2}$
+\[
+    \lim_{x\to\infty}  \frac{\frac{2x}{e^x-e^{-x}}}{\frac{1}{x^2}} = \lim_{x\to\infty} \frac{2x^3}{e^x-\underbrace{e^{-x}}_{\to0}}  = \lim_{x\to\infty} \frac{2x^3}{e^x}
+\]
+יש פולינום ממעלה שלישית במונה ופונקציה מעריכית במכנה, לכן אם נעשה לופיטל שלוש פעמים נקבל שהגבול הוא $0$\\
+לכן ממסקנה של מבחן ההשוואה הגבולי ומזה ש $\int_0^\infty \frac{1}{x^2}\,dx$ מתכנס, $\int^\infty_0 \frac{2x}{e^x-e^{-x}} \, dx$ מתכנס
 \newpage
 \part*{שאלה 4}
 תהא $f$ רציפה ב-$\left[0,1\right]$ ותיהיו $0 < a < b$. הראו כי הגבול הבא קיים ומצאו אותו
 \[
 	\lim_{\varepsilon \to 0^+} \int^{\varepsilon b}_{\varepsilon a} \frac{f\left(x\right)}{x}\,dx
-\]
-\section*{סעיף ב'}
-\[
-	\int_0^1 \frac{1}{\log x}\,dx
 \]
 \part*{פתרון 4}
 \newpage
