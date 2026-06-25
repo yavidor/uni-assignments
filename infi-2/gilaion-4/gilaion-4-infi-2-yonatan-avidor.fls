@@ -74,6 +74,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/config/language.dat
@@ -114,6 +118,7 @@ INPUT /home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/b94e8b4
 INPUT /home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/8e66d168b48d13eae3ffc227e111b28275655780b6d062241aed7c265c3a7b75.luc
 INPUT /home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/13b830bfdae59fbd5f7e5da59eda332256e9c0b14ab8b55ee155a67149664a06.luc
 OUTPUT gilaion-4-infi-2-yonatan-avidor.aux
+INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
@@ -172,3 +177,5 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

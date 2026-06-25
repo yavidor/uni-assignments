@@ -4,11 +4,13 @@
 \usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{cancel}
+\usepackage{xcolor}
 \usepackage[bidi=basic]{babel}
 \babelprovide[main,import]{hebrew}
 \babelfont[hebrew]{rm}{Hadasim CLM}
 \babelfont[hebrew]{sf}{Miriam Mono CLM}
 \usepackage{titlesec}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 \title{חשבון אינפי 2 - 01040281 \\ גליון 4}
 \author{יונתן אבידור - 214269565}
 \titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
@@ -229,11 +231,33 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 לכן ממסקנה של מבחן ההשוואה הגבולי ומזה ש $\int_0^\infty \frac{1}{x^2}\,dx$ מתכנס, $\int^\infty_0 \frac{2x}{e^x-e^{-x}} \, dx$ מתכנס
 \newpage
 \part*{שאלה 4}
-תהא $f$ רציפה ב-$\left[0,1\right]$ ותיהיו $0 < a < b$. הראו כי הגבול הבא קיים ומצאו אותו
+תהא $f$ רציפה ב-$\left[0,1\right]$ ויהיו $0 < a < b$. הראו כי הגבול הבא קיים ומצאו אותו
 \[
 	\lim_{\varepsilon \to 0^+} \int^{\varepsilon b}_{\varepsilon a} \frac{f\left(x\right)}{x}\,dx
 \]
 \part*{פתרון 4}
+$f$ רציפה מההגדרה, $\frac{1}{x}$ אינטגרבילית בכל $\left[\varepsilon a,\varepsilon b\right]$ וחיובית, לכן ממשפט ערך הביניים האינטגרלי (עם פונקציית משקל כללית), לכל $\varepsilon > 0$ קיים $c_\varepsilon \in \left[\varepsilon a, \varepsilon b\right]$ כך ש
+\[
+ \lim_{\varepsilon \to 0^+} \int_{\varepsilon a}^{\varepsilon b} \frac{f(x)}{x}  \,dx =\lim_{\varepsilon \to 0^+} f\left(c_\varepsilon\right) \int_{\varepsilon a}^{\varepsilon b} \frac{1}{x}\,dx \underset{\text{אריתמטיקה, כפל}}{=} \lim_{\varepsilon\to0^+} f \left( c_{\varepsilon} \right) \cdot \lim_{\varepsilon \to 0^+} \int_{\varepsilon a}^{\varepsilon b} \frac{1}{x}\,dx
+\]
+יש לציין שהמעבר האחרון יעבוד אם ורק אם שני הגבולות קיימים\\
+כאשר $\varepsilon \to 0^+$
+\[
+    0\leftarrow \varepsilon a \leq c_\varepsilon \leq \varepsilon b \to 0
+\]
+לכן, מכלל הסנדוויץ' $\lim_{\varepsilon\to0^+} c_\varepsilon = 0$, ומכאן $\lim_{\varepsilon\to0^+} f\left(c_\varepsilon\right) = f\left(0\right)$
+נתבונן בגבול השני
+\begin{gather*}
+    \lim_{\varepsilon \to 0^+} \int_{\varepsilon a}^{\varepsilon b} \frac{1}{x}\,dx \underset{N-L}{=} \lim_{\varepsilon \to 0^+} \log\left(x\right)\bigg{|}^{\varepsilon a}_{\varepsilon b} =\lim_{\varepsilon \to 0^+} \log(\varepsilon a )- \log(\varepsilon b)  \underset{\left(*\right)}{=}\lim_{\varepsilon \to 0^+} \log\left(\frac{\cancel{\varepsilon} a}{\cancel{\varepsilon} b}\right) \\
+        \underset{\left(*\right)}{=} \lim_{\varepsilon \to 0^+} \log\left(\frac{a}{b}\right) \underset{\left(**\right)}{=} \log \left(\frac{a}{b}\right)
+\end{gather*}
+$\left(*\right)$ - מכיוון ש$\varepsilon \to 0^+$, $\varepsilon \neq 0$ ולכן ניתן לשים $\varepsilon$ במכנה ולצמצם איתו\\
+$\left(**\right)$ - קיבלנו ביטוי ללא תלות ב-$\varepsilon$ ולכן אין הבדל בין הביטוי הגבולי לגבול
+קיבלנו גבול סופי בשני הביטויים שפיצלנו, לכן האריתמטיקה תקינה, ולכן קיים הגבול.\\
+נמצא אותו
+\[
+\lim_{\varepsilon\to0^+} f \left( c_{\varepsilon} \right) \cdot \lim_{\varepsilon \to 0^+} \int_{\varepsilon a}^{\varepsilon b} \frac{1}{x}\,dx =\boxed{ f\left(0\right) \cdot \log\left(\frac{a}{b}\right)}
+\]
 \newpage
 \part*{שאלה 5}
 בדקו האם הטורים הבאים מתכנסים
@@ -246,6 +270,25 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 	\sum_{n=1}^\infty \frac{4n^2+5n}{n\left(n^2+1\right)^{\frac{3}{2}}}
 \]
 \part*{פתרון 5}
+\section*{סעיף א'}
+הטור הוא סכום אינסופי של איברים חיוביים ממש, לכן הטור חיובי
+נשתמש במבחן המנה
+\begin{gather*}
+    \lim_{n\to\infty} \frac{\frac{\left(\left(n+1\right)!\right)^2}{\left(2\left(n+1\right)\right)!}}{\frac{\left(n!\right)^2}{\left(2n\right)!}}=
+    \lim_{n\to\infty} \frac{\left(\left(n+1\right)!\right)^2\cdot\left(2n\right)!}{\left(2\left(n+1\right)\right)!\left(n!\right)^2}
+    \\   =\lim_{n\to\infty} \frac{\left(n!\cdot\left(n+1\right)\right)^2\cdot\left(2n\right)!}{\left(2n+2\right)!\left(n!\right)^2}
+    =\lim_{n\to\infty} \frac{\Ccancel[blue]{\left(n!\right)^2}\left(n+1\right)^2\cdot\Ccancel[green]{\left(2n\right)!}}{\left(2n+2\right)\left(2n+1\right)\Ccancel[green]{\left(2n\right)!}\Ccancel[blue]{\left(n!\right)^2}}\\
+    = \lim_{n\to\infty} \frac{\cancel{\left(n+1\right)}\left(n+1\right)}{2\cancel{\left(n+1\right)}\left(2n+1\right)}\\
+    = \lim_{n\to\infty} \frac{n+1}{4n+2} = \frac{1}{4} < 1
+\end{gather*}
+הגבול קיים וקטן מ-$1$, לכן ממבחן המנה הטור מתכנס
+\section*{סעיף ב'}
+גם כאן הטור אי-שלילי, נרצה להשתמש במבחן הההשוואה
+\[
+    \frac{4n^2+5n}{n\left(n^2+1\right)^{\frac{3}{2}}} = \frac{\cancel{n}\left(4n+5\right)}{\cancel{n}\left(n^2+1\right)^\frac{3}{2}} \leq \frac{4n+5n}{\left(n^2+1\right)^\frac{3}{2}}  = \frac{9n}{\left(n^2+1\right)^\frac{3}{2}} \leq \frac{9n}{\left(n^2\right)^\frac{3}{2}} = \frac{9n}{n^3} = \frac{9}{n^2}
+\]
+הטור $\sum_{n=1}^\infty \frac{9}{n^2}$ מתכנס כי הוא כפולה בקבוע של $\sum_{n=1}^\infty \frac{1}{n^2}$, אי-שלילי, וכפי שהראינו $\frac{9}{n^2} \geq \frac{4n^2+5n}{n\left(n^2+1\right)^{\frac{3}{2}}}$ לכל $n$\\
+לכן ממבחן ההשוואה, גם הטור $\sum_{n=1}^{\infty} \frac{4n^2+5n}{n\left(n^2+1\right)^{\frac{3}{2}}}$ מתכנס
 \newpage
 \part*{שאלה 6}
 בדקו האם הטורים הבאים מתכנסים
@@ -255,9 +298,33 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 \]
 \section*{סעיף ב'}
 \[
-	\sum_{n=1}^\infty \frac{\cos n\pi}{n^\frac{1}{4}}
+	\sum_{n=1}^\infty \frac{\cos\left( n\pi\right)}{n^\frac{1}{4}}
 \]
 \part*{פתרון 6}
+\section*{סעיף א'}
+לכל $n\in \mathbb{N}_+$ \\
+$3n + 1 > 2n + 1  > 1$, לכן $\sqrt{3n+1} > \sqrt{2n+1}$ ולכן $\frac{1}{\sqrt{3n+1}} < \frac{1}{\sqrt{2n+1}}$\\
+לכן $\frac{1}{\sqrt{2n+1}}-\frac{1}{\sqrt{3n+1}}>0$, כלומר הטור הוא טור אי-שלילי וניתן להשתמש במבחן ההשוואה הגבולי\\
+נשווה לטור $\frac{1}{\sqrt{n}}$
+\begin{gather*}
+    \lim_{n\to\infty} \frac{\frac{1}{\sqrt{2n+1}}-\frac{1}{\sqrt{3n+1}}}{\frac{1}{\sqrt{n}}} \\
+    = \lim_{n\to\infty} \sqrt{n}\left( \frac{1}{\sqrt{2n+1}}-\frac{1}{\sqrt{3n+1}}\right) \\
+    = \lim_{n\to\infty} \sqrt{n}\left( \frac{1}{\sqrt{n}\sqrt{2+\frac{1}{n}}}-\frac{1}{\sqrt{n}\sqrt{3+\frac{1}{n}}}\right) \\
+    = \lim_{n\to\infty} \sqrt{n} \left(\frac{1}{\sqrt{n}}\left(\frac{1}{\sqrt{2+\frac{1}{n}}}-\frac{1}{\sqrt{3+\frac{1}{n}}}\right)\right)\\
+    = \lim_{n\to\infty} \frac{1}{\sqrt{2+\underbrace{\frac{1}{n}}_{\to 0}}} - \frac{1}{\sqrt{3+\underbrace{\frac{1}{n}}_{\to 0}}} \\
+    = \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{3}}
+\end{gather*}
+הגבול קיים, לכן הטורים מתכנסים ומתבדרים יחדיו\\
+הגבול קיים, והטור $\frac{1}{\sqrt{n}}$ הוא טור מסוג $\frac{1}{n^p}$ כאשר $p=0.5 < 1$ ולכן הטור מתבדר\\
+לכן גם הטור $\sum_{n=1}^\infty \left(\frac{1}{\sqrt{2n+1}}-\frac{1}{\sqrt{3n+1}}\right)$ מתבדר
+\section*{סעיף ב'}
+נשים לב שלכל $n$ זוגי, $\cos\left(n\pi\right)=1$ ולכל $n$ אי-זוגי' $\cos\left(n\pi\right)=-1$, לכן
+\[
+    \sum_{n=1}^\infty \frac{\cos \left(n\pi\right)}{n^{\frac{1}{4}}} = \sum_{n=1}^\infty \frac{\left(-1\right)^{n}}{n^{\frac{1}{4}}} 
+\]
+נתבונן ב$\left\{\left|\frac{\left(-1\right)^n}{n^{\frac{1}{4}}}\right|\right\}^\infty_{n=1}=\left\{ \frac{1}{n^{\frac{1}{4}}}\right\}^\infty_{n=1}$\\
+הסדרה מונוטונית שואפת ל-$0$ ולכן הטור $\sum_{n=1}^\infty \frac{\left(-1\right)^{n}}{n^{\frac{1}{4}}}$ הוא טור לייבניץ ולכן מתכנס.\\
+הטור בערך מוחלט הוא מסוג $\frac{1}{n^p}$ כאשר $p=\frac{1}{4} <1$ ולכן הטור מתכנס \textbf{בתנאי}
 \newpage
 \part*{שאלה 7}
 תהא $\left\{a_n\right\}^\infty_{n=1}$ סדרה חיובית. הוכיחו כי
@@ -265,6 +332,18 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 	\sum_{n=1}^\infty a_n < \infty \iff \sum_{n=1}^\infty \frac{a_n}{1+a_n} < \infty
 \]
 \part*{פתרון 7}
+$\implies$\\
+נשים לב כי לכל $n$, $a_n > \frac{a_n}{1+a_n} > 0$, לכן ממבחן ההשוואה הם מתכנסים ומתבדרים יחדיו\\
+נתון כי $\sum_{n=1}^\infty a_n < \infty$, לכן $\sum_{n=1}^\infty \frac{a_n}{1+a_n} < \infty$\\
+$\impliedby$\\
+נתון כי $\sum_{n=1}^{\infty} \frac{a_n}{1+a_n}$ מתכנס, לכן $\lim_{n\to\infty}\frac{a_n}{1+a_n}=0$\\
+מכאן שקיים $N\in\mathbb{N}$ כך שלכל $n>N$ $\frac{a_n}{1+a_n} < \frac{1}{2}$, נתבונן באי שוויון זה
+\begin{gather*}
+    \frac{a_n}{1+a_n} < \frac{1}{2} \implies 2a_n < 1+a_n \implies a_n < 1 \\
+    \implies a_n + 1 < 2  \implies \frac{a_n}{1+a_n} > \frac{a_n}{2} \implies 2\left(\frac{a_n}{1+a_n}\right) > a_n
+\end{gather*}
+$a_n$ קטן מכפל בקבוע של $\frac{a_n}{1+a_n}$, ושתי הסדרות חיוביות. בנוסף, נתון כי $\sum_{n=1}^\infty \frac{a_n}{1+a_n} < \infty$, ולכן ממבחן ההשוואה $a_n < \infty$\\
+$\blacksquare$
 \newpage
 \part*{שאלה 8}
 \section*{סעיף א'}
@@ -279,5 +358,68 @@ $\int_0^1 \frac{1}{x}\,dx$ מתבדר ולכן $\int_0^1 \frac{e^x}{x}\,dx$ מת
 \]
 קיים.
 \part*{פתרון 8}
+\section*{סעיף א'}
+נטען כי הסדרה $u_n$ מונוטונית יורדת.\\
+נראה כי $u_{n+1} - u_n \leq 0$
+\begin{gather*}
+    u_{n+1} - u_n = \left(S_{n+1} - I_{n+1}\right) - \left(S_{n} - I_n\right) = \left(S_{n+1} - S_n\right) - \left(I_{n+1} - I_n\right)
+\end{gather*}
+נסתכל על הצד השמאלי של הביטוי
+\[
+    S_{n+1} - S_n = \sum_{k=1}^{n+1} f\left(k\right) - \sum_{k=1}^{n} f\left(k\right) = f\left(n+1\right)
+\]
+ובצד הימני
+\[
+    I_{n+1} - I_n = \int_{1}^{n+1} f\left(x\right)\,dx - \int_1^{n} f\left(x\right)\,dx \underset{\text{אדטיביות האינטגרל}}{=} \int_n^{n+1} f\left(x\right) \,dx 
+\]
+לכן
+\[
+u_{n+1} - u_n = f(n+1) - \int_n^{n+1} f\left(x\right) \,dx
+\]
+מכיוון ש-$f(x)$ מונוטונית יורדת, האינפימום שלה בקטע $[n,n+1]$ מתקבל ב-$n+1$, לכן האינטגרל בקטע $[n,n+1]$ יהיה גדול או שווה למלבן שגובהו $f\left(n+1\right)$ ורוחבו $1$, כלומר
+\[
+    \int_n^{n+1} f\left(x\right) \,dx  \geq f\left(n+1\right)\cdot 1
+\]
+לכן
+\[
+u_{n+1} - u_n = f\left(n+1\right) - \int_n^{n+1} f\left(x\right) \,dx \leq f\left(n+1\right) - f\left(n+1\right) = 0
+\]
+עכשיו נראה כי $u_n$ חסומה מלרע.\\
+מאדטיביות האינטגרל נקבל ש
+\[
+    \int_1^n f\left(x\right)\,dx = \sum_{k=1}^{n-1} \int_k^{k+1} f(x)\,dx
+\]
+מכיוון ש-$f\left(x\right)$ מונוטונית יורדת, הסופרימום שלה בקטע $[k,k+1]$ מתקבל ב-$k$, לכן האינטגרל בקטע $[k,k+1]$ יהיה קטן או שווה למלבן שגבוהו $f\left(k\right)$ ורוחבו $1$, כלומר
+\[
+\int_k^{k+1} f(x)\,dx \leq f\left(k\right)
+\]
+לכן
+\[
+    \int_1^n f\left(x\right)\,dx = \sum_{k=1}^{n-1} \int_k^{k+1} f(x)\,dx \leq \sum_{k=1}^{n-1} f(k)
+\]
+לכן
+\[
+    u_n = \sum_{k=1}^n f(k) - \int_1^n f(x) \, dx \geq \sum_{k=1}^n f(k) - \sum_{k=1}^{n-1} f(k) = f(n)
+\]
+לכן $u_n \geq f_n > 0$\\
+$u_n$ חסומה ומונוטונית, לכן ממשפט על סדרות חסומות ומונוטוניות היא מתכנסת\\
+$\blacksquare$
 \newpage
+\section*{סעיף ב'}
+נסמן
+\begin{gather*}
+    f: \left[1,\infty\right)\\
+    f(x)  =\frac{1}{x}
+\end{gather*}
+$f(x)$ חיובית ומונוטונית, ונגדיר $\left\{u_n\right\}_{n=1}^{\infty}$ כמו בסעיף הקודם
+\begin{gather*}
+    u_n = \sum_{k=1}^n f(k) - \int_1^n f(x)\,dx = \sum_{k=1}^n \frac{1}{n} - \log x \bigg{|}^n_1 \\
+    =  \sum_{k=1}^n \frac{1}{n} - \left(\log n - \log 1\right) =  \sum_{k=1}^n \frac{1}{n} - \log n
+\end{gather*}
+לפי סעיף א'
+$$
+\lim_{n\to\infty} u_n = \sum_{k=1}^n \frac{1}{n} - \log n
+$$
+קיים, כנדרש\\
+$\blacksquare$
 \end{document}
