@@ -1,0 +1,101 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\title{חשבון אינפי 2 - 01040281 \\ גליון 4}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+הוכיחו שסדרות הפונקציות הבאות מתכנסות במידה שווה בקטעים הבאים
+\section*{סעיף א'}
+\begin{gather*}
+    \left\{\frac{1}{n} \cos \left(n^2x\right) \right\}^\infty_{n=1}\\
+    x \in \mathbb{R}
+\end{gather*}
+\section*{סעיף ב'}
+\begin{gather*}
+    \left\{n\ln \left(1+\frac{1}{nx}\right)\right\}^\infty_{n=1}\\
+    x\in\left[1,4\right]
+\end{gather*}
+\part*{פתרון 1}
+\section*{סעיף א'}
+נתחיל בלהוכיח התכנסות נקודתית\\
+יהי $x_0 \in \mathbb{R}$, נתבונן בסדרה $\left\{\frac{1}{n} \cos\left(n x_0\right)\right\}_{n=1}^{\infty}$ \\
+$\cos\left(n x_0\right)$ חסומה, בעוד $\frac{1}{n} \xrightarrow{n\to\infty}0$, לכן משיקול "חסומה כפול אפסה" הסדרה מתכנסת ל-$0$\\
+נראה כעת כי $\left\{\frac{1}{n} \cos \left(n^2x\right) \right\}^\infty_{n=1}$ שואפת ל$f \equiv 0$ במידה שווה \\
+יהי $\varepsilon > 0$ ונבחר $N_{\varepsilon} = \frac{1}{\varepsilon}$, לכל $\mathbb{N} \ni n > N_{\varepsilon}$ ולכל $x \in \mathbb{R}$ מתקיים
+\[
+\left|\frac{1}{n}\cos\left(n^2 x\right) - \underbrace{f\left(x\right)}_{= 0} \right| \leq \frac{1}{n} \underbrace{\left|\cos\left(n^2x\right)\right|}_{\leq 1}\leq \frac{1}{n} < \varepsilon
+\]
+לכן הסדרה מתכנסת במ"ש ל-$f\left(x\right) = 0$\\
+$\blacksquare$
+\section*{סעיף ב'}
+נתחיל בלהוכיח התכנסות נקודתית\\
+יהי $x_0 \in \left[1,4\right]$, נתבונן בסדרה $\left\{n\ln\left(1+\frac{1}{nx_0}\right)\right\}^\infty_{n=1}$
+\begin{gather*}
+    n\ln\left(1+\frac{1}{nx_0}\right) = \ln\left(\left(1+\frac{1}{nx_0}\right)^n\right)= \ln\left(\left(1+\frac{1}{nx_0}\right)^\frac{nx_0}{x_0}\right) \\
+    =  \ln\left(\left(\left(1+\frac{1}{nx_0}\right)^{nx_0}\right)^{\frac{1}{x_0}}\right) = \frac{1}{x_0} \ln\underbrace{\left(\left(1+\frac{1}{nx_0}\right)^{nx_0}\right)}_{\xrightarrow{n\to\infty}e} \xrightarrow{n\to\infty} \frac{1}{x_0} \ln(e) = \frac{1}{x_0}
+\end{gather*}
+לכן הסדרה מתכנסת \textbf{נקודתית} ל-$\frac{1}{x}$ \\ נוכיח התכנסות במידה שווה באמצעות האפיון השקול\\
+נרצה להראות כי
+\[
+    \lim_{n\to\infty}    \sup_{x\in \left[1,4\right]} \left|f_n\left(x\right) - f\left(x\right)\right| = 0
+\]
+\newpage
+\part*{שאלה 2}
+תהא
+\[
+    f_n\left(x\right) = \sqrt{n} x e^{-nx}, \text{for }x\geq 0
+\]
+\section*{סעיף א'}
+הראו שהסדרה $\left\{f_n(x)\right\}^\infty_{n=1}$ מתכנס נקודתית לכל $x\geq 0$
+\section*{סעיף ב'}
+הראו שהסדרה מתכנסת במ"ש עבור $x \in \left[0,\infty\right]$
+\part*{פתרון 2}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\newpage
+\part*{שאלה 3}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\part*{פתרון 3}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\newpage
+\part*{שאלה 4}
+\part*{פתרון 4}
+\newpage
+\part*{שאלה 5}
+\part*{פתרון 5}
+\newpage
+\part*{שאלה 6}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\part*{פתרון 6}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\newpage
+\part*{שאלה 7}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\part*{פתרון 7}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\newpage
+\part*{שאלה 8}
+\part*{פתרון 8}
+\end{document}
