@@ -55,6 +55,15 @@ $\blacksquare$
 \[
     \lim_{n\to\infty}    \sup_{x\in \left[1,4\right]} \left|f_n\left(x\right) - f\left(x\right)\right| = 0
 \]
+נגזור את הפונקציות $f_n(x) - f(x)$ (תהליך הגזירה זהה לכל $n$)
+\begin{gather*}
+    \left(f_n(x) - f(x)\right)' \underset{\text{לינאריות הנגזרת}}{=} f_n'\left(x\right) - f'\left(x\right)\\
+    = \left(n\ln\left(1+\frac{1}{nx}\right)\right)' -\left(\frac{1}{x}\right)' = n \cdot \frac{1}{1+\frac{1}{nx}} \cdot \left(-\frac{1}{nx^2}\right) + \frac{1}{x^2} \\
+    = n \cdot \frac{\cancel{nx}}{1+nx} \cdot \left(-\frac{1}{\cancel{nx^2}}\right) + \frac{1}{x^2} =  -\frac{n}{x\left(1+nx\right)} + \frac{1}{x^2} \\
+    = \frac{-nx+1+nx}{x^2\left(1+nx\right)} = \frac{1}{x^2\left(1+nx\right)} 
+\end{gather*}
+לכל $n > 0$ ולכל $x \in \left[1,4\right]$ $x^2\left(1+nx\right)>0$, $\frac{1}{x^2\left(1+nx\right)}>0$, כלומר הנגזרת עולה ממש\\
+לכן הסופרימום שלה יתקבל ב-$x=1$
 \newpage
 \part*{שאלה 2}
 תהא
