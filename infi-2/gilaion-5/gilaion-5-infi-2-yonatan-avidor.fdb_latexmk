@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1782933527.69556 "gilaion-5-infi-2-yonatan-avidor.tex" "gilaion-5-infi-2-yonatan-avidor.pdf" "gilaion-5-infi-2-yonatan-avidor" 1782933528.58029 0
+["lualatex"] 1783002544.66181 "gilaion-5-infi-2-yonatan-avidor.tex" "gilaion-5-infi-2-yonatan-avidor.pdf" "gilaion-5-infi-2-yonatan-avidor" 1783002546.22107 0
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/13b830bfdae59fbd5f7e5da59eda332256e9c0b14ab8b55ee155a67149664a06.luc" 1781635945.96991 16538 6fd6abb1bec26c0b6cfc5e4a118c117a ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/1551cdade4e9c198d21388ef02cd49afe3ad6bdd722b73e14fccc5409a0ef16b.luc" 1781635945.95791 15441 09f8ff539e2138903eabb5297286e8c0 ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/31617e83133e8430e5db393984e146dcc717df9a6ea9aa512a1649589b9f2cac.luc" 1781635945.93985 18711 e1b72eab9b1b0589817dec12e9127857 ""
@@ -12,7 +12,7 @@
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc" 1781635945.83291 128294 43d80560c160697dc4dd757ec6bf5e97 ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1781635945.59191 127665 a8a658210a542aa912673a950f797170 ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc" 1781635945.89691 128160 b00aaef37814e4ddb8dcb81f8164ad21 ""
-  "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1782649392.75467 6499 ca7c18d497a5590a8abde6fed69553f9 ""
+  "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1782989358.67336 6600 c2a3980feff3fd2602b44bd4740547bd ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1781635945.52591 401463 d4a03b784c1eb77d6f71babd169860a3 ""
   "/usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Bold.ttf" 1537994615 38076 76f4666ad58f510511b92ca5a6758c59 ""
   "/usr/share/fonts/clm-hadasim-fonts/HadasimCLM-Regular.ttf" 1768521600 36852 81f960d01dd7d9e7d7aedf839a4ef4d5 ""
@@ -42,12 +42,14 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1248133631 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
@@ -149,8 +151,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1781628601 4809665 37a5dccec98bafb55966bde8a0522c46 ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1781628733 5674147 332ff2734ed14c84b1815e3b5eb760b8 ""
-  "gilaion-5-infi-2-yonatan-avidor.aux" 1782933528.4302 150 284cb2c51fd3e74b5eb84170365339c1 "lualatex"
-  "gilaion-5-infi-2-yonatan-avidor.tex" 1782933527.04421 4879 033c34e57f27135d33197ca8fda8ece4 ""
+  "gilaion-5-infi-2-yonatan-avidor.aux" 1783002545.94744 150 d6c2107c198cea9652e977ce119bed41 "lualatex"
+  "gilaion-5-infi-2-yonatan-avidor.tex" 1783002543.20336 9439 3cca87b7bd524ed8781270a6e5339538 ""
   (generated)
   "gilaion-5-infi-2-yonatan-avidor.aux"
   "gilaion-5-infi-2-yonatan-avidor.log"

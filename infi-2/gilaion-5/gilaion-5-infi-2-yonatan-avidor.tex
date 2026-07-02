@@ -55,15 +55,49 @@ $\blacksquare$
 \[
     \lim_{n\to\infty}    \sup_{x\in \left[1,4\right]} \left|f_n\left(x\right) - f\left(x\right)\right| = 0
 \]
-נגזור את הפונקציות $f_n(x) - f(x)$ (תהליך הגזירה זהה לכל $n$)
+נגדיר סדרת פונקציות $g_n(x) = f_n(x) -f(x)$
+נגזור את הפונקציות $g_n(x)$ (תהליך הגזירה זהה לכל $n$)
 \begin{gather*}
-    \left(f_n(x) - f(x)\right)' \underset{\text{לינאריות הנגזרת}}{=} f_n'\left(x\right) - f'\left(x\right)\\
+g_n'(x)=    \left(f_n(x) - f(x)\right)' \underset{\text{לינאריות הנגזרת}}{=} f_n'\left(x\right) - f'\left(x\right)\\
     = \left(n\ln\left(1+\frac{1}{nx}\right)\right)' -\left(\frac{1}{x}\right)' = n \cdot \frac{1}{1+\frac{1}{nx}} \cdot \left(-\frac{1}{nx^2}\right) + \frac{1}{x^2} \\
     = n \cdot \frac{\cancel{nx}}{1+nx} \cdot \left(-\frac{1}{\cancel{nx^2}}\right) + \frac{1}{x^2} =  -\frac{n}{x\left(1+nx\right)} + \frac{1}{x^2} \\
     = \frac{-nx+1+nx}{x^2\left(1+nx\right)} = \frac{1}{x^2\left(1+nx\right)} 
 \end{gather*}
 לכל $n > 0$ ולכל $x \in \left[1,4\right]$ $x^2\left(1+nx\right)>0$, $\frac{1}{x^2\left(1+nx\right)}>0$, כלומר הנגזרת עולה ממש\\
-לכן הסופרימום שלה יתקבל ב-$x=1$
+נתבונן בהתנהגות של $g_n(x)$ בקצוות\\
+כאשר $x=1$
+\begin{gather*}
+    \lim_{n\to\infty} \left(f_n\left(1\right) - f\left(1\right)\right) = \lim_{n\to\infty} n\ln\left(1+\frac{1}{n}\right) -\frac{1}{1} = \lim_{n\to\infty} \ln\left(\left(1+\frac{1}{n}\right)^n\right) - 1 \\
+    =  \ln(e) - 1 =  1 -1 = 0
+\end{gather*}
+כאשר $x=4$
+\begin{gather*}
+    \lim_{n\to\infty} \left(f_n\left(4\right) - f\left(4\right)\right) = \lim_{n\to\infty} n\ln\left(1+\frac{1}{4n}\right) -\frac{1}{4} \\
+    \underset{4\text{כפל וחלוקה ב-}}{=} \lim_{n\to\infty} \frac{1}{4} \cdot 4n \ln\left(1+\frac{1}{4n}\right) - \frac{1}{4} \\
+    =\lim_{n\to\infty} \frac{1}{4} \ln\left(\left(1+\frac{1}{4n}\right)^{4n}\right) - \frac{1}{4} =  \frac{1}{4}\cdot\ln(e) -\frac{1}{4} = \frac{1}{4}-\frac{1}{4} = 0
+\end{gather*}
+מכיוון ש-$g_n(x)$ מונוטונית עולה ממש ב-$[1,4]$, מתקיים
+\[
+g_n(1) \leq g_n(x) \leq g_n(4) 
+\]
+לכן, עבור הערך המוחלט מתקיים
+\[
+\forall x \in \left[1,4\right]: \left|g_n(x)\right| \leq \max\left(\left|g_n(1)\right|,\left|g_n(4)\right|\right)
+\]
+מכיוון שזה נכון לכל $x$, בפרט זה נכון עבור הסופרימום
+\[
+0 \leq \sup_{x\in[1,4]}  \left|g_n(x)\right| \leq \max\left(\left|g_n(1)\right|,\left|g_n(4)\right|\right) \xrightarrow{n\to\infty} 0
+\]
+לכן מכלל הסנדוויץ'
+\[
+    \lim_{n\to\infty}    \sup_{x\in[1,4]} \left|g_n(x)\right| = 0
+\]
+כלומר
+\[
+    \lim_{n\to\infty}    \sup_{x\in[1,4]} \left|f_n(x) - f(x)\right| = 0
+\]
+מכאן, מהאפיון השקול להתכנסות במ"ש. $f_n(x)$ מתכנסת במ"ש לפונקציה $\frac{1}{x}$\\
+$\blacksquare$
 \newpage
 \part*{שאלה 2}
 תהא
@@ -73,38 +107,76 @@ $\blacksquare$
 \section*{סעיף א'}
 הראו שהסדרה $\left\{f_n(x)\right\}^\infty_{n=1}$ מתכנס נקודתית לכל $x\geq 0$
 \section*{סעיף ב'}
-הראו שהסדרה מתכנסת במ"ש עבור $x \in \left[0,\infty\right]$
+הראו שהסדרה מתכנסת במ"ש עבור $x \in \left[0,\infty\right)$
 \part*{פתרון 2}
 \section*{סעיף א'}
+יהי $x_0 \in \left[0,\infty\right)$ נראה כי הסדרה $\left\{\sqrt{n}x_0e^{-nx_0}\right\}^\infty_{n=1}$ מתכנסת\\
+נחלק למקרים על פי $x_0$
+\subsection*{$x_0 = 0$}
+כאשר $x_0$ הסדרה היא $\left\{\sqrt{n}\cdot 0 \cdot e^{-n \cdot 0}\right\}^\infty_{n=1}=\left\{0\right\}^\infty_{n=1}$, כלומר הסדרה הקבועה $0$, לכן היא שואפת נקודתית ל-$f\left(x\right) \equiv 0$
+\subsection*{$x_0 > 0$}
+\[
+    \lim_{n\to\infty} \sqrt{n}x_0 e^{-nx_0} = \lim_{n\to\infty} \frac{\sqrt{n}x_0}{e^{nx_0}}
+\]
+נשים לב כי במונה יש שורש $n$ כפול קבוע, בעוד שבמכנה יש סדרה מעריכית עם חזקת $n$ כפול קבוע. \\
+לכן ממבחן המנה נקבל כי $\lim_{n\to\infty} \frac{\sqrt{n}x_0}{e^{nx_0}} =0$ \\
+לכן גם עבור $x_0 > 0$ הסדרה שואפת נקודתית ל-$f\left(x\right) \equiv 0$\\
+קיבלנו כי לכל $x_0 \in \left[0,\infty\right)$ $f_n\left(x_0\right) \to 0$ לכן הסדרה מתכנסת נקודתית ל-$f\left(x\right) \equiv 0$\\
+$\blacksquare$
 \section*{סעיף ב'}
+נוכיח כי $\left\{f_n\right\}_{n=1}^\infty$ מתכנסת במ"ש ל-$f\left(x\right) \equiv 0$ בקטע $\left[0,\infty\right)$
 \newpage
 \part*{שאלה 3}
 \section*{סעיף א'}
+הראו שהסדרה $\left\{\frac{nx}{1+n^2x^2}\right\}_{n=1}^\infty$ מתכנסת במידה שווה בקטע $\left[a,\infty\right)$ לכל $a>0$, אבל מתכנסת נקודתית בלבד ב-$\left(0,\infty\right)$
 \section*{סעיף ב'}
+הראו שהסדרה $\left\{\frac{1}{n}\ln\left(1+nx\right)\right\}^\infty_{n=1}$ מתכנסת במידה שווה בקטע $\left[0,b\right]$ לכל $b>0$ אבל מתכנסת נקודתית בלבד ב-$\left[0,\infty\right)$
 \part*{פתרון 3}
 \section*{סעיף א'}
 \section*{סעיף ב'}
 \newpage
 \part*{שאלה 4}
+מצאו את התחום שבו הטור הבא מתכנס בצורה שווה והתחום שבו הוא מתכנס נקודתית
+\[
+    \sum_{n=1}^\infty \frac{\left(-1\right)^n}{n}e^{n\left(x^2-3x+2\right)}
+\]
 \part*{פתרון 4}
 \newpage
 \part*{שאלה 5}
+תהי $f_0\left(x\right)$ אינטגרבילית ב-$\left[0,a\right]$. לכל $n\geq 1$ נגדיר $f_n\left(x\right)=\int^x_0 f_{n-1}(t)\,dt, x\in\left[0,a\right]$. הוכיחו כי הסדרה $\left\{f_n(x)\right\}_{n=1}^\infty$ מתכנסת ל-$0$ במידה שווה בקטע $\left[0,a\right]$
 \part*{פתרון 5}
 \newpage
 \part*{שאלה 6}
+תהא
+\[
+    f_n(x) = \frac{nx}{1+n^2x^p}, x\in[0,1], p>0
+\]
 \section*{סעיף א'}
+עבור אילו ערכי $p$ הסדרה $\left\{f_n(x)\right\}^\infty_{n=1}$ מתכנסת במידה שווה ל-$0$
 \section*{סעיף ב'}
+האם $\lim_{n\to\infty} \int_0^1 f_n(x)\,dx =0$ עבור $p=2$? עבור $p=4$?
 \part*{פתרון 6}
 \section*{סעיף א'}
 \section*{סעיף ב'}
 \newpage
 \part*{שאלה 7}
+מצאו את רדיוסי ההתכנסות של טורי החזקות הבאים
 \section*{סעיף א'}
+\[
+    \sum_{n=1}^\infty \frac{\left(-1\right)}{n!} \left(\frac{n}{e}\right)^n x^n
+\]
 \section*{סעיף ב'}
+\[
+    \sum_{n=1}^\infty \frac{1}{n} \left(1+\frac{1}{n}\right)^{n^2} x^{3n}
+\]
 \part*{פתרון 7}
 \section*{סעיף א'}
 \section*{סעיף ב'}
 \newpage
 \part*{שאלה 8}
+הוכיחו כי עבור $\left|x\right| < 1$
+\[
+    \frac{1}{\left(1-x\right)^3} = \frac{1}{2} \sum_{n=0}^{\infty} \left(n+1\right)\left(n+2\right) x^n
+\]
 \part*{פתרון 8}
 \end{document}
