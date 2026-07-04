@@ -125,6 +125,45 @@ $\blacksquare$
 $\blacksquare$
 \section*{סעיף ב'}
 נוכיח כי $\left\{f_n\right\}_{n=1}^\infty$ מתכנסת במ"ש ל-$f\left(x\right) \equiv 0$ בקטע $\left[0,\infty\right)$
+נוכיח זאת  באמצעות האפיון השקול להתכנסות במ"ש, כלומר נרצה להראות כי
+\[
+    \lim_{n\to\infty} \sup_{x\in\left[0,\infty\right)} \left|f_n\left(x\right) - f\left(x\right) \right| = 0
+\]
+ומכיוון ש-$f\left(x\right)\equiv 0$ זה בעצם
+\[
+    \lim_{n\to\infty} \sup_{x\in\left[0,\infty\right)} \left|\frac{\sqrt{n}x}{e^{nx}} \right| = 0
+\]
+מכיוון שבקטע $\left[0,\infty\right)$, $f_n(x)$ תמיד חיובית, $|f_n(x)| = f_n(x)$
+נגזור את $f_n(x)$
+\[
+    f_n'(x) = \frac{\sqrt{n}\cdot e^{nx} - n\cdot e^{nx} \cdot \sqrt{n}x}{e^{2nx}}
+\]
+נמצא שורשים על מנת למצוא נקודות קיצון
+\begin{gather*}
+    \frac{\sqrt{n}e^{nx} - x\sqrt{n}ne^{nx}}{e^{2nx}} = 0\\
+    \underset{\times e^{2nx}}{\implies} \sqrt{n}e^{nx} - x\sqrt{n}ne^{nx} = 0 \\
+    \implies \sqrt{n}e^{nx} \left(1-nx\right) = 0 \\
+    \underset{\div \sqrt{n}e^{nx}}{\implies} 1-nx = 0
+    \implies x= \frac{1}{n}
+\end{gather*}
+לפי משפט פרמה, הפונקציה יכולה לשנות את התנהגותה (מבחינת ירידה ועלייה) אך ורק ב-$x=\frac{1}{n}$, נבדוק את ההתנהגות בנקודות קרובות
+\begin{gather*}
+    f_n\left(0\right) = \frac{\sqrt{n}\cdot 0}{e^0} = 0 \\
+    f_n\left(\frac{1}{n}\right) = \frac{\sqrt{n}\frac{1}{n}}{e^{n\frac{1}{n}}} = \frac{\frac{\sqrt{n}}{\sqrt{n}\sqrt{n}}}{e}= \frac{1}{e\sqrt{n}}\\
+    f_n(1) = \frac{\sqrt{n}\cdot 1}{e^{n\cdot 1}}= \frac{\sqrt{n}}{e^n}
+\end{gather*}
+נראה שלכל $n$ מתקיים $\frac{1}{e\sqrt{n}} > \frac{\sqrt{n}}{e^n}$\\
+לכל $n$, $n < e^{n-1}$, נשתמש בזה
+\[
+    n < e^{n-1} \underset{\div e^n}{\implies} \frac{n}{e^n} < \frac{1}{e} \underset{\div \sqrt{n}}{\implies} \frac{\sqrt{n}}{e^n} < \frac{1}{e\sqrt{n}}
+\]
+לכן הנגזרת עולה ב-$\left[0,\frac{1}{n}\right)$ ויורדת ב-$\left(\frac{1}{n},\infty\right)$\\
+לכן הסופרימום נמצא ב-$x=\frac{1}{n}$,
+נמצא את הגבול של סדרת הפונקציות בנקודה זו
+\[
+    \lim_{n\to\infty} \frac{\sqrt{n}\frac{1}{n}}{e^{n\frac{1}{n}}} = \lim_{n\to\infty} \frac{\frac{\sqrt{n}}{\sqrt{n}\sqrt{n}}}{e} = \lim_{n\to\infty} \frac{1}{e\sqrt{n}} = 0
+\]
+קיבלנו שהסופרימום שואף ל-$0$, לכן $f_n(x)$ מתכנסת במידה שווה ל-$f\left(x\right)$ בקטע $\left[0,\infty\right)$
 \newpage
 \part*{שאלה 3}
 \section*{סעיף א'}
@@ -133,6 +172,15 @@ $\blacksquare$
 הראו שהסדרה $\left\{\frac{1}{n}\ln\left(1+nx\right)\right\}^\infty_{n=1}$ מתכנסת במידה שווה בקטע $\left[0,b\right]$ לכל $b>0$ אבל מתכנסת נקודתית בלבד ב-$\left[0,\infty\right)$
 \part*{פתרון 3}
 \section*{סעיף א'}
+יהי $a>0$
+נטען כי הסדרה $\left\{\frac{nx}{1+n^2x^2}\right\}_{n=1}^\infty$ מתכנסת במ"ש לפונקציה $f\left(x\right) \equiv 0$ בקטע $\left[a,\infty\right)$\\
+יהי $\varepsilon > 0$, נגדיר $N = \lfloor \frac{1}{\varepsilon a} + 1 \rfloor$\\
+לכל $n>N$ ולכל $x\in\left[a,\infty\right)$
+\[
+    \left|\frac{nx}{1+n^2x^2} - 0\right| = \frac{nx}{1+n^2x^2} < \frac{nx}{n^2x^2} = \frac{1}{nx} < \frac{1}{na} < \frac{1}{Na} = \varepsilon
+\]
+לכן לכל $a>0$, הסדרה מתכנסת שווה ל-$0$ בקטע $\left[a,\infty\right)$\\
+כעת נוכיח כי היא \textbf{לא} מתכנסת במ"ש בקטע $\left(0,\infty\right)$
 \section*{סעיף ב'}
 \newpage
 \part*{שאלה 4}
