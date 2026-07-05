@@ -172,16 +172,68 @@ $\blacksquare$
 הראו שהסדרה $\left\{\frac{1}{n}\ln\left(1+nx\right)\right\}^\infty_{n=1}$ מתכנסת במידה שווה בקטע $\left[0,b\right]$ לכל $b>0$ אבל מתכנסת נקודתית בלבד ב-$\left[0,\infty\right)$
 \part*{פתרון 3}
 \section*{סעיף א'}
-יהי $a>0$
-נטען כי הסדרה $\left\{\frac{nx}{1+n^2x^2}\right\}_{n=1}^\infty$ מתכנסת במ"ש לפונקציה $f\left(x\right) \equiv 0$ בקטע $\left[a,\infty\right)$\\
-יהי $\varepsilon > 0$, נגדיר $N = \lfloor \frac{1}{\varepsilon a} + 1 \rfloor$\\
-לכל $n>N$ ולכל $x\in\left[a,\infty\right)$
+נטען כי הסדרה מתכנסת נקודתית לפונקציה $f\left(x\right) \equiv 0$
+ראשית, נראה כי הסדרה מתכנסת נקודתית בכל הקטע $\left(0,\infty\right)$
+יהי $\varepsilon > 0$ ויהי $x \in \left(0,\infty\right)$, נבחר $N_{x,\varepsilon}=\lfloor \frac{1}{x\varepsilon} + 1\rfloor$ 
+לכל $n>N_{x,\varepsilon}$
 \[
-    \left|\frac{nx}{1+n^2x^2} - 0\right| = \frac{nx}{1+n^2x^2} < \frac{nx}{n^2x^2} = \frac{1}{nx} < \frac{1}{na} < \frac{1}{Na} = \varepsilon
+    \left|\frac{nx}{1+n^2x^2}-0\right| = \frac{nx}{1+n^2x^2} < \frac{nx}{n^2x^2} = \frac{1}{nx} < \frac{1}{N_{x,\varepsilon}x} \leq \varepsilon
+\]
+כעת, נוכיח כי הסדרה מתכנסת במ"ש בקטע $[a,\infty)$ לכל $a>0$\\
+יהי $a>0$\\
+יהי $\varepsilon > 0$, נבחר $N_{\varepsilon} = \lfloor \frac{1}{\varepsilon a} + 1 \rfloor$\\
+לכל $n>N_{\varepsilon}$ ולכל $x\in\left[a,\infty\right)$
+\[
+    \left|\frac{nx}{1+n^2x^2} - 0\right| = \frac{nx}{1+n^2x^2} < \frac{nx}{n^2x^2} = \frac{1}{nx} < \frac{1}{na} < \frac{1}{N_{\varepsilon}a} \leq \varepsilon
 \]
 לכן לכל $a>0$, הסדרה מתכנסת שווה ל-$0$ בקטע $\left[a,\infty\right)$\\
 כעת נוכיח כי היא \textbf{לא} מתכנסת במ"ש בקטע $\left(0,\infty\right)$
+נתבונן בגבול
+\[
+    \lim_{n\to\infty} \sup_{x\in\left(0,\infty\right)}\left|\frac{nx}{1+n^2x^2}-0\right| = \lim_{n\to\infty} \sup_{x\in\left(0,\infty\right)} \frac{nx}{1+n^2x^2}
+\]
+נמצא את הסופרימום
+\begin{gather*}
+    \left(\frac{nx}{1+n^2x^2}\right)' = \frac{n\left(1+n^2x^2\right)-2n^2x\left(nx\right)}{\left(1+n^2x^2\right)^2} \\
+    = \frac{n+n^3x^2 - 2n^3x^2}{\left(1+n^2x^2\right)^2} = \frac{n\left(1-n^2x^2\right)}{\left(1+n^2x^2\right)^2}
+\end{gather*}
+נמצא שורשים
+\begin{gather*}
+    \frac{n\left(1-n^2x^2\right)}{\left(1+n^2x^2\right)^2} = 0 \underset{\times \left(1+n^2x^2\right)^2}{\implies} n\left(1-n^2x^2\right) = 0 \underset{\div n}{\implies} 1-n^2x^2 =0  \\
+    \implies n^2x^2 = 1 \underset{\div n^2}{\implies} x^2 = \frac{1}{n^2} \underset{\sqrt{}}{\implies} x = \pm \frac{1}{n}
+\end{gather*}
+מכיוון ש-$x >0$ השורש היחיד הרלוונטי הוא $x=\frac{1}{n}$\\
+נשים לב שמכיוון ש-$n>0$ וגם $\left(1+n^2x^2\right)^2>0$, החלק היחיד בנגזרת שיכול להשפיע על הסימן הוא $1-n^2x^2$, נתבונן בהתנהגות שלו בסמוך ל-$x=\frac{1}{n}$\\
+כאשר $x\in\left(0,\frac{1}{n}\right)$
+\[
+    1-n^2x^2 < 1 - n^2 \frac{1}{n^2} = 1-1 = 0 
+\]
+לכן הנגזרת שלילית בתחום הזה\\
+נעבור ל-$x\in\left(\frac{1}{n},\infty\right)$
+\[
+    1-n^2x^2 > 1-n^2 \frac{1}{n^2} = 1-1 = 0
+\]
+קיבלנו כי אכן מדובר בנקודת קיצון סופרימום, כעת נחשב את הגבול
+\[
+    \lim_{n\to\infty} \frac{n\frac{1}{n}}{1+n^2\frac{1}{n^2}} = \lim_{n\to\infty} \frac{1}{1+1} = \frac{1}{2} \neq 0
+\]
+קיבלנו שהסופרימום שואף ל-$\frac{1}{2}$ ולא לאפס, לכן הסדרה אינה מתכנסת במידה שווה, זאת מכיוון שמיחידות הגבול, אם סדרה מתנסת במ"ש לפונקציה, אזי היא גם תתכנס אליה נקודתית.\\
+$\blacksquare$
 \section*{סעיף ב'}
+יהי $b>0$, נראה התכנסות נקודתית בקטע $\left[0,b\right]$\\
+יהי $x_0 \in \left[0,b\right]$
+\[
+    \lim_{n\to\infty} \frac{1}{n} \ln\left(1+nx_0\right) = \lim_{n\to\infty} \frac{\ln\left(1+nx_0\right)}{n}
+\]
+נשתמש בקריטריון היינה ונגדיר פונקציה $h(x)= \frac{\ln(1+x\cdot x_0)}{x}$, כעת נסתכל עליה כאשר $x\to\infty$
+\[
+    \lim_{x\to\infty} \frac{\ln\left(1+x\cdot x_0\right)}{x} \underset{"\frac{\infty}{\infty}"}{=} \lim_{x\to\infty} \frac{\frac{x_0}{1+x\cdot x_0}}{1} = \lim_{x\to\infty} \frac{x_0}{1+x \cdot x_0} = 0
+\]
+לכן לפי היינה גם הגבול
+\[
+ \lim_{n\to\infty} \frac{\ln\left(1+nx_0\right)}{n} = 0
+\]
+הראינו התכנסות נקודתית ל-$f(x)\equiv 0$
 \newpage
 \part*{שאלה 4}
 מצאו את התחום שבו הטור הבא מתכנס בצורה שווה והתחום שבו הוא מתכנס נקודתית
