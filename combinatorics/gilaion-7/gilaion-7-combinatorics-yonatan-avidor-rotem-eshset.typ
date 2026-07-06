@@ -16,8 +16,8 @@
 #let Im = math.op("Im")
 #let Ker = math.op("Ker")
 #let english(content) = {
-set text(lang: "en") 
-set align(center)
+  set text(lang: "en")
+  set align(center)
   block(content)
 }
 #align(center + horizon)[
@@ -47,13 +47,13 @@ $square.filled$
 == סעיף א'
 בהינתן $r$ ממשי ו-$n$ טבעי, הראו שבסדרה
 $
-0,{r},{2r},{3r},dots,{n r}
+  0,{r},{2r},{3r},dots,{n r}
 $
 יש שני איברים שההפרש ביניהם קטן מ-$1/n$.
 == סעיף ב'
 הסיקו שלכל $r$ ממשי ו-$n$ טבעי קיים קירוב רציונלי $p/q$ המקיים
 $
-lr(|r- p/q|) < 1/(q n) 
+  lr(|r- p/q|) < 1/(q n)
 $
 כאשר $q < n$.
 = פתרון 2
@@ -66,19 +66,17 @@ $ |r-p/q| < 1/(q n) $
 נכפיל את שני צדדי הביטוי ב-$q$
 $ |r q-p| < 1/n $
 נשים לב כי בסעיף הקודם הראנו כי קיימים $a, b$ כך ש
-$ (a r-[a r])-(b r-[b r]) < 1/n
-$
+$ (a r-[a r])-(b r-[b r]) < 1/n $
 
 $ (a-b)r-([a r]-[b r]) <1/n $
 נגדיר
 $
-q=a-b\
-
-p=[a r]-[b r]
+  q=a-b\
+  p=[a r]-[b r]
 $
 ואכן מתקבל
 $
-q r - p <= |q r - p|  < 1 / n ==> |r - p/q | < 1/(q n)
+  q r - p <= |q r - p| < 1 / n ==> |r - p/q | < 1/(q n)
 $
 #pagebreak()
 = שאלה 3
@@ -102,23 +100,23 @@ $square.filled$
 מצאו את נוסחת הנסיגה ואת האיבר הכללי
 == סעיף א'
 $
-1,-1,2,-3,5,dots
+  1,-1,2,-3,5,dots
 $
 == סעיף ב'
 $
-0,2,4,4,0,dots
+  0,2,4,4,0,dots
 $
 = פתרון 4
 == סעיף א'
 נתון לנו כי מדובר בנוסחת נסיגה לינארית הומוגנית עם מקדמים קבועים מסדר $2$, לכן קיימים $alpha,beta in CC$ כך ש-
 $
-alpha dot.c 1 + beta dot.c (-1) = 2\
-alpha dot.c (-1) + beta dot.c 2 = -3
+  alpha dot.c 1 + beta dot.c (-1) = 2\
+  alpha dot.c (-1) + beta dot.c 2 = -3
 $
 נפתור את הממ"ל.\
 נוסיף את המשוואה הראשונה לשנייה ונקבל $alpha dot.c 0 + beta dot.c 1 = -1$, נציב במשוואה הראשונה ונקבל
 $
-alpha dot.c 1 + (-1)^2 = 2 ==> alpha = 1
+  alpha dot.c 1 + (-1)^2 = 2 ==> alpha = 1
 $
 קיבלנו $alpha = 1, beta =-1$ ולכן נוסחת הנסיגה היא
 #align(center)[
@@ -131,41 +129,44 @@ $ q^2 + q - 1 = 0 $
 לפי נוסחת שורשים
 $ q_(1,2) = (-1plus.minus sqrt(1+4))/(2) ==> q_1 = -phi,q_2 = -psi $
 לכן
-$G_n =  a dot.c (-phi)^n + b(-psi)^n$ כאשר
+$G_n = a dot.c (-phi)^n + b(-psi)^n$ כאשר
 $
-a + b = 1 \
-a dot.c (-phi) + b dot.c (-psi) = -1
+  a + b = 1 \
+  a dot.c (-phi) + b dot.c (-psi) = -1
 $
 
 נציב $b=1-a$, נכפיל את שני צדדי המשוואה השנייה ב-$(-1)$ ונקבל
-$ a phi + (1-a)psi = 1 ==> a phi + psi -  a psi =1 ==>  a (phi - psi) + psi = 1\
-==> a(phi - psi) = 1-psi
- $
+$
+  a phi + (1-a)psi = 1 ==> a phi + psi - a psi =1 ==> a (phi - psi) + psi = 1\
+  ==> a(phi - psi) = 1-psi
+$
 נשים לב לכך ש
 $
-1-psi = 1- (1-sqrt(5))/2 =  (1+sqrt(5))/2 = phi\
-phi-psi = (1+sqrt(5))/(2) - (1-sqrt(5))/(2) = (1+sqrt(5)-1+sqrt(5))/2=sqrt(5)
+  1-psi = 1- (1-sqrt(5))/2 = (1+sqrt(5))/2 = phi\
+  phi-psi = (1+sqrt(5))/(2) - (1-sqrt(5))/(2) = (1+sqrt(5)-1+sqrt(5))/2=sqrt(5)
 $
 לכן
 $
-a(phi-psi) = 1- psi ==> a(sqrt(5)) = phi ==> a = phi/(sqrt(5)) = (1+sqrt(5))/(2sqrt(5))
+  a(phi-psi) = 1- psi ==> a(sqrt(5)) = phi ==> a = phi/(sqrt(5)) = (1+sqrt(5))/(2sqrt(5))
 $
 ומכאן
 $
-b= 1- phi/sqrt(5) = 1 - (1+sqrt(5))/(2sqrt(5)) =    (sqrt(5)-1)/(2sqrt(5)) = (-psi)/sqrt(5)
+  b= 1- phi/sqrt(5) = 1 - (1+sqrt(5))/(2sqrt(5)) = (sqrt(5)-1)/(2sqrt(5)) = (-psi)/sqrt(5)
 $
 לכן
 #align(center)[
   #rect()[
-$ G_n = phi/(sqrt(5)) dot.c (-phi)^n +  (-psi)/sqrt(5) dot.c (-psi)^n  = (phi^(n+1) - psi^(n+1)) dot.c (-1)^n/sqrt(5) $
+    $
+      G_n = phi/(sqrt(5)) dot.c (-phi)^n + (-psi)/sqrt(5) dot.c (-psi)^n = (phi^(n+1) - psi^(n+1)) dot.c (-1)^n/sqrt(5)
+    $
   ]
 ]
 == סעיף ב'
 נתון לנו כי מדובר בנוסחת נסיגה לינארית הומוגנית עם מקדמים קבועים מסדר $2$, לכן קיימים $alpha,beta in CC$ כך ש-
 
 $
-alpha dot.c 0 + beta dot.c 2 = 4\
-alpha dot.c 2 + beta dot.c 4 = 4
+  alpha dot.c 0 + beta dot.c 2 = 4\
+  alpha dot.c 2 + beta dot.c 4 = 4
 $
 נפתור את הממ"ל\
 $ alpha dot.c 0 + beta dot.c 2 = 4 ==> beta = 2 ==> alpha dot.c 2 + 8 = 4 ==> alpha = -2 $
@@ -177,90 +178,95 @@ $ alpha dot.c 0 + beta dot.c 2 = 4 ==> beta = 2 ==> alpha dot.c 2 + 8 = 4 ==> al
 ]
 נמצא את הפולינום האופייני של נוסחת הנסיגה
 $
-q^2 - 2q +2
+  q^2 - 2q +2
 $
 לפי נוסחת שורשים
 $
-q_(1,2)= (2plus.minus sqrt(-4))/(2)==> q_1 = 1-i,q_2 = 1+i
+  q_(1,2)= (2plus.minus sqrt(-4))/(2)==> q_1 = 1-i,q_2 = 1+i
 $
 לכן
 $ G_n = a dot.c (1-i)^n + b dot.c (1+i)^n $
 כאשר
 $
-a+b = 0\
-a-a i + b + b i = 2
+  a+b = 0\
+  a-a i + b + b i = 2
 $
 נפתור את הממ"ל ישירות
-$ a+b = 0 ==> a = - b ==> -b + b i + b + b i = 2 ==> 2 b i = 2 ==> b i = 1 \
-==> b = -i ==> a = i $
+$
+  a+b = 0 ==> a = - b ==> -b + b i + b + b i = 2 ==> 2 b i = 2 ==> b i = 1 \
+  ==> b = -i ==> a = i
+$
 ולכן
 #align(center)[
   #rect()[
-$ G_n = i dot.c (1-i)^n - i dot.c (1+i)^n $
+    $ G_n = i dot.c (1-i)^n - i dot.c (1+i)^n $
   ]
 ]
 #pagebreak()
 = שאלה 5
 השתמשו בטכניקה של פולינום אופייני, ומצאו נוסחה מפורשת עבור $a_n$ בסדרה הבאה:
 $
-a_n = 6a_(n-1) - 11a_(n-2) + 6 a_(n-3)
+  a_n = 6a_(n-1) - 11a_(n-2) + 6 a_(n-3)
 $
 כאשר $a_0=0,a_1=1,a_2=5$
 = פתרון 5
 נחפש $q$ כך ש-$a_(n+1) = a_n dot.c q$\
 לפי הנוסחה לאיבר הכללי, נקבל
 $
-x^3- 6x^2 + 11x -6
+  x^3- 6x^2 + 11x -6
 $
 ננחש $1$ שורש ונבצע חילוק פולינומים
 #english[
-#table(
-columns: 5,
-stroke: none,
-$x^2$,$-5x$,$+6$,[],[]
-,table.hline(),
-$x^3$,$-6x^2$,$-11x$,$+6$,table.vline(),$x-1$,
-table.hline(),
-$x^3$,$-x^2$,[],[],[],
-table.hline(),
-$0$,$-5x^2$,$+11x$,[],[],
-[],$-5x^2$,$+5x$,[],[],
-table.hline(),
-[],$0$,$6x$,$-6$,[],
-[],[],$6x$,$-6$,[],
-table.hline(),
-[],[],$0$,$+0$,[]
-)]
+  #table(
+    columns: 5,
+    stroke: none,
+    $x^2$, $-5x$, $+6$, [], [],
+    table.hline(),
+    $x^3$, $-6x^2$, $-11x$, $+6$, table.vline(), $x-1$,
+    table.hline(),
+    $x^3$, $-x^2$, [], [], [],
+    table.hline(),
+    $0$, $-5x^2$, $+11x$, [], [],
+    [], $-5x^2$, $+5x$, [], [],
+    table.hline(),
+    [], $0$, $6x$, $-6$, [],
+    [], [], $6x$, $-6$, [],
+    table.hline(),
+    [], [], $0$, $+0$, [],
+  )]
 קיבלנו $(x^2-5x+6)(x-1)$
 נמצא את השורשים הנותרים באמצעות נוסחת שורשים
 $
-x_(1,2) = (5plus.minus sqrt(25-24))/(2) = (5plus.minus 1)/2 = 3,2
+  x_(1,2) = (5plus.minus sqrt(25-24))/(2) = (5plus.minus 1)/2 = 3,2
 $
 לכן
 $
-x^3- 6x^2 + 11x -6=(x-1)(x-2)(x-3)
+  x^3- 6x^2 + 11x -6=(x-1)(x-2)(x-3)
 $
 לכן
 $ a_n = a dot.c 1^n + b dot.c 2^n + c dot.c 3^n $
 נמצא את $a,b,c$
 $
-a+b+c = 0\
-a+2b+3c = 1\
-a+4b+9c = 5
+  a+b+c = 0\
+  a+2b+3c = 1\
+  a+4b+9c = 5
 $
 נשים במטריצת מקדמים מורחבת ונדרג
 $
-mat(augment:#3,1,1,1,0;1,2,3,1;1,4,9,5) --> mat(augment:#3,
-1,0,0,0;
-0,1,0,-1;
-0,0,1,1)
+  mat(augment: #3, 1, 1, 1, 0; 1, 2, 3, 1; 1, 4, 9, 5) --> mat(
+    augment: #3,
+    1, 0, 0, 0;
+    0, 1, 0, -1;
+    0, 0, 1, 1
+  )
 $
 לכן $a=0,b=-1,c=1$ ומכאן ש
 #align(center)[
   #rect()[
-    $ a_n =  3^n-2^n $
+    $ a_n = 3^n-2^n $
   ]
 ]
 #pagebreak()
 = בדיחת קרש
 חשבנו על $n$ בדיחות עבור $n+1$ גליונות, בהכרח קיימת בדיחה שנכתוב בשני גליונות שונים
+
