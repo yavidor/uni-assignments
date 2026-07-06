@@ -303,8 +303,47 @@ $t\left(\left[1,2\right]\right) = \left[e^{-\frac{1}{4}},1\right] \subseteq \lef
 לכן הטור מתכנס במידה שווה ב-$\left[1,2\right]$
 \newpage
 \part*{שאלה 5}
-תהי $f_0\left(x\right)$ אינטגרבילית ב-$\left[0,a\right]$. לכל $n\geq 1$ נגדיר $f_n\left(x\right)=\int^x_0 f_{n-1}(t)\,dt, x\in\left[0,a\right]$. הוכיחו כי הסדרה $\left\{f_n(x)\right\}_{n=1}^\infty$ מתכנסת ל-$0$ במידה שווה בקטע $\left[0,a\right]$
+תהי $f_0\left(x\right)$ אינטגרבילית ב-$\left[0,a\right]$. לכל $n\geq 1$ נגדיר 
+\[
+    f_n\left(x\right)=\int^x_0 f_{n-1}(t)\,dt, x\in\left[0,a\right]
+\]
+הוכיחו כי הסדרה $\left\{f_n(x)\right\}_{n=1}^\infty$ מתכנסת ל-$0$ במידה שווה בקטע $\left[0,a\right]$
 \part*{פתרון 5}
+נוכיח באינדוקציה שקיים $M\in \mathbb{R}$ כך ש לכל $x\in\left[0,a\right]$ $\left|f_n(x)\right| < M \frac{x^n}{n!}$
+\subsubsection*{בסיס האינדוקציה}
+$f_0$ אינטגרבילית בקטע $\left[0,a\right]$, לכן היא חסומה שם, כלומר קיים חסם עליון $M\in\mathbb{R}$ כך שלכל $x\in\left[0,a\right]$
+\[
+    \left|f_0\left(x\right)\right| \leq M = M \underbrace{\frac{x^0}{0!}}_{=1}
+\]
+\subsubsection*{הנחת האינדוקציה}
+נניח כי 
+\[
+    \left|f_{n-1}\right| = \leq M\frac{x^{n-1}}{\left(n-1\right)!}
+\]
+לכן
+
+\subsubsection*{צעד האינדוקציה}
+\begin{gather*}
+    \left|f_{n}\right| \underset{\text{הגדרת הסדרה}}{=} \left|\int_0^x f_{n-1}\left(t\right)\, dt\right| \leq \int_0^x \left|f_{n-1}\left(t\right)\right|\,dt\\
+    \underset{\text{הנחת האינדוקציה}}{<}\int_0^x M\frac{t^{n-1}}{\left(n-1\right)!} \,dt  = M\frac{x^n}{n!}
+\end{gather*}
+נתבונן בגבול
+\[
+    \lim_{n\to\infty} \sup_{x\in\left[0,a\right]} \left|f_n\left(x\right)-0\right| =\lim_{n\to\infty} \sup_{x\in\left[0,a\right]} \left|f_n(x)\right| < \lim_{n\to\infty} M \frac{x^n}{n!} \leq \lim_{n\to\infty} M \frac{a^n}{n!}
+\]
+נשתמש במבחן המנה
+\[
+    \lim_{n\to\infty}    \frac{\frac{M a^{n+1}}{\left(n+1\right)!}}{\frac{M a^n}{n!}} = \lim_{n\to\infty} \frac{M a^{n+1} n!}{M a^n n! \cdot \left(n+1\right)} =\lim_{n\to\infty} \frac{a}{n+1} \underset{\text{חסומה כפול אפסה}}{=} 0
+\]
+קיבלנו כי גבול המנה קיים וקטן מ-$1$ ולכן הסדרה שואפת ל-$0$\\
+מצד שני, $\sup_{x\in\left[0,a\right]} \left|f_n(x)\right| \geq \left|f_n(x)\right| \geq 0$\\
+לכן מסנדוויץ'
+\[
+    \lim_{n\to\infty} \sup_{x\in\left[0,a\right]} \left|f_n(x)\right| = 0
+\]
+לכן הסדרה מתכנסת במ"ש ל-$0$ בכל הקטע\\
+כנדרש\\
+$\blacksquare$
 \newpage
 \part*{שאלה 6}
 תהא
@@ -317,7 +356,68 @@ $t\left(\left[1,2\right]\right) = \left[e^{-\frac{1}{4}},1\right] \subseteq \lef
 האם $\lim_{n\to\infty} \int_0^1 f_n(x)\,dx =0$ עבור $p=2$? עבור $p=4$?
 \part*{פתרון 6}
 \section*{סעיף א'}
+נתבונן בגבול
+\[
+    \lim_{n\to\infty} \sup_{x\in\left[0,1\right]} \left|f_{n}\left(x\right)-0\right| = \lim_{n\to\infty} \sup_{x\in\left[0,1\right]} \frac{nx}{1+n^2x^p} 
+\]
+נמצא את הסופרימום
+\begin{gather*}
+    \left(\frac{nx}{1+n^2x^p}\right)' = \frac{n\left(1+n^2x^p\right)-pn^2x^{p-1}\left(nx\right)}{\left(1+n^2x^p\right)^2}\\
+    = \frac{n\left(1+n^2x^p\right)-pn^3x^p}{\left(1+n^2x^p\right)^2} = \frac{n\left(1+n^2x^p-pn^2x^p\right)}{1+n^2x^p} = \frac{n\left(1+n^2x^p\left(1-p\right)\right)}{\left(1+n^2x^p\right)^2}
+\end{gather*}
+נמצא שורשים
+\begin{gather*}
+    \frac{n\left(1+n^2x^p\left(1-p\right)\right)}{\left(1+n^2x^p\right)^2} = 0 \implies n\left(1+n^2x^p\left(1-p\right)\right) = 0 \\
+    \implies 1+n^2x^p\left(1-p\right) = 0 \implies n^2x^p\left(1-p\right) = \frac{-1}{n^2\left(1-p\right)}\\
+    \implies x^p = \frac{1}{n^2\left(p-1\right)} \implies  x = \frac{1}{n^{\frac{2}{p}}\left(p-1\right)^{\frac{1}{p}}}
+\end{gather*}
+נסמן את השורש הזה לכל $n$ בתור $x_n$ (אנחנו מעוניינים בחיובי בלבד בגלל התחום שלנו)\\
+מתרגיל (3) אנחנו יודעים שמדובר בסופרימום, נמצא את הגבול בסופרימום הזה
+\[
+    \lim_{n\to\infty} f_n(x_n) = \lim_{n\to\infty} \frac{nx_n}{1+n^2x_n^p}
+\]
+נציב את הערך של $x_n$
+\[
+    \lim_{n\to\infty} \frac{nx_n}{1+n^2x_n^p} = \lim_{n\to\infty} \frac{n\cdot\left(\frac{1}{n^{\frac{2}{p}}\left(p-1\right)^{\frac{1}{p}}}\right)}{1+\frac{1}{p-1}} = \frac{p-1}{p} \cdot \frac{n}{n^{\frac{2}{p}}\left(p-1\right)^{\frac{1}{p}}} = \frac{p-1}{p(p-1)} \cdot n^{1-\frac{2}{p}}
+\]
+נרצה שהמעריך יהיה שלילי
+\[
+    1-\frac{2}{p}<0 \implies 1 < \frac{2}{p} \implies p<2
+\]
+לכן
+\[
+    \boxed{0<p<2}
+\]
 \section*{סעיף ב'}
+\subsection*{$p=2$}
+נשתמש בהצבה
+\begin{gather*}
+    t = 1+n^2x^2\\
+    dt = 2n^x\\
+    nxdx = \frac{1}{2n} du\\
+    x = 0 \implies t =1\\
+    x = 1 \implies t = 1+n^2
+\end{gather*}
+לכן
+\begin{gather*}
+    \lim_{n\to\infty} \int_0^1 f_n(x)\,dx = \lim_{n\to\infty} \frac{1}{2n} \int_1^{1+n^2} \frac{1}{t}\,dt\\
+    =\lim_{n\to\infty} \frac{1}{2n} \ln\left|t\right|\bigg|^{1+n^2}_1 =\lim_{n\to\infty} \frac{\ln(1+n^2)-ln(1)}{2n}= \lim_{n\to\infty}\frac{\ln(1+n^2)}{2n} = 0
+\end{gather*}
+לכן התשובה היא כן
+\subsection*{$p=4$}
+גם הפעם נעשה הצבה, אבל אחרת
+\begin{gather*}
+    t=  nx^2\\
+    dt = 2nx\,dx\\
+    nx dx = \frac{1}{2}\,dt\\
+    x = 0 \implies t = 0\\
+    x =1 \implies t =n
+\end{gather*}
+לכן
+\[
+    \lim_{n\to\infty} \frac{1}{2} \int^n_0 \frac{1}{1+t^2}\,dt =\lim_{n\to\infty} \frac{1}{2} \arctan n= \frac{\pi}{4}
+\]
+לכן התשובה היא לא 
 \newpage
 \part*{שאלה 7}
 מצאו את רדיוסי ההתכנסות של טורי החזקות הבאים
