@@ -16,7 +16,7 @@
 #let ip(x, y) = $lr(chevron.l #x, #y chevron.r)$
 #let english(content) = {
   set text(lang: "en")
-  //set align(center)
+  set align(center)
   block(content)
 }
 #align(center + horizon)[
@@ -139,17 +139,6 @@ $square.filled$
 = שאלה 2
 יהי $T in "End"_(CC) (V)$ נורמלי, ונניח כי $3,4$ ערכים עצמיים של $T$. הראו שיש $v in V$ עבורו $norm(v) = sqrt(2)$ וגם $norm(T v) = 5$.
 = פתרון 2
-יהיו $u in V_4, w in V_3$
-$
-  ip(T u, T u) = ip(4 u, 4 u) = 4 ip(u, 4 u) = 4 dot.c overline(4) ip(u, u) = 16 ip(u, u) = 16
-$
-לכן $norm(u) =1$
-$
-  ip(T w, T w) = ip(3 w, 3 w) = 3 ip(w, 3 w) = 3 dot.c overline(3) ip(w, w) = 9 ip(w, w) = 9
-$
-לכן $norm(w) =1$\
-$v = u +w$
-= פתרון 2
 יהי $u' != 0 in V$ וקטור עצמי של $T$ עם ע"ע $4$, נגדיר $u = u'/norm(u')$, מכיוון ש-$u in "Span"(u')$, גם $u$ הוא וקטור עצמי של $T$ עם ע"ע $4$, בנוסף, $norm(u) = 1$\
 באותה דרך נגדיר $w$ ו"ע של $T$ עם ע"ע $3$ ונורמה $1$. \
 נגדיר $v = u + w$ ונתבונן ב-$norm(T v)^2$
@@ -195,20 +184,30 @@ $square.filled$
 = פתרון 3
 == סעיף א'
 נניח כי $T^* = a T$\
-בנוסף, נניח בשלילה כי $T != 0$\
-יהיו $0_V != v != w in V$, נתבונן ב-$ip(T v, w)$
+יהיו $0_V != v in V$ , נתבונן ב-$norm(T v)^2$
 $
-  ip(T v, w) \
-  underset(=, T^* "הגדרת") ip(v, T^* w) \
-  underset(=, T^* = a T "נתון") ip(v, alpha T w)\
-  underset(=, "הומוגניות צמודה ברכיב השני") overline(a) ip(v, T w)\
-  underset(=, T^* "הגדרת") overline(a) ip(T^* v, w) \
-  underset(=, T^* = a T "נתון") overline(a) ip(a T v, w)\
-  underset(=, "לינאריות ברכיב הראשון") overline(a) a ip(T v, w)\
-  = a^2 ip(T v, w)
+  norm(T v)^2 \
+  underset(=, "הגדרת נורמה")ip(T v, T v)
+  underset(=, T^* "הגדרת") ip(v, T^* T v) \
+  underset(=, T^* = a T "נתון") ip(v, alpha T T v)\
+  underset(=, "הומוגניות צמודה ברכיב השני") overline(a) ip(v, T T v)\
+  underset(=, T^* "הגדרת") overline(a) ip(T^* v, T v) \
+  underset(=, T^* = a T "נתון") overline(a) ip(a T v, T v)\
+  underset(=, "לינאריות ברכיב הראשון") overline(a) a ip(T v, T v)\
+  underset(=, "הגדרת נורמה") |a|^2 norm(v)^2
 $
-קיבלנו כי $ip(T v, w) = a^2 ip(T v, w)$, לכן $a^2 = 1$, כלומר $|a| = 1$, בסתירה לנתון שאומר $|a| != 1$\
-לכן $T = 0$\
+לכן
+$
+  norm(T v)^2 = |a|^2 norm(v)^2
+$
+נעביר אגפים
+$
+  norm(T v)^2 (1- |a|^2) = 0
+$
+נתון כי $|a| != 0$ ולכן $norm(T v)^2=0$ \
+משרירותיות $v$, זה נכון עבור #text(weight: "bold")[כל] $v in V$\
+הוקטור היחיד שהנורמה שלו הוא $0$ הוא וקטור האפס, האופרטור היחיד ששולח כל וקטור לוקטור האפס הוא אופרטור האפס\
+לכן $T = 0$
 כנדרש\
 $square.filled$
 == סעיף ב'
