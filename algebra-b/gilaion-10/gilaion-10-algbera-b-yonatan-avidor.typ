@@ -8,6 +8,8 @@
     counter(page).display()
   }
 })
+#import "@preview/cetz:0.5.2": canvas, draw
+//#import draw: arc, circle, content, line
 #set document(author: "יונתן אבידור - 214269565", title: "אלגברה ב' 01040168", description: "גליון 10", date: auto)
 #set par(leading: 0.55em, spacing: 0.55em, first-line-indent: 1.8em, justify: true)
 #import "@preview/ouset:0.2.0": underset
@@ -204,11 +206,193 @@ $
 $
   norm(T v)^2 (1- |a|^2) = 0
 $
-נתון כי $|a| != 0$ ולכן $norm(T v)^2=0$ \
+נתון כי $|a| != 1$ ולכן $norm(T v)^2=0$ \
 משרירותיות $v$, זה נכון עבור #text(weight: "bold")[כל] $v in V$\
-הוקטור היחיד שהנורמה שלו הוא $0$ הוא וקטור האפס, האופרטור היחיד ששולח כל וקטור לוקטור האפס הוא אופרטור האפס\
+הוקטור היחיד שהנורמה שלו היא $0$ הוא וקטור האפס, האופרטור היחיד ששולח כל וקטור לוקטור האפס הוא אופרטור האפס\
 לכן $T = 0$
 כנדרש\
 $square.filled$
 == סעיף ב'
+נראה כי $Ker(T) = Ker(S)$ באמצעות הכלה דו-כיוונית
+=== $Ker(T) subset.eq Ker(S)$
+יהי $v in Ker(T)$, מכאן ש $T v = 0_V$, לכן $norm(T v)=0$, נתון כי $T$ אופרטור נורמלי, לכן $norm(T^* v) = norm(T v) = 0$\
+הוקטור שהנורמה שלו היא $0$ הוא וקטור האפס, לכן $T^* v = 0_V$ \
+נתבונן ב-$S v$
+$
+  S v = (T - a T^*) v = T v - a T^* v = 0_V - a dot.c 0_V = 0_V
+$
+לכן $S v = 0_V$, ומכאן $v in Ker(S)$\
+משרירותיות $v$ קיבלנו כי לכל $v in Ker(T)$, $v in Ker(S)$, לכן $Ker(T) subset.eq Ker(S)$
+=== $Ker(S) subset.eq Ker(T)$
+יהי $v in Ker(S)$, מכאן ש $S v = 0_V$, מהגדרת $S$ זה אומר $(T -a T^*) v = 0_V$ \
+נעביר אגפים ונקבל
+$T v = a T^*v$, נוציא את הנורמה של שני האגפים ונקבל כי $norm(T v) = norm(a T^*v)$. מאידך,
+נתון כי $T$ נורמלי ולכן $norm(T v) = norm(T^* v)$\
+לכן
+$
+  norm(T^* v) = norm(a T^* v) = |a| norm(T^*v)
+$
+מכאן שמתקיים הפסוק הבא
+$
+|a| = 1 or T^*v = 0_V
+$
+ומכיוון שנתון $|a|!= 1$, בהכרח מתקיים $T^* v = 0_V$
+לכן $norm(T^*v)=0$, מנור מליות $T$ מתקבל $norm(T v)=0$.\
+לכן $T v = 0$, כלומר $v in Ker (T)$\
+משרירותיות $v$ קיבלנו כי לכל $v in Ker(S)$, $v in Ker(T)$, לכן $Ker(S) subset.eq Ker(T)$\
+הראינו הכלה דו-כיוונית, ולכן שוויון\
+כנדרש\
+$square.filled$
+#pagebreak()
+= שאלה 4
+== סעיף א'
+יהי $T in "End"_CC (V)$ הרמיטי עם $r_sigma (T) < 1$ מיצאו $S in "End"_CC (V)$ אוניטרי עבורו
+$
+T = (S+S^*)/2
+$
+== סעיף ב'
+יהי $T in "End"_CC (V)$ הוכיחו כי $T$ ניתן לכתיבה כצירוף של ארבעה אופרטורים אוניטריים.
+= פתרון 4
+== סעיף א'
+נחפש כיוון דרך ההקבלה בין $"End"_CC$ ל-$CC$.\
+כפי שניתן לתאר $z in CC$ בתור $a + i b$ כאשר $a,b in RR$. נחפwש $S in "End"_CC$ אוניטרי בתור $A + i B$ כאשר $A,B$ הרמיטיים, כך ש $T= (S+S^*)/2$.\
+נמצא את הצמוד של $S$
+$
+S^* = (A+ i B )^* = ((A)^* + (i B )^*) = (A^* +  overline(i) B^*) = (A^* - i B^* ) = A - i B 
+$
+כשהשוויון האחרון מתקבל מהיות $A,B$ הרמיטים.\
+עכשיו כשיש לנו ייצוג ל-$S,S^*$, נוכל להשוות ל-$T$
+$
+T = (S+S^*)/2 = (A+i B + (A - i B ))/2 = (2A)/2 = A
+$
+לכן נגדיר את
+$S = T + B i$, נחפש את $B$\
+$S$ אוניטרי, לכן $S^(-1) = S^*$, כלומר $S^* S = I d_V$
+$
+I d_V = S^* S = (T+ i B) dot.c (T - i B) = T^2 + B^2
+$
+נעביר אגפים ונקבל
+$
+B^2 = I d_V - T^2
+$
+נוציא שורש לשני הצדדים
+$
+B = sqrt(I d_V - T^2)
+$
+ולכן
+$
+S = T + i sqrt(I d_V - T^2)
+$
+אך נזכור כי כל זה היה לא יותר מאשר ניחוש מושכל
+== סעיף א'
+נסמן $lambda_1,lambda_2,dots,lambda_n = sigma(T)$\
 
+לפי המשפט הספקטרלי, קיים בסיס $cal(B)$, כך ש
+$
+[T]_cal(B) = mat(lambda_1;,lambda_2;,,dots.down;,,,lambda_n)
+$
+נשים לב כי לכל $j in [n]$, $lambda_j in RR$ כי $T$ הרמיטי, ובנוסף $-1 <= lambda_j <=1$ מהנתון.\
+נגדיר $alpha_1,alpha_2,dots,alpha_n in CC$ בדרך הבאה,
+לכל $j in [n]$, נגדיר $theta_j=arccos(lambda_j)$ ו-$alpha_j = cos(theta_j)+i sin(theta_j)$ (בסימונים של אלגברה א' $a_j=e^(i theta_j)$).\
+נזכר בשתי זהויות טריגונומטריות. יהי $-1<=a<=1 in RR$\
+נסמן $gamma=arccos(a) in[0,pi]$
+אזי
+$
+cos(gamma) = a \
+sin(gamma) = sqrt(1-a^2)
+$
+כאשר הזהות הראשונה מתקבלת מהיות $arccos$ הפונקציה ההופכית של $cos$\
+את הזהות השנייה נקבל כך:\
+לפי זהות פיתגורס $sin(gamma)^2+cos(gamma)^2=1$\
+מהזהות הראשונה שהראינו $cos(gamma)=a$, לכן $sin(gamma)^2+a^2=1$, נעביר אגפים ונקבל $sin(gamma)^2 = 1-a^2$\
+נוציא שורש לשני צדדי המשוואה ונקבל $sin(gamma)=sqrt(1-a^2)$, מכיוון ש $|a|<1$, $1-a^2>0$ והשורש קיים.\
+לפי הזהויות הללו, נוכל למצוא את $alpha_j$
+$
+alpha_j = cos(theta_j) + i sin(theta_j) = lambda_j + i sqrt(1-lambda_j^2)
+$
+נגדיר את המטריצה האלכסונית הבאה
+$
+A:= mat(alpha_1;,alpha_2;,,dots.down;,,,alpha_n)
+$
+$A$ אלכסונית ולכן סימטרית, לכן
+$
+A^* = mat(overline(alpha_1);,overline(alpha_2);,,dots.down;,,,overline(alpha_n))
+$
+נשים לב כי $A$ אוניטרית, זאת מכיוון ש
+$
+A^*A = mat(overline(alpha_1)alpha_1;,overline(alpha_2)alpha_2;,,dots.down;,,,overline(alpha_n)alpha_n)= mat(|alpha_1|^2;,|alpha_2|^2;,,dots.down;,,,|alpha_n|^2)
+$
+ומתקיים
+$
+|alpha_j|^2 = lambda_j^2 + sqrt(1-lambda_j^2)^2 = lambda_j^2 + 1 - lambda_j^2 = 1
+$
+לכן
+$
+A^* A = mat(1;,1;,,dots.down;,,,1) = I_n
+$
+מכאן ש$A^* = A^(-1)$, כלומר $A$ אוניטרית.\
+נתבונן במטריצה $1/2 dot.c (A+A^*)$
+$
+1/2 dot.c (A+A^*) = 1/2 dot.c mat(overline(alpha_1)+alpha_1;,overline(alpha_2)+alpha_2;,,dots.down;,,,overline(alpha_n)+alpha_n)\
+= 1/2 mat(lambda_1 + sqrt(1-lambda_1^2)+lambda_1 - sqrt(1-lambda_1^2);,lambda_2 + sqrt(1-lambda_2^2)+lambda_2 - sqrt(1-lambda_2^2);,,dots.down;,,,lambda_n + sqrt(1-lambda_n^2)+lambda_n - sqrt(1-lambda_n^2))\
+=1/2  mat(2lambda_1;,2lambda_2;,,dots.down;,,,2lambda_n) =  mat(lambda_1;,lambda_2;,,dots.down;,,,lambda_n) = [T]_(cal(B))
+$
+נגדיר את האופרטור $S$ להיות האופרטור שהמטריצה המייצגת שלו ביחס לבסיס $cal(B)$ היא $A$
+=== אינטואיציה
+כל הע"ע של $T$ ממשיים כי הוא נורמלי, וכולם ב-$(-1,1)$, על מערכת הצירים המרוכבת אפשר לומר שהם כולם על אותו הקוטר של מעגל היחידה. אנחנו יודעים לבנות אופרטור אוניטרי באמצעות $n$ עם ערך מוחלט (מודולו? מודול?) $1$, לכן נרצה "להעביר" את הע"ע שיש לנו למעגל היחידה\
+#english[
+#canvas({
+  let (radius, angle) = (2.6,50deg)
+  let point = (radius * calc.cos(angle), radius * calc.sin(angle))
+  let axis = (mark: (end: "stealth", fill: black, scale: .65), stroke: .8pt)
+
+  draw.line((-3, 0), (3, 0), ..axis, name: "re-axis")
+  draw.line((0, -3), (0, 3), ..axis, name: "im-axis")
+  draw.circle((0, 0), radius: radius, stroke: .55pt)
+  draw.grid((-3, -3), (3, 3), step: 0.5, stroke: gray + 0.2pt)
+  draw.line((0, 0), (point.at(0), 0), stroke: 1pt, name: "re-proj")
+  draw.line((0, 0), point, stroke:  1pt, name: "radius")
+  draw.line("radius.end", "re-proj.end", stroke:  1pt, name: "im-proj")
+  draw.line((0, 0), (point.at(0),-point.at(1)), stroke:  (thickness: 1pt , dash:"dashed"), name: "radius-bar")
+  draw.line("radius-bar.end", "re-proj.end", stroke:  (thickness: 1pt, dash:"dashed"), name: "im-proj-bar")
+  draw.arc((0, 0), radius: 0.9, start: 0deg, stop: angle, anchor: "origin", stroke: .55pt, name: "theta-arc")
+
+  draw.circle("re-proj.end", radius: .055, fill: black, stroke: none)
+  draw.content("re-axis.end", $"Re"$, anchor: "west", padding: 2pt)
+  draw.content("im-axis.end", $Im$, anchor: "south", padding: 2pt)
+  draw.content("radius.end", $alpha$, anchor: "south-west", padding: 3pt)
+draw.content((point.at(0),-point.at(1)),$overline(alpha)$,anchor:"north-west", padding: 2pt)
+  draw.content("im-proj.mid", text[$Im(alpha)$], anchor: "west", padding:(left: 0.1))
+  draw.content("radius.mid", text[$1$], anchor: "south", padding:(bottom:0.2))
+  draw.content("theta-arc.50%", $theta$, anchor: "base-west", padding: 1pt)
+draw.content((point.at(0),0),$lambda$,anchor:"north", padding:(top:0.1, left:10pt))
+})
+]
+לכן $alpha = cos(theta)+i sin(theta)$, ידוע לנו האורך של הניצב הקרוב ל-$theta$ ושל היתר, לכן $cos(theta) = cos(lambda/1) =cos(lambda)$, כלומר $theta = arccos(lambda)$.\ לכן  
+$
+"Re"(alpha)=cos(arccos(lambda))=lambda\
+Im(alpha) = sin(arccos(lambda))=sqrt(1-lambda^2)
+$
+ומכיוון ש-$|lambda|<1$ מתקבל מספר ממשי תקין.\
+באותה מידה נקבל את $overline(alpha)$
+$
+"Re"(overline(alpha)) = lambda\
+Im(overline(alpha)) = -sqrt(1-lambda^2)
+$
+#pagebreak()
+= שאלה 5
+== סעיף א'
+תהי $theta in RR$, תהי
+$
+A_theta = mat(cos(theta),-sin(theta);sin(theta),cos(theta))
+$
+ויהי $rho_theta := T_A_theta$ אופרטור הכפל משמאל ב-$A_theta$.\
+מיצאו $v in V$ $rho_theta = R_v circle.small R$ והסיקו כי כל אופרטור אורתוגונלי על $RR^2$ הוא הרכבה של לכל היותר שני שיקופים.
+== סעיף ב'
+יהי $T in "End"_RR (RR^3)$ אורתוגונלי. הראו שקיים בסיס $cal(B)$ של $RR^3$, שקיימת $lambda in {plus.minus 1}$ ושקיימת $O in "M"_2 (RR)$ אורתוגונלית עבורם מתקיים
+$
+[T]_cal(B) = mat(lambda,0_(1 times 2);0_(2 times 1), O)
+$
+== סעיף ג'
+הוכיחו כי כל אופרטור אורתוגונלי $T in "End"_RR (RR^3)$ הוא הרכבה של לכל היותר $3$ שיקופים.
+= פתרון 5
