@@ -473,15 +473,31 @@ $
 $
 נפשט
 $
-2 sin(theta/2)cos(theta/2)=2x sin(theta/2)^2
+2 sin(theta/2)cos(theta/2)=2 sin(theta/2)^2 x
 $
 נעביר אגפים
 $
-2sin(theta/2) (cos(theta/2)y - x sin(theta/2))=0
+2sin(theta/2) (cos(theta/2)y -  sin(theta/2)x)=0
 $
 אם כך או ש-$2sin(theta/2)=0$, כלומר קיים $k in NN$ כך ש $theta = 2pi $, ובמקרה הזה
 $
 A = mat(1,0;0,1)=I_2
 $
 לכן $rho_theta=I d_V$, מכאן ש $R_v circle.small R = I d_V$\
-כלומר $R_v = R^(-1) =R$ ואז $v=e_1 = vec(1,0)$\
+כלומר $R_v = R^(-1) =R$ ואז $v=e_1 = vec(1,0)$\ \
+האפשרות השנייה היא ש $cos(theta/2)y = sin(theta/2)x$\
+לכן
+$
+x = cos(theta/2)\
+y = sin(theta/2)
+$
+ולכן
+#align(center)[
+#rect()[
+$
+v = vec(cos(theta/2),sin(theta/2))
+$
+]]
+ראינו בתרגול כי יש שני סוגים של איזומטריות מעל $RR^2$, סיבובים והרכבה של סיבובים והשיקוף $R$. בתרגיל זה הראינו כי כל סיבוב הוא עצמו הרכבה של שיקוף על וקטור כלשהו והשיקוף $R$, לכן עבור סיבובים ניתן לייצגם בתור הרכבה כפי שהראינו, ועבור הרכבה של סיבוב עם $R$, אפשר לכתוב בתור הרכבה של שיקוף $R_v$ כלשהו עם $R^2$.\
+כנדרש\
+$square.filled$
