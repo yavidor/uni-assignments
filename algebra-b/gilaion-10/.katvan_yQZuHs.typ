@@ -479,4 +479,9 @@ $
 $
 2sin(theta/2) (cos(theta/2)y - x sin(theta/2))=0
 $
-אם כך או ש-$2sin(theta/2)=0$
+אם כך או ש-$2sin(theta/2)=0$, כלומר קיים $k in NN$ כך ש $theta = 2pi $, ובמקרה הזה
+$
+A = mat(1,0;0,1)=I_2
+$
+לכן $rho_theta=I d_V$, מכאן ש $R_v circle.small R = I d_V$\
+כלומר $R_v = R^(-1) =R$ ואז $v=e_1 = vec(1,0)$\
