@@ -1,0 +1,183 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\newcommand{\pard}[2][f]{\frac{\partial #1}{\partial #2}}
+\title{חשבון אינפי 2 - 01040281 \\ גליון 6}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+בדקו האם הגבולות הבאים קיימים
+\section*{סעיף א'}
+\[
+    \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{1-\cos 2xy}{x^2y\sin \left(\pi y\right)}
+\]
+\section*{סעיף ב'}
+\[
+    \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{x^4-x^2-y^4+y^2}{x+y}
+\]
+\part*{פתרון 1}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\newpage
+\part*{שאלה 2}
+תהא
+\[
+    f\left(x,y\right) = \begin{cases}
+        \frac{x^3+y^3}{2x^2+y^2} & \left(x,y\right) \neq(0,0)\\
+        0 & \left(x,y\right) = \left(0,0\right)
+    \end{cases}
+\]
+האם $f$ רציפה ב-$\left(0,0\right)$? האם $\frac{\partial f}{\partial x} \left(0,0\right)$ ו-$\frac{\partial f}{\partial x} \left(0,0\right)$ קיימים? האם $f$ דיפרנציאבילית ב-$\left(0,0\right)$
+\part*{פתרון 2}
+\newpage
+\part*{שאלה 3}
+תהא
+\[
+    f\left(x,y\right) = \begin{cases}
+    \frac{x^2y}{\left(x^2+y^2\right)^k} & \left(x,y\right) \neq \left(0,0\right)\\
+        0 & \left(x,y\right) = \left(0,0\right)
+    \end{cases}
+\]
+\section*{סעיף א'}
+עבור אילו $k>0$ $f$ רציפה ב-$\left(0,0\right)$?
+\section*{סעיף ב'}
+בדקו האם הנגזרות החלקיות קיימות ב-$\left(0,0\right)$, אם כן. חשבו אותם
+\section*{סעיף ג'}
+עבור אילו $k>0$ $f$ דיפרנציאבילית ב-$\left(0,0\right)$?
+\part*{פתרון 3}
+\section*{סעיף א'}
+נציב
+\begin{gather*}
+    x = r \cos \theta \\
+    y = r \sin \theta
+\end{gather*}
+כעת נבדוק את הגבול
+\[
+    \lim_{\left(x,y\right) \to \left(0,0\right)} f\left(r\cos \theta,r\sin\theta\right)
+\]
+אם הגבול הוא $0$, הפונקציה רציפה.
+\begin{gather*}
+    f\left(r\cos \theta, r\sin\theta\right) = \frac{r^2 \cos^2\theta r\sin\theta}{\left(r^2\cos^2\theta+r^2\sin^2\right)^k} = \frac{r^3 \cos^2\theta \sin\theta}{\left(r^2\underbrace{\left(\cos^2\theta+\sin^2\theta\right)}_{=1}\right)^k}\\
+    =\frac{r^3 \cos^2\theta \sin\theta}{\left(r^2\right)^k} = \frac{r^3 \cos^2\theta \sin\theta}{r^{2k}} = \frac{r^3}{r^{2k}} \cos^2\theta\sin\theta=r^{3-2k} \cos^2\theta\sin\theta
+\end{gather*}
+$\cos^2\theta\sin\theta$ חסומה, לכן אם $r^{3-2k}\xrightarrow{r\to0}0$ יתקיים $f\left(x,y\right)\xrightarrow{\left(x,y\right)\to\left(0,0\right)}0$
+כאשר $r\to 0$, נרצה שיתקיים $3-2k>0$, כי אם $3-2k=0$  יהיה $r^0$ שזה $1$, ואם יתקיים $3-2k<0$ אז $r^{3-2k}\xrightarrow{r\to0}\infty$
+\[
+3-2k > 0 \implies 3 > 2k \implies \boxed{\frac{3}{2} > k}
+\]
+\section*{סעיף ב'}
+\[
+    \frac{\partial f}{\partial x} \left(0,0\right) = \lim_{\Delta x} \frac{\frac{\left(0+\Delta x\right)^2 \cdot 0}{\left(\left(0+\Delta x\right)^2 + 0^2\right)^k} - 0}{\Delta x} = 0
+\]
+
+\[
+    \frac{\partial f}{\partial y} \left(0,0\right) = \lim_{\Delta y} \frac{\frac{0^2 \cdot \left(0+\Delta y\right)}{\left(0^2 + \left(0+\Delta y\right)^2\right)^k} - 0}{\Delta y} = 0
+\]
+\section*{סעיף ג'}
+הראינו כי $f$ רציפה ב-$\left(0,0\right)$ ושתי הנגזרות קיימות בו, לכן הפונקציה דיפרנציאבילית אם
+\[
+    \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{f\left(x,y\right) -f\left(0,0\right) - \frac{\partial f}{\partial x} \left(0,0\right) \cdot \left(x-0\right) - \frac{\partial f}{\partial y} \left(0,0\right) \cdot \left(y-0\right)}{\sqrt{\left(x-0\right)^2 + \left(y-0\right)^2}} = 0
+\]
+בסעיף הוקדם הראינו כי $\frac{\partial f}{\partial y} = 0, \frac{\partial f}{\partial x} = 0$
+לכן אנחנו בעצם מחפשים את הגבול הבא
+\begin{gather*}
+    \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{f\left(x,y\right)}{\sqrt{x^2 +y^2}} = \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{x^2y}{\left(x^2+y^2\right)^k\cdot \left(x^2+y^2\right)^{\frac{1}{2}}} \\
+    = \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{x^2y}{\left(x^2+y^2\right)^{k+ \frac{1}{2}}}
+\end{gather*}
+בסעיף א' ראינו כי הגבול הוא $0$ אמ"מ $3-2\left(k+\frac{1}{2}\right)>0$
+\[
+3-2\left(k+\frac{1}{2}\right) > 0 \implies 3 -2k-1 > 0 \implies 2 > 2k \implies  \boxed{1 > k}
+\]
+\newpage
+\part*{שאלה 4}
+חשבו את $f_{xy}$ ואת $f_{yx}$ ב-$\left(0,0\right)$ כאשר
+\[
+    f(x,y) = \begin{cases}
+        x^2 \sin \frac{1}{x} + y^2 \sin \frac{1}{y} & x,y \neq 0\\
+        x^2 \sin \frac{1}{x} & x \neq 0 ,y = 0\\
+        y^2 \sin \frac{1}{y} & x = 0, y \neq 0\\
+        0 & x=y=0
+    \end{cases}
+\]
+\part*{פתרון 4}
+\newpage
+\part*{שאלה 5}
+תהא $f\left(x,y\right)$ המקיימת $\left|f\left(x,y\right)\right| \leq M\left(x^2+y^2\right)$ עבור $M>0$ כלשהו ולכל $\left(x,y\right)$ בסביבה של $\left(0,0\right)$. הוכיחו כי $f$ דיפרנציאבילית ב-$\left(0,0\right)$
+\part*{פתרון 5}
+\newpage
+\part*{שאלה 6}
+תהא $f$ דיפרנציאבילית ב-$\left(x_0,y_0\right)$. הוכיחו כי קיים כיוון $v$ שעבורו הנגזרת המכוונת של $f$ היא $0$
+\part*{תשובה 6}
+נחפש $v = \begin{pmatrix}
+    v_1,v_2
+\end{pmatrix} \in \mathbb{R}^2$ המקיים
+\[
+  \pard{v} \left(x_0,y_0\right) = \left<\nabla f\left(x_0,y_0\right), v \right> = 0
+\]
+לכל שני וקטורים $u,w$ מתקיים
+\[
+    \left<u,w\right> = 0 \iff u \perp w
+\]
+לכן נדרוש ש $\left(v_1,v_2\right) \perp \left(x_0,y_0\right)$\\
+נייצג את $\left(x_0,y_0\right)$ בצורה פולארית
+\[
+\begin{gathered}
+    x_0 = r \cos \theta\\
+    y_0 = r \sin \theta
+\end{gathered} \implies \left(x_0,y_0\right) = \left(r\cos\theta,r\sin\theta\right)
+\]
+על מנת למצוא וקטור ניצב, נזיז את $\left(x_0,y_0\right)$ בתשעים מעלות.
+\[
+    \left(v_1,v_2\right) = \left(r\cos\left(\theta + \frac{\pi}{2}\right),r\sin\left(\theta+\frac{\pi}{2}\right)\right) = \left(-r \sin\theta, r\cos\theta\right) = \left(-y_0,x_0\right)
+\]
+לכן
+\[
+    \boxed{v =\left( 
+            -y_0,x_0
+    \right)}
+\]
+נחשב ונבדוק
+\[
+    \left<\nabla f\left(x_0,y_0\right), \left(-y_0,x_0\right)\right>
+\]
+\newpage
+\part*{שאלה 7}
+מצאו את משוואת המישור המשיק ואת הנורמל של המישור המשיק של הפונקציה $z=e^{x+\sin y}$ בנקודה $\left(0,0,1\right)$
+\part*{תשובה 7}
+\newpage
+\part*{שאלה 8}
+יהי $m \in \mathbb{R}$. הפונקציה $f\left(x,y\right)$ נקראית הומוגנית מסדר $m$ אם היא מקיימת 
+\[
+    f\left(\lambda x, \lambda y\right) = \lambda^m f\left(x,y\right)
+\]
+לכל $x,y,\lambda$
+\section*{סעיף א'}
+הראו שכל פונקציה הומוגנית מסדר $m$ יכולה להיות מיוצגת בתור 
+\[
+    f\left(x,y\right) = x^m F\left(\frac{y}{x}\right)
+\]
+לכל $x\neq 0$, כאשר $F$ היא פונקציה כלשהי במשתנה אחד
+\section*{סעיף ב'}
+הראו שאם $f$ הומוגנית מסדר $m$ אז היא מקיימת את המשוואה הדיפרנציאלית
+\[
+    x f_x + y f_y = m f
+\]
+\part*{תשובה 8}
+\section*{סעיף א'}
+\section*{סעיף ב'}
+\end{document}
