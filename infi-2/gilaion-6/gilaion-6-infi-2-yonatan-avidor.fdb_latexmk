@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1784020134.78458 "gilaion-6-infi-2-yonatan-avidor.tex" "gilaion-6-infi-2-yonatan-avidor.pdf" "gilaion-6-infi-2-yonatan-avidor" 1784020136.25041 0
+["lualatex"] 1784057552.83883 "gilaion-6-infi-2-yonatan-avidor.tex" "gilaion-6-infi-2-yonatan-avidor.pdf" "gilaion-6-infi-2-yonatan-avidor" 1784057554.51932 0
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/13b830bfdae59fbd5f7e5da59eda332256e9c0b14ab8b55ee155a67149664a06.luc" 1781635945.96991 16538 6fd6abb1bec26c0b6cfc5e4a118c117a ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/1551cdade4e9c198d21388ef02cd49afe3ad6bdd722b73e14fccc5409a0ef16b.luc" 1781635945.95791 15441 09f8ff539e2138903eabb5297286e8c0 ""
   "/home/yavidor/.texlive2026/texmf-var/luatex-cache/generic/fonts/hb/31617e83133e8430e5db393984e146dcc717df9a6ea9aa512a1649589b9f2cac.luc" 1781635945.93985 18711 e1b72eab9b1b0589817dec12e9127857 ""
@@ -48,6 +48,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1777593600 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel-bidi-basic.lua" 1771111869 13561 b2bac95d49b8582266897d52e9032c11 ""
@@ -147,8 +148,8 @@
   "/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1443997592 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1781628601 4809665 37a5dccec98bafb55966bde8a0522c46 ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1781628733 5674147 332ff2734ed14c84b1815e3b5eb760b8 ""
-  "gilaion-6-infi-2-yonatan-avidor.aux" 1784020136.00383 150 8d40c057ebc6f08c81f5bf219c56b333 "lualatex"
-  "gilaion-6-infi-2-yonatan-avidor.tex" 1784020134.25782 7790 c6fa5e67b4791be1d12c8f0d0f09e247 ""
+  "gilaion-6-infi-2-yonatan-avidor.aux" 1784057554.25554 150 94bb8353c3b294a3e8e0021a0e960c67 "lualatex"
+  "gilaion-6-infi-2-yonatan-avidor.tex" 1784057551.94901 14021 9e6d5aaeb9ec845882afb1f88c9d74ce ""
   (generated)
   "gilaion-6-infi-2-yonatan-avidor.aux"
   "gilaion-6-infi-2-yonatan-avidor.log"

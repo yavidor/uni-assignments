@@ -44,6 +44,96 @@
 \]
 האם $f$ רציפה ב-$\left(0,0\right)$? האם $\frac{\partial f}{\partial x} \left(0,0\right)$ ו-$\frac{\partial f}{\partial x} \left(0,0\right)$ קיימים? האם $f$ דיפרנציאבילית ב-$\left(0,0\right)$
 \part*{פתרון 2}
+\subsection*{רציפות ב-$\left(0,0\right)$}
+יהי $\varepsilon >0$, נבחר $\delta = \frac{\varepsilon}{2}$\\
+לכל $Q:=\left(x,y\right)$ כך ש-$\lVert Q \rVert < \delta$ מתקיים
+\begin{gather*}
+    \left|f\left(x,y\right) - f\left(0,0\right)\right| = \left|\frac{x^3 + y^3}{2x^2 +y^2}\right| \underset{\triangle}{\leq} \left|\frac{x^3}{2x^2 + y^2}\right| + \left|\frac{y^3}{2x^2+y^2}\right| \\
+    = \left|x \cdot \frac{x^2}{2x^2 + y^2}\right| + \left|y\cdot\frac{y^2}{2x^2+y^2}\right| 
+\end{gather*}
+נסתכל על המחובר הראשון
+\[
+    \left|x\cdot \frac{x^2}{2x^2+y^2}\right| \leq \left|x\cdot \frac{2x^2}{2x^2+y^2}\right| = \left|x\right| \cdot \left|\frac{2x^2}{2x^2 + y^2}\right|
+\]
+נשים לב לכך ש$2x^2 \leq 2x^2 + y^2$ ולכן $\left|\frac{2x^2}{2x^2+y^2}\right|\leq 1$, לכן
+\[
+\left|x\right| \cdot \left|\frac{2x^2}{2x^2 + y^2}\right| \leq \left|x\right|
+\]
+ובאותה דרך נטפל במחובר השני
+\[
+    \left|y\cdot \frac{y^2}{2x^2+y^2}\right| = \left|y\right| \cdot \left|\frac{y^2}{2x^2 + y^2}\right| \leq \left|y\right|
+\]
+לכן
+\[
+    \left|x \cdot \frac{x^2}{2x^2+y^2}\right| + \left|y\cdot \frac{y^2}{2x^2+y^2}\right| \leq \left|x\right| + \left|y\right|
+\]
+כעת, מכיוון ו
+\begin{gather*}
+    \left|x\right| \leq \sqrt{x^2+y^2} < \delta\\
+    \left|y\right| \leq \sqrt{x^2+y^2} < \delta
+\end{gather*}
+נקבל
+\[
+    \left|x\right| + \left|y\right| < 2\delta = \varepsilon
+\]
+לכן הגבול אכן קיים ושווה ל-$f\left(0,0\right)$
+\subsection*{קיום נגזרות חלקיות}
+\subsubsection*{$\pard{x}$}
+נבדוק אם הגבול קיים
+\begin{gather*}
+    \lim_{\Delta x} \frac{f\left(0+\Delta x,0\right) - f\left(0,0\right)}{\Delta x} = \lim_{\Delta x\to 0} \frac{f\left(\Delta x,0\right) - 0}{\Delta x} \\
+    = \lim_{\Delta x\to0} \frac{\frac{\left(\Delta x\right)^3}{2\left(\Delta x\right)^2}}{\Delta x } = \lim_{\Delta x\to 0}\frac{\left(\Delta x\right)^3}{2\left(\Delta x\right)^2} \cdot \frac{1}{\Delta x} = \lim_{\Delta x\to 0} \frac{\left(\Delta x\right)^3}{2\left(\Delta x\right)^3} = \frac{1}{2}
+\end{gather*}
+הגבול אכן קיים (ושווה ל-$\frac{1}{2}$) ולכן הנגזרת החלקית קיימת
+\subsubsection*{$\pard{y}$}
+נבדוק אם הגבול קיים
+\begin{gather*}
+    \lim_{\Delta y \to 0} \frac{f\left(0,0+\Delta y\right)-f\left(0,0\right)}{\Delta y} = \lim_{\Delta y\to 0} \frac{\frac{\left(\Delta y\right)^3}{\left(\Delta y\right)^2}}{\Delta y} \\=\lim_{\Delta y\to0} \frac{\left(\Delta y\right)^3}{\left(\Delta y\right)^2} \cdot \frac{1}{\Delta y} =\lim_{\Delta y \to 0} \frac{\left(\Delta y\right)^3}{\left(\Delta y\right)^3} = 1
+\end{gather*}
+הגבול אכן קיים (ושווה ל-$1$) ולכן הנגזרת החלקית קיימת
+\subsection*{דיפרנציאביליות ב-$\left(0,0\right)$}
+לפי הגדרה, $f$ דיפרנציאבילית ב-$\left(0,0\right)$ אם ורק אם
+\[
+    \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{f\left(0+x,0+y\right)-f\left(0,0\right)-\pard{x}\left(0,0\right)x-\pard{y}\left(0,0\right)y}{\sqrt{x^2+y^2}} =0
+\]
+נפשט את הביטוי
+\[
+ \frac{f\left(0+x,0+y\right)-f\left(0,0\right)-\pard{x}\left(0,0\right)x-\pard{y}\left(0,0\right)y}{\sqrt{x^2+y^2}} = \frac{f\left(x,y\right) - \frac{1}{2}x - y}{\sqrt{x^2+y^2}}
+\]
+כעת, נחשב את הגבול
+\[
+    \lim_{\left(x,y\right)\to \left(0,0\right)} \frac{f\left(x,y\right) -\frac{1}{2}x - y}{\sqrt{x^2+y^2}}  = \lim_{\left(x,y\right)\to \left(0,0\right)} \frac{\frac{x^3+y^3}{2x^2+y^2} -\frac{x}{2} - y}{\sqrt{x^2+y^2}} 
+\]
+נתמקד במונה
+\[
+\frac{x^3+y^3}{2x^2+y^2} -\frac{x}{2} - y
+\]
+נמצא מכנה משותף
+\begin{gather*}
+    \frac{x^3+y^3}{2x^2+y^2} -\frac{x}{2} - y =\frac{x^3+y^3}{2\left(x^2+\frac{1}{2}y^2\right)} -\frac{x}{2} -y \\
+    \frac{x^3+y^3}{2\left(x^2+\frac{1}{2}y^2\right)} \cdot \frac{1}{1} -\frac{x}{2} \cdot \frac{x^2+\frac{1}{2}y^2}{x^2+\frac{1}{2}y^2} -y \cdot \frac{2x^2 + y^2}{2x^2 + y^2}\\
+    = \frac{x^3+y^3-\left(x^3+\frac{1}{2}xy^2\right)-\left(2yx^2 + y^3\right)}{2x^2+y^2} \\
+    = \frac{x^3+y^3-x^3-\frac{1}{2}xy^2-2yx^2 - y^3}{2x^2+y^2} \\
+    = \frac{-\frac{1}{2}xy^2 - 2yx^2}{2x^2+y^2}
+\end{gather*}
+נציב בגבול
+\[
+    \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{\frac{-\frac{1}{2}xy^2 - 2yx^2}{2x^2+y^2}}{\sqrt{x^2+y^2}}
+\]
+נשתמש בקואורדינטות פולאריות
+\begin{gather*}
+    x = r \cos \theta \\
+    y = r \sin \theta
+\end{gather*}
+ואז הגבול הוא
+\begin{gather*}
+    \frac{\frac{-\frac{1}{2}r\cos\theta r^2\sin ^2\theta  - 2 r\sin \theta r^2\cos^2\theta}{2r^2\cos^2\theta+ r^2\sin^2 \theta }}{\sqrt{r^2\cos^2\theta+ r^2\sin^2 \theta }} = \frac{-\frac{1}{2}r^3\cos\theta  \sin^2\theta - 2r^3 \sin \theta \cos^2 \theta}{\left(2r^2\cos^2\theta + r^2\sin^2\theta\right)\sqrt{r^2\cos^2\theta+r^2\sin^2\theta}} \\
+    = \frac{r^3\left(-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta\right) }{r^2\left(2\cos^2\theta+\sin^2\theta\right)\sqrt{r^2\left(\cos^2\theta+\sin^2\theta\right)}} \\
+    = \frac{r^3\left(-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta\right) }{r^2\left(2\cos^2\theta+\sin^2\theta\right)\sqrt{r^2}} = \frac{r^3\left(-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta\right) }{r^3\left(2\cos^2+\theta\sin^2\theta\right)} \\
+    = \frac{-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta }{2\cos^2\theta+\sin^2\theta} \xrightarrow{r\to 0}\frac{-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta }{2\cos^2\theta+\sin^2\theta} \neq 0
+\end{gather*}
+על פי משפט ההצגה הפולארית, כאשר $r\to0$, גם הביטוי צריך לשאוף ל-$0$ לכל $\theta$, מכיוון שאין זה המצב. הגבול אינו $0$.\\
+מכיוון שהגבול אינו $0$ הפונקציה \textbf{אינה} דיפרנציאבילית ב-$\left(0,0\right)$
 \newpage
 \part*{שאלה 3}
 תהא
@@ -129,32 +219,37 @@ $\cos^2\theta\sin\theta$ חסומה, לכן אם $r^{3-2k}\xrightarrow{r\to0}0$ 
 \[
   \pard{v} \left(x_0,y_0\right) = \left<\nabla f\left(x_0,y_0\right), v \right> = 0
 \]
+נסמן $\nabla f\left(x_0,y_0\right) = \left(x_1,y_1\right)$
 לכל שני וקטורים $u,w$ מתקיים
 \[
     \left<u,w\right> = 0 \iff u \perp w
 \]
-לכן נדרוש ש $\left(v_1,v_2\right) \perp \left(x_0,y_0\right)$\\
-נייצג את $\left(x_0,y_0\right)$ בצורה פולארית
+לכן נדרוש ש $\left(v_1,v_2\right) \perp \left(x_1,y_1\right)$\\
+נחלק למקרים,
+אם $\left(x_0,y_0\right)$, אזי כל וקטור הוא מאונך אליו ולכן ניתן לבחור כל וקטור ב-$\mathbb{R}^2$.\\
+אחרת, נייצג את $\left(x_1,y_1\right)$ בצורה פולארית
 \[
 \begin{gathered}
-    x_0 = r \cos \theta\\
-    y_0 = r \sin \theta
+    x_1 = r \cos \theta\\
+    y_1 = r \sin \theta
 \end{gathered} \implies \left(x_0,y_0\right) = \left(r\cos\theta,r\sin\theta\right)
 \]
-על מנת למצוא וקטור ניצב, נזיז את $\left(x_0,y_0\right)$ בתשעים מעלות.
+על מנת למצוא וקטור ניצב, נזיז את $\left(x_1,y_1\right)$ בתשעים מעלות.
 \[
-    \left(v_1,v_2\right) = \left(r\cos\left(\theta + \frac{\pi}{2}\right),r\sin\left(\theta+\frac{\pi}{2}\right)\right) = \left(-r \sin\theta, r\cos\theta\right) = \left(-y_0,x_0\right)
+    \left(v_1,v_2\right) = \left(r\cos\left(\theta + \frac{\pi}{2}\right),r\sin\left(\theta+\frac{\pi}{2}\right)\right) = \left(-r \sin\theta, r\cos\theta\right) = \left(-y_1,x_1\right)
 \]
 לכן
 \[
     \boxed{v =\left( 
-            -y_0,x_0
+            -y_1,x_1
     \right)}
 \]
 נחשב ונבדוק
 \[
-    \left<\nabla f\left(x_0,y_0\right), \left(-y_0,x_0\right)\right>
+\left<\nabla f\left(x_0,y_0\right),v\right>=\left<\left(x_1,y_1\right), \left(-y_1,x_1\right)\right>  = x_1 \left(-y_1\right) + y_1 x_1 = x_1y_1 - x_1y_1 = 0
 \]
+כנדרש\\
+$\blacksquare$
 \newpage
 \part*{שאלה 7}
 מצאו את משוואת המישור המשיק ואת הנורמל של המישור המשיק של הפונקציה $z=e^{x+\sin y}$ בנקודה $\left(0,0,1\right)$
