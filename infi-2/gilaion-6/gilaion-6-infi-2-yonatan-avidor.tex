@@ -32,7 +32,46 @@
 \]
 \part*{פתרון 1}
 \section*{סעיף א'}
+נתבונן במונה
+\[
+    1-\cos\left(2xy\right)
+\]
+נזכר בזהות הזווית הכפולה (לקוסינוס)
+\[
+    \cos \left(2\theta\right) = \cos^2\theta - \sin^2\theta
+\]
+נשתמש בה
+\[
+1-\cos\left(2xy\right) = 1 - \left(\cos^2\left(xy\right) - \sin^2\left(xy\right)\right) = 1 - \cos^2\left(xy\right) + \sin^2\left(xy\right)
+\]
+כמסקנה מהזהות הפיתגורית נציב $1-\cos^2\left(xy\right) = \sin^2\left(xy\right)$
+\[
+ 1 - \cos^2\left(xy\right) + \sin^2\left(xy\right) = 2\sin^2\left(xy\right)
+\]
+נציב במונה של הגבול
+\[
+    \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{1-\cos 2xy}{x^2y\sin \left(\pi y\right)} = \lim_{\left(x,y\right) \to \left(0,0\right)} = \frac{2\sin^2\left(xy\right)}{x^y\sin\left(\pi y\right)}
+\]
+נשתמש בטריק הידוע (כפל וחילוק באותו ביטוי)
+\begin{gather*}
+    \lim_{\left(x,y\right) \to \left(0,0\right)} \frac{2\sin^2\left(xy\right)}{x^2 y\sin\left(\pi y\right)} = \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{2\sin^2\left(xy\right)}{x^2y\sin\left(\pi y\right)} \cdot \frac{\pi}{\pi} \cdot \frac{y}{y} \\
+= \lim_{\left(x,y\right) \to\left(0,0\right)} 2 \cdot \underbrace{\frac{\sin\left(xy\right)}{xy}}_{\to 1}\cdot\underbrace{\frac{\sin\left(xy\right)}{xy}}_{\to 1} \cdot \underbrace{\frac{\pi y}{\sin\left(\pi y\right)}}_{\to 1} \cdot \frac{1}{\pi} = \boxed{\frac{2}{\pi}}
+\end{gather*}
+הגבול קיים (ושווה ל-$\frac{2}{\pi}$)
 \section*{סעיף ב'}
+נפשט את הביטוי
+\begin{gather*}
+    \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{x^4-x^2-y^4+y^2}{x+y} =\lim_{\left(x,y\right)\to\left(0,0\right)} \frac{\left(y^2-x^2\right)+\left(x^4-y^4\right)}{x+y}\\
+    \lim_{\left(x,y\right)\to\left(0,0\right)} = \frac{\left(y-x\right)\left(x+y\right) +\left(x-y\right)\left(x+y\right)\left(x^2+y^2\right)}{x+y} \\
+    = \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{\left(x+y\right)\left(y-x+\left(x-y\right)\left(x^2+y^2\right)\right)}{x+y} \\
+    % = \lim_{\left(x,y\right) \to \left(0,0\right)} y-x+x^3+xy^2-yx^2-y^3
+\end{gather*}
+מכיוון שהפונקציה אינה מוגדרת ב$x=-y$, נניח כי במסלול ההתקרבות $x+y\neq 0$
+\begin{gather*}
+    = \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{\left(x+y\right)\left(y-x+\left(x-y\right)\left(x^2+y^2\right)\right)}{x+y} \\
+    = \lim_{\left(x,y\right) \to \left(0,0\right)} y-x+x^3+xy^2-yx^2-y^3 = \boxed{0}
+\end{gather*}
+לכן הגבול קיים ושווה ל-$0$
 \newpage
 \part*{שאלה 2}
 תהא
@@ -132,8 +171,8 @@
     = \frac{r^3\left(-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta\right) }{r^2\left(2\cos^2\theta+\sin^2\theta\right)\sqrt{r^2}} = \frac{r^3\left(-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta\right) }{r^3\left(2\cos^2+\theta\sin^2\theta\right)} \\
     = \frac{-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta }{2\cos^2\theta+\sin^2\theta} \xrightarrow{r\to 0}\frac{-\frac{1}{2}\cos\theta\sin^2\theta-2\sin\theta\cos^2\theta }{2\cos^2\theta+\sin^2\theta} \neq 0
 \end{gather*}
-על פי משפט ההצגה הפולארית, כאשר $r\to0$, גם הביטוי צריך לשאוף ל-$0$ לכל $\theta$, מכיוון שאין זה המצב. הגבול אינו $0$.\\
-מכיוון שהגבול אינו $0$ הפונקציה \textbf{אינה} דיפרנציאבילית ב-$\left(0,0\right)$
+על מנת שהגבול יהיה קיים ושווה ל-$0$, עליו לשאוף ל-$0$ ללא תלות בזווית $\theta$. אך מכיוון שביטויי $r$ הצטמצמו, המשתנה היחיד שנותר הוא $\theta$. לכן הגבול תלוי במסלולי ההתקרבות לנקודה (בזווית), כלומר עבור זוויות שונות יתקבלו תוצאות שונות, ולכן הגבול אינו קיים\\
+מכיוון שהגבול אינו קיים (ובפרט אינו $0$) הפונקציה \textbf{אינה} דיפרנציאבילית ב-$\left(0,0\right)$
 \newpage
 \part*{שאלה 3}
 תהא
@@ -205,10 +244,76 @@ $\cos^2\theta\sin\theta$ חסומה, לכן אם $r^{3-2k}\xrightarrow{r\to0}0$ 
     \end{cases}
 \]
 \part*{פתרון 4}
+נסתכל על $f_{xy}\left(0,0\right)$ לפי הגדרה
+\[
+    f_{xy}\left(0,0\right) = \lim_{\Delta y\to 0} \frac{f_x\left(0,\Delta y\right)-f_x\left(0,0\right)}{\Delta y}
+\]
+נחשב את $f_x\left(0,0\right)$ ואת $f_x\left(0,y_0\right)$ עבור $x_0 \neq 0$
+\begin{gather*}
+    f_x\left(0,0\right) = \lim_{\Delta x\to 0} \frac{f\left(\Delta x,0\right) - f\left(0,0\right)}{\Delta x} \\
+    = \lim_{\Delta x \to 0} \frac{\left(\Delta x\right)^2 \sin \frac{1}{\Delta x}}{\Delta x} = \lim_{\Delta x\to0} \Delta x \sin \frac{1}{\Delta x} \underset{\text{חסומה כפול אפסה}}{=} 0
+\end{gather*}
+\begin{gather*}
+    f_x\left(y_0,0\right) = \lim_{\Delta x \to 0}  \frac{f\left(\Delta x,y_0\right)-f\left(0,y_0\right)}{\Delta x}  \\
+    = \lim_{\Delta x\to0} \frac{\left(\Delta x\right)^2 \sin\frac{1}{\Delta x}  +y_0^2 \sin\frac{1}{y_0} - y_0^2 \sin\frac{1}{y_0}}{\Delta x} = \lim_{\Delta x\to0} \Delta x \sin \frac{1}{\Delta x}\underset{\text{חסומה כפול אפסה}}{=} 0
+\end{gather*}
+נחזור ל-$f_{xy}$ ונציב את מה שקיבלנו
+\[
+f_{xy}\left(0,0\right) = \lim_{\Delta y \to 0} \frac{0-0}{\Delta y} = 0
+\]
+נשים לב כי הפונקציה סימטרית ביחס להחלפת משתנים, כלומר $f\left(x,y\right)=f\left(y,x\right)$ לכל $\left(x,y\right) \in \mathbb{R}^2$, לכן משיקולי סימטריה 
+\[
+    \boxed{f_{xy}\left(0,0\right) = f_{yx}\left(0,0\right) = 0}
+\]
 \newpage
 \part*{שאלה 5}
 תהא $f\left(x,y\right)$ המקיימת $\left|f\left(x,y\right)\right| \leq M\left(x^2+y^2\right)$ עבור $M>0$ כלשהו ולכל $\left(x,y\right)$ בסביבה של $\left(0,0\right)$. הוכיחו כי $f$ דיפרנציאבילית ב-$\left(0,0\right)$
 \part*{פתרון 5}
+נרצה להראות כי
+\[
+    \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{f\left(x,y\right)-f\left(0,0\right)-f_x\left(0,0\right)x-f_y\left(0,0\right)y}{\sqrt{x^2+y^2}}= 0
+\]
+על מנת לעשות כן, נמצא את $f\left(0,0\right),f_x\left(0,0\right),f_y\left(0,0\right)$
+\subsection*{$f\left(0,0\right)$}
+נתון כי לכל $x,y$ מתקיים $\left|f\left(x,y\right)\right| \leq M\left(x^2+y^2\right)$\\
+לכן
+$\left|f\left(0,0\right)\right| \leq M\left(0+0\right) = 0$, ומצד שני, מהגדרת ערך מוחלט $\left|f\left(0,0\right)\right| \geq 0$\\
+קיבלנו כי
+$0 \geq \left|f\left(0,0\right)\right| \leq 0$, לכן $\left|f\left(0,0\right)\right|=0$ ומכאן שגם $\boxed{f\left(0,0\right)=0}$ 
+\subsection*{$f_x\left(0,0\right)$}
+נסתכל על הערך המוחלט של $f_x\left(0,0\right)$
+\[
+\left|f_x\left(0,0\right)\right|=     \lim_{\Delta x \to 0} \left|\frac{f\left(\Delta x,0\right) - f\left(0,0\right)}{\Delta x}\right| =\lim_{\Delta x \to 0}\left| \frac{f\left(\Delta x,0\right)}{\Delta x}\right|
+\]
+מהנתון מתקיים
+\begin{gather*}
+    \left|\frac{f\left(\Delta x,0\right)}{\Delta x}\right|=\frac{\left|f\left(\Delta x,0\right)\right|}{\left|\Delta x\right|} \leq \frac{M\left(\Delta x\right)^2}{\left|\Delta x\right|} = M\left|\Delta x\right|\xrightarrow{\Delta x \to 0} 0\\
+\end{gather*}
+מתכונות ערך מוחלט
+\[
+  \lim_{\Delta x\to 0}    \left|\frac{f\left(\Delta x,0\right)}{\Delta x}\right| \geq 0
+\]
+לכן
+\[
+    0 \leq \lim_{\Delta x \to 0} \left|\frac{f\left(\Delta x,0\right)}{\Delta x}\right| \leq 0
+\]
+אם כך $\lim_{\Delta x \to 0}\left|\frac{f\left(\Delta x,0\right)}{\Delta x}\right| = 0$, לכן $\left|f_x\left(0,0\right)\right|=0$ ומכאן $\boxed{f_x\left(0,0\right)=0}$
+\subsection*{$f_y\left(0,0\right)$}
+מכיוון שהתנאי משפיע על $x,y$ באופן \textbf{זהה} ל-$x$ ו-$y$, נקבל כי 
+\[
+    0 \leq \lim_{\Delta y \to 0} \left|\frac{f\left(\Delta y,0\right)}{\Delta y}\right| \leq 0
+\]
+ולכן $\boxed{f_y\left(0,0\right)=0}$
+\subsection*{דיפרנציאביליות}
+נתבונן בגבול בערך מוחלט ונציב את מה שקיבלנו
+\begin{gather*}
+    \lim_{\left(x,y\right)\to\left(0,0\right)} \left|\frac{f\left(x,y\right)-f\left(0,0\right)-f_x\left(0,0\right)x-f_y\left(0,0\right)y}{\sqrt{x^2+y^2}}\right| \\
+    = \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{\left|f\left(x,y\right)-0-0x -0y\right|}{\sqrt{x^2+y^2}} = \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{\left|f\left(x,y\right)\right|}{\sqrt{x^2+y^2}} \\\leq \lim_{\left(x,y\right)\to\left(0,0\right)} \frac{M\left(x^2+y^2\right)}{\sqrt{x^2+y^2}} =\lim_{\left(x,y\right)\to\left(0,0\right)} \frac{M\left(x^2+y^2\right)^1}{\left(x^2+y^2\right)^{\frac{1}{2}}} = \lim_{\left(x,y\right)\to\left(0,0\right)} M\sqrt{x^2+y^2}\\
+    = M\lim_{\left(x,y\right)\to\left(0,0\right)} \sqrt{x^2+y^2} = M \cdot 0 = 0
+\end{gather*}
+קיבלנו כי הגבול בערך מוחלט קטן שווה ל-$0$, מתכונות ערך מוחלט זה אומר שערכו הוא $0$.\\
+קיבלנו כי הגבול קיים ושווה ל-$0$ ולכן הפונקציה דיפרנציאבילית ב-$\left(0,0\right)$\\
+$\blacksquare$
 \newpage
 \part*{שאלה 6}
 תהא $f$ דיפרנציאבילית ב-$\left(x_0,y_0\right)$. הוכיחו כי קיים כיוון $v$ שעבורו הנגזרת המכוונת של $f$ היא $0$
