@@ -359,6 +359,42 @@ $\blacksquare$
 \part*{שאלה 7}
 מצאו את משוואת המישור המשיק ואת הנורמל של המישור המשיק של הפונקציה $z=e^{x+\sin y}$ בנקודה $\left(0,0,1\right)$
 \part*{תשובה 7}
+ליתר בטחון, נבדוק שהערך הפונקציה בנקודה הוא אכן $1$
+\[
+    f\left(0,0\right) = e^{0+\sin 0} = 1
+\]
+נמצא את הנגזרות החלקיות
+\subsection*{$f_x$}
+\[
+    f_x = e^{x+\sin y}
+\]
+נחשב ב-$\left(0,0\right)$
+\[
+    f_x\left(0,0\right) = e^{0+\sin 0}= e^0 = 1
+    \]
+\subsection*{$f_y$}
+\[
+    f_y = \cos y e^{x+\sin y} 
+\]
+נחשב ב-$\left(0,0\right)$
+\[
+    f_y\left(0,0\right) = \cos 0 \cdot e^{0+\sin 0} = 1 \cdot e^0 = 1 \cdot 1 = 1
+\]
+\[
+     f_x \left(0,0\right) \left(x-0\right) + f_y\left(0,0\right) \left(y-0\right) - \left(z-f\left(0,0\right)\right) = 0
+\]
+נציב
+\[
+    1 \cdot x + 1 \cdot y - \left(z - 1\right) = 0
+\]
+ונקבל
+\[
+    \boxed{x + y - z + 1 = 0}
+\]
+ולכן הנורמל הוא
+\[
+    \boxed{\left(1,1,-1\right)}
+\]
 \newpage
 \part*{שאלה 8}
 יהי $m \in \mathbb{R}$. הפונקציה $f\left(x,y\right)$ נקראית הומוגנית מסדר $m$ אם היא מקיימת 
@@ -379,5 +415,60 @@ $\blacksquare$
 \]
 \part*{תשובה 8}
 \section*{סעיף א'}
+לפי הגדרת פונקציה הומוגנית מסדר $m$ לכל $\lambda$ מתקיים $f\left(\lambda x,\lambda y\right) =\lambda^m f\left(x,y\right)$ \\
+יהיו $y \in \mathbb{R}$, $0\neq x \in \mathbb{R}$, נבחר $\lambda = \frac{1}{x}$, ואז מהגדרת פונקציה הומוגנית מסדר $m$
+\[
+    f\left(\frac{1}{x} x, \frac{1}{x} y\right) = \left(\frac{1}{x}\right)^m f\left(x,y\right)
+\]
+לכן
+\[
+    f\left(1,\frac{y}{x}\right) = \frac{1}{x^m} f\left(x,y\right)
+\]
+נרצה לבודד את $f\left(x,y\right)$ ולכן נכפיל את שני האגפים ב-$x^m$
+\[
+    x^m f\left(1,\frac{y}{x}\right) = f\left(x,y\right)
+\]
+כעת אם נגדיר $F\left(x\right) = f\left(1,x\right)$\\
+נקבל
+\[
+    f\left(x,y\right) = x^m f\left(1,\frac{y}{x}\right) = x^m F\left(\frac{y}{x}\right)
+\]
+כנדרש\\
+$\blacksquare$
 \section*{סעיף ב'}
+תהי $f$ פונקציה דיפרנציאבילית בכל $\mathbb{R}^2$ ויהיו $\left(x,y\right) \in \mathbb{R}^2$
+נתבונן בנגזרת המכוונת על פי הוקטור $\left(x,y\right)$, בנקודה $\left(x,y\right)$
+\begin{gather*}
+    \pard{\left(x,y\right)} \left(x,y\right) = \lim_{t\to0^+} \frac{f\left(x+t x, y+ty\right)-f\left(x,y\right)}{t}  \\
+    = \lim_{t\to0^+} \frac{f\left(x\left(t+1\right), y\left(t+1\right)\right)-f\left(x,y\right)}{t} \\
+    \underset{m\text{ הומוגנית מסדר }f}{=} \lim_{t\to0^+} \frac{\left(t+1\right)^m f\left(x,y\right) - f\left(x,y\right)}{t} \\
+    = \lim_{t\to0^+} \frac{f\left(x,y\right) \left(\left(t+1\right)^m - 1\right)}{t}\\
+    \underset{\text{ קבוע} f\left(x,y\right)}{=} f\left(x,y\right) \lim_{t\to0^+} \frac{\left(t+1\right)^m-1}{t}
+\end{gather*}
+$\left(t+1\right)^m-1$ רציפה ושואפת ל-$0$ כאשר $t\to0^+$, כך גם $t$.\\
+לכן, נשתמש בלופיטל מסוג $"\frac{0}{0}"$
+\begin{gather*}
+    \frac{d}{dt} \left(t+1\right)^m-1 =  m\left(t+1\right)^{m-1}\\
+    \frac{d}{dt} t = 1\\
+    \lim_{t\to0^+} \frac{m\left(t+1\right)^{m-1}}{1} = m\left(1\right)^{m-1} = m
+\end{gather*}
+לכן
+\[
+    f\left(x,y\right) \lim_{t\to0^+} \frac{\left(t+1\right)^m-1}{t} = f\left(x,y\right) m
+\]
+ממשפט, עבור $v \in \mathbb{R}^2$ ו-$P\in D$, כאשר $D$ הוא התחום של $f$, מתקיים 
+\[
+    \pard{v}\left(P\right) = \left<\nabla f\left(P\right),v\right>
+\]
+ולכן
+\[
+    \pard{\left(x,y\right)}\left(x,y\right) = \left< \left(f_x\left(x,y\right),f_y\left(x,y\right)\right),\left(x,y\right)\right> = xf_x\left(x,y\right) + yf_y\left(x,y\right)
+\]
+קיבלנו כי
+\[
+    m f\left(x,y\right) = xf_x\left(x,y\right) + yf_y\left(x,y\right) 
+\]
+לכל $\left(x,y\right) \in \mathbb{R}^2$\\
+כנדרש\\
+$\blacksquare$
 \end{document}
