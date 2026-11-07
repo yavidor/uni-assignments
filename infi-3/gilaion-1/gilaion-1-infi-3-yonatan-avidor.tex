@@ -1,0 +1,84 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[bidi=basic]{babel}
+\babelprovide[main,import]{hebrew}
+\babelfont[hebrew]{rm}{Hadasim CLM}
+\babelfont[hebrew]{sf}{Miriam Mono CLM}
+\usepackage{titlesec}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\newcommand{\pard}[2][f]{\frac{\partial #1}{\partial #2}}
+\title{חשבון אינפיניטסימלי 3 - 01040295 \\ גליון 1}
+\author{יונתן אבידור - 214269565}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
+\begin{document}
+\maketitle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{\text{214269565}}
+\part*{שאלה 1}
+כידוע כל הנורמות שקולות זו לזו ב-$\mathbb{R}^n$, ולכן לכל שתי נורמות $\lVert x\rVert_\alpha, \lVert x \rVert_\beta$ קיים קבוע $C_{\alpha,\beta}$ כך ש-
+\[
+  \left(\forall x\in\mathbb{R}^n\right) \left(  \lVert x \rVert_\alpha \leq C_{\alpha,\beta} \lVert x\rVert_\beta\right)
+\]
+עבור $\alpha,\beta=1,2,\infty$ יש להוכיח כי הקבוע $C_{\alpha,\beta}$ נתון ע"י הטבלה הבאה:
+  \begin{center}
+    \begin{tabular}[c]{c||c|c|c|}
+      $_\alpha \setminus ^\beta$ & $1$ & $2$ & $\infty$\\
+      \hline
+      \hline
+      $1$ & * & $\sqrt{n}$ & n \\
+      \hline
+      $2$ & 1 & * & $\sqrt{n}$ \\
+      \hline
+      $\infty$ & 1 & 1 & *\\
+      \hline
+    \end{tabular}
+  \end{center}
+
+לכל אחת מששת המקרים יש להראות כי $C_{\alpha,\beta}$ הנ"ל נותן את החסם הטוב ביותר, ע"י מציאת דוגמה לווקטור $x$ (שונה מאפס) שעבורו מתקבל שוויון.
+\part*{פתרון 1}
+יהי $x = \begin{pmatrix}x_1&\ldots&x_n\end{pmatrix}^t\in \mathbb{R}^n \neq 0_n$, נחפש $C_{\alpha,\beta}$ כך ש
+\[
+  \lVert x\rVert_\alpha \leq C_{\alpha,\beta} \lVert x \rVert_\beta 
+\]
+\section*{$C_{1,2}$}
+נגדיר וקטור $y=\begin{pmatrix}\left|x_1\right|&\ldots&\left|x_n\right|\end{pmatrix}^t$, נשים לב כי $\lVert x\rVert_2 = \lVert y \rVert_2$.\\
+בנוסף, נגדיר $z=\begin{pmatrix}1&\ldots&1\end{pmatrix}^t$, ונשים לב כי $\lVert z\rVert_2 = \sqrt{\sum_{i=1}^n 1^2} = \sqrt{n}$\\
+לפי אי-שוויון קושי שוורץ עם הנורמה $\lVert \cdot \rVert_2$ (אפשר להשתמש איתה באי-שוויון קושי-שוורץ, שכן היא מושרית על ידי מכפלה פנימית) נקבל
+\[
+  \left<y,z\right> = \underbrace{\sum_{i=1}^n \left|x_i\right| \cdot 1}_{=\lVert x\rVert_1} \leq \lVert x\rVert_2 \sqrt{n} \implies \lVert x \rVert_1 \leq \lVert x_2\rVert \sqrt{n}
+\]
+כעת, על מנת למצוא וקטור שמוכיח שהחסם הוא הדוק, נצטרך למצוא וקטור שאצלו אי-שוויון קושי שוורץ מקיים שוויון\\
+כידוע מההרצאה, נצטרך ששני הוקטורים יהיו פרופורציונליים, על מנת שוקטור יהיה פרופורציונלי ל-$z$ הוא יצטרך להיות מהצורה $\begin{pmatrix}k &\ldots& k \end{pmatrix}^t$ עבור $k\in \mathbb{R}$ כלשהו, לשם הנוחות נבחר ב-$z$ עצמו (שמקיים את התנאי עם $k=1$), ואכן
+\begin{gather*}
+  \lVert z\rVert_2 = \sqrt{\sum_{i=1}^n 1^2} = \sqrt{n}\\
+  \lVert z \rVert_1 = \sum_{i=1}^n \left|1\right| = n
+\end{gather*}
+אכן קיבלנו כי
+\[
+  n = \sqrt{n}\sqrt{n}
+\]
+כנדרש
+\section*{$C_{1,\infty}$}
+\section*{$C_{2,1}$}
+נתבונן ב-$\lVert x\rVert_1^2$
+\begin{gather*}
+    \lVert x \rVert_1^2 = \left(\sum_{i=1}^n \left|x_i\right|\right)^2 = \sum_{i\in\left[n\right]} x_i^2 + \underbrace{\sum_{i\in\left[n\right]}\sum_{j\in\left[n\right]\setminus \left\{i\right\}} \left|x_i\right| \left|x_j\right|}_{\geq 0}
+    \\ \geq \sum_{i\in\left[n\right]} x_i^2 = \left(\sqrt{\sum_{i\in\left[n\right]} x_i^2}\right)^2 = \lVert x\rVert_2^2
+\end{gather*}
+כעת נראה כי $e_1=\begin{pmatrix}1&0&\ldots&0\end{pmatrix}$ מקיים $\lVert e_1 \rVert_2 = \lVert e_1 \rVert_2$
+\[
+  \rVert e_1 \lVert_2 = \sqrt{1^2 + \sum_{i=2}^n 0^2} = \sqrt{1^2} = 1
+\]
+\[
+  \lVert e_1 \rVert_1 = 1 + \sum_{i=2}^n \left|0\right| = 1
+\]
+\section*{$C_{2,\infty}$}
+\section*{$C_{\infty,1}$}
+\section*{$C_{\infty,2}$}
+\end{document}
