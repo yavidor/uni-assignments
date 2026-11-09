@@ -3,6 +3,11 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{fancyhdr}
+\usepackage{unicode-math}
+\AtBeginDocument{%
+  \let\mathbb\relax
+  \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
+}
 \usepackage{cancel}
 \usepackage{xcolor}
 \usepackage[bidi=basic]{babel}
@@ -31,11 +36,11 @@
       $_\alpha \setminus ^\beta$ & $1$ & $2$ & $\infty$\\
       \hline
       \hline
-      $1$ & * & $\sqrt{n}$ & n \\
+      $1$ & $*$ & $\sqrt{n}$ & $n$ \\
       \hline
-      $2$ & 1 & * & $\sqrt{n}$ \\
+      $2$ & $1$ & $*$ & $\sqrt{n}$ \\
       \hline
-      $\infty$ & 1 & 1 & *\\
+      $\infty$ & $1$ & $1$ & $*$\\
       \hline
     \end{tabular}
   \end{center}
@@ -56,8 +61,8 @@
 כעת, על מנת למצוא וקטור שמוכיח שהחסם הוא הדוק, נצטרך למצוא וקטור שאצלו אי-שוויון קושי שוורץ מקיים שוויון\\
 כידוע מההרצאה, נצטרך ששני הוקטורים יהיו פרופורציונליים, על מנת שוקטור יהיה פרופורציונלי ל-$z$ הוא יצטרך להיות מהצורה $\begin{pmatrix}k &\ldots& k \end{pmatrix}^t$ עבור $k\in \mathbb{R}$ כלשהו, לשם הנוחות נבחר ב-$z$ עצמו (שמקיים את התנאי עם $k=1$), ואכן
 \begin{gather*}
-  \lVert z\rVert_2 = \sqrt{\sum_{i=1}^n 1^2} = \sqrt{n}\\
-  \lVert z \rVert_1 = \sum_{i=1}^n \left|1\right| = n
+  \lVert z \rVert_1 = \sum_{i=1}^n \left|1\right| = n\\
+  \lVert z\rVert_2 = \sqrt{\sum_{i=1}^n 1^2} = \sqrt{n}
 \end{gather*}
 אכן קיבלנו כי
 \[
@@ -65,13 +70,26 @@
 \]
 כנדרש
 \section*{$C_{1,\infty}$}
+נסמן ב-$k$ את האינדקס המקיים $x_k = \max_{i\in\left[n\right]} \left|x_i\right|$, ונשים לב כי
+\[
+  \lVert x\rVert_1 = \sum_{i=1}^n \left|x_i\right| \leq \sum_{i=1}^n \left|x_k\right|= \left|x_k\right| \sum_{i=1}^n 1 = n\left|x_k\right| = n \lVert x\rVert_\infty
+\]
+כעת נמצא את השוויון, נתבונן בוקטור $z=\begin{pmatrix}1&\ldots&1\end{pmatrix}^t$
+\begin{gather*}
+  \lVert z\rVert_1 = n\\
+  \lVert z \rVert _\infty = \max\left\{1\right\} = 1
+\end{gather*}
+ואכן
+\[
+  n = n \cdot 1
+\]
 \section*{$C_{2,1}$}
 נתבונן ב-$\lVert x\rVert_1^2$
 \begin{gather*}
     \lVert x \rVert_1^2 = \left(\sum_{i=1}^n \left|x_i\right|\right)^2 = \sum_{i\in\left[n\right]} x_i^2 + \underbrace{\sum_{i\in\left[n\right]}\sum_{j\in\left[n\right]\setminus \left\{i\right\}} \left|x_i\right| \left|x_j\right|}_{\geq 0}
     \\ \geq \sum_{i\in\left[n\right]} x_i^2 = \left(\sqrt{\sum_{i\in\left[n\right]} x_i^2}\right)^2 = \lVert x\rVert_2^2
 \end{gather*}
-כעת נראה כי $e_1=\begin{pmatrix}1&0&\ldots&0\end{pmatrix}$ מקיים $\lVert e_1 \rVert_2 = \lVert e_1 \rVert_2$
+כעת נראה כי $e_1=\begin{pmatrix}1&0&\ldots&0\end{pmatrix}$ מקיים $\lVert e_1 \rVert_2 = \lVert e_1 \rVert_1$
 \[
   \rVert e_1 \lVert_2 = \sqrt{1^2 + \sum_{i=2}^n 0^2} = \sqrt{1^2} = 1
 \]
@@ -79,6 +97,90 @@
   \lVert e_1 \rVert_1 = 1 + \sum_{i=2}^n \left|0\right| = 1
 \]
 \section*{$C_{2,\infty}$}
+נסמן ב-$k$ את האינדקס המקיים $x_k = \max_{i\in\left[n\right]} \left|x_i\right|$, ונשים לב כי
+\[
+  \lVert x\rVert_2^2  = \sum_{i=1}^n x_i^2 \leq \sum_{i=1}^n x_k^2 = x_k^2 \sum_{i=1}^n 1^2 = x_k^2 n = \lVert x_k\rVert_\infty^2 n \implies \lVert x\rVert_2 \leq \sqrt{n} \lVert x\rVert_\infty
+\]
+כעת נמצא את השוויון, נתבונן בוקטור $z=\begin{pmatrix}1&\ldots&1\end{pmatrix}^t$
+\begin{gather*}
+  \lVert z\rVert_2 = \sqrt{\sum_{i=1}^n 1} = \sqrt{n}\\
+  \lVert z \rVert_\infty = 1
+\end{gather*}
+ואכן
+\[
+  \sqrt{n} = \sqrt{n} \cdot 1
+\]
 \section*{$C_{\infty,1}$}
+נסמן ב-$k$ את האינדקס המקיים $x_k = \max_{i\in\left[n\right]} \left|x_i\right|$, ונשים לב כי
+\[
+  \lVert x\rVert_\infty = \left|x_k\right| \leq  \left|x_k\right| \underbrace{\sum_{i\in\left[n\right]\setminus \left\{k\right\}} \left|x_i\right|}_{\geq 0} = \lVert x\rVert_1
+\]
+כעת נראה כי $e_1=\begin{pmatrix}1&0&\ldots&0\end{pmatrix}$ מקיים $\lVert e_1 \rVert_\infty = \lVert e_1 \rVert_1$
+\begin{gather*}
+  \lVert e_1\rVert_\infty = 1\\
+  \lVert e_1\rVert_1 = 1
+\end{gather*}
 \section*{$C_{\infty,2}$}
+נסמן ב-$k$ את האינדקס המקיים $x_k = \max_{i\in\left[n\right]} \left|x_i\right|$, ונשים לב כי
+\[
+  \lVert x\rVert_2^2 = \sum_{i\in\left[n\right]} x_i^2 \geq  x_k^2 = \lVert x\rVert_\infty \implies \lVert x\rVert_2 \geq \lVert x \rVert_\infty
+\]
+
+כעת נראה כי $e_1=\begin{pmatrix}1&0&\ldots&0\end{pmatrix}$ מקיים $\lVert e_1 \rVert_2 = \lVert e_1 \rVert_\infty$
+\begin{gather*}
+  \lVert e_1 \rVert_2 = \sqrt{1^2 \sum_{i=2}^{n} 0^2} \\
+  \lVert e_1 \rVert_\infty = 1 \\
+\end{gather*}
+\newpage
+\part*{שאלה 2}
+תהיינה $\lVert \cdot \rVert_\alpha, \lVert \cdot \rVert_\beta$ שתי נורמות שקולות ב-$\mathbb{R}^n$.
+\section*{סעיף א'}
+יש להוכיח שכל כדור פתוח בנורמה $\lVert\cdot\rVert_\alpha$ \underline{מכיל} כדור פתוח בנורמה $\lVert\cdot\rVert_\beta$, וגם \underline{מוכל} בכדור פתוח בנורמה $\lVert\cdot\rVert_\beta$
+\section*{סעיף ב'}
+יש להראות שקבוצה $\Omega \subseteq \mathbb{R}^n$ היא פתוחה ביחס לנורמה $\lVert\cdot\rVert_\alpha$ אם ורק אם היא פתוחה ביחס לנורמה $\lVert\cdot\rVert_\beta$
+\part*{פתרון 2}
+יהיו $R\in\mathbb{R}_{>0}$ ו-$p\in\mathbb{R}^n$, נסמן את הכדור הפתוח לפי המטריקה $\lVert \cdot \rVert_\alpha$ שרדיוסו $R$ ומרכזו בנקודה $p$ בדרך הבאה
+\[
+  \mathcal{B}_\alpha\left(R,p\right) = \left\{x\in\mathbb{R}^n:\lVert x - p\rVert_\alpha < R\right\}
+\]
+משקילות הנורמות, קיים $C_{\beta,\alpha}$ כך שלכל $x\in\mathbb{R}^n$
+\[
+  \lVert x \rVert_\beta \leq C_{\beta,\alpha} \lVert x \rVert_\alpha
+\]
+נתבונן ב-$\mathcal{B}_\beta\left(\frac{1}{C_{\beta,\alpha}}\cdot R,p\right)$
+\[
+  \mathcal{B}_\beta\left(\frac{1}{C_{\beta,\alpha}}\cdot R,p\right)= \left\{x\in\mathbb{R}^n : \lVert x-p\rVert_\beta < \frac{1}{C_{\beta,\alpha}} \cdot R\right\}
+\]
+ונראה כי $\mathcal{B}_\alpha\left(R,p\right)\subseteq\mathcal{B}_\beta\left(\frac{1}{C_{\beta,\alpha}}\cdot R,p\right)$, \\
+יהי $x\in \mathcal{B}_\alpha\left(R,p\right)$
+
+\begin{gather*}
+  \lVert x-p\rVert_\beta \underset{\text{שקילות הנורמות}}{\leq} C_{\beta,\alpha} \lVert x-p \rVert_\alpha \underset{x\in\mathcal{B}_\alpha\left(R,p\right)}{<} C_{\beta,\alpha}R\\
+  \implies \lVert x-p \rVert_\beta<\frac{1}{C_{\beta,\alpha}} R
+\end{gather*}
+באותה מידה, קיים גם $C_{\alpha,\beta}$, כך שלכל $x\in\mathbb{R}^n$
+\[
+  \lVert x\rVert_\alpha \leq C_{\alpha,\beta} \lVert x\rVert_\beta
+\]
+כעת נראה כי 
+\[
+  \mathcal{B}_\alpha \left(R,p\right) \supseteq \mathcal{B}_\beta \left(\frac{1}{C_{\alpha,\beta}}\cdot R, p\right) = \left\{x\in\mathbb{R}^n :\lVert x-p\rVert_\beta < \frac{1}{C_{\alpha,\beta}} \cdot R\right\}
+\]
+יהי $x\in\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}},p\right)$
+\begin{gather*}
+  \lVert x-p\rVert_\alpha \underset{\text{שקילות הנורמות}}{\leq} C_{\alpha,\beta} \lVert x-p \rVert_\beta \underset{x\in\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}},p\right)}{<} R\\
+  \implies \lVert x-p \rVert_\alpha< R
+\end{gather*}
+\section*{סעיף ב'}
+תהי $\Omega \subseteq \mathbb{R}^n$ ו-$\lVert \cdot \rVert_\alpha, \lVert \cdot \rVert_\beta$ שתי נורמות
+\subsection*{$\impliedby$}
+נניח כי $\Omega$ פתוחה ביחס ל-$\lVert \cdot \rVert_\alpha$\\
+יהי $x\in\Omega$, מההנחה קיים $\varepsilon>0$ כך ש-$x\in\mathcal{B}_\alpha\left(\varepsilon,x\right)\subseteq \Omega$, מסעיף א', קיים $C_{\alpha,\beta}$ כך ש-$x\in\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}}\cdot\varepsilon,x\right)\subseteq \mathcal{B}_\alpha\left(\varepsilon,x\right)\subseteq \Omega$\\
+$\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}}\cdot\varepsilon,x\right)$ היא סביבה פתוחה לפי $\lVert \cdot \rVert_\beta$, אשר מכילה את $x$, ומוכלת בתוך $\Omega$\\
+משרירותיות $x$, קיבלנו כי לכל $x\in\Omega$, קיימת סביבה פתוחה לפי $\lVert \cdot \rVert_\beta$ המוכלת כולה ב-$\Omega$ ומכילה את $x$, לכן לפי ההגדרה $\Omega$ פתוחה לפי $\lVert \cdot \rVert_\beta$
+\subsection*{$\implies$}
+כעת נניח כי $\Omega$ פתוחה ביחס ל-$\lVert\cdot\rVert_\beta$\\
+יהי $x\in\Omega$, מההנחה קיים $\varepsilon>0$ כך ש-$x\in\mathcal{B}_\beta\left(\varepsilon,x\right)\subseteq \Omega$, מסעיף א' קיים גם $C_{\beta,\alpha}$ כך ש $x\in\mathcal{B}_\alpha\left(\frac{1}{C_{\beta,\alpha}}\cdot\varepsilon,x\right)\subseteq\mathcal{B}_\beta\left(\varepsilon,x\right)\subseteq\Omega$\\
+$\mathcal{B}_\alpha\left(\frac{1}{C_{\beta,\alpha}}\cdot\varepsilon,x\right)$ היא סביבה פתוחה לפי $\lVert \cdot \rVert_\beta$ אשר מכילה את $x$, ומוכלת בתוך $\Omega$\\
+משרירותיות $x$, קיבלנו כי לכל $x\in\Omega$ קיימת סביבה פתוחה לפי $\lVert \cdot \rVert_\alpha$ המוכלת כולה ב-$\Omega$ ומכילה את $x$, לכן לפי ההגדרה $\Omega$ פתוחה לפי $\lVert \cdot \rVert_\alpha$
 \end{document}
