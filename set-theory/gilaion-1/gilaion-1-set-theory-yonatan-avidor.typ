@@ -1,4 +1,5 @@
 #import "@preview/catppuccin:1.1.0": catppuccin, flavors
+#import "@preview/iridis:0.2.0"
 #import "@preview/showybox:2.0.4": showybox
 #show: catppuccin.with(flavors.mocha)
 #set text(lang: "he", font: "David CLM")
@@ -19,9 +20,9 @@
   block(content)
 }
 #let heb(content) = {
-set text(lang: "he")
-set align(center)
-block(content)
+  set text(lang: "he")
+  set align(center)
+  block(content)
 }
 #align(center + horizon)[
   #set text(font: "Hadasim CLM")
@@ -57,14 +58,18 @@ block(content)
 הוכיחו כי $ union.big F = {a,b,c} $
 = פתרון 2
 
-#showybox( frame: (
+#showybox(
+  frame: (
     border-color: red.darken(30%),
     title-color: red.darken(30%),
     radius: 2pt,
     thickness: 1pt,
     body-inset: 1.5em,
-body-color: red.lighten(67%)
-  ), title: "אופסי")[קראתי את סעיף א' בלי לקרוא את האחרים (אני יודע שממש לא אמורים לעשות את זה, אבל לא נורא) \ וכתבתי פתרון של סעיף א' שעל הדרך עושה את סעיפים ב' וג', דיברתי עם המרצה והיא אמרה שזה בסדר ולכן אגיש את זה כך]
+    body-color: red.lighten(67%),
+  ),
+  title: "אופסי",
+)[קראתי את סעיף א' בלי לקרוא את האחרים (אני יודע שממש לא אמורים לעשות את זה, אבל לא נורא) \ וכתבתי פתרון של סעיף א' שעל הדרך עושה את סעיפים ב' וג', דיברתי עם המרצה והיא אמרה שזה בסדר ולכן אגיש את זה כך]
+נבנה את ${a,b,c}$
 === שלב I
 נבנה את ${a}$ בכך ש"נפעיל" את אקסיומת הזיווג על $a,a$ ונקבל קבוצה ${a,a}$, לאחר מכן, נבנה באותה צורה את הקבוצות ${b}$ ואת ${c}$.\
 === שלב II
@@ -73,7 +78,18 @@ body-color: red.lighten(67%)
 "נפעיל" את אקסיומת הזיווג על ${{b},{c}},{{a}}$ ונקבל את  #box(rect(stroke: flavors.mocha.colors.lavender.rgb)[${{a},{b},{c}}$]) (מה שמראה את סעיף ב')
 === שלב IV
 "נפעיל" את אקסיומת האיחוד על ${{a},{b},{c}}$ ונקבל כי
- $ union.big {{a},{b},{c}} = #box(rect(stroke: flavors.mocha.colors.lavender.rgb)[{a,b,c}]) $
-(ובכך סיימנו גם את סעיפים א' ו-ג')
+$ union.big {{a},{b},{c}} = #box(rect(stroke: flavors.mocha.colors.lavender.rgb)[$ {a,b,c} $]) $
+מאקסיומת האיחוד אכן מדובר בקבוצה, מה שמסיים את סעיף א'.\
+מאקסיומת ההיקף, מכיוון שאיברי הקבוצות הם אותם האיברים, אכן מדובר באותה קבוצה, מה שמסיים גם את סעיף ג'
 #pagebreak()
 = שאלה 3
+נסמן $0=emptyset$, $1={0}$, ו-$2={0,1}$. חשבו ונמקו
+$
+union.big {1,emptyset,2,{emptyset,{1}}}
+$
+= פתרון 3
+נסמן $cal(A)={1,emptyset,2,{emptyset,{1}}}$ ונפתח לפי ההגדרה
+#iridis.iridis-show(
+$
+cal(A)={1,emptyset,2,{emptyset,{1}}} = {{emptyset},emptyset,{emptyset,{emptyset}},{emptyset,{{emptyset}}}}
+$)

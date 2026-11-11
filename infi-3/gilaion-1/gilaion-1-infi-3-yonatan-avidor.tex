@@ -4,10 +4,8 @@
 \usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{unicode-math}
-\AtBeginDocument{%
-  \let\mathbb\relax
-  \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
-}
+\AtBeginDocument{ \let\mathbb\relax \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n} }
+\usepackage[mocha,styleAll]{catppuccinpalette}
 \usepackage{cancel}
 \usepackage{xcolor}
 \usepackage[bidi=basic]{babel}
@@ -91,7 +89,7 @@
 \end{gather*}
 כעת נראה כי $e_1=\begin{pmatrix}1&0&\ldots&0\end{pmatrix}$ מקיים $\lVert e_1 \rVert_2 = \lVert e_1 \rVert_1$
 \[
-  \rVert e_1 \lVert_2 = \sqrt{1^2 + \sum_{i=2}^n 0^2} = \sqrt{1^2} = 1
+  \lVert e_1 \rVert_2 = \sqrt{1^2 + \sum_{i=2}^n 0^2} = \sqrt{1^2} = 1
 \]
 \[
   \lVert e_1 \rVert_1 = 1 + \sum_{i=2}^n \left|0\right| = 1
@@ -183,4 +181,61 @@ $\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}}\cdot\varepsilon,x\right)$ ה�
 יהי $x\in\Omega$, מההנחה קיים $\varepsilon>0$ כך ש-$x\in\mathcal{B}_\beta\left(\varepsilon,x\right)\subseteq \Omega$, מסעיף א' קיים גם $C_{\beta,\alpha}$ כך ש $x\in\mathcal{B}_\alpha\left(\frac{1}{C_{\beta,\alpha}}\cdot\varepsilon,x\right)\subseteq\mathcal{B}_\beta\left(\varepsilon,x\right)\subseteq\Omega$\\
 $\mathcal{B}_\alpha\left(\frac{1}{C_{\beta,\alpha}}\cdot\varepsilon,x\right)$ היא סביבה פתוחה לפי $\lVert \cdot \rVert_\beta$ אשר מכילה את $x$, ומוכלת בתוך $\Omega$\\
 משרירותיות $x$, קיבלנו כי לכל $x\in\Omega$ קיימת סביבה פתוחה לפי $\lVert \cdot \rVert_\alpha$ המוכלת כולה ב-$\Omega$ ומכילה את $x$, לכן לפי ההגדרה $\Omega$ פתוחה לפי $\lVert \cdot \rVert_\alpha$
+\newpage
+\part*{שאלה 3}
+תהי $A:\mathbb{R}^n\to\mathbb{R}^m$ טרנספורמציה לינארית, נסמן 
+\[
+  \lVert A\rVert = \sup_{\lVert v\rVert=1} \left\{\lVert Av\rVert\right\}
+\]
+\section*{סעיף א'}
+יש להוכיח כי $\lVert A\rVert$ נורמה
+\section*{סעיף ב'}
+עבור נורמות הערך המוחלט יש להוכיח כי
+\[
+  \lVert A\rVert = \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}
+\]
+\part*{פתרון 3}
+\section*{סעיף א'}
+נראה כי $\lVert A \rVert$ מקיימת את שלושת התכונות של נורמה
+\subsection*{חיוביות}
+ראשית נראה כי $\lVert A\rVert \geq 0$\\
+$\lVert A\rVert$ מוגדר להיות הסופרימום של קבוצת נורמות כלשהן, מתכונת הנורמה $\lVert Av\rVert$ ב-$\mathbb{R}^m$, $\lVert Av\rVert\geq 0$ לכל $v$ (ובפרט לכל $v$ במקיים $\rVert v\rVert=1$)\\
+כעת נראה ש-$\lVert A\rVert=0 \iff A=0_{m\times n}$\\
+על מנת שהסופרימום של קבוצת אי-שליליים יהיה $0$, כל איברי הקבוצה צריכים להיות $0$.\\
+כלומר
+\[
+  \left(\forall v\in\mathbb{R}^n\right)\left(\lVert v\rVert=1\implies \lVert Av\rVert = 0\right)
+\]
+מכיוון ש-$\lVert Av\rVert$ היא נורמה, $\lVert Av\rVert = 0 \iff Av = 0_{m}$\\
+הטרנספורמציה \underline{היחידה} המקיימת את זה היא טרנספורמציית האפס
+\subsection*{הומוגניות}
+יהי $\alpha \in \mathbb{R}$, נרצה להראות כי $\lVert \alpha A\rVert=\left|\alpha\right|\lVert A\rVert$
+\[
+  \lVert \alpha A\rVert = \sup_{\lVert v\rVert=1}\left\{\lVert \alpha A v\rVert\right\} \underset{\left(*\right)}{=} \sup_{\lVert v\rVert =1} \left\{\left|\alpha\right|\lVert Av\rVert\right\} \underset{\left(**\right)}{=} \left|\alpha\right|\sup_{\lVert v\rVert =1} \left\{\lVert Av\rVert\right\} 
+\]
+$\left(*\right)$ $\lVert Av\rVert$ היא נורמה ולכן מקיימת הומוגניות\\
+$\left(**\right)$ כפל של כל איבר בקבוצה בסקלאר חיובי
+\subsection*{אי שוויון המשולש}
+נרצה להוכיח כי
+\[
+  \left(\forall B\in M_{m \times n}\left(\mathbb{R}\right)\right)\left(\lVert A + B\rVert\leq\lVert A\rVert + \lVert B \rVert\right)
+\]
+\begin{gather*}
+  \lVert A+B\rVert = \sup_{\lVert v\rVert = 1} \left\{\lVert \left(A+B\right) v\rVert\right\} = \sup_{\lVert v\rVert = 1} \left\{\lVert \left(Av\right) +\left(Bv\right)\rVert\right\} \\
+  \underset{\left(*\right)}{\leq} \sup_{\lVert v\rVert = 1} \left\{\lVert A v\rVert +\lVert B v\rVert\right\}  \underset{\left(**\right)}{\leq} \sup_{\lVert v\rVert = 1}\left\{\lVert Av\rVert\right\} + \sup_{\lVert v\rVert = 1}\left\{\lVert Bv\rVert\right\} = \lVert A\rVert + \lVert B\rVert
+\end{gather*}
+$\left(*\right)$ אי-שוויון המשולש של $\lVert Av\rVert$\\
+$\left(**\right)$ "בחירה" נפרדת של $v$ עבור $A$ ועבור $B$ יכולה רק להגדיל את הסופרימום
+קיבלנו כי $\lVert A \rVert$ מקיימת את שלושת התכונות של נורמה, ולכן היא נורמה
+\section*{סעיף ב'}
+נוכיח על ידי שני אי-שוויונות, ראשית נוכיח כי $\lVert A\rVert \leq \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}$, ואז נוכיח כי $\lVert A\rVert \geq \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}$
+\subsection*{$\lVert A\rVert \leq \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}$}
+עבור $v=\begin{pmatrix}v_1\\\vdots\\v_n\end{pmatrix}$ המקיים $\sum_{j=1}^{n} \left|v_j\right|=1$,
+נכתוב ישירות את $\lVert Av\rVert$
+\begin{gather*}
+  \lVert Av \rVert = \sum_{i=1}^m\left| \sum_{j=1}^n a_{i,j} v_j\right| \underset{\triangle}{\leq}\sum_{i=1}^m\sum_{j=1}^n \left|a_{i,j} v_j\right|\\
+  \underset{\left(*\right)}{=}\sum_{i=1}^m\sum_{j=1}^n \left|a_{i,j}\right|\left| v_j\right| = \sum_{i=1}^m\left| v_j\right|\sum_{j=1}^n \left|a_{i,j}\right|
+\end{gather*}
+$\left(*\right)$ קומוטטיביות בסכום סופי
+
 \end{document}

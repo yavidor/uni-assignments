@@ -92,11 +92,16 @@ INPUT /usr/share/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
 INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/share/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.lua
 INPUT /usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex
-INPUT /usr/share/texmf-dist/tex/latex/cancel/cancel.sty
+INPUT /usr/share/texmf-dist/tex/latex/catppuccinpalette/catppuccinpalette.sty
+INPUT /usr/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+INPUT /usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
 INPUT /usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
 INPUT /usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT /usr/share/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texmf-dist/tex/generic/babel/luababel.def
 INPUT /etc/texmf/tex/generic/config/language.dat

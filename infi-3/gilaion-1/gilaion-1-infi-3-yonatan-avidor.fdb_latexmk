@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1794154964.78034 "gilaion-1-infi-3-yonatan-avidor.tex" "gilaion-1-infi-3-yonatan-avidor.pdf" "gilaion-1-infi-3-yonatan-avidor" 1794154966.06474 0
+["lualatex"] 1794408471.44914 "gilaion-1-infi-3-yonatan-avidor.tex" "gilaion-1-infi-3-yonatan-avidor.pdf" "gilaion-1-infi-3-yonatan-avidor" 1794408472.80032 0
   "/etc/texmf/tex/generic/config/language.dat" 1785242605.01166 3542 77951ca2fa77aa121277afdb1543cdd4 ""
   "/home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/hb/1afe2a7caa6bb8dd0913b9ac62029db65536b2addbf0d4930eb02ed2efe5c83f.luc" 1784915656.55301 17723 4e0b3a2ee65613403f59339987877695 ""
   "/home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/hb/1fe9bfbdec5a0a09d8faef82478dad33de44b16030a08440ec28eecd620fcf91.luc" 1784915656.54801 15441 7445393845dfc5cd8c6f9ac6bd5a6f6d ""
@@ -49,6 +49,8 @@
   "/usr/share/texmf-dist/tex/generic/babel/luababel.def" 1775415801 74972 bb6a7599e4a79226754522ae2e26e907 ""
   "/usr/share/texmf-dist/tex/generic/babel/nil.ldf" 1775415801 2696 9dc402617e71b4f3c1fb7d00d026e6f3 ""
   "/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-he.tex" 1775415801 599 609ea54e8a658a9b281c44e494e12ef8 ""
+  "/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex" 1775415801 39784 414c54e866ebab4b801e2ad81d9b21d8 ""
+  "/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex" 1775415801 37436 50ba7794827e363eec9ea3467c15c6d7 ""
   "/usr/share/texmf-dist/tex/generic/unicode-data/CaseFolding.txt" 1775415801 87539 6b7075ab2647623eab0e52d7dfa4ffbb ""
   "/usr/share/texmf-dist/tex/generic/unicode-data/PropList.txt" 1775415801 145465 d1c4ecf7da205e937fd56b7a5bb2e6d6 ""
   "/usr/share/texmf-dist/tex/generic/unicode-data/ScriptExtensions.txt" 1775415801 20707 e746270daafaa94f2d5d1a9b0a3e442d ""
@@ -72,6 +74,7 @@
   "/usr/share/texmf-dist/tex/latex/base/size12.clo" 1775415801 8449 8dc66c6c313c8eb2d774af83bca435dd ""
   "/usr/share/texmf-dist/tex/latex/base/ts1enc.def" 1775415801 8090 bcb38b4f148e75e16d2c33225dbca53b ""
   "/usr/share/texmf-dist/tex/latex/cancel/cancel.sty" 1775415801 7592 dd751af313a16a0308545d5bfd7aaaa2 ""
+  "/usr/share/texmf-dist/tex/latex/catppuccinpalette/catppuccinpalette.sty" 1775415801 14751 477a9ebe34f2be9e41ba19b50ec2a919 ""
   "/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1775415801 46885 8953c67ffba03252c6090aa19568b8ba ""
   "/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1775415801 31715 19e60610b63819fe670dfa1cd84a4e94 ""
   "/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty" 1775415801 153606 8c5fb6ea1ec6ccd2c7362602c0d29f5b ""
@@ -87,6 +90,8 @@
   "/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty" 1775415801 6558 45786cbbf5684a09ee65aa45a7b367e0 ""
   "/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1775415801 4674 ff006c14a0adf55e7318570f962bcbbb ""
   "/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1775415801 10176 c2fc1c663b3f3899ddac6e6ed3fb1d7e ""
+  "/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1775415801 274 5ae372b7df79135d240456a1c6f2cf9a ""
+  "/usr/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty" 1775415801 5540 d5c60cf09c59da351aa4023ed084e4eb ""
   "/usr/share/texmf-dist/tex/latex/tex-ini-files/lualatexquotejobname.lua" 1775415801 1020 36d4dc663e02d83b566558c712569e2d ""
   "/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty" 1775415801 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty" 1775415801 132734 581741622246f2362a0cc3396d0d2fa4 ""
@@ -142,8 +147,8 @@
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload.lua" 1775415801 13566 16df94dd2de231b2bca0aaa0190941fe ""
   "/usr/share/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1775415801 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1792576283 5422468 e8029c2f0baa6bd05bf7aeee242ffcf6 ""
-  "gilaion-1-infi-3-yonatan-avidor.aux" 1794154965.88995 149 c5830c989e70e7761ddfc00530e89854 "lualatex"
-  "gilaion-1-infi-3-yonatan-avidor.tex" 1794154963.94077 11259 37040e238c0089eb98b8b2dc498bc2bf ""
+  "gilaion-1-infi-3-yonatan-avidor.aux" 1794408472.61568 150 8d40c057ebc6f08c81f5bf219c56b333 "lualatex"
+  "gilaion-1-infi-3-yonatan-avidor.tex" 1794408469.64667 15427 93052f0523d69325004d315c8f9bd6a8 ""
   (generated)
   "gilaion-1-infi-3-yonatan-avidor.aux"
   "gilaion-1-infi-3-yonatan-avidor.log"
