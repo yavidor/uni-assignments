@@ -228,14 +228,24 @@ $\left(*\right)$ אי-שוויון המשולש של $\lVert Av\rVert$\\
 $\left(**\right)$ "בחירה" נפרדת של $v$ עבור $A$ ועבור $B$ יכולה רק להגדיל את הסופרימום
 קיבלנו כי $\lVert A \rVert$ מקיימת את שלושת התכונות של נורמה, ולכן היא נורמה
 \section*{סעיף ב'}
-נוכיח על ידי שני אי-שוויונות, ראשית נוכיח כי $\lVert A\rVert \leq \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}$, ואז נוכיח כי $\lVert A\rVert \geq \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}$
-\subsection*{$\lVert A\rVert \leq \max_{j\in\left[n\right]}\left\{ \sum_{i=1}^m \left|a_{i,j}\right|\right\}$}
+נוכיח על ידי שני אי-שוויונות, נגדיר $M=\max_{j\in\left[n\right]}\left\{\sum_{i=1}^m\left|a_{i,j}\right|\right\}$.\\
+נוכיח כי $\lVert A\rVert \leq M$, ואז נוכיח כי $\lVert A\rVert \geq M$
+\subsection*{$\lVert A\rVert \leq M$}
 עבור $v=\begin{pmatrix}v_1\\\vdots\\v_n\end{pmatrix}$ המקיים $\sum_{j=1}^{n} \left|v_j\right|=1$,
 נכתוב ישירות את $\lVert Av\rVert$
 \begin{gather*}
   \lVert Av \rVert = \sum_{i=1}^m\left| \sum_{j=1}^n a_{i,j} v_j\right| \underset{\triangle}{\leq}\sum_{i=1}^m\sum_{j=1}^n \left|a_{i,j} v_j\right|\\
-  \underset{\left(*\right)}{=}\sum_{i=1}^m\sum_{j=1}^n \left|a_{i,j}\right|\left| v_j\right| = \sum_{i=1}^m\left| v_j\right|\sum_{j=1}^n \left|a_{i,j}\right|
+  =\sum_{i=1}^m\sum_{j=1}^n \left|a_{i,j}\right|\left| v_j\right| \underset{\left(*\right)}{=} \sum_{j=1}^n\left(\sum_{i=1}^m \left|a_{i,j}\right|\right)\left| v_j\right| \\
+  \underset{\left(**\right)}{\leq} \sum_{j=1}^n M \left|v_j\right| = M \sum_{j=1}^n \left|v_j\right| \underset{\lVert v \rVert = 1}{=} M
 \end{gather*}
-$\left(*\right)$ קומוטטיביות בסכום סופי
-
+$\left(*\right)$ קומוטטיביות בסכום סופי\\
+$\left(**\right)$  לכל $j\in\left[n\right]$, $\sum_{i=1}^m \left|a_{i,j}\right|\leq \max_{k\in\left[n\right]} \sum_{i=1}^m \left|a_{i,k}\right|=M$\\
+מכיוון שלכל $v$ כנ"ל מתקיים $\lVert Av \rVert \leq M$, מתקיים שגם הסופרימום חסום ע"י $M$, כלומר
+\[
+  \lVert A \rVert = \sup_{\lVert v \rVert = 1}\left\{\lVert Av\rVert\right\}
+\]
+\subsection*{$\lVert A \rVert \geq M$}
+נגדיר את $k\in\left[n\right]$ להיות האינדקס שבו $\sum^m_{i=1}\left|a_{i,k}\right|$ מקבל ערך מקסימלי.\\
+מהתנאי ש-$\lVert v\rVert=1$, צריך שיתקיים $\sum_{j=1}^n\left|v_j\right|=1$.\\
+נרצה להגדיל את $\lVert Av\rVert$, נרצה ש-$\left|v_k\right|$ יהיה גדול ככל האפשר, זה מתקבל עבור $v=e_k$
 \end{document}

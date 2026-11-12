@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1794408471.44914 "gilaion-1-infi-3-yonatan-avidor.tex" "gilaion-1-infi-3-yonatan-avidor.pdf" "gilaion-1-infi-3-yonatan-avidor" 1794408472.80032 0
+["lualatex"] 1794486205.4559 "gilaion-1-infi-3-yonatan-avidor.tex" "gilaion-1-infi-3-yonatan-avidor.pdf" "gilaion-1-infi-3-yonatan-avidor" 1794486206.78984 0
   "/etc/texmf/tex/generic/config/language.dat" 1785242605.01166 3542 77951ca2fa77aa121277afdb1543cdd4 ""
   "/home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/hb/1afe2a7caa6bb8dd0913b9ac62029db65536b2addbf0d4930eb02ed2efe5c83f.luc" 1784915656.55301 17723 4e0b3a2ee65613403f59339987877695 ""
   "/home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/hb/1fe9bfbdec5a0a09d8faef82478dad33de44b16030a08440ec28eecd620fcf91.luc" 1784915656.54801 15441 7445393845dfc5cd8c6f9ac6bd5a6f6d ""
@@ -147,8 +147,8 @@
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload.lua" 1775415801 13566 16df94dd2de231b2bca0aaa0190941fe ""
   "/usr/share/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1775415801 10170 b1a2248f43cab899e3fe36f676176865 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1792576283 5422468 e8029c2f0baa6bd05bf7aeee242ffcf6 ""
-  "gilaion-1-infi-3-yonatan-avidor.aux" 1794408472.61568 150 8d40c057ebc6f08c81f5bf219c56b333 "lualatex"
-  "gilaion-1-infi-3-yonatan-avidor.tex" 1794408469.64667 15427 93052f0523d69325004d315c8f9bd6a8 ""
+  "gilaion-1-infi-3-yonatan-avidor.aux" 1794486206.61216 150 8d40c057ebc6f08c81f5bf219c56b333 "lualatex"
+  "gilaion-1-infi-3-yonatan-avidor.tex" 1794486203.81815 16242 7663a82a8ddc78613988618db057798f ""
   (generated)
   "gilaion-1-infi-3-yonatan-avidor.aux"
   "gilaion-1-infi-3-yonatan-avidor.log"
