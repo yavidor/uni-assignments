@@ -137,6 +137,7 @@
 \section*{סעיף ב'}
 יש להראות שקבוצה $\Omega \subseteq \mathbb{R}^n$ היא פתוחה ביחס לנורמה $\lVert\cdot\rVert_\alpha$ אם ורק אם היא פתוחה ביחס לנורמה $\lVert\cdot\rVert_\beta$
 \part*{פתרון 2}
+\section*{סעיף א'}
 יהיו $R\in\mathbb{R}_{>0}$ ו-$p\in\mathbb{R}^n$, נסמן את הכדור הפתוח לפי המטריקה $\lVert \cdot \rVert_\alpha$ שרדיוסו $R$ ומרכזו בנקודה $p$ בדרך הבאה
 \[
   \mathcal{B}_\alpha\left(R,p\right) = \left\{x\in\mathbb{R}^n:\lVert x - p\rVert_\alpha < R\right\}
@@ -169,6 +170,8 @@
   \lVert x-p\rVert_\alpha \underset{\text{שקילות הנורמות}}{\leq} C_{\alpha,\beta} \lVert x-p \rVert_\beta \underset{x\in\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}},p\right)}{<} R\\
   \implies \lVert x-p \rVert_\alpha< R
 \end{gather*}
+כנדרש\\
+$\blacksquare$
 \section*{סעיף ב'}
 תהי $\Omega \subseteq \mathbb{R}^n$ ו-$\lVert \cdot \rVert_\alpha, \lVert \cdot \rVert_\beta$ שתי נורמות
 \subsection*{$\impliedby$}
@@ -180,7 +183,9 @@ $\mathcal{B}_\beta\left(\frac{1}{C_{\alpha,\beta}}\cdot\varepsilon,x\right)$ ה�
 כעת נניח כי $\Omega$ פתוחה ביחס ל-$\lVert\cdot\rVert_\beta$\\
 יהי $x\in\Omega$, מההנחה קיים $\varepsilon>0$ כך ש-$x\in\mathcal{B}_\beta\left(\varepsilon,x\right)\subseteq \Omega$, מסעיף א' קיים גם $C_{\beta,\alpha}$ כך ש $x\in\mathcal{B}_\alpha\left(\frac{1}{C_{\beta,\alpha}}\cdot\varepsilon,x\right)\subseteq\mathcal{B}_\beta\left(\varepsilon,x\right)\subseteq\Omega$\\
 $\mathcal{B}_\alpha\left(\frac{1}{C_{\beta,\alpha}}\cdot\varepsilon,x\right)$ היא סביבה פתוחה לפי $\lVert \cdot \rVert_\beta$ אשר מכילה את $x$, ומוכלת בתוך $\Omega$\\
-משרירותיות $x$, קיבלנו כי לכל $x\in\Omega$ קיימת סביבה פתוחה לפי $\lVert \cdot \rVert_\alpha$ המוכלת כולה ב-$\Omega$ ומכילה את $x$, לכן לפי ההגדרה $\Omega$ פתוחה לפי $\lVert \cdot \rVert_\alpha$
+משרירותיות $x$, קיבלנו כי לכל $x\in\Omega$ קיימת סביבה פתוחה לפי $\lVert \cdot \rVert_\alpha$ המוכלת כולה ב-$\Omega$ ומכילה את $x$, לכן לפי ההגדרה $\Omega$ פתוחה לפי $\lVert \cdot \rVert_\alpha$\\
+כנדרש\\
+$\blacksquare$
 \newpage
 \part*{שאלה 3}
 תהי $A:\mathbb{R}^n\to\mathbb{R}^m$ טרנספורמציה לינארית, נסמן 
@@ -226,7 +231,9 @@ $\left(**\right)$ כפל של כל איבר בקבוצה בסקלאר חיובי
 \end{gather*}
 $\left(*\right)$ אי-שוויון המשולש של $\lVert Av\rVert$\\
 $\left(**\right)$ "בחירה" נפרדת של $v$ עבור $A$ ועבור $B$ יכולה רק להגדיל את הסופרימום
-קיבלנו כי $\lVert A \rVert$ מקיימת את שלושת התכונות של נורמה, ולכן היא נורמה
+קיבלנו כי $\lVert A \rVert$ מקיימת את שלושת התכונות של נורמה, ולכן היא נורמה\\
+כנדרש\\
+$\blacksquare$
 \section*{סעיף ב'}
 נוכיח על ידי שני אי-שוויונות, נגדיר $M=\max_{j\in\left[n\right]}\left\{\sum_{i=1}^m\left|a_{i,j}\right|\right\}$.\\
 נוכיח כי $\lVert A\rVert \leq M$, ואז נוכיח כי $\lVert A\rVert \geq M$
@@ -242,10 +249,33 @@ $\left(*\right)$ קומוטטיביות בסכום סופי\\
 $\left(**\right)$  לכל $j\in\left[n\right]$, $\sum_{i=1}^m \left|a_{i,j}\right|\leq \max_{k\in\left[n\right]} \sum_{i=1}^m \left|a_{i,k}\right|=M$\\
 מכיוון שלכל $v$ כנ"ל מתקיים $\lVert Av \rVert \leq M$, מתקיים שגם הסופרימום חסום ע"י $M$, כלומר
 \[
-  \lVert A \rVert = \sup_{\lVert v \rVert = 1}\left\{\lVert Av\rVert\right\}
+  \lVert A\rVert = \sup_{\lVert v\rVert=1} \left\{\lVert Av\rVert\right\} \leq M \implies \lVert A \rVert \leq M
 \]
 \subsection*{$\lVert A \rVert \geq M$}
-נגדיר את $k\in\left[n\right]$ להיות האינדקס שבו $\sum^m_{i=1}\left|a_{i,k}\right|$ מקבל ערך מקסימלי.\\
-מהתנאי ש-$\lVert v\rVert=1$, צריך שיתקיים $\sum_{j=1}^n\left|v_j\right|=1$.\\
-נרצה להגדיל את $\lVert Av\rVert$, נרצה ש-$\left|v_k\right|$ יהיה גדול ככל האפשר, זה מתקבל עבור $v=e_k$
+נגדיר את $l\in\left[n\right]$ להיות האינדקס שבו $\sum^m_{i=1}\left|a_{i,l}\right|$ מקבל ערך מקסימלי.\\
+נרצה להגדיל את $\lVert Av\rVert$, מהגדרת כפל מטריצה בוקטור והגדרת הנורמה $l_1$, נוכל להסתכל על הקואורדינטה ה-$j$ של $v$ (בערך מוחלט) בתור סקלאר בין $0$ ל-$1$ (מהתנאי ש-$\lVert v\rVert=1$, צריך שיתקיים $\sum_{j=1}^n\left|v_j\right|=1$) שמכפילים אותו בעמודה ה-$j$ של $A$, לכן נרצה ש-$\left|v_l\right|$ יהיה גדול ככל האפשר, זה מתקבל עבור $v=e_l$ (או $v=-e_l$),
+כעת
+\[
+  \lVert Ae_l\rVert = \sum_{i=1}^m\left| \sum_{j=1}^n a_{i,j} \delta_{l,j}\right| = \sum_{i=1}^m \left|a_{i,l}\right|
+\]
+כאשר $\delta_{l,j}$ היא הדלטא של קרונקר, וכפי שראינו באלגברה זוהי דרך לייצג את ההתנהגות של $e_l$\\
+מהגדרת $l$, קיבלנו כי
+\[
+  \lVert A e_l\rVert = \max_{k\in\left[n\right]}\left\{\sum_{i=1}^m \left|a_{i,k}\right|\right\} \underset{Def}{=} M
+\]
+מצאנו וקטור $v$ עבורו $\lVert Av\rVert = M$. מההגדרה, הסופרימום גדול (או שווה) לכל איבר בקבוצה, לכן 
+\[
+ \lVert A \rVert = \sup_{\lVert v\rVert=1} \left\{\lVert Av\rVert\right\} \geq \lVert Ae_l\rVert = M \implies \lVert A \rVert \geq M
+\]
+\subsection*{מסקנה}
+קיבלנו כי
+\[
+  \lVert A \rVert \leq M \land \lVert A \rVert \geq M
+\]
+ולכן
+\[
+  \lVert A \rVert = M
+\]
+כנדרש\\
+$\blacksquare$
 \end{document}

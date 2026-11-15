@@ -165,4 +165,5 @@ INPUT /home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman17-
 INPUT /home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc
 INPUT /home/yavidor/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc
 INPUT ./gilaion-1-infi-3-yonatan-avidor.aux
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
