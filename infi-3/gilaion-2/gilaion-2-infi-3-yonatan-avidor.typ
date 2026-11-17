@@ -74,7 +74,7 @@ $
   lim_(norm(Delta x)->0) norm(F(x+Delta x)-F(x)-L(Delta x))/norm(Delta x) = 0
 $
 לכן אם נגדיר $L$ להיות טרנפורמציית האפס נקבל את השוויון המבוקש, ומכאן $F$ דיפרנציאבילית ב-$x$\
-מכיוון ש-$L$ היא טרנפרומציית האפס, המטריצה המייצגת שלה היא מטריצת האפס, ולכן מטריצת הנגזרת המבוקשת היא #box(rect($0_(m times n)$, stroke: flavors.mocha.colors.lavender.rgb))
+מכיוון ש-$L$ היא טרנספורמציית האפס, המטריצה המייצגת שלה היא מטריצת האפס, ולכן מטריצת הנגזרת המבוקשת היא #box(rect($0_(m times n)$, stroke: flavors.mocha.colors.lavender.rgb))
 #pagebreak()
 = שאלה 2
 תהי $F:RR^n -> RR$ פוקנציה בעלת נגזרות חלקיות רציפות בקבוצה קומפקטית וקמורה $Omega subset.eq RR^n$. יש להוכיח שקיים מספר חיובי $M$ כך ש-
@@ -82,11 +82,23 @@ $
   forall x,y in Omega. abs(f(x)-f(y)) <= M norm(x-y)
 $
 = פתרון 2
+$f$ מוגדרת בקבוצה קמורה ודיפרנציאבילית בקבוצה קמורה, לכן מאי-שוויון הערך הממוצע הוקטורי מתקבל שלכל שתי נקודות $x,y subset.eq Omega$ מתקיים
+$
+  |f(x)-f(y)| <= (sup_(omega in Omega) norm(D f|_omega)) norm(x-y)
+$
+בנוסף, מרציפות הנורמות, הפונקציה $norm(D f)$ רציפה ומוגדרת בקבוצה קומפקטית, אחת ההגדרות של קבוצה קומפקטית, לכן ממשפט ווירשטראס, נורמת הנגזרת ($norm(D f)$) חסומה, לכן קיים מספר סופי $M in RR$ כך ש $forall omega in Omega. M>= norm(D f|_omega)$.\
+מכיוון ש-$M$ מקיים את אי השוויון הזה לכל $omega in Omega$, מתקיים $M>=sup_(omega in Omega) norm(D f|_omega)$\
+לכן
+$
+  forall x,y in Omega. abs(f(x)-f(y)) <= (sup_(omega in Omega) norm(D f|_omega)) norm(x-y)<= M norm(x-y)
+$
 #pagebreak()
 = שאלה 3
-תהי $F: Omega subset.eq RR^n -> RR^m$ פונקציה דיפרנציאבילית בנקודה פנמית $x in Omega$.\
+תהי $F: Omega subset.eq RR^n -> RR^m$ פונקציה דיפרנציאבילית בנקודה פנימית $x in Omega$.\
 יש להוכיח שקיימת סביבה של הנקודה $x$ שבה קיים קבוע $M$ כך ש
 $
   norm(F(x+Delta x)- F(x)) <= M norm(Delta x)
 $
 לכל $Delta x$ כך שגם הנקודה $x+ Delta x$ נמצאת בסביבה הנ"ל
+= פתרון 3
+
