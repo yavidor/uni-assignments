@@ -1,4 +1,5 @@
 #import "@preview/catppuccin:1.1.0": catppuccin, flavors
+#import "@preview/showybox:2.0.4": showybox
 #import "@preview/cetz:0.5.3"
 #show: catppuccin.with(flavors.mocha)
 #set page(margin: 1.50in, footer: context {
@@ -139,9 +140,9 @@ Prove that $PP(D)=0$
 == Section B
 Prove that $PP(T)=1/2$
 = Answer 2
-First, we'll visualize the prob. space
+First, we'll visualize the probabiliy space
 #align(center)[
-  #cetz.canvas(length: 5cm, {
+  #cetz.canvas(length: 6cm, {
     import cetz.draw: *
     line((0, 0), (1, 1), (0, 1), close: true, fill: flavors.mocha.colors.blue.rgb.darken(50%), stroke: none)
 
@@ -171,8 +172,7 @@ First, we'll visualize the prob. space
 Let $n in NN$, \
 We'll define $A_n := (a_k)^n_(k=1)$\
 Where $a_k := [(k-1)/n, k/n]$\
-Let $(x,y) in D$, from the definition of $D$ we know that $x=y$.\
-Since $A_n$ covers $[0,1]$, there exists $k in [n]$ such that $x in a_k$, and for that $k$ also $y in a_k$.\
+Let $(x,y) in D$, Since $A_n$ covers $[0,1]$, there exists $k in [n]$ such that $x in a_k$, and since from the definition of $D$, $x=y$, for that $k$ also $y in a_k$.\
 Since this is true for _all_ elements of $D$, it means that
 $
   D subset.eq union.big^n_(k=1)(a_k times a_k)
@@ -202,11 +202,11 @@ $
   0 < PP(D) <= 1/n stretch(arrow.long)^(n->oo) 0
 $
 Therefore, from sandwich (and not, I'm not calling it "squeeze theorem", sandwich is the superior name) we have $PP(D)=0$\
+$square.filled$\
 And for fun, let's add another visualization
 #align(center)[
-  #cetz.canvas(length: 5cm, {
+  #cetz.canvas(length: 6cm, {
     import cetz.draw: *
-    line((0, 0), (1, 1), (0, 1), close: true, fill: flavors.mocha.colors.blue.rgb.darken(50%), stroke: none)
     let n = 10
     for i in range(n) {
       let step = i / n
@@ -234,22 +234,150 @@ And for fun, let's add another visualization
     content((1, -0.1), text(fill: flavors.mocha.colors.subtext0.rgb, $1$))
     content((-0.1, 1), text(fill: flavors.mocha.colors.subtext0.rgb, $1$))
 
-    content((0.3, 0.7), text(fill: flavors.mocha.colors.blue.rgb, $T \ (x < y)$))
     content((0.65, 0.35), angle: 45deg, text(fill: flavors.mocha.colors.red.rgb, weight: "bold", $D \ (x = y)$))
     content((1.15, 1.15), text(fill: flavors.mocha.colors.text.rgb, $Omega$))
 
     line((0.85, 0.85), (1, 0.45), stroke: (paint: flavors.mocha.colors.peach.rgb, dash: "dotted"))
-    content((1, 0.45), text(fill: flavors.mocha.colors.peach.rgb, $n "boxes of" a_k times a_k$))
+    content((1., 0.45), text(fill: flavors.mocha.colors.peach.rgb, $n "boxes of" a_k times a_k$))
   })]
 == Section B
+Let $n in NN$.
+We'll define $A_n := (a_k)^n_(k=1)$\
+Where $a_k := [(k-1)/n,k/n)$.\
+And we'll define $B_n = (b_k)^n_(k=1)$\
+Where $b_k := [(k-1)/n,1]$.\
+Now let $(x,y) in T$, from T's definition we know that $y>x$, since $A_n$ covers $[0,1]$ we know that there exists $k in [n]$ such that $x in a_k$, therefore $(k-1)/n <= x < k/n <= 1$.\
+And since $x <y <= 1$, for the same $k$, $y in b_k$.\
+Since this is true for all elements of $T$, we have
+$
+  T subset.eq union.big_(k=1)^n (a_k times b_k)
+$
+Notice how $a_k$ is pairwise disjoin, therefore we have addativity.\
+From the monotonicity of the measure, additivity and uniformity we have
+$
+  PP(T) <= PP(union.big_(k=1)^n (a_k times b_k)) =PP(sum_(k=1)^n (a_k times b_k)) = sum_(k=1)^n ((k/n - (k-1)/n) (1-(k-1)/n)) = sum_(k=1)^n 1/n dot.c (n-k+1)/n \
+  = (n-k+1)/n^2 underset(=, "Arithmetic series") (n(n+1))/(2n^2) = (n+1)/(2n) = (1+1/n)/2
+$
+Now we'll define yet another sequence, $C_n = (c_k)^n_(k=1)$, where $c_k = [k/n,1]$\
+Let $(x,y) in union.big^n_(k=1)(a_k times c_k)$, by definition it means that there exists $k in [n]$ such that $x in a_k$ and $y in c_k$, therefore
+$
+  (k-1)/n <= x < k/n <= y <= 1 ==> x <= y ==> (x,y) in T
+$
+From monotonicity of the measure, sub-additivity and uniformity we have
+$ PP(T) >= PP(union.big_(k=1)^n (a_k times c_k)) =PP(sum_(k=1)^n (k/n - (k-1)/n)(1- k/n))=sum_(k=1)^n 1/n dot.c (n-k)/n\
+sum_(k=1)^n (n-k)/n^2 = (n(n-1))/(2n^2) = (1+1/n)/2 $If we add what we got we have
+$
+  (1+1/n)/2 <= PP(T) <= (1+1/n)/2
+$
+So if take $n--> oo$ we get
+$
+  1/2 <= PP(T) <= 1/2 ==> PP(T) = 1/2
+$
+$square.filled$\
+And we'll finish with another (though way less aesthetically pleasing) visualization
+#align(center)[
+  #cetz.canvas(length: 6cm, {
+    import cetz.draw: *
+    line(
+      (0, 0),
+      (1, 1),
+      (0, 1),
+      close: true,
+      fill: flavors.mocha.colors.blue.rgb.darken(50%),
+      stroke: none,
+    )
+    let n = 10
+    for i in range(n) {
+      let step = i / n
+      let next-step = (i + 1) / n
+      rect(
+        (step, next-step),
+        (next-step, 1),
+        fill: flavors.mocha.colors.green.rgb.darken(30%).transparentize(60%),
+        stroke: (
+          paint: flavors.mocha.colors.green.rgb,
+          thickness: 1pt,
+        ),
+      )
+
+      rect(
+        (step, step),
+        (next-step, next-step),
+        fill: flavors.mocha.colors.peach.rgb.darken(35%).transparentize(60%),
+        stroke: (
+          paint: flavors.mocha.colors.peach.rgb,
+          thickness: 1pt,
+        ),
+      )
+      rect(
+        (step, next-step),
+        (next-step, 1),
+        fill: flavors.mocha.colors.peach.rgb.darken(65%).transparentize(60%),
+        stroke: none,
+      )
+    }
+    rect((0, 0), (1, 1), stroke: (paint: flavors.mocha.colors.text.rgb, thickness: 1.5pt))
+
+    line((-0.1, 0), (1.2, 0), stroke: flavors.mocha.colors.subtext0.rgb, mark: (
+      end: ">",
+      fill: flavors.mocha.colors.subtext0.rgb,
+    ))
+    line((0, -0.1), (0, 1.2), stroke: flavors.mocha.colors.subtext0.rgb, mark: (
+      end: ">",
+      fill: flavors.mocha.colors.subtext0.rgb,
+    ))
+    set-style(content: (padding: 0.1))
+    content((1.2, -0.1), text(fill: flavors.mocha.colors.text.rgb, $x$))
+    content((-0.1, 1.2), text(fill: flavors.mocha.colors.text.rgb, $y$))
+    content((-0.1, -0.1), text(fill: flavors.mocha.colors.subtext0.rgb, $0$))
+    content((1, -0.1), text(fill: flavors.mocha.colors.subtext0.rgb, $1$))
+    content((-0.1, 1), text(fill: flavors.mocha.colors.subtext0.rgb, $1$))
+
+    content((0.3, 0.7), text(fill: flavors.mocha.colors.blue.rgb, $T \ (x < y)$))
+    content((1.15, 1.15), text(fill: flavors.mocha.colors.text.rgb, $Omega$))
+
+    line((0.85, 0.85), (1, 0.45), stroke: (paint: flavors.mocha.colors.peach.rgb, dash: "dotted"))
+    content((1., 0.45), text(fill: flavors.mocha.colors.peach.rgb, $n "rectangles of" a_k times b_k$))
+
+    line((0.55, 0.85), (0.6, 0.12), stroke: (paint: flavors.mocha.colors.green.rgb, dash: "dotted"))
+    content((0.6, 0.12), text(fill: flavors.mocha.colors.green.rgb, $n "rectangles of" a_k times c_k$))
+  })]
 #pagebreak()
 = Question 3 - A shooting competition
-wo players, Alice and Bob, compete in a shooting game. Alice hits the target with probability $p$, and
+Two players, Alice and Bob, compete in a shooting game. Alice hits the target with probability $p$, and
 Bob hits the target with probability $q$, where $0 <p,q<1$.
 Alice shoots first, and then the players alternate turns. All shots are independent, and the game
 ends as soon as one player hits the target. That player is declared the winner.
 Find the probability that Alice wins, and the probability that Bob wins.
 = Answer 3
+== Alice Wins
+For Alice to win she needs to hit on her first try, or for her and Bob to miss the their first try then for her to hit on the second try and so on.\
+We'll define $A_n$ to be the event where Alice hits the target on her $n$-th try.\
+$PP(A_n) = (1-p)^(n-1) dot.c (1-q)^(n-1) dot.c p$, and such for her to win we need to find $sum_(n=1)^oo PP(A_n)$
+$
+  sum_(n=1)^oo PP(A_n) = sum_(n=1)^oo (1-p)^(n-1) dot.c (1-q)^(n-1) dot.c p= sum_(n=1)^oo ((1-p)(1-q))^(n-1) dot.c p \
+  underset(=, "Geometric Series") p/(1-(1-p)(1-q)) = p/(1-(1-q-p+p q)) = #rect($ p/(q+p-p q) $, stroke: flavors.mocha.colors.lavender.rgb)
+$
+== Bob Wins
+#showybox(
+  frame: (
+    border-color: flavors.mocha.colors.teal.rgb.darken(30%),
+    title-color: flavors.mocha.colors.teal.rgb.darken(20%),
+    radius: 2pt,
+    thickness: 1pt,
+    body-inset: 1.5em,
+    body-color: flavors.mocha.colors.teal.rgb.lighten(67%),
+  ),
+  title: "Blabbering ahead",
+)[We can just say that someone needs to win eventually so $ PP(B o b) = 1- PP(A l i c e) $But I feels like the question is meant for us to calculate it directly]
+
+For Bob to win he needs he needs Alice to miss on her first and for him to hit on his first try, or for both Alice and him to miss their first tries, for Alice misses her second try as well and for Bob to hit on his second try, and so on.\
+We'll define $B_n$ to be the even where Bob hits the target on his $n$-th try.\
+$PP(B_n) = (1-p)^n dot.c (1-q)^(n-1) dot.c q$, and such for him to win we need to find $sum_(n=1)^oo PP(B_n)$
+$
+  sum_(n=1)^oo PP(B)= sum_(n=1)^oo (1-p)^n dot.c (1-q)^(n-1) dot.c q= sum_(n=1)^oo ((1-p)(1-q))^(n-1) dot.c (1-p)dot.c q\
+  underset(=, "Geometric Series") ((1-p)dot.c q)/(1-(1-p)(1-q)) = ((1-p)dot.c q)/(1-(1-q-p+p q)) = #rect($ ((1-p)dot.c q)/(q+p-p q) $, stroke: flavors.mocha.colors.lavender.rgb)
+$
 #pagebreak()
 = Question 4 - Monty Hall with a biased host
 There are three doors, behind exactly one of which is a prize. The prize is placed uniformly at random, and a contestant intially chooses door $1$.\

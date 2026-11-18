@@ -34,11 +34,9 @@
 }
 #align(center + horizon)[
   #set text(font: "Hadasim CLM")
-
-  #text(size: 22pt, weight: "bold")[תורת הקבוצות - 104293] \
+  #text(size: 22pt, weight: "bold")[חשבון אינפיניטסימלי 3 - 01040295] \
   #v(0.5em)
-  #text(size: 18pt)[גיליון 1]
-
+  #text(size: 18pt)[גיליון 2]
   #v(1cm)
   #text(size: 14pt)[יונתן אבידור - 214269565]
 ]
