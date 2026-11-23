@@ -389,9 +389,37 @@ Given that the host opened door $3$, is the probabiliy of the prize being behind
 == Section C
 Suppose the contestant always switches to the remaining closed door. Find the probability of winning, without conditioning on which door the host opened.
 = Answer 4
+First, we'll define our sample space to make the conversation easier.\
+The space consists of ordered pairs where the first entry is where the car is, and the second is which door the host chose to open.
+$
+  Omega = {(c,h):c in {1,2,3},h in {2,3}}\
+$
+And we denote $c=k$ as $C_k$, and $h =k$ as $H_k$
 == Section A
+If the host opened door $3$, it is given that $H_3$, therefore we now "live in" $PP(dot.c mid(|) H_3)$, and we want to find $PP(C_2 mid(|) H_3)$
+We know that $PP(H_3 mid(|) C_2)= 1$.\
+From Bayes' theorem we get
+$
+  PP(C_2 mid(|) H_3) = (PP(H_3 mid(|) C_2)dot.c PP(C_2))/PP(H_3) = (1/3)/(PP(H_3))
+$
+No we need to find $PP(H_3)$, and we'll do it using the law of total probability\
+Since ${C_1,C_2,C_3}$ is a partition of of $Omega$ we can use it
+$
+  PP(H_3) = sum_(n=1)^3 PP(H_3 mid(|)C_n)dot.c PP(C_n) = PP(H_3 mid(|) C_1) dot.c 1/3 + PP(H_3 mid(|) C_2) dot.c 1/3 + PP(H_3 mid(|) C_3) dot.c 1/3\
+  = (1-r)/3 + 1/3 + 0= (2-r)/3
+$
+Therefore
+$ #rect($ PP(C_2 mid(|) H_3) = 1/(2-r) $, stroke: flavors.mocha.colors.lavender.rgb) $
 == Section B
+$PP(C_1 mid(|) H_3) = 1- PP(C_2 mid(|) H_3)$, therefore the prob. of the car being behind door $1$ is higher than it is being behind door $2$ if-and-only-if $1/(2-r)> 1/2$.\
+Since $r in [0,1]$, this condition never happens and such $PP(C_1) <= PP(C_2)$. And if $r=0$ (Which means that the host _always_ opens door $3$) we have $PP(C_1) = PP(C_2)$
 == Section C
+If the contestant switches and gets the prize than either of the two *disjoint* events must occur, either the host opened door $3$ while the car was behind door $2$, or the host opened door $2$ while the car was behind door $3$. So from additivity it is $ PP(C_2 inter H_3) + PP(C_3 inter H_2) $
+$
+PP(C_2 inter H_3) = PP(H_3 mid(|) C_2) dot.c PP(C_2) = 1 dot.c 1/3 = 1/3\
+PP(C_3 inter H_2) = PP(H_2 mid(|) C_3) dot.c PP(C_3) = 1 dot.c 1/3 = 1/3\
+PP(C_2 inter H_3) + PP(C_3 inter H_2) = #rect($ 2/3 $, stroke: flavors.mocha.colors.lavender.rgb) 
+$
 #pagebreak()
 = Corny Joke
 My life

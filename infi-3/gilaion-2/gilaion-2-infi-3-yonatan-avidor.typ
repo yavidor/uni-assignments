@@ -90,13 +90,3 @@ $
 $
   forall x,y in Omega. abs(f(x)-f(y)) <= (sup_(omega in Omega) norm(D f|_omega)) norm(x-y)<= M norm(x-y)
 $
-#pagebreak()
-= שאלה 3
-תהי $F: Omega subset.eq RR^n -> RR^m$ פונקציה דיפרנציאבילית בנקודה פנימית $x in Omega$.\
-יש להוכיח שקיימת סביבה של הנקודה $x$ שבה קיים קבוע $M$ כך ש
-$
-  norm(F(x+Delta x)- F(x)) <= M norm(Delta x)
-$
-לכל $Delta x$ כך שגם הנקודה $x+ Delta x$ נמצאת בסביבה הנ"ל
-= פתרון 3
-
