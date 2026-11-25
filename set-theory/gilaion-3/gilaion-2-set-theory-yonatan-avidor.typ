@@ -42,38 +42,95 @@
   #v(1cm)
   #text(size: 14pt)[יונתן אבידור - 214269565]
 ]
+#outline()
 #pagebreak()
 = שאלה 1 <q1>
 תהי $F:A->B$ פונקציה. לכל $Y subset.eq B$ נסמן $F^(-1)[Y]={a in A : F(a) in Y}$.
 == סעיף א'
 הוכיחו שלכל $Y,Z subset.eq B$ מתקיים
 $
-F^(-1)[Y inter B] = F^(-1) [Y] inter F^(-1) [Z] quad quad F^(-1)[B without Y] = A without F^(-1)[Y]
+  F^(-1)[Y inter B] = F^(-1) [Y] inter F^(-1) [Z] quad quad F^(-1)[B without Y] = A without F^(-1)[Y]
 $
 == סעיף ב'
 הוכיחו שלכל $X subset.eq A$ ולכל $Y subset.eq B$ מתקיים
 $
-X subset.eq F^(-1)[F[X]] quad quad F[F^(-1)[Y]] subset.eq Y
+  X subset.eq F^(-1)[F[X]] quad quad F[F^(-1)[Y]] subset.eq Y
 $
 לכל אחת משתי ההכלות, תנו דוגמה בה לא מתקיים שוויון
 = פתרון 1
+== סעיף א'
+=== חיתוך
+==== $F^(-1)[Y inter Z] subset.eq F^(-1)[Y] inter F^(-1)[Z]$
+יהי $x in F^(-1)[Y inter Z]$ מהגדרת המקור מתקיים כי $x in A$, ו-$F(x) in Y inter Z$\
+מהגדרת חיתוך מקבלים כי $F(x) in Y and F(x) in Z$, מהגדרת המקור שוב נקבל כי זה אומר ש $x in F^(-1)[Y] and x in F^(-1)[Z]$.\ מהגדרת חיתוך נקבל כי $x in F^(-1)[Y] inter F^(-1)[Z]$\
+==== $F^(-1)[Y] inter F^(-1)[Z] subset.eq F^(-1)[Y inter Z]$
+יהי $x in F^(-1)[Y] inter F^(-1)[Z]$
+$
+  x in {a in A: F(a) in Z} inter {a in A: F(a) in Z}
+  \ ={a in A: F(a) in Y and F(a) in Z} =F^(-1)[Y inter Z]
+$
+=== הפרש
+==== $F^(-1)[B without Y] subset.eq A without F^(-1)[Y]$
+יהי $x in F^(-1)[B without Y]$, מהגדרת המקור זה אומר ש $F(x) in B without Y$\
+כלומר $x in.not F^(-1)[Y]$, מהגדרת המקור נקבל גם כי $x in A$, וכי $F^(-1)[Y] subset.eq A$
+$
+  x in A and x in.not F^(-1)[Y] subset.eq A ==> x in A without F^(-1)[Y]
+$
+==== $A without F^(-1)[Y] subset.eq F^(-1)[B without Y]$
+יהי $x in A without F^(-1)[Y]$, כלומר $F(x) in.not Y subset.eq B ==> F(x) in B without Y$, מהגדרת המקור זה אומר ש $x in F^(-1)[B without Y]$
+= סעיף ב'
+יהיו $X subset.eq A quad Y subset.eq B$
+=== $X subset.eq F^(-1)[F[X]]$
+יהי $x in X$\
+נתבונן ב-$F[X]$\
+$
+  F[X] = {F(a): a in X}
+$
+לכן $F(x) in F[X]$, כלומר $x in F^(-1)[F[X]]$.\
+==== דוגמה נגדית
+בעיקרון ניתן להשתמש בכל פונקציה שאינה חח"ע\
+$
+  A = {1,2}\
+  B = {3,4}\
+  X= {1}\
+  F = {(1,4),(2,4)}\
+  F[X] = 4\
+  F^(-1)[4] = {1,2}\
+  X subset.neq F^(-1)[F[X]]
+$
+=== $F[F^(-1)[Y]] subset.eq Y$
+יהי $y in F[F^(-1)[Y]]$
+$
+  y in F[F^(-1)[Y]] ==> exists z in F^(-1)[Y]. Y in.rev F(z) = y ==> y in Y
+$
+==== דוגמה נגדית
+בעיקרון ניתן להשתמש בכל פונקצי שאינה על\
+$
+  A = {1} \
+  B = {2,3} \
+  F = {(1,2)} \
+  Y= {2,3}\
+  F^(-1)[Y] = {1}\
+  F[F^(-1)[Y]] = {2}\
+  F[F^(-1)[Y]] subset.neq Y
+$
 #pagebreak()
 = שאלה 2
 יהיו $A,B$ קבוצות, ונסמן
 $
-cal(H) = {F in cal(P)(A times cal(P)(B)) mid(|) F : A -> cal(P)(B)}
+  cal(H) = {F in cal(P)(A times cal(P)(B)) mid(|) F : A -> cal(P)(B)}
 $
 == סעיף א'
 נמקו מדוע $cal(H)$ היא קבוצה.\
 לכל $R subset.eq A times B$ ולכל $a in A$ נגדיר
 $
-R_a = {b in B : (a,b) in R}
+  R_a = {b in B : (a,b) in R}
 $
 הראו שהכלל $F_R(a)=R_a$ מגדיר פונקציה $F_R: A -> cal(P)(B)$, ונמקו את קיומה באמצעות האקסיומות.
 == סעיף ב'
 הוכיחו שהכלל
 $
-Psi:cal(P)(A times B) -> cal(H), quad quad Psi(R) = F_R
+  Psi:cal(P)(A times B) -> cal(H), quad quad Psi(R) = F_R
 $
 מגדיר פונקציה חד-חד-ערכית ועל. נמקו גם את קוימה של $Phi$ כקבוצה.
 == סעיף ג'
@@ -82,7 +139,7 @@ $
 #pagebreak()
 יהיו $A,B$ קבוצות. לכל $U subset.eq A union B$ \
 $
-Phi(U) = (U inter A, U inter B)
+  Phi(U) = (U inter A, U inter B)
 $
 == סעיף א'
 הראו שהכלל מגדיר פונקציה $Phi: cal(P)(A union B)->cal(P)(A)times cal(P)(B)$
@@ -91,3 +148,4 @@ $
 הוכיחו ש-$Phi$ על אם-ורק-אם $A inter B = emptyset$
 == סעיף ג'
 יהיו $X subset.eq A$ ו-$Y subset.eq B$
+
